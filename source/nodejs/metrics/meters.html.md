@@ -83,7 +83,7 @@ meter.incrementCounter("login_count", 1)
 
 We recommend naming your metrics something easily recognizable and without too many dynamic elements. While you can wildcard parts of the metric name for dashboard creation, we recommend you only use this for small grouping and not use IDs for metric names.
 
-Metric names only support numbers, letters, dots and underscores (`[a-z0-9._]`) as valid characters. Any other characters will be replaced with an underscore by our processor. You can find the list of metrics as processed on the ["Add Dashboard"](https://appsignal.com/redirect-to/app?to=metrics/new). This is in the "Metrics" feature, as listed in the AppSignal navigation.
+Metric names only support numbers, letters, dots and underscores (`[a-z0-9._]`) as valid characters. Any other characters will be replaced with an underscore by our processor. You can find the list of metrics as processed on the ["Add Dashboard"](https://appsignal.com/redirect-to/app?to=dashboard&overlay=dashboardForm). This is in the "Metrics" feature, as listed in the AppSignal navigation.
 
 Some examples of good metric names are:
 
@@ -94,7 +94,7 @@ Some examples of good metric names are:
 - `notifier.perform`
 - `notifier.success`
 
-By default AppSignal already tracks metrics for your application, such as [host metrics](/metrics/host.html). See the metrics list on the ["Add Dashboard"](https://appsignal.com/redirect-to/app?to=metrics/new) page for the metrics that are already available for your app.
+By default AppSignal already tracks metrics for your application, such as [host metrics](/metrics/host.html). See the metrics list on the ["Add Dashboard"](https://appsignal.com/redirect-to/app?to=dashboard&overlay=dashboardForm) page for the metrics that are already available for your app.
 
 ## Metric values
 
