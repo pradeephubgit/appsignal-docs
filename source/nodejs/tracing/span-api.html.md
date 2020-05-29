@@ -14,7 +14,7 @@ span
 
 ### `span.set(key: string, value: string | number | boolean)`
 
-Sets arbitary data on a current `Span`. The data can be a `string`, `number` or `boolean` type.
+Sets arbitrary data on a current `Span`. The data can be a `string`, `number` or `boolean` type.
 
 ### `span.setName(name: string)`
 
@@ -24,11 +24,11 @@ Sets the `name` of the current `Span`. Namespaces are a way to group error incid
 
 Adds sanitized SQL data as a string to a `Span`.
 
-he `value` will be applied to the `Span` as the body of a query made within the lifetime of the `Span`, which will show the sanitized query in your dashboard.
+The `value` will be applied to the `Span` as the body of a query made within the lifetime of the `Span`, which will show the sanitized query in your dashboard.
 
 ### `span.setCategory(category: string)`
 
-Sets the category for a the `Span`. The category groups `Span`s together in the "Slow Events" feature, and in the "Sample breakdown".
+Sets the category for the `Span`. The category groups `Span`s together in the "Slow Events" feature, and in the "Sample breakdown".
 
 ### `span.addError(error: Error)`
 
