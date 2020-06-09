@@ -10,7 +10,7 @@ AppSignal provides many ways to provide more insights in your application - by a
 
 ## Table of Contents
 
-- [The Tracer object](/nodejs/instrumentation/tracer.html)
-- [Async tracing and Scopes](/nodejs/instrumentation/scopes.html)
-- [Creating and using a Span](/nodejs/instrumentation/span.html)
-- [Span API](/nodejs/instrumentation/span-api.html)
+- [The Tracer object](/nodejs/tracing/tracer.html)
+- [Async tracing and Scopes](/nodejs/tracing/scopes.html)
+- [Creating and using a Span](/nodejs/tracing/span.html)
+- [Span API](/nodejs/tracing/span-api.html)
