@@ -27,8 +27,10 @@ All open source projects are available on our [AppSignal GitHub organization][gi
 
 Our main projects include:
 
-- [AppSignal Ruby agent][appsignal-ruby]
-- [AppSignal Elixir agent][appsignal-elixir]
+- [AppSignal Ruby library][appsignal-ruby]
+- [AppSignal Elixir library][appsignal-elixir]
+- [AppSignal Front-end JavaScript library][appsignal-javascript]
+- [AppSignal Node.js library][appsignal-nodejs]
 - [AppSignal Documentation][appsignal-docs] - That's this website!
 - [AppSignal Examples applications][appsignal-examples]
 
@@ -41,6 +43,8 @@ include:
   Rust library to lex and sanitize SQL queries.
 - [probes.rs][probes-rs]  
   Rust library to read out system stats from a machine running Linux.
+- [public_config][public_config]  
+  Parts of AppSignal.com configuration that are public, such as magic dashboards.
 
 ## Using git and GitHub
 
@@ -110,12 +114,15 @@ behavior to [contact@appsignal.com][coc-contact].
 [waffles-page]: https://appsignal.com/waffles
 [appsignal-ruby]: https://github.com/appsignal/appsignal-ruby
 [appsignal-elixir]: https://github.com/appsignal/appsignal-elixir
+[appsignal-javascript]: https://github.com/appsignal/appsignal-javascript
+[appsignal-nodejs]: https://github.com/appsignal/appsignal-nodejs
 [appsignal-rust]: https://github.com/appsignal/appsignal-rs
 [appsignal-docs]: https://github.com/appsignal/appsignal-docs
 [appsignal-examples]: https://github.com/appsignal/appsignal-examples
 
 [sql_lexer]: https://github.com/appsignal/sql_lexer
 [probes-rs]: https://github.com/appsignal/probes-rs
+[public_config]: https://github.com/appsignal/public_config
 
 [github-appsignal]: https://github.com/appsignal
 [travis-appsignal]: https://travis-ci.org/appsignal
