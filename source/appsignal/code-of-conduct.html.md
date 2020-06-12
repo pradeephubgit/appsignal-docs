@@ -2,6 +2,9 @@
 title: Code of Conduct
 ---
 
+This Code of Conduct applies to
+[all AppSignal projects](/appsignal/contributing.html#open-source-projects).
+
 ## Our Pledge
 
 In the interest of fostering an open and welcoming environment, we as
