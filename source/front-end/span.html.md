@@ -2,7 +2,7 @@
 title: "Creating and Using a Span"
 ---
 
-A `Span` is the name of the object that we use to capture data about an error and its surrounding context. It is designed to be similar to, but not exactly like, the Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification. 
+A `Span` is the name of the object that we use to capture data about an error and its surrounding context. It is designed to be similar to, but not exactly like, the Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification.
 
 ## Creating a new `Span`
 
@@ -68,7 +68,9 @@ Sets the `namespace` of the current `Span`. Namespaces are a way to group error 
 
 ### `span.setError(error: Error | object)`
 
-Sets the `error` of the current `Span`. When an `Error` object is passed to the `setError` method, the `stack` property is normalised and transformed into an array of strings, with each string representing a line in the stacktrace. For consistency with our other integrations, `stack` is renamed to `backtrace`.
+Sets the `error` of the current `Span`. The `Error` object has a `name`, `message` and `backtrace` property. Make sure to only use something describing the error's type as the `name`. AppSignal groups the errors based on this name. You can put anything you like in the `message`.
+
+When an `Error` object is passed to the `setError` method, the `stack` property is normalised and transformed into an array of strings, with each string representing a line in the stacktrace. For consistency with our other integrations, `stack` is renamed to `backtrace`.
 
 ### `span.setTags(tags: object)`
 
@@ -84,7 +86,7 @@ Returns the contents of a `Span` as an object.
 
 ## Sending a `Span` to AppSignal
 
-When you're finished adding data to the `Span`, it can then be passed to `appsignal.send()` to be pushed to our API. 
+When you're finished adding data to the `Span`, it can then be passed to `appsignal.send()` to be pushed to our API.
 
 ```js
 const span = appsignal.createSpan((span) => {
