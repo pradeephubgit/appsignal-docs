@@ -8,7 +8,7 @@ Below you'll read how GDPR applies to AppSignal, our customers and the people ou
 
 ## Compliance in relation to our employees and vendors
 
-AppSignal B.V. is the entity that owns and operates the AppSignal service, a business located in the Netherlands and therefor bound by Dutch and European law. This entity is fully GDPR compliant, which means we only request and process data based on legal bases as defined in the GDPR. In cooperation with our counsel we have made a thorough assessment of all of our processes and data stores.
+AppSignal B.V. is the entity that owns and operates the AppSignal service, a business located in the Netherlands and therefore bound by Dutch and European law. This entity is fully GDPR compliant, which means we only request and process data based on legal bases as defined in the GDPR. In cooperation with our counsel we have made a thorough assessment of all of our processes and data stores.
 
 Where needed, we changed our internal policies and procedures to be in compliance with GDPR, and deleted data that we didn't need or want. We also defined a new Privacy Policy and wrote a Data Processing Agreement (more on that below).
 
