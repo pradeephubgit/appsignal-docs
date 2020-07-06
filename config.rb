@@ -4,7 +4,7 @@ require "lib/appsignal_markdown"
 Haml::TempleEngine.disable_option_validator!
 
 DOCS_ROOT   = File.expand_path(File.dirname(__FILE__))
-GITHUB_ROOT = "https://github.com/appsignal/appsignal-docs/tree/master"
+GITHUB_ROOT = "https://github.com/appsignal/appsignal-docs/tree/main"
 
 Time.zone = "Amsterdam"
 
