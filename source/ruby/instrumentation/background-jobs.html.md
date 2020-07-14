@@ -2,7 +2,7 @@
 title: "Instrumentation for background jobs"
 ---
 
-While we support Resque, Sidekiq and Delayed Job out-of-the-box, it's not very
+While we support Resque, Sidekiq and Delayed::Job out-of-the-box, it's not very
 difficult to monitor other background processors. For custom monitoring of
 processors we need to do four things.
 

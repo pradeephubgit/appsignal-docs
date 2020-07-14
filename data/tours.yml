@@ -17,7 +17,7 @@ tours:
         text: We save details error details and provide you with the information to drill down to the root cause. Look at other occurrences of the same error to discover patterns.
       -
         title: Works with your setup
-        text: AppSignal tracks errors in all major background processors for Ruby such as Delayed job, Resque, Sidekiq. Plus your custom background job processors.
+        text: AppSignal tracks errors in all major background processors for Ruby such as Delayed::Job, Resque, Sidekiq. Plus your custom background job processors.
   -
     slug: performance
     name: performance

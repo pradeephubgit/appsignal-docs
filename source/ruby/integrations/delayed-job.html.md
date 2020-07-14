@@ -1,8 +1,8 @@
 ---
-title: "Delayed Job"
+title: "Delayed::Job"
 ---
 
-[Delayed Job](https://github.com/collectiveidea/delayed_job) is created by the excellent folks at [Shopify](https://shopifyengineering.myshopify.com/) and one of the most popular background processors for Ruby and Rails.
+[Delayed::Job](https://github.com/collectiveidea/delayed_job) is created by the excellent folks at [Shopify](https://shopifyengineering.myshopify.com/) and one of the most popular background processors for Ruby and Rails.
 
 The AppSignal gem detects Delayed Job when it's present and hooks into the standard Delayed Job callbacks. No further action is required to enable integration.
 
