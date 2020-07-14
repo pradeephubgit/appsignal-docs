@@ -7,7 +7,7 @@ as:
 
 * [Capistrano](capistrano.html)
 * [DataMapper](datamapper.html)
-* [Delayed Job](delayed-job.html)
+* [Delayed::Job](delayed-job.html)
 * [Grape](grape.html)
 * [MongoDB](mongodb.html)
 * [Padrino](padrino.html)
