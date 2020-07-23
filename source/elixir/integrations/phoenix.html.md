@@ -66,9 +66,27 @@ end
 
 ### Channel instrumentation with a channel's handle
 
-Incoming channel requests can be instrumented by adding code to the
-`handle_in/3` function of your application. Function decorators are used to
-minimize the amount of code you have to add to your application's channels.
+Incoming channel requests can be instrumented by wrapping the code in your
+`handle_in/3` functions with `Appsignal.Phoenix.Channel.instrument/5`:
+
+```
+defmodule AppsignalPhoenixExampleWeb.RoomChannel do
+  use Phoenix.Channel
+
+  # ...
+
+  def handle_in("new_msg", %{"body" => body} = params, socket) do
+    Appsignal.Phoenix.Channel.instrument(__MODULE__, "new_msg", params, socket, fn ->
+      broadcast!(socket, "new_msg", %{body: body})
+      {:noreply, socket}
+    end)
+  end
+end
+```
+
+Alternatively, you can use function decorators to instrument channels. While
+less flexible than the instrumentation function, decorators minimize the amount
+of code you have to add to your application's channels.
 
 ```elixir
 defmodule SomeApp.MyChannel do
@@ -84,42 +102,6 @@ end
 Channel events will be displayed under the "Background jobs" tab, showing the
 channel module and the action argument that you entered.
 
-### Channel instrumentation without decorators
-
-You can also decide not to use function decorators. In that case, use the
-`channel_action/3` function directly, passing in a name for the channel action,
-the socket, and the actual code that you are executing in the channel handler.
-
-```elixir
-defmodule SomeApp.MyChannel do
-  import Appsignal.Phoenix.Channel, only: [channel_action: 4]
-
-  def handle_in("ping" = action, _payload, socket) do
-    channel_action(__MODULE__, action, socket, fn ->
-      # do some heave processing here...
-      reply = perform_work()
-      {:reply, {:ok, reply}, socket}
-    end)
-  end
-end
-```
-
-### Adding channel payloads
-
-Channel payloads aren't included by default, but can be added by using [sample_data]:
-
-```elixir
-defmodule SomeApp.MyChannel do
-  use Appsignal.Instrumentation.Decorators
-
-  @decorate channel_action
-  def handle_in("ping", %{"body" => body}, socket) do
-    # make sure to sanitize any parameters such as emails/passwords and long strings
-    Appsignal.Transaction.set_sample_data("custom_data", %{body: body})
-    # your code here..
-  end
-end
-```
 
 ## LiveView
 
