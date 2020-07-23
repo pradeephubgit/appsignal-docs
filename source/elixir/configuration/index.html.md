@@ -15,6 +15,7 @@ following items. If they are not present, AppSignal will not send any data to
 AppSignal.com.
 
 - A valid [Push API Key](/appsignal/terminology.html#push-api-key)
+- The application's OTP app name
 - An application name
 - An application environment (`dev` / `prod` / `test`)
 - The application environment to be set to `active: true`
@@ -23,10 +24,11 @@ AppSignal.com.
 # Example minimal config file
 # config/config.exs
 config :appsignal, :config,
-  active: true,
-  name: "My awesome app",
+  otp_app: :appsignal_phoenix_example,
+  name: "AppsignalPhoenixExample",
   push_api_key: "your-push-api-key",
-  env: Mix.env
+  env: Mix.env,
+  active: true
 ```
 
 Alternatively, you can configure the agent using system environment variables.
@@ -34,8 +36,9 @@ AppSignal will automatically become active if the `APPSIGNAL_PUSH_API_KEY`
 environment variable is set.
 
 ```elixir
+export APPSIGNAL_OTP_APP="appsignal_phoenix_example"
 export APPSIGNAL_PUSH_API_KEY="your-push-api-key"
-export APPSIGNAL_APP_NAME="My awesome app"
+export APPSIGNAL_APP_NAME="AppsignalPhoenixExample"
 export APPSIGNAL_APP_ENV="prod"
 ```
 
@@ -87,10 +90,10 @@ config :appsignal, :config,
 ```elixir
 # config/config.exs
 config :appsignal, :config,
-  active: true,
-  name: "My awesome app",
+  otp_app: :appsignal_phoenix_example,
+  name: "AppsignalPhoenixExample",
   push_api_key: "your-push-api-key",
-  env: Mix.env
+  env: Mix.env,
 ```
 
 ```elixir
