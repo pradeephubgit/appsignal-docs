@@ -30,76 +30,37 @@ end
 This will create a transaction for every HTTP request which is performed on the
 endpoint.
 
-## Phoenix instrumentation hooks
-
--> **Note**: From AppSignal for Elixir package version `1.12.0` onward, manually configuring Phoenix instrumentation hooks is no longer needed and this step can be skipped for apps running Phoenix 1.4.7 and up.
-
-Phoenix comes with instrumentation hooks built-in. To send Phoenix'
-default instrumentation events to AppSignal, add the following to your
-`config.exs` (adjusting for your app's name!).
-
-```elixir
-# config/config.exs
-config :my_app, MyAppWeb.Endpoint,
-  instrumenters: [Appsignal.Phoenix.Instrumenter]
-```
-
-Using the `Appsignal.Phoenix.Instrumenter` it's possible to add custom
-instrumentation to your Phoenix applications.
-
-This module can be used as a Phoenix instrumentation module. Adding this module
-to the list of Phoenix instrumenters will result in the
-`phoenix_controller_call` and `phoenix_controller_render` events to become part
-of your request timeline.
-
-For more information on instrumentation please visit the [AppSignal Hex package
-documentation](https://hexdocs.pm/appsignal/).
-
 ## Template rendering
 
 It's possible to instrument how much time it takes each template render,
 including subtemplates (partials), in your Phoenix application.
 
-To enable this for AppSignal you need to register the AppSignal template
-renderer, which augment the compiled templates with instrumentation hooks.
-
-Put the following in your `config.exs`.
+To enable this for AppSignal, add `use Appsignal.Phoenix.View` to the view/0
+function in your app's web module, after `use Phoenix.View`:
 
 ```elixir
-# config/config.exs
-config :phoenix, :template_engines,
-  eex: Appsignal.Phoenix.Template.EExEngine,
-  exs: Appsignal.Phoenix.Template.ExsEngine
-```
+defmodule AppsignalPhoenixExampleWeb do
+  # ...
 
-## Queries
+  def view do
+    quote do
+      use Phoenix.View,
+        root: "lib/appsignal_phoenix_example_web/templates",
+        namespace: AppsignalPhoenixExampleWeb
 
-If you're using Ecto 3, attach `Appsignal.Ecto` to Telemetry query events in your application's `start/2` function by calling `:telemetry.attach/4`. In most Phoenix applications, the application's start function is located in a module named `YourAppName.Application`:
+      use Appsignal.Phoenix.View
 
-``` elixir
-defmodule AppsignalPhoenixExample.Application do
-  use Application
+      # Import convenience functions from controllers
+      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-  def start(_type, _args) do
-    children = [
-      # ...
-    ]
-
-    # Add this :telemetry.attach/4 call:
-    :telemetry.attach(
-      "appsignal-ecto",
-      [:my_app, :repo, :query],
-      &Appsignal.Ecto.handle_event/4,
-      nil
-    )
-
-    opts = [strategy: :one_for_one, name: AppsignalPhoenixExample.Supervisor]
-    Supervisor.start_link(children, opts)
+      # Include shared imports and aliases for views
+      unquote(view_helpers())
+    end
   end
+
+  # ...
 end
 ```
-
-For more information on query instrumentation and installation instructions for Telemetry < 0.3.0 and Ecto < 3.0, check out the [AppSignal Ecto documentation](/elixir/integrations/ecto.html).
 
 ## Channels
 
