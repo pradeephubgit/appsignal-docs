@@ -13,6 +13,29 @@ instrumentation](/elixir/instrumentation/index.html) documentation.
 More information can be found in the [AppSignal Hex package
 documentation][hex-appsignal].
 
+## Getting started
+
+Since version 2.0, the Phoenix integration is moved to a separate library named
+`:appsignal_phoenix`, which depends on the main `:appsignal` library. To use
+AppSignal in a Phoenix app, add `:appsignal_phoenix` to your dependencies. You
+can then remove the `:appsignal` dependency.
+
+``` elixir
+defmodule AppsignalPhoenixExample.MixProject do
+  # ...
+
+  defp deps do
+    [
+      {:phoenix, "~> 1.5.3"},
+      # ...
+      {:appsignal_phoenix, "~> 2.0.0"}
+    ]
+  end
+
+  # ...
+end
+```
+
 ## Incoming HTTP requests
 
 To start logging HTTP requests in your Phoenix app, make sure you use the
