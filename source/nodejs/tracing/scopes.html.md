@@ -10,7 +10,7 @@ As mentioned in the `Span` documentation, the current active `Span` can be recal
 const span = tracer.currentSpan()
 ```
 
-Before it can be recalled again, the `Span` must be given a Scope. A Scope is a wrapper for a `Span` that allows it to be recalled across ansychronous code paths that may not directly be directly linked to each other (in an `EventEmitter` or a timer, for example, or even in a completely different file or function scope). This wrapper is invisible to you and is managed internally via the the `Tracer` objects `ScopeManager` and the internal `async_hooks` module. These Scopes are stored in a stack, meaning that the most recent `Span` to be given a scope will be the next `Span` returned by `tracer.currentSpan()`.
+Before it can be recalled again, the `Span` must be given a Scope. A Scope is a wrapper for a `Span` that allows it to be recalled across ansychronous code paths that may not directly be directly linked to each other (in an `EventEmitter` or a timer, for example, or even in a completely different file or function scope). This wrapper is invisible to you and is managed internally via the `Tracer` objects `ScopeManager` and the internal `async_hooks` module. These Scopes are stored in a stack, meaning that the most recent `Span` to be given a scope will be the next `Span` returned by `tracer.currentSpan()`.
 
 A `Span` can be given a Scope like this:
 

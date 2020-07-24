@@ -48,7 +48,7 @@ An application can have multiple environments such as "development", "test", "st
 
 To separate the errors and performance issues that occur in the "development" environment and those in "production", it's possible to set the environment in which the application is running with the `NODE_ENV` environment variable.
 
-If you activate AppSignal per environment, you can set the the `active` property of the options you pass into the constructor conditionally:
+If you activate AppSignal per environment, you can set the `active` property of the options you pass into the constructor conditionally:
 
 ```js
 const appsignal = new Appsignal({

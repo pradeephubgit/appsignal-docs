@@ -17,7 +17,7 @@ npm install --save @appsignal/javascript @appsignal/angular
 
 ### `AppsignalErrorHandler`
 
-The default Angular integration is a class that extends the the `ErrorHandler` class provided by `@angular/core`. In a new app created using `@angular/cli`, your `app.module.ts` file might include something like this:
+The default Angular integration is a class that extends the `ErrorHandler` class provided by `@angular/core`. In a new app created using `@angular/cli`, your `app.module.ts` file might include something like this:
 
 ```js
 import { ErrorHandler, NgModule } from '@angular/core'
