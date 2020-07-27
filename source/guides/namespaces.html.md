@@ -94,7 +94,7 @@ defmodule AppsignalPhoenixExampleWeb.AdminController do
   defp set_appsignal_namespace(conn, _params) do
     # Configures all actions in this controller to report
     # in the "admin" namespace
-    Appsignal.Transaction.set_namespace(:admin)
+    Appsignal.Span.set_namespace(Appsignal.Tracer.current_span(), "admin")
     conn
   end
 
@@ -108,7 +108,7 @@ In a background job call the `Appsignal.Transaction.set_namespace` at the beginn
 defmodule MyApp.CriticalJob do
   def run do
     # Configures this worker's jobs to report in the "critical" namespace
-    Appsignal.Transaction.set_namespace(:critical)
+    Appsignal.Span.set_namespace(Appsignal.Tracer.current_span(), "critical")
 
     # The actual worker code
   end
