@@ -2,7 +2,28 @@
 
 AppSignal uses Ecto’s Telemetry instrumentation to gain information about queries ran in your app by attaching a handler that gets called whenever a query is executed.
 
-To get this to work, you attach the handler manually when starting your app’s supervisor. In most applications, this is done in your application’s `start/2` function.
+## Automatic instrumentation
+
+The Ecto instrumentation automatically hooks into your Ecto repos if you've set your `:otp_app` configuration to match your app's OTP app name. The new installer wil automatically set that option, but you'll need to add it to your appsignal.exs  config file manually when upgrading:
+
+``` elixir
+config :appsignal, :config,
+  otp_app: :appsignal_phoenix_example, <--
+  name: "appsignal_phoenix_example",
+  push_api_key: "your-api-key",
+  env: Mix.env
+```
+
+The integration thens use your app's configuration to find out which repos are configured, as your app will have a configuration line like this in config/config.exs :
+
+``` elixir
+config :appsignal_phoenix_example,
+  ecto_repos: [AppsignalPhoenixExample.Repo]
+```
+
+## Manual handler attachment
+
+For repos that aren't listed in the `:ecto_repos` configuration, you can attach a handler manually when starting your app’s supervisor. In most applications, this is done in your application’s `start/2` function.
 
 ``` elixir
 def start(_type, _args) do
@@ -54,13 +75,4 @@ Telemetry.attach(
   :handle_event,
   nil
 )
-```
-
-## Ecto < 3.0
-
-On Ecto 2, add the `Appsignal.Ecto` module to your Repo's logger configuration instead. The `Ecto.LogEntry` logger is the default logger for Ecto and needs to be set as well to keep the original Ecto logger behavior intact.
-
-```elixir
-config :my_app, MyApp.Repo,
-  loggers: [Appsignal.Ecto, Ecto.LogEntry]
 ```
