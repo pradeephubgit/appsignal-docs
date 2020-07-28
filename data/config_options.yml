@@ -711,7 +711,8 @@ options:
     ruby:
       since: 2.7.0
       since_notes:
-        - "Please use the [`working_dir_path`](#option-working_dir_path) option on versions earlier."
+        - "`2.10.12`: Support added for the system environment option."
+        - "Please use the [`working_dir_path`](#option-working_dir_path) option on versions older than 2.7.0."
       type: string
       default_value:
         markdown: detected by agent
