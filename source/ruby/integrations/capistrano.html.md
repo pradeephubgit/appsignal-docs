@@ -76,6 +76,19 @@ set :branch, "master"
 set :appsignal_revision, `git log --pretty=format:'%h' -n 1 #{fetch(:branch)}`
 ```
 
+### appsignal_user (since gem version 2.4.0)
+
+Used in combination with `appsignal_revision` (if necessary), it's possible to customize a deploy user for Capistrano deploys.
+
+By default this uses the system's local username, read from the `USER` or `USERNAME` environment variable, so there's no need to configure it if the system has these variables available.
+
+If you do want to customize the deploy user, set the `:appsignal_user` config option in your Capistrano config.
+
+```ruby
+# deploy.rb
+set :appsignal_user, "Jane" # Custom deploy user name
+```
+
 ## Example applications
 
 We have two example applications in our examples repository on GitHub. The
