@@ -30,7 +30,7 @@ The AppSignal gem starts with loading its default configuration, setting paths
 and enabling certain features.
 
 The agent defaults can be found in the [gem source]
-(https://github.com/appsignal/appsignal-ruby/blob/master/lib/appsignal/config.rb)
+(https://github.com/appsignal/appsignal-ruby/blob/main/lib/appsignal/config.rb)
 as `Appsignal::Config::DEFAULT_CONFIG`.
 
 This source is listed as `default` in the [diagnose](/ruby/command-line/diagnose.html) output.

@@ -95,7 +95,7 @@ to create by specifying the `kind` value.
     <tr>
       <td>repository</td>
       <td>String</td>
-      <td>Git link or reference, e.g. "master".</td>
+      <td>Git link or reference, e.g. "main".</td>
     </tr>
     <tr>
       <td>revision</td>

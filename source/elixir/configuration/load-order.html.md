@@ -24,7 +24,7 @@ The AppSignal package starts with loading its default configuration, setting
 paths and enabling certain features.
 
 The agent defaults can be found in the [package source]
-(https://github.com/appsignal/appsignal-elixir/blob/master/lib/appsignal/config.ex)
+(https://github.com/appsignal/appsignal-elixir/blob/main/lib/appsignal/config.ex)
 as `Appsignal.Config.default_config`.
 
 This source is listed as `default` in the [diagnose](/elixir/command-line/diagnose.html) output.

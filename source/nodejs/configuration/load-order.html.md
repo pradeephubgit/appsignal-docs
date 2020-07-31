@@ -17,7 +17,7 @@ The configuration is loaded in a four step process, starting with the package de
 
 The AppSignal module starts with loading its default configuration, setting paths and enabling certain features.
 
-The agent defaults can be found in the [module source](https://github.com/appsignal/appsignal-nodejs/blob/master/packages/nodejs/src/config.ts).
+The agent defaults can be found in the [module source](https://github.com/appsignal/appsignal-nodejs/blob/main/packages/nodejs/src/config.ts).
 
 ##=system 2. System detected settings
 
@@ -47,5 +47,3 @@ const appsignal = new Appsignal({
 ```
 
 This step will override all given options from the defaults or system detected configuration.
-
-

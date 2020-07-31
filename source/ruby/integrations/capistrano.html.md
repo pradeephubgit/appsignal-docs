@@ -71,7 +71,7 @@ If you're using the branch configuration setting Capistrano you can also set
 git to fetch the commit SHA from the selected branch.
 
 ```ruby
-set :branch, "master"
+set :branch, "main"
 # Sets the selected branch's git commit SHA as the revision
 set :appsignal_revision, `git log --pretty=format:'%h' -n 1 #{fetch(:branch)}`
 ```

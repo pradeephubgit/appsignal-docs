@@ -48,8 +48,8 @@ include:
 
 ## Using git and GitHub
 
-We organize most of our git repositories on GitHub using a `master` and
-`develop` branch. The `master` branch corresponds to the current stable
+We organize most of our git repositories on GitHub using a `main` and
+`develop` branch. The `main` branch corresponds to the current stable
 release of a project. The `develop` branch is used for development of features
 that will end up in the next minor release of a project.
 
@@ -85,7 +85,7 @@ When the bug is a security sensitive issue, please refer to the [Security
 issues](#security-issues) section.
 
 When submitting a bug fix please create a Pull Request on the project's GitHub
-page please submit the change against the `master` branch.
+page please submit the change against the `main` branch.
 
 ## Feature requests
 
