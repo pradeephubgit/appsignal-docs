@@ -8,8 +8,8 @@ website][docs].
 - [Support][contact]
 
 ## Setup
-
-Run the following commands:
+1. Replace ${FONTAWESOME_TOKEN} in `.npmrc` with the token you can find in 1Password
+2. Run the following commands:
 
 ```sh
 git submodule init
