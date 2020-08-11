@@ -11,6 +11,7 @@ Support for Sidekiq was added in AppSignal Ruby gem version `0.8`.
 - [Job naming](#job-naming)
 - [Usage](#usage)
   - [Using with Rails](#usage-with-rails)
+  - [Using with Active Job](#usage-with-active-job)
   - [Using standalone](#usage-standalone)
 - [Metrics](#metrics)
 - [Minutely probe](#minutely-probe)
@@ -29,6 +30,12 @@ You can recognize events from Sidekiq with the name `perform_job.sidekiq` in the
 ### Using with Rails
 
 The AppSignal Ruby gem automatically inserts a listener into the Sidekiq server middleware stack if the `Sidekiq` module is present if you use Rails. No further action is required.
+
+### Using with Active Job
+
+The Sidekiq integration is compatible with [Active Job](active-job.html).
+
+Upgrade to version 2.11.0 of the Ruby gem or newer for improved support.
 
 ### Using standalone
 
@@ -115,8 +122,17 @@ An example is listed below.
 ```ruby
 # config/initializers/appsignal.rb or a file that's loaded on boot
 
+# Ruby gem 2.11.0 and newer
+Appsignal::Minutely.probes.register(
+  :sidekiq, # Use the same key as the default Sidekiq probe to override it
+  Appsignal::Probes::SidekiqProbe.new(:hostname => "my_sidekiq_hostname")
+)
+
+# Ruby gem 2.10.x and older
 Appsignal::Minutely.probes.register(
   :sidekiq, # Use the same key as the default Sidekiq probe to override it
   Appsignal::Hooks::SidekiqProbe.new(:hostname => "my_sidekiq_hostname")
 )
 ```
+
+In version 2.11.0 of the Ruby gem the `SidekiqProbe` constant was moved to its own module. Upon calling the constant a warning will be printed and logged. Update to the new constant name `Appsignal::Probes::SidekiqProbe` to remove the warning.
