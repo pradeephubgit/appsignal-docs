@@ -77,6 +77,19 @@ helpers do
     "AppSignal documentation"
   end
 
+  def section_active?(section_prefix)
+    current_url = current_page.url
+    if section_prefix == "/"
+      current_url == section_prefix
+    else
+      current_url.start_with?(section_prefix)
+    end
+  end
+
+  def page_active?(path)
+    path == current_page.url
+  end
+
   def link_with_active(*args, &block)
     if block_given?
       path, options = args

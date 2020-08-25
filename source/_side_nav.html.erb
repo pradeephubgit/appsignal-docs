@@ -1,0 +1,7 @@
+<nav>
+  <ul>
+    <% data.navigation.sections.each do |section| %>
+      <%= partial "navigation/section", :locals => { section: section } %>
+    <% end %>
+  </ul>
+</nav>
