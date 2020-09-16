@@ -72,7 +72,7 @@ If you do not want to move the metric and sample history of an application we'd 
 
 If you like to have the history of the application as well, you will then need to <a href="mailto:support@appsignal.com">contact us</a> so we can help you in this process by going through the following steps.
 
- - Step 1. First you'd need to update your PUSH API key for the app you'd like to move to an app-specific key, instead of an organisation-specific key. This ensures data that's being sent during the move will end up under the correct app.  You can find the app-specific key here: https://appsignal.com/redirect-to/app?to=info
+ - Step 1. First you'd need to update your PUSH API key for the app you'd like to move to an app-specific key, instead of an organisation-specific key. This ensures data that's being sent during the move will end up under the correct app.  You can find the app-specific key [here](https://appsignal.com/redirect-to/app?to=info).
 
  - Step 2. Once you inform us that you have taken care of the step above, we will then move the application data to the new organisation, this can take a couple of hours, depending on the amount of samples.
 
