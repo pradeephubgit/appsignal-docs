@@ -14,6 +14,8 @@ title: "Frequently Asked Questions"
   - [How to debug an issue with the AppSignal integration?](#how-to-debug-an-issue-with-the-appsignal-integration)
 - User account
   - [How to enable two-factor authentication (2FA) for the AppSignal app?](#how-to-enable-two-factor-authentication-2fa-for-the-appsignal-app)
+- Applications
+  - [How to transfer an app from one organization to another?](#how-to-transfer-an-app-from-one-organization-to-another)
 
 ## AppSignal libraries
 
@@ -61,3 +63,19 @@ Also check our [known issues](/support/known-issues.html) page for issues that m
 ### How to enable two-factor authentication (2FA) for the AppSignal app?
 
 Please see our [two-factor authentication](/user-account/two-factor-authentication.html) page for more information.
+
+## Application
+
+### How to transfer an app from one organization to another?
+
+If you do not want to move the metric and sample history of an application we'd recommend to deploy your application with the new organisation's push API key and your app should appear under the new organisation right away. Once the deploy is complete, you can remove the old app.
+
+If you like to have the history of the application as well, you will then need to <a href="mailto:support@appsignal.com">contact us</a> so we can help you in this process by going through the following steps.
+
+ - Step 1. First you'd need to update your PUSH API key for the app you'd like to move to an app-specific key, instead of an organisation-specific key. This ensures data that's being sent during the move will end up under the correct app.  You can find the app-specific key here: https://appsignal.com/redirect-to/app?to=info
+
+ - Step 2. Once you inform us that you have taken care of the step above, we will then move the application data to the new organisation, this can take a couple of hours, depending on the amount of samples.
+
+ - Step 3. Once the data migration is complete, we move the app itself to the new organisation. Note that we can't migrate everything, as some things are account specific, such as certain integration such as Jira/GitHub or notifiers such as Slack.
+
+ - Step 4. Deploy the app again with the new organisation-specific API key (from the new organisation). The migration is now complete.
