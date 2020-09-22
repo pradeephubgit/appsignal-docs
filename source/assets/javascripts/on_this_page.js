@@ -19,15 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const items = []
 
   headers.forEach((item) => {
-    const node = document.createElement("li")
-    const linkNode = item.querySelector("a").cloneNode(true)
-    linkNode.classList = elementClassList
+    const linkNode = item.querySelector("a:not(.anchor)")
+    if (linkNode) {
+      const node = document.createElement("li")
+      const itemLinkNode = linkNode.cloneNode(true)
+      itemLinkNode.classList = elementClassList
 
-    if (item.tagName === "H3") {
-      linkNode.classList.add("ml-2")
+      if (item.tagName === "H3") {
+        itemLinkNode.classList.add("ml-2")
+      }
+
+      node.appendChild(itemLinkNode)
+      onThisPageBar.appendChild(node)
     }
-
-    node.appendChild(linkNode)
-    onThisPageBar.appendChild(node)
   })
 })

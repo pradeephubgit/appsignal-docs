@@ -1,7 +1,10 @@
 <% options = options_for(integration).sort_by { |o| option_value(:config_key, o, integration) || o[:named_key] } %>
 <% required_options = options.select { |o| o[:required] } %>
 <% not_required_options = options.reject { |o| o[:required] } %>
-<h2>Available options</h2>
+<h2>
+  <a class="anchor" id="available-options"></a>
+  <a href="#available-options">Available options</a>
+</h2>
 <ul>
   <li>
     Required options
