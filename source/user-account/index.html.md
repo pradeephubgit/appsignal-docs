@@ -11,6 +11,8 @@ being monitored.
 When you are invited to an existing account or sign up, you can choose to sign
 up using GitHub or use an email / password combination.
 
+If you chose to sign up using an email / password combination, you can always link your GitHub account later on by visiting your [Profile & Settings](https://appsignal.com/users/edit) and scrolling down to GitHub section.
+
 ## Personal settings
 
 Once you're logged in you can navigate to your settings page by using
