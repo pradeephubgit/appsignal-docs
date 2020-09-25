@@ -203,7 +203,7 @@ Appsignal.set_gauge("my_metric_name", 200, %{tag_a: "b", tag_b: "c"})
 
 ## Rendering metric with and without tags
 
-If you created a custom metric and you have multiple tags associated with it, you can render this metric with and without the tag at the same time in a graph.
+If you created a custom metric and you have multiple tags associated with it, you can render the metric with and without the tag at the same time in a graph. The one without the tag will be a total of all the ones with the tag.
 
 ```ruby
 # Ruby
