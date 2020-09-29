@@ -26,3 +26,8 @@ Owners of an Organization can specify a Repo url on [the app settings page](http
 Alternatively organization owners can [link an app to GitHub](https://appsignal.com/redirect-to/app?to=integrations) and the "repo url" from the selected repository will be stored automatically. With the GitHub integration you'll also be able to send incidents to GitHub directly from AppSignal.
 
 Once the steps are completed we'll automatically enrich the backtrace lines with a link to the correct revision/file/line on the specified Git repository.
+
+## Send error to GitHub
+When an error occurs, AppSignal will not create an issue automatically on GitHub, if you think it is an error that needs to be fixed then you can create this error as an issue in GitHub by clicking on the "Send to GitHub" button.
+
+![Send error to github](/assets/images/screenshots/send_error_to_github.png)
