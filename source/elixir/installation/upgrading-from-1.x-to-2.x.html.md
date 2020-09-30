@@ -78,7 +78,7 @@ while upgrading to 2.x.
 
 ## Template rendering
 
-Instead of the custom `:template_engines` from 1.x, AppSignal for Elxir  2.x
+Instead of the custom `:template_engines` from 1.x, AppSignal for Elixir 2.x
 uses the new `Appsignal.View` module to gain insights into your template
 rendering.
 
