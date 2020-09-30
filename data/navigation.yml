@@ -307,6 +307,9 @@ sections:
               -
                 name: "Umbrella applications"
                 link: "/elixir/installation/umbrella.html"
+              -
+                name: "Upgrading from 1.x to 2.x"
+                link: "/elixir/installation/upgrading-from-1.x-to-2.x.html"
           -
             name: "Configuration"
             link: "/elixir/configuration/"
