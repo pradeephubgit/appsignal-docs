@@ -4,7 +4,7 @@ title: Upgrading from Appsignal for Elixir 1.x to 2.x
 
 Upgrading to AppSignal for Elixir requires some manual changes. This guide
 covers upgrading from a Phoenix application running AppSignal for Elixir 1.x to
-2.x, but is also applicable to Plug- or pure Elixir applications.
+2.x, but is also applicable to Plug applications, or pure Elixir applications.
 
 ## Dependencies
 
