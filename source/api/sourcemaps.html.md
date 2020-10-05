@@ -25,7 +25,7 @@ This endpoint enables the creation of private sourcemaps.
   </tr>
   <tr>
     <td>Requires authentication?</td>
-    <td>Yes (<a href="appsignal/terminology.html#push-api-key">Push API key</a>)</td>
+    <td>Yes (<a href="/appsignal/terminology.html#push-api-key">Push API key</a>)</td>
   </tr>
   <tr>
     <td>Response formats</td>
@@ -49,7 +49,7 @@ All parameters, except for `file` can be sent either in the POST body or as GET 
     <tr>
       <td><code>push_api_key</code></td>
       <td>String</td>
-      <td>Your organization's <a href="appsignal/terminology.html#push-api-key">Push API key</a>.</td>
+      <td>Your organization's <a href="/appsignal/terminology.html#push-api-key">Push API key</a>.</td>
     </tr>
     <tr>
       <td><code>app_name</code></td>
