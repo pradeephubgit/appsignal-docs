@@ -117,7 +117,6 @@ Here is an example implementation of
 - Retrieving the Tracer.
 - Retrieving the current span.
 - Creating a child span and setting its name.
-- Assigning the sample data to the span. It is important to note that at present the UI does not support displaying of sample data for child spans, so it must always be attached to the root for now.
 - Closing the child span.
 
 ```js
@@ -127,7 +126,7 @@ Here is an example implementation of
   const childSpan = span.child();
   childSpan.setName("GET /homepage");
 
-  span.setSampleData("custom_data", { foo: "bar" });
+  //do stuff
 
   childSpan.close()
 ```
