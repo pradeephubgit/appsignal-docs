@@ -429,8 +429,11 @@ sections:
                 name: "Load order"
                 link: "/nodejs/configuration/load-order.html"
               -
-                name: "Ignore actions"
+                name: "Ignoring spans"
                 link: "/nodejs/configuration/ignore-actions.html"
+              -
+                name: "Ignoring errors"
+                link: "/nodejs/configuration/ignore-errors.html"
           -
             name: "Tracing"
             link: "/nodejs/tracing/"
@@ -442,14 +445,20 @@ sections:
                 name: "The Tracer object"
                 link: "/nodejs/tracing/tracer.html"
               -
-                name: "Async tracing and Scopes"
-                link: "/nodejs/tracing/scopes.html"
-              -
                 name: "Creating and using a Span"
                 link: "/nodejs/tracing/span.html"
               -
-                name: "Span API"
-                link: "/nodejs/tracing/span-api.html"
+                name: "Exception handling"
+                link: "/nodejs/tracing/exception-handling.html"
+              -
+                name: "Tagging and Sample Data"
+                link: "/nodejs/tracing/tagging.html"
+              -
+                name: "Namespaces"
+                link: "/nodejs/tracing/namespaces.html"
+              -
+                name: "Async tracing and Scopes"
+                link: "/nodejs/tracing/scopes.html"
           -
             name: "Metrics"
             link: "/nodejs/metrics/"
@@ -457,9 +466,6 @@ sections:
               -
                 name: "Overview"
                 link: "/nodejs/metrics/"
-              -
-                name: "The Metrics object"
-                link: "/nodejs/metrics/meters.html"
               -
                 name: "Minutely probes"
                 link: "/nodejs/metrics/minutely-probes.html"
@@ -492,6 +498,12 @@ sections:
             name: "Command line tools"
             link: "/nodejs/command-line/index.html"
             sub_pages:
+              -
+                name: "Overview"
+                link: "/nodejs/command-line/"
+              -
+                name: "Install"
+                link: "/nodejs/command-line/install.html"
               -
                 name: "Diagnose"
                 link: "/nodejs/command-line/diagnose.html"
