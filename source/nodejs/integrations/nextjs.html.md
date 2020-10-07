@@ -44,6 +44,7 @@ const { getRequestHandler } = require("@appsignal/nextjs");
 
 const url = require("url");
 const next = require("next");
+const { createServer } = require("http");
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 
@@ -58,18 +59,24 @@ app.prepare().then(() => {
     const parsedUrl = url.parse(req.url, true);
     const { pathname, query } = parsedUrl;
 
-    if (pathname === "/a") {
-      app.render(req, res, "/b", query);
-    } else if (pathname === "/b") {
-      app.render(req, res, "/a", query);
-    } else {
-      handle(req, res, parsedUrl);
-    }
+    // You might want to handle other routes here too, see
+    // https://nextjs.org/docs/advanced-features/custom-server
+    handle(req, res, parsedUrl);
   }).listen(PORT, (err) => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${PORT}`);
   });
 });
+```
+
+Don't forget to also update your `package.json` to refer to the new entrypoint file:
+
+```json
+"scripts": {
+  "dev": "node server.js",
+  "build": "next build",
+  "start": "NODE_ENV=production node server.js"
+}
 ```
 
 The integration will then track any queries served by Next.js, and send metrics and statistics to AppSignal. This also works great with Express and the `@appsignal/express` integration:
