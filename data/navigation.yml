@@ -588,17 +588,6 @@ sections:
     name: "Features"
     sub_sections:
       -
-        name: "Standalone agent <sup>Beta</sup>"
-        icon: "fas fa-user-secret"
-        link: "/standalone-agent/"
-        pages:
-          -
-            name: "Installation"
-            link: "/standalone-agent/installation.html"
-          -
-            name: "StatsD"
-            link: "/standalone-agent/statsd.html"
-      -
         name: "Metrics"
         icon: "fas fa-chart-area"
         link: "/metrics/"
@@ -622,6 +611,17 @@ sections:
           -
             name: "Dashboards"
             link: "/metrics/dashboards.html"
+      -
+        name: "Standalone agent <sup>Beta</sup>"
+        icon: "fas fa-user-secret"
+        link: "/standalone-agent/"
+        pages:
+          -
+            name: "Installation"
+            link: "/standalone-agent/installation.html"
+          -
+            name: "StatsD"
+            link: "/standalone-agent/statsd.html"
       -
         name: "AppSignal API <sup>Beta</sup>"
         icon: "fas fa-code"
