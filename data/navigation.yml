@@ -23,7 +23,7 @@ sections:
             link: "/application/new-application.html"
           -
             name: "Anomaly detection"
-            link: "/application/anomaly-detection/index.html"
+            link: "/application/anomaly-detection/"
           -
             name: "Namespaces"
             link: "/application/namespaces.html"
@@ -496,7 +496,7 @@ sections:
                 link: "/nodejs/integrations/apollo.html"
           -
             name: "Command line tools"
-            link: "/nodejs/command-line/index.html"
+            link: "/nodejs/command-line/"
             sub_pages:
               -
                 name: "Overview"
@@ -520,7 +520,7 @@ sections:
             link: "/front-end/installation.html"
           -
             name: "Configuration"
-            link: "/front-end/configuration/index.html"
+            link: "/front-end/configuration/"
           -
             name: "Error handling"
             link: "/front-end/error-handling.html"
