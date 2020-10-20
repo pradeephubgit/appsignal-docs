@@ -2,6 +2,8 @@
 title: "Frequently Asked Questions"
 ---
 
+On this page we list some frequently asked questions, if you need further support please check out our [support section](/support/).
+
 - AppSignal libraries
   - [What programming languages does AppSignal support?](#what-programming-languages-does-appsignal-support)
   - [Filtering data](#filtering-data)
