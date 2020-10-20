@@ -80,12 +80,10 @@ The diagnose command will output the following data.
   - Agent logger initialization
   - Agent lock file path writable check
 - Configuration
-  - Environment
-    - The Ruby gem outputs a warning if none is found.
-  - List of configuration options
-    - See [Ruby configuration](/ruby/configuration/options.html) and [Elixir
-      configuration](/elixir/configuration/options.html) for all
-      available options.
+    - Environment
+        - The Ruby gem outputs a warning if none is found.
+    - List of configuration options
+        - See [Ruby configuration](/ruby/configuration/options.html) and [Elixir configuration](/elixir/configuration/options.html) for all available options.
 - Push API key validation
   - Tests if the Push API key that's being used is a valid key at AppSignal.com.
 - Path information
