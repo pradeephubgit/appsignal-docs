@@ -11,6 +11,17 @@ sections:
         icon: "fas fa-question-circle"
         link: "/faq.html"
       -
+        name: "Guides"
+        icon: "fas fa-book-open"
+        link: "/guides/"
+        pages:
+          -
+            name: "Start"
+            link: "/guides/"
+          -
+            name: "Reporting deploys"
+            link: "/guides/deploy-markers.html"
+      -
         name: "Your applications"
         icon: "fas fa-server"
         link: "/application/"

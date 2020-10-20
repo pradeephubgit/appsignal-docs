@@ -10,6 +10,7 @@ In this documentation we aim to give you all the information you need to get sta
 ## Getting started
 
 - [Add a new application](/application/new-application.html)
+- [Getting started guides](/guides/)
 - [AppSignal for Ruby](/ruby/index.html)
 - [AppSignal for Elixir](/elixir/index.html)
 - [AppSignal for Node.js](https://docs.appsignal.com/nodejs/)
