@@ -39,6 +39,8 @@ production:
 ```
 [Ruby `revision` configuration option details](/ruby/configuration/options.html#option-revision)
 
+-> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
+
 ### Elixir
 
 In the Elixir integration we will load the Git revision in the `config/appsignal.exs` config file (your file location may differ). In this `.exs` command we call the `git log` command with Elixir and set the output as the `revision` config option.
@@ -51,6 +53,8 @@ config :appsignal, :config,
   # Other config
 ```
 [Elixir `revision` configuration option details](/elixir/configuration/options.html#option-revision)
+
+-> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
 
 ### Node.js
 
@@ -65,6 +69,8 @@ const appsignal = new Appsignal({
 })
 ```
 [Node.js `revision` configuration option details](/nodejs/configuration/options.html#option-revision)
+
+-> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
 
 ### JavaScript
 
@@ -83,6 +89,8 @@ const appsignal = new Appsignal({
 });
 ```
 [JavaScript `revision` configuration option details](/front-end/configuration/options.html#option-revision)
+
+-> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
 
 ## Deploy
 
