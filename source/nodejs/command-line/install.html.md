@@ -6,7 +6,7 @@ The `@appsignal/cli` package includes a command-line tool to install AppSignal i
 
 ## Description
 
-The command-line tool is primarily used to help set up the configuration for AppSignal. Please follow the [installation guide](/application/new-application.html) when adding a new application to AppSignal.
+The command-line tool is primarily used to help set up the configuration for AppSignal. Please follow the [installation guide](/guides/new-application.html) when adding a new application to AppSignal.
 
 Full integration works automatically for many frameworks. Other frameworks may require some additional setup. Please refer to our documentation pages for [integrations](/nodejs/integrations/) to find out which applies to you.
 

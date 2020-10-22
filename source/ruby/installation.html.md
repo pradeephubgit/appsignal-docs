@@ -2,11 +2,7 @@
 title: "Installing AppSignal for Ruby"
 ---
 
-Please follow the [installation guide](/application/new-application.html) when adding a new application to AppSignal.
-
-## Installation
-
-Please follow the [installation guide](/application/new-application.html) when adding a new application to AppSignal.
+Please follow the [installation guide](/guides/new-application.html) first, when adding a new application to AppSignal.
 
 ### Requirements
 

@@ -8,7 +8,7 @@ A list of Applications appears on the [Application index] and in the application
 
 ## Adding applications
 
-To add a new Application to AppSignal, please follow the [add a new application setup wizard](/application/new-application.html).
+If you're just getting started with AppSignal and haven't set up your first app yet, please follow the [add a new application guide](/guides/new-application.html) first.
 
 ## Environments
 

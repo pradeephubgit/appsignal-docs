@@ -2,6 +2,8 @@
 title: "Installing AppSignal for JavaScript"
 ---
 
+Please follow the [installation guide](/guides/new-application.html) first, when adding a new application to AppSignal.
+
 ## Installation
 
 First, add the `@appsignal/javascript` package to your `package.json`. Then, run `yarn install`/`npm install`. You'll also need a Front-end error monitoring key from the ["Push and deploy" section](https://appsignal.com/redirect-to/app?to=info) of your App settings page.

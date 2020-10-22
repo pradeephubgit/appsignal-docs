@@ -17,8 +17,9 @@ Once the app is deployed AppSignal will start receiving data and you're good to 
 Some language integrations and support for libraries require some manual steps to get set up. Please see our installation instructions for the language of your app for more information.
 
 - [Ruby installation instructions](/ruby/installation.html)
-- [Elixir installation instructions](/elixir/installation.html)
-- [JavaScript installation instructions](/front-end/installation.html)
+- [Elixir installation instructions](/elixir/installation/)
+- [Node.js installation instructions](/nodejs/installation.html)
+- [Front-end JavaScript installation instructions](/front-end/installation.html)
 
 AppSignal will detect and register new Ruby, Elixir & Node.js applications when it receives data from the application and not before it. Using their installers this should be done automatically. When installing AppSignal manually, please use the demo command line tool ([Ruby](/ruby/command-line/demo.html) / [Elixir](/elixir/command-line/demo.html)) or start your application and perform some requests/jobs to send data to AppSignal.com.
 
