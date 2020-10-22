@@ -11,6 +11,20 @@ sections:
         icon: "fas fa-question-circle"
         link: "/faq.html"
       -
+        name: "Guides"
+        icon: "fas fa-book-open"
+        link: "/guides/"
+        pages:
+          -
+            name: "Start"
+            link: "/guides/"
+          -
+            name: "Add a new application"
+            link: "/guides/new-application.html"
+          -
+            name: "Reporting deploys"
+            link: "/guides/deploy-markers.html"
+      -
         name: "Your applications"
         icon: "fas fa-server"
         link: "/application/"
@@ -18,9 +32,6 @@ sections:
           -
             name: "Overview"
             link: "/application/"
-          -
-            name: "Add an application"
-            link: "/application/new-application.html"
           -
             name: "Anomaly detection"
             link: "/application/anomaly-detection/"
