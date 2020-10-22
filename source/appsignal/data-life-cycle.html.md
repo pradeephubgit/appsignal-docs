@@ -2,7 +2,7 @@
 title: "The life cycle of app data"
 ---
 
-There are a lot of moving parts working together to get the data from apps on your servers to AppSignal's servers and finally in a human readable format on AppSignal.com. This page will describe the process data from apps follow to become incident data, entries in tables, points in graphs, alerts for [Anomaly detection](/application/anomaly-detection) and notifications.
+There are a lot of moving parts working together to get the data from apps on your servers to AppSignal's servers and finally in a human readable format on AppSignal.com. This page will describe the process data from apps follow to become incident data, entries in tables, points in graphs, alerts for [Anomaly detection](/anomaly-detection) and notifications.
 
 AppSignal is eventually consistent. This means that, even though we try to minimize this, there is no arbitrary duration between a request, background job or metric data being recorded in an app and this data being displayed data on AppSignal.com.
 
@@ -34,7 +34,7 @@ Finally when all the processing is done we send out [notifications](/application
 
 ### Anomaly detection
 
-When metric data arrives in our processors, or is created by our processors, they are not immediately used to process [Anomaly detection](/application/anomaly-detection) Triggers to create or update alerts. The AppSignal processors wait for up to _180 seconds_ (3 minutes) before processing data for a minute. This delay about the same maximum delay [<sup>1</sup>][retries] it takes for metrics to appear in graphs on AppSignal.com.
+When metric data arrives in our processors, or is created by our processors, they are not immediately used to process [Anomaly detection](/anomaly-detection) Triggers to create or update alerts. The AppSignal processors wait for up to _180 seconds_ (3 minutes) before processing data for a minute. This delay about the same maximum delay [<sup>1</sup>][retries] it takes for metrics to appear in graphs on AppSignal.com.
 
 Read on to learn why this processing delay is present.
 
