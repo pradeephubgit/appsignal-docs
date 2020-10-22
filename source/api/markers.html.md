@@ -20,14 +20,15 @@ application performance.
 A list of these markers is also shown on the "Deploys" page on AppSignal.com,
 in an Application context.
 
+-> 🔍 For more information, also read our [deploy markers page](/application/markers/deploy-markers.html).
+
 ### Custom markers
 
 Custom markers provide a way to add more context to graphs, allowing you to add
 annotations yourself. Create a Custom marker for scaling operations, when there
 was a sudden spike in traffic or when a database was acting up.
 
-For more information also read our [blog post about Custom
-markers](http://blog.appsignal.com/blog/2016/10/28/custom-markers.html).
+-> 🔍 For more information, also read our [custom markers page](/application/markers/custom-markers.html).
 
 ## Marker create
 
