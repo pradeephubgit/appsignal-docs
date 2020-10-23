@@ -48,6 +48,10 @@ When developing, don’t forget to check browser support on [Can I Use?](https:/
 
 `@appsignal/javascript` also works in React Native/Expo apps!
 
+---
+
+-> 📖 Continue with our [installation guide](/guides/new-application.html).
+
 ## Uninstall
 
 Uninstall AppSignal from your app by following the steps below. When these steps are completed your app will no longer send data to the AppSignal servers.

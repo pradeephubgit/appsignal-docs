@@ -111,6 +111,10 @@ Add custom instrumentation to your application to get a more in-depth view of
 what's happening in your application. Read more about custom instrumentation in
 our [instrumentation documentation](/elixir/instrumentation/index.html).
 
+---
+
+-> 📖 Continue with our [installation guide](/guides/new-application.html).
+
 ## Uninstall
 
 Uninstall AppSignal from your app by following the steps below. When these steps are completed your app will no longer send data to the AppSignal servers.

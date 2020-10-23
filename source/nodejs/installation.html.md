@@ -51,6 +51,10 @@ const appsignal = new Appsignal({
 
 !> To auto-instrument modules, the Appsignal module must be both **required** and **initialized** before any other package.
 
+---
+
+-> 📖 Continue with our [installation guide](/guides/new-application.html).
+
 ## Uninstalling Appsignal for Node.js
 
 Uninstall AppSignal from your app by following the steps below. When these steps are completed your app will no longer send data to the AppSignal servers.

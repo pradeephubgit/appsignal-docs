@@ -34,6 +34,10 @@ This will present you with an installation script that can integrate automatical
 
 For more information on how to integrate AppSignal into your application see the [integrations documentation](/ruby/integrations/index.html) to see what steps are necessary.
 
+---
+
+-> 📖 Continue with our [installation guide](/guides/new-application.html).
+
 ## Uninstall
 
 Uninstall AppSignal from your app by following the steps below. When these steps are completed your app will no longer send data to the AppSignal servers.
