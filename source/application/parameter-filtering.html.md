@@ -1,5 +1,5 @@
 ---
-title: "Parameter parameters"
+title: "Parameter filtering"
 ---
 
 For every request made on a web app, AppSignal collects the parameters that were sent with the request. This includes form data (POST), query parameters and keys in routes, e.g. `/user/:id/` in some frameworks.
