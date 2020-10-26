@@ -17,6 +17,7 @@ Once the app is deployed AppSignal will start receiving data and you're good to 
 Some language integrations and support for libraries require some manual steps to get set up. Please see our installation instructions for the language of your app for more information.
 
 - [Ruby installation instructions](/ruby/installation.html)
+- [Node.js installation instructions](/nodejs/installation.html)
 - [Elixir installation instructions](/elixir/installation/)
 - [Node.js installation instructions](/nodejs/installation.html)
 - [Front-end JavaScript installation instructions](/front-end/installation.html)
