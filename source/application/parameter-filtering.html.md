@@ -68,3 +68,7 @@ A non-exhaustive list of parameter keys that may be used by an application. Pick
   - `post_code`
 - User information
   - `phone_number`
+
+## See also
+
+- [Data filtering guide](/guides/filter-data.html) - Filter app data in AppSignal integrations
