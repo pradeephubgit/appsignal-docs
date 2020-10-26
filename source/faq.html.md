@@ -21,7 +21,7 @@ On this page we list some frequently asked questions, if you need further suppor
 
 ### What programming languages does AppSignal support?
 
-AppSignal supports the [Ruby](https://www.ruby-lang.org/en/) and [Elixir](https://elixir-lang.org/) programming languages. We also have [JavaScript packages](/front-end) available for the browser to catch client-side errors.
+AppSignal supports the [Node.js](https://nodejs.dev), [Ruby](https://www.ruby-lang.org/en/) and [Elixir](https://elixir-lang.org/) programming languages and/or runtime. We also have [JavaScript packages](/front-end) available for the browser to catch client-side errors.
 
 ### Filtering data
 
