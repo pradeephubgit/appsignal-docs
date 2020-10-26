@@ -206,7 +206,7 @@ The graph will render the following display value for the specified file size fo
 
 ## Metric tags
 
--> **Note**: Tags for custom metrics are supported since AppSignal for Ruby gem version `2.6.0` and Elixir package `1.6.0`.
+-> **Note**: Tags for custom metrics are supported since AppSignal for Ruby gem version `2.6.0`, Elixir package `1.6.0` and Node.js package `1.0.0`.
 
 The same metric can be about different groups of data. These groups can be added as tags to the metric. By default, every tag and value combination will result in a line being drawn in an AppSignal graph.
 

@@ -6,15 +6,15 @@ These are the things we do at AppSignal to keep your data safe.
 
 ## Language specific libraries
 
-The [Ruby gem](https://github.com/appsignal/appsignal-ruby) and the [Elixir package](https://github.com/appsignal/appsignal-elixir) are public code, hosted on GitHub. You can browse the source to see how we handle the data. Our closed-source [agent](/appsignal/terminology.html#agent) will send the actual data to the AppSignal servers.
+The [Ruby gem](https://github.com/appsignal/appsignal-ruby), [Elixir package](https://github.com/appsignal/appsignal-elixir) and [Node.js package](https://github.com/appsignal/appsignal-nodejs) are public code, hosted on GitHub. You can browse the source to see how we handle the data. Our closed-source [agent](/appsignal/terminology.html#agent) will send the actual data to the AppSignal servers.
 
 We have built several systems to filter or redact sensitive data from reaching our servers, please see the [data collection page](/application/data-collection) for more information.
 
 ## System agent
 
-With the release of the AppSignal Ruby gem version 1.0 on the 12th of January 2016 we started shipping all our language specific libraries with a system agent.
+With the release of the AppSignal Ruby gem version 1.0 on the 12th of January 2016 we started shipping all our language integrations with a system agent.
 
-When an application with AppSignal integration starts the language integration starts a separate UNIX process. The Ruby gem and Elixir package will send all transaction samples to this agent through a UNIX socket. The agent will periodically sends the transaction samples to the AppSignal servers.
+When an application with AppSignal integration starts the language integration starts a separate UNIX process. The Ruby gem, Elixir package and Node.js package will send all transaction samples to this agent through a UNIX socket. The agent will periodically sends the transaction samples to the AppSignal servers.
 
 The system agent will also collect host specific data such as CPU usage, load average, memory usage, disk usage, etc. See the [Host metrics](/metrics/host.html) for more information.
 

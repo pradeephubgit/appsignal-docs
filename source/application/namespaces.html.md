@@ -63,7 +63,7 @@ documentation for our [Ruby](/ruby/instrumentation/namespaces.html) and
 
 ## Ignoring namespaces
 
--> The `ignore_namespaces` feature was introduced in AppSignal for Ruby gem version 2.3.0 and AppSignal for Elixir package version 1.3.0.
+-> The `ignore_namespaces` feature was introduced in AppSignal for Ruby gem version 2.3.0, AppSignal for Elixir package version 1.3.0 and AppSignal for Node.js package version 1.0.0.
 
 Sometimes you have a certain part of an application that does not need to be monitored by AppSignal. The most common use case is an administration panel that you use internally which doesn't need constant monitoring. By ignoring an entire namespace AppSignal will ignore all transactional data from all actions in the configured namespaces.
 

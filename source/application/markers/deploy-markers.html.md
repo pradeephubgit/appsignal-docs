@@ -35,7 +35,7 @@ AppSignal will create a new deploy marker when it receives [transaction data](/a
 
 ### Config option
 
-The `revision` config option has been released in [Ruby](/ruby/configuration/options.html#option-revision) gem version `2.6.1` and [Elixir](/elixir/configuration/options.html#option-revision) package version `1.6.3`.
+The `revision` config option has been released in [Ruby](/ruby/configuration/options.html#option-revision) gem version `2.6.1`, [Elixir](/elixir/configuration/options.html#option-revision) package version `1.6.3` and [Node.js](/nodejs/configuration/options.html#option-revision) package version `1.0.0`.
 
 ```yml
 # For Ruby
