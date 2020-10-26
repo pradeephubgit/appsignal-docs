@@ -25,7 +25,7 @@ The second approach (creating a deploy marker manually) is a method only really 
 
 ## Revision config option
 
-The recommended approach of letting AppSignal know a new version of your application is deployed is by using the `revision` config option or the `APP_REVISION` environment variable ([Ruby](/ruby/configuration/options.html#option-revision)/[Elixir](/elixir/configuration/options.html#option-revision)). This is automatically detected for [Heroku apps](#heroku-support) using the dyno metadata lab feature.
+The recommended approach of letting AppSignal know a new version of your application is deployed is by using the `revision` config option or the `APP_REVISION` environment variable ([Ruby](/ruby/configuration/options.html#option-revision)/[Elixir](/elixir/configuration/options.html#option-revision))/[Node.js](/nodejs/configuration/options.html#option-revision)). This is automatically detected for [Heroku apps](#heroku-support) using the dyno metadata lab feature.
 
 This config option is set per instance of an application which has the benefit of every version of an application running at the same time reporting the errors under the correct deploy, rather than the latest deploy that [has been reported](#manually-create-a-deploy-marker) to AppSignal.
 
@@ -92,7 +92,7 @@ Read more about how to create Deploy markers with our API in our [API endpoint](
 
 ### Ruby CLI tool
 
-The AppSignal for Ruby gem includes a (deprecated) CLI tool to allow creation of deploy markers from your app. See the [`notify_of_deploy` CLI command][notify_of_deploy] documentation for more information.
+The AppSignal for Ruby gem includes a (deprecated) CLI tool to allow creation of deploy markers from your app. See the [`notify_of_deploy` CLI command][notify_of_deploy] documentation for more information. A similar CLI tool is not available for other language integrations.
 
 [notify_of_deploy]: /ruby/command-line/notify_of_deploy.html
 [backtrace links]: /application/backtrace-links.html
