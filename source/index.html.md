@@ -17,7 +17,7 @@ In this documentation we aim to give you all the information you need to get sta
 
 ## Features
 
-- Error and performance monitoring for [Ruby](/ruby/index.html) and [Elixir](/elixir/index.html)
+- Error and performance monitoring for [Node.js](/nodejs/index.html), [Ruby](/ruby/index.html) and [Elixir](/elixir/index.html)
 - Error monitoring [Front-end](/front-end/)
 - [Host metrics](/metrics/host.html)
 - [Custom metrics](/metrics/custom.html)
