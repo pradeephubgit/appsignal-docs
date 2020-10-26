@@ -142,4 +142,4 @@ For more information, [read more about how spans work in Front-end JavaScript](f
 
 [namespaces]: /application/namespaces.html
 [ignoring namespaces]: /application/namespaces.html#ignoring-namespaces
-[filtering]: /guides/filter-data.html
+[filtering]: /guides/filter-data/

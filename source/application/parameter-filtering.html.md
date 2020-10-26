@@ -16,7 +16,7 @@ All AppSignal integrations have a parameter filtering system. A list of paramete
 
 Any parameter values that are filtered out by these systems will be replaced with a `[FILTERED]` value. This way the list of parameters in the app data on AppSignal.com still includes the parameter key, but not the value. Making it easier to see that a value was sent, but the potentially sensitive data was filtered out.
 
--> 📖 Read our guide about [setting up parameter filtering](/guides/filter-parameters.html) for your app.
+-> 📖 Read our guide about [setting up parameter filtering](/guides/filter-data/filter-parameters.html) for your app.
 
 ### Filter all parameters
 

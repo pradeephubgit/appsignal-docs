@@ -29,14 +29,14 @@ sections:
             link: "/guides/namespaces.html"
           -
             name: "Filtering app data"
-            link: "/guides/filter-data.html"
+            link: "/guides/filter-data/"
             sub_pages:
               -
                 name: "Start"
-                link: "/guides/filter-data.html"
+                link: "/guides/filter-data/"
               -
                 name: "Parameter filtering"
-                link: "/guides/filter-parameters.html"
+                link: "/guides/filter-data/filter-parameters.html"
       -
         name: "Your applications"
         icon: "fas fa-server"
