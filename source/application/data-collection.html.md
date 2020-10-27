@@ -6,6 +6,8 @@ By default AppSignal gathers relevant data for errors and performance measuremen
 
 You can configure AppSignal to gather more, or less, information than it does by default by tagging your transactions and configuring the request headers, parameter filtering, etc. Ideally we receive as little metadata for samples as possible, and only data that is needed to debug an exception or performance issue.
 
+-> 📖 Read our [filtering app data guide](/guides/filter-data/) about limiting what (sensitive) data is collected by AppSignal. It will guide you through configuring which parameters, session data and request headers to collect.
+
 ## Ignore actions
 
 Noisy actions (web endpoints, background jobs, scheduled tasks) sometimes do more harm than good. To filter out these actions it's possible to ignore them in AppSignal by updating the AppSignal configuration in an app.
@@ -23,20 +25,6 @@ By configuring the `ignore_errors` option it's possible to ignore errors matchin
 - [Ruby gem `ignore_errors` config option](/ruby/configuration/ignore-errors.html)
 - [Elixir package `ignore_errors` config option](/elixir/configuration/ignore-errors.html)
 - [Node.js package `ignore_errors` config option](/nodejs/configuration/ignore-errors.html)
-
-## Request headers
-
-By default AppSignal does not gather all request headers from a request. We only include non user identifiable request headers. This is so you and AppSignal are [GDPR compliant by default](/appsignal/gdpr.html#allowed-request-headers-only). If you are missing some headers you really need for your app you can customize which request headers are collected in [Ruby](/ruby/configuration/options.html#option-request_headers) and [Elixir](/elixir/configuration/options.html#option-request_headers).
-
-## Parameters
-
-If you use any framework with automatic parameter filtering, AppSignal will use the parameter filtering of the framework to filter the parameters. This can be further customized with our parameter filtering in [Ruby](/ruby/configuration/parameter-filtering.html) and [Elixir](/elixir/configuration/parameter-filtering.html).
-
-## Session data
-
-AppSignal gathers session data for requests by default. This may help you track down errors or performance issues that were caused by some session data your app is using. However, your app's session data may contain sensitive user information which you do not want to the AppSignal servers.
-
-The session data can be filtered by the data's key name with our session data filtering for [Ruby](/ruby/configuration/session-data-filtering.html) and [Elixir](/elixir/configuration/session-data-filtering.html). It's also possible to disable session data collection entirely for [Ruby](/ruby/configuration/session-data-filtering.html#skip-sending-session-data) and [Elixir](/elixir/configuration/session-data-filtering.html#skip-sending-session-data).
 
 ## Tagging
 
