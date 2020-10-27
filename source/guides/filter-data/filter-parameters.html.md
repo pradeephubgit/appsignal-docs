@@ -8,6 +8,8 @@ This data can contain user identifiable information like names, email addresses,
 
 -> 🔍 Read more about parameter filtering, processor parameter filtering and what types of parameters to set up filtering for in our [parameter filtering topic][parameter filtering].
 
+!> ⚠️ Do not send personal data to AppSignal. If request parameters, request headers or session data contain personal data, please use filtering to avoid sending this data to AppSignal. Follow this step and the next steps to set up this filtering.
+
 ## Parameter filtering
 
 Basic parameter filtering in the AppSignal integrations works with a _denylist_, a list of keys to filter out and to not send. In the integrations it's possible to set a "filter parameters" option in the AppSignal configuration with a list of parameters keys to filter.
@@ -15,8 +17,6 @@ Basic parameter filtering in the AppSignal integrations works with a _denylist_,
 Any parameter values that are filtered out by these systems will be replaced with a `[FILTERED]` value. This way the list of parameters in the app data on AppSignal.com still includes the parameter key, but not the value. Making it easier to see that a value was sent, but the potentially sensitive data was filtered out.
 
 -> 🔍 Some [parameter keys are also removed by our processor](/application/parameter-filtering.html#processor-parameter-filtering) on our servers.
-
-!> ⚠️ Do not send personal data to AppSignal. If request parameters, request headers or session data contain personal data, please use filtering to avoid sending this data to AppSignal. Follow this step and the next steps to set up this filtering.
 
 ### Example
 
