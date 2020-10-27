@@ -71,11 +71,11 @@ In the Node.js integration, AppSignal automatically stores the contents of the u
 To use this filtering, add the following to your AppSignal configuration file. The [`filterSessionData`](/nodejs/configuration/options.html#option-filterSessionData) value is an Array of Strings.
 
 ```js
-# Example: appsignal.js
+// Example: appsignal.js
 const { Appsignal } = require("@appsignal/nodejs");
 
 const appsignal = new Appsignal({
-  # Other config
+  // Other config
   filterSessionData: ["name", "email", "api_token", "token"]
 });
 ```

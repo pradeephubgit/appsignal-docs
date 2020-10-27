@@ -46,7 +46,7 @@ production:
 In the Elixir integration we will load the Git revision in the `config/appsignal.exs` config file (your file location may differ). In this `.exs` command we call the `git log` command with Elixir and set the output as the `revision` config option.
 
 ```elixir
-# config/appsignal.exs
+# Example: config/appsignal.exs
 {revision, _exitcode} = System.cmd("git", ["log", "--pretty=format:%h", "-n 1"])
 config :appsignal, :config,
   revision: revision
@@ -59,6 +59,7 @@ config :appsignal, :config,
 In the Node.js integration load the Git revision in the app's config file. In this `.js` command we call the `git log` command with Node.js and set the output as the `revision` config option.
 
 ```javascript
+// Example: appsignal.js
 var childProcess = require("child_process");
 var REVISION = childProcess.execSync("git log --pretty=format:'%h' -n 1").toString();
 const appsignal = new Appsignal({
@@ -78,6 +79,7 @@ In the front-end JavaScript integration it's not possible to call the `git` exec
 ```
 
 ```javascript
+// Example: appsignal.js
 const body = document.querySelector("body");
 const appsignal = new Appsignal({
   revision: body.dataset.appRevision
