@@ -54,8 +54,6 @@ class CriticalWorker
 end
 ```
 
--> 🔁 Restart or deploy the changes for the namespace changes to be reported for the app.
-
 #### A note on helper location
 
 The `set_namespace` helpers used in this guide can be called in any action that starts an AppSignal transaction. We recommend calling this as early in the request or background job as possible, so the transaction is configured with the given namespace before any error occurs. Otherwise, if an error occurs—or anything else that stops the process—the transaction is sent to AppSignal before the `set_namespace` code is called and it is reported under the default namespace instead.
@@ -95,8 +93,6 @@ defmodule MyApp.CriticalJob do
 end
 ```
 
--> 🔁 Restart or deploy the changes for the namespace changes to be reported for the app.
-
 #### A note on helper location
 
 The `set_namespace` helpers used in this guide can be called in any action that starts an AppSignal transaction. We recommend calling this as early in the request or background job as possible, so the transaction is configured with the given namespace before any error occurs. Otherwise, if an error occurs—or anything else that stops the process—the transaction is sent to AppSignal before the `set_namespace` code is called and it is reported under the default namespace instead.
@@ -114,8 +110,6 @@ const span = tracer.createSpan({
 
 For more information, [read more about how spans work in Node.js](/nodejs/tracing/tracer.html).
 
--> 🔁 Restart or deploy the changes for the namespace changes to be reported for the app.
-
 ### JavaScript
 
 In front-end JavaScript applications AppSignal works with spans to track metadata such as which namespace a span belongs to. The namespace can only be set on the "root span", or the first span that's created without any parent spans. When creating this root span, pass in the `namespace` option as a key with a `String` value that is the desired namespace name.
@@ -127,7 +121,11 @@ span.setNamespace("admin") // a custom namespace for this span (defaults to `fro
 
 For more information, [read more about how spans work in Front-end JavaScript](front-end/span.html).
 
--> 🔁 Restart or deploy the changes for the namespace changes to be reported for the app.
+## Deploy
+
+After the app has been configured with the namespace helpers, commit your changes and deploy the app. When the app starts/restarts, AppSignal will report the actions under the new namespace. Data from older deploys, grouping actions under their original namespaces, is not moved to the new namespace location.
+
+Are namespaces not being reported or incorrectly? [Contact us][contact] and we will help you out!
 
 ## Next steps
 
@@ -143,3 +141,4 @@ For more information, [read more about how spans work in Front-end JavaScript](f
 [namespaces]: /application/namespaces.html
 [ignoring namespaces]: /application/namespaces.html#ignoring-namespaces
 [filtering]: /guides/filter-data/
+[contact]: mailto:support@appsignal.com
