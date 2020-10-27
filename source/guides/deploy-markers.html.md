@@ -4,7 +4,9 @@ title: "Reporting deploys to track improvements"
 
 Every time an app gets deployed, changes that affect the app start running. By tracking deploys in AppSignal, error incidents and performance measurements are grouped per deploy. They will also allow for AppSignal.com to link directly from an [error backtrace]([error backtrace links]) to the line of code in your app for that version of the app.
 
-We will track deploys in AppSignal using deploy markers. Read more about [deploy markers], what they're used for, how to send them, and more.
+In this guide we will track deploys in AppSignal using deploy markers, configure an application to report these deploy markers.
+
+-> 🔍 Read more in-depth information about [deploy markers][deploy markers] and what they're used for.
 
 ## Configuring AppSignal
 
@@ -27,7 +29,7 @@ git log --pretty=format:'%h' -n 1
 
 We will use the Git example in the integration examples below.
 
-### Ruby
+## Ruby
 
 In the Ruby integration we will load the Git revision in the `config/appsignal.yml` config file. By using ERB we call the `git log` command and set the output as the `revision` config option.
 
@@ -39,9 +41,7 @@ production:
 ```
 [Ruby `revision` configuration option details](/ruby/configuration/options.html#option-revision)
 
--> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
-
-### Elixir
+## Elixir
 
 In the Elixir integration we will load the Git revision in the `config/appsignal.exs` config file (your file location may differ). In this `.exs` command we call the `git log` command with Elixir and set the output as the `revision` config option.
 
@@ -54,9 +54,7 @@ config :appsignal, :config,
 ```
 [Elixir `revision` configuration option details](/elixir/configuration/options.html#option-revision)
 
--> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
-
-### Node.js
+## Node.js
 
 In the Node.js integration load the Git revision in the app's config file. In this `.js` command we call the `git log` command with Node.js and set the output as the `revision` config option.
 
@@ -70,9 +68,7 @@ const appsignal = new Appsignal({
 ```
 [Node.js `revision` configuration option details](/nodejs/configuration/options.html#option-revision)
 
--> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
-
-### JavaScript
+## JavaScript
 
 In the front-end JavaScript integration it's not possible to call the `git` executable, because the integration runs in the browser. Instead, set the "revision" value from the back-end app—such as a Rails or Phoenix app—into the HTML body as a property. Then load that property in the JavaScript config file.
 
@@ -90,11 +86,9 @@ const appsignal = new Appsignal({
 ```
 [JavaScript `revision` configuration option details](/front-end/configuration/options.html#option-revision)
 
--> 🔁 Restart or deploy the changes for the revision option changes to be reported for the app.
-
 ## Deploy
 
-After the app has been configured with the `revision` option, commit your changes and deploy the app. When the app starts AppSignal will create a deploy in the [deploys section] for your app.
+After the app has been configured with the `revision` option, commit your changes and deploy the app. When the app starts/restarts, AppSignal will create a deploy in the [deploys section] for your app.
 
 Are deploys not being reported or incorrectly? [Contact us][contact] and we will help you out!
 
