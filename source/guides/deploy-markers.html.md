@@ -33,8 +33,8 @@ We will use the Git example in the integration examples below.
 
 In the Ruby integration we will load the Git revision in the `config/appsignal.yml` config file. By using ERB we call the `git log` command and set the output as the `revision` config option.
 
-```ruby
-# config/appsignal.yml
+```yaml
+# Example: config/appsignal.yml
 production:
   revision: "<%= `git log --pretty=format:'%h' -n 1` %>"
   # Other config
