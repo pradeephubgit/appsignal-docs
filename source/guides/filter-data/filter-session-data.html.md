@@ -12,7 +12,7 @@ Sessions can contain sensitive or personally identifiable information that shoul
 
 ## Session data filtering
 
-Basic session data filtering in the AppSignal integrations works with a denylist, a list of keys to filter out and to not send. In the integrations it's possible to set a "filter session data" option in the AppSignal configuration with a list of parameters keys to filter.
+Basic session data filtering in the AppSignal integrations works with a denylist, a list of keys to filter out and to not send. In the integrations it's possible to set a "filter session data" option in the AppSignal configuration with a list of session data keys to filter.
 
 Any session data values that are filtered out by these systems will be replaced with a `[FILTERED]` value. This way the list of session data in the app data on AppSignal.com still includes the session data key, but not the value. Making it easier to see that a value was sent, but the potentially sensitive data was filtered out.
 
@@ -24,7 +24,7 @@ For example, an application with this AppSignal config:
 filter_session_data: ["password"]
 ```
 
-Results in this view for the parameters of a web request on AppSignal.com:
+Results in this view for the session data of a web request on AppSignal.com:
 
 ```json
 {
@@ -36,7 +36,7 @@ Results in this view for the parameters of a web request on AppSignal.com:
 
 In the Ruby integration, AppSignal automatically stores the contents of the user's session for Rails apps and other frameworks. Specific values can be filtered out or it can be [disabled entirely].
 
-In session data filtering, there's support for nested hashes and nested hashes in arrays. Any hash we encounter in your parameters will be filtered.
+In session data filtering, there's support for nested hashes and nested hashes in arrays. Any hash we encounter in your session data will be filtered.
 
 To use this filtering, add the following to your `config/appsignal.yml` file in the environment group you want it to apply. The [`filter_session_data`](/ruby/configuration/options.html#option-filter_session_data) value is an Array of Strings.
 
@@ -54,9 +54,9 @@ production:
 
 In the Elixir integration, AppSignal automatically stores the contents of the user's session for Phoenix apps. Specific values can be filtered out or it can be [disabled entirely].
 
-In the session data filtering, there's support for nested hashes and nested hashes in arrays. Any hash we encounter in your parameters will be filtered.
+In the session data filtering, there's support for nested hashes and nested hashes in arrays. Any hash we encounter in your session data will be filtered.
 
-To use this filtering, add the following to your `config/appsignal.yml` file. The [`filter_session_data`](/elixir/configuration/options.html#option-filter_session_data) value is an Array of Strings.
+To use this filtering, add the following to your `config/appsignal.exs` file. The [`filter_session_data`](/elixir/configuration/options.html#option-filter_session_data) value is an Array of Strings.
 
 ```elixir
 # Example: config/appsignal.exs
