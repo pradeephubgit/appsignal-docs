@@ -163,3 +163,12 @@
 [[redirects]]
   from = "/elixir/configuration/session-data-filtering.html"
   to = "/application/session-data-filtering.html"
+[[redirects]]
+  from = "/ruby/configuration/ignore-errors.html"
+  to = "/guides/filter-data/ignore-errors.html"
+[[redirects]]
+  from = "/elixir/configuration/ignore-errors.html"
+  to = "/guides/filter-data/ignore-errors.html"
+[[redirects]]
+  from = "/nodejs/configuration/ignore-errors.html"
+  to = "/guides/filter-data/ignore-errors.html"

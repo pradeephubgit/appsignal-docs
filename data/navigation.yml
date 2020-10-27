@@ -43,6 +43,9 @@ sections:
               -
                 name: "Request header collection"
                 link: "/guides/filter-data/filter-headers.html"
+              -
+                name: "Ignore errors"
+                link: "/guides/filter-data/ignore-errors.html"
       -
         name: "Your applications"
         icon: "fas fa-server"
@@ -196,9 +199,6 @@ sections:
               -
                 name: "Ignore actions"
                 link: "/ruby/configuration/ignore-actions.html"
-              -
-                name: "Ignore errors"
-                link: "/ruby/configuration/ignore-errors.html"
           -
             name: "Integrations"
             link: "/ruby/integrations/"
@@ -356,9 +356,6 @@ sections:
               -
                 name: "Ignore actions"
                 link: "/elixir/configuration/ignore-actions.html"
-              -
-                name: "Ignore errors"
-                link: "/elixir/configuration/ignore-errors.html"
           -
             name: "Integrations"
             link: "/elixir/integrations/"
@@ -455,9 +452,6 @@ sections:
               -
                 name: "Ignoring spans"
                 link: "/nodejs/configuration/ignore-actions.html"
-              -
-                name: "Ignoring errors"
-                link: "/nodejs/configuration/ignore-errors.html"
           -
             name: "Tracing"
             link: "/nodejs/tracing/"

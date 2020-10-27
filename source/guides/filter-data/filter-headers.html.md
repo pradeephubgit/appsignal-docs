@@ -70,6 +70,10 @@ config :appsignal, :config,
 
 ## Next steps
 
+- [Ignore errors](/guides/filter-data/ignore-errors.html) - the next step in this guide
+
+---
+
 - [Filtering session data](/guides/filter-data/filter-session-data.html) - the previous step in this guide
 - [Filtering app data](/guides/filter-data/) - the start of this guide
 - [Getting started guides](/guides/) - Guides overview

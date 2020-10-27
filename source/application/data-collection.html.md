@@ -20,11 +20,9 @@ By configuring the `ignore_actions` option it's possible to not record any data 
 
 ## Ignore errors
 
-By configuring the `ignore_errors` option it's possible to ignore errors matching the exact name of an error for the entire app.
+By configuring the `ignore_errors` option it's possible to ignore errors matching the exact name of an error for the entire app. 
 
-- [Ruby gem `ignore_errors` config option](/ruby/configuration/ignore-errors.html)
-- [Elixir package `ignore_errors` config option](/elixir/configuration/ignore-errors.html)
-- [Node.js package `ignore_errors` config option](/nodejs/configuration/ignore-errors.html)
+-> 📖 Read our [guide about ignoring errors](/guides/filter-data/ignore-errors.html).
 
 ## Tagging
 
