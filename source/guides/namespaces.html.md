@@ -19,7 +19,7 @@ Namespaces are set up from within the app code. With small helpers the namespace
 
 ### Ruby
 
-In a Rails controller we use a `before_action` callback to call a method before the request is handled by Rails. In this method we call the `Appsignal.set_namespace` helper method to configure the namespace for this request. This also works if the `AdminController` is subclassed by other controllers. All sub-controllers will be part of the "admin" namespace.
+In a Rails controller we use a `before_action` callback to call a method before the request is handled by Rails. In this method we call the [`Appsignal.set_namespace` helper method][ruby helper] to configure the namespace for this request. This also works if the `AdminController` is subclassed by other controllers. All sub-controllers will be part of the "admin" namespace.
 
 ```ruby
 # In a Rails controller
@@ -58,9 +58,15 @@ end
 
 The `set_namespace` helpers used in this guide can be called in any action that starts an AppSignal transaction. We recommend calling this as early in the request or background job as possible, so the transaction is configured with the given namespace before any error occurs. Otherwise, if an error occurs—or anything else that stops the process—the transaction is sent to AppSignal before the `set_namespace` code is called and it is reported under the default namespace instead.
 
+####^ruby Read more
+
+- [`Appsignal.set_namespace` helper method documentation][ruby helper]
+
+[ruby helper]: https://www.rubydoc.info/gems/appsignal/Appsignal/Helpers/Instrumentation#set_namespace-instance_method
+
 ### Elixir
 
-In a Phoenix controller we use a `plug` to call a function before the request is handled by Phoenix. In this function we call the `Appsignal.Transaction.set_namespace` helper to configure the namespace for this request.
+In a Phoenix controller we use a `plug` to call a function before the request is handled by Phoenix. In this function we call the [`Appsignal.Transaction.set_namespace` helper][elixir helper] to configure the namespace for this request.
 
 ```elixir
 # In a Phoenix controller
@@ -93,9 +99,15 @@ defmodule MyApp.CriticalJob do
 end
 ```
 
-#### A note on helper location
+####^elixir A note on helper location
 
 The `set_namespace` helpers used in this guide can be called in any action that starts an AppSignal transaction. We recommend calling this as early in the request or background job as possible, so the transaction is configured with the given namespace before any error occurs. Otherwise, if an error occurs—or anything else that stops the process—the transaction is sent to AppSignal before the `set_namespace` code is called and it is reported under the default namespace instead.
+
+####^elixir Read more
+
+- [`Appsignal.Transaction.set_namespace` helper method documentation][elixir helper]
+
+[elixir helper]: https://hexdocs.pm/appsignal/Appsignal.Transaction.html?#set_namespace/1
 
 ### Node.js
 
