@@ -22,17 +22,13 @@ By configuring the `ignore_actions` option it's possible to not record any data 
 
 By configuring the `ignore_errors` option it's possible to ignore errors matching the exact name of an error for the entire app.
 
-- [Ruby gem `ignore_errors` config option](/ruby/configuration/ignore-errors.html)
-- [Elixir package `ignore_errors` config option](/elixir/configuration/ignore-errors.html)
-- [Node.js package `ignore_errors` config option](/nodejs/configuration/ignore-errors.html)
+-> 📖 Read our [guide about ignoring errors](/guides/filter-data/ignore-errors.html).
 
 ## Tagging
 
 Our tagging system allows you to attach more metadata to samples, besides what we already collect. Things such as the ID of the user making the request or other data that can help you identify who made the request or specific conditions for the request.
 
-- [Tagging for Ruby](/ruby/instrumentation/tagging.html)
-- [Tagging for Elixir](/elixir/instrumentation/tagging.html)
-- [Tagging for front-end JavaScript](/front-end/span.html#span-settags-tags-object)
+-> 📖 Read our [guide about ignoring actions](/guides/filter-data/ignore-actions.html).
 
 ## Namespaces
 
