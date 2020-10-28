@@ -280,9 +280,6 @@ sections:
                 name: "Tagging and Sample Data"
                 link: "/ruby/instrumentation/tagging.html"
               -
-                name: "Namespaces"
-                link: "/ruby/instrumentation/namespaces.html"
-              -
                 name: "Ignore instrumentation"
                 link: "/ruby/instrumentation/ignore-instrumentation.html"
               -
@@ -392,9 +389,6 @@ sections:
                 name: "Tagging and Sample Data"
                 link: "/elixir/instrumentation/tagging.html"
               -
-                name: "Namespaces"
-                link: "/elixir/instrumentation/namespaces.html"
-              -
                 name: "Minutely probes <sup>New</sup>"
                 link: "/elixir/instrumentation/minutely-probes.html"
               -
@@ -465,9 +459,6 @@ sections:
               -
                 name: "Tagging and Sample Data"
                 link: "/nodejs/tracing/tagging.html"
-              -
-                name: "Namespaces"
-                link: "/nodejs/tracing/namespaces.html"
               -
                 name: "Async tracing and Scopes"
                 link: "/nodejs/tracing/scopes.html"
