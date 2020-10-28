@@ -2,7 +2,7 @@
 title: "Filtering app data"
 ---
 
-By default AppSignal integrations gather relevant data about errors and performance measurements to help you find the cause of the issue. Sometimes it sends collects much (or too little) app specific data by default.
+By default AppSignal integrations gather relevant data about errors and performance measurements to help you find the cause of the issue. Sometimes it collects much (or too little) app specific data by default.
 
 -> ⚠️ Apps should not collect any user identifiable information (such as personal names, email addresses, passwords, etc.), use the tools described in this guide to limit filter out this type of data.
 
