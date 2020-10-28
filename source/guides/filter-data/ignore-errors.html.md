@@ -104,6 +104,10 @@ const appsignal = new Appsignal({
 
 ## Next steps
 
+- [Ignoring actions](/guides/filter-data/ignore-actions.html) - the next step in this guide
+
+---
+
 - [Request header collection](/guides/filter-data/filter-headers.html) - the previous step in this guide
 - [Filtering app data](/guides/filter-data/) - the start of this guide
 - [Getting started guides](/guides/) - Guides overview
