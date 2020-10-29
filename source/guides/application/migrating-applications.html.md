@@ -8,7 +8,7 @@ To migrate an app you can choose to [either keep](#migration-with-app-data-and-h
 
 ## Migration without keeping app data and history
 
-If you do not want to keep the app's data we recommend to update your application config with the new organization's Push API key. After a deploy, a new app with the same name and environment will appear under the new organisation. Once the new app reports data, you can remove the old app in the other organization.
+If you do not want to keep the app's data we recommend to update your application config with the new organization's Push API key. After a deploy, a new app with the same name and environment will appear under the new organisation. Once the new app reports data, you can [remove the old app][remove guide] in the other organization.
 
 ## Migration with app data and history
 
@@ -25,5 +25,11 @@ If you like to have the history of the application as well, you will then need t
   - Deploy the app again with the new organization-specific API key (from the new organization) as found in the [app settings section][app settings], first key listed there.
   - The migration is now complete.
 
+## See also
+
+- [Application topic](/application/)
+- [Guides index](/guides/)
+
 [contact]: mailto:support@appsignal.com
 [app settings]: https://appsignal.com/redirect-to/app?to=info
+[remove guide]: /guides/deleting-applications.html
