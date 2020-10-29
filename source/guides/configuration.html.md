@@ -173,7 +173,7 @@ const appsignal = new Appsignal({
 
 System environment variables, or "environment variables" for short, are variables that are accessible by all apps started by a certain parent process. Instead of using a [configuration file][file] for configuration, it's possible to configure AppSignal using only these environment variables. Alternatively, it's possible to only set config keys that contain sensitive data such as the Push API key this way, and use [config files][file] for the rest of the config.
 
-This configuration method works for all integrations the same way and is leading for integrations: If a system environment variable is detected as AppSignal config option it overwrites the previous set config option value.
+This configuration method works for all integrations, setting an environment variable will be picked up by every AppSignal language integration.
 
 In the example below we've configured two environment variables, using the environment variables key format. After (re)starting the app process in a shell that has these environment variables set, AppSignal will load the values of these environment variables as its config. Config options set via environment variables apply to all app environments.
 
