@@ -4,6 +4,8 @@ title: "Configuring applications"
 
 In this guide we'll explain how to configure AppSignal. We'll choose a config option and guide you through the process of adding or changing this configuration in the AppSignal config in an app.
 
+-> 🔍 Read more information about AppSignal integration configuration in your app in our [configuration section][config topic].
+
 ## Choose a configuration option
 
 You may have arrived at this guide from another page to help you configure AppSignal. If so, great, you already know what config option you want to configure. In this guide we'll configure the config option below for the listed integrations as an example.
@@ -203,6 +205,7 @@ Are configuration changes not being picked up? [Contact us][contact] and we will
 ## Next steps
 
 - [Reporting deploys to track improvements](/guides/deploy-markers.html) - next guide
+- Read more about configuration in our [configuration topic][config topic]
 
 ---
 
@@ -211,4 +214,5 @@ Are configuration changes not being picked up? [Contact us][contact] and we will
 
 [file]: #file-based-configuration
 [env]: #system-environment-variable-configuration
+[config topic]: /application/configuration.html
 [contact]: mailto:support@appsignal.com

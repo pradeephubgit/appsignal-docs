@@ -64,6 +64,9 @@ sections:
             name: "Overview"
             link: "/application/"
           -
+            name: "Configuration"
+            link: "/application/configuration.html"
+          -
             name: "Namespaces"
             link: "/application/namespaces.html"
           -
