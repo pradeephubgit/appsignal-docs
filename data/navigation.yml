@@ -60,6 +60,9 @@ sections:
             link: "/guides/application/"
             sub_pages:
             -
+              name: "Multiple applications on one host"
+              link: "/guides/application/multiple-applications-on-one-host.html"
+            -
               name: "Migrating applications"
               link: "/guides/application/migrating-applications.html"
             -

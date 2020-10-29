@@ -61,11 +61,11 @@ config :appsignal, :config,
 To ignore errors in Node.js, add the following to your AppSignal configuration file. The [`ignoreErrors`][nodejs ignore_errors] value is an Array of Strings.
 
 ```js
-# Example: appsignal.js
+// Example: appsignal.js
 const { Appsignal } = require("@appsignal/nodejs");
 
 const appsignal = new Appsignal({
-  # Other config
+  // Other config
   ignoreErrors: ["SpecificError", "AnotherError"]
 });
 ```
@@ -84,11 +84,11 @@ const appsignal = new Appsignal({
 To ignore errors in Front-end JavaScript, add the following to your AppSignal configuration file. The [`ignoreErrors`][js ignore_errors] value is an Array of Regular expressions.
 
 ```js
-# Example: appsignal.js
+// Example: appsignal.js
 import Appsignal from "@appsignal/javascript"
 
 const appsignal = new Appsignal({
-  # Other config
+  // Other config
   ignoreErrors: [/a specific error message/, /another error message/]
 });
 ```

@@ -46,7 +46,7 @@ Add additional instrumentation to your app to gain more insights in how your app
 
 By default AppSignal is configured to assume one application runs on one host. If you run more than one application on a host, some odd behavior may occur, such as data being reported for a different app.
 
-To configure AppSignal for multiple applications on one host the AppSignal working directory needs to be configured. Read more about how to configure the working directory on our [applications documentation page](https://docs.appsignal.com/application/#running-multiple-applications-on-one-host).
+To configure AppSignal for multiple applications on one host the AppSignal working directory needs to be configured. Read more about how to configure the working directory in our [guide to running multiple application on one host](/guides/application/multiple-applications-on-one-host.html).
 
 ### What Operating Systems does AppSignal support?
 

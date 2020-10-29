@@ -21,3 +21,4 @@ In the next couple steps we'll guide you through ways to make the data being rep
 
 - [Migrating applications between organizations](/guides/application/migrating-applications.html)
 - [Removing an application](/guides/application/deleting-applications.html)
+- [Running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html)

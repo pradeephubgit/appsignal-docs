@@ -29,19 +29,10 @@ Namespaces can be used to group together incidents that are related to the same 
 
 Read more about [namespaces](namespaces.html) and how to configure them for your app.
 
-## Running multiple applications on one host
-
-When running multiple applications on one host some odd behavior may occur. This is because the default configuration of our AppSignal libraries assume a one application per host setting.
-
-One common problem we've seen is that Applications start reporting under different names and/or environments. Such as an application switching between the staging and production environment after a deploy or restart of an application process or worker.
-
-To allow AppSignal to be used for multiple applications on one host we need to set the `working_directory_path` configuration option ([Ruby](/ruby/configuration/options.html#option-working_directory_path) / [Elixir](/elixir/configuration/options.html#option-working_directory_path)). Using this configuration option, set a working directory path per application so that the AppSignal agent will not stop agents for other Applications that are running.
-
-Read more about the AppSignal [working directory](/appsignal/how-appsignal-operates.html#working-directory).
-
 ## See also
 
-- [📖 Removing an application](/guides/application/deleting-applications.html)
+- [📖 Removing an application guide](/guides/application/deleting-applications.html)
 - [📖 Migrating an application between organizations guide](/guides/application/migrating-applications.html)
+- [📖 Running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html)
 
 [Application index]: https://appsignal.com/accounts
