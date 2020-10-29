@@ -55,6 +55,13 @@ sections:
               -
                 name: "Ignore namespaces"
                 link: "/guides/filter-data/ignore-namespaces.html"
+          -
+            name: "Application management"
+            link: "/guides/application/"
+            sub_pages:
+            -
+              name: "Migrating applications"
+              link: "/guides/application/migrating-applications.html"
       -
         name: "Your applications"
         icon: "fas fa-server"

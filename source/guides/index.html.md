@@ -1,6 +1,11 @@
 ---
-title: "Getting started guides"
+title: "AppSignal guides"
 ---
+
+- New to AppSignal? Start with our [getting started guides](#getting-started-guides).
+- Want to customize AppSignal further? Read our [other guides](#guides).
+
+## Getting started guides
 
 You have set up AppSignal and data is coming in from your app. What's next?
 
@@ -11,3 +16,7 @@ In the next couple steps we'll guide you through ways to make the data being rep
 1. [Reporting deploys to track improvements](/guides/deploy-markers.html)
 1. [Grouping parts of your app with namespaces](/guides/namespaces.html)
 1. [Filtering app data](/guides/filter-data/) - Customize which parameters, session data, headers and more are collected by AppSignal integrations.
+
+## Guides
+
+- [Migrating applications between organizations](/guides/application/migrating-applications.html)
