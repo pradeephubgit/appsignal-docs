@@ -17,7 +17,7 @@ In the next couple steps we'll guide you through ways to make the data being rep
 1. [Grouping parts of your app with namespaces](/guides/namespaces.html)
 1. [Filtering app data](/guides/filter-data/) - Customize which parameters, session data, headers and more are collected by AppSignal integrations.
 
-## Guides
+## Application management guides
 
 - [Migrating applications between organizations](/guides/application/migrating-applications.html)
 - [Removing an application](/guides/application/deleting-applications.html)
