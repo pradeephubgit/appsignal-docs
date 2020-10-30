@@ -152,6 +152,9 @@
   from = "/application/anomaly-detection/index.html"
   to = "/anomaly-detection/index.html"
 [[redirects]]
+  from = "/application/anomaly-detection/"
+  to = "/anomaly-detection/index.html"
+[[redirects]]
   from = "/ruby/configuration/parameter-filtering.html"
   to = "/application/parameter-filtering.html"
 [[redirects]]
