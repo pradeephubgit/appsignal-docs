@@ -155,7 +155,7 @@ const span = appsignal.createSpan()
 span.setNamespace("admin") // a custom namespace for this span (defaults to `frontend`)
 ```
 
-For more information, [read more about how spans work in Front-end JavaScript](front-end/span.html).
+For more information, [read more about how spans work in Front-end JavaScript](/front-end/span.html).
 
 ## Deploy
 

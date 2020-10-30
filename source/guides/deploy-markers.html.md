@@ -2,7 +2,7 @@
 title: "Reporting deploys to track improvements"
 ---
 
-Every time an app gets deployed, changes that affect the app start running. By tracking deploys in AppSignal, error incidents and performance measurements are grouped per deploy. They will also allow for AppSignal.com to link directly from an [error backtrace]([error backtrace links]) to the line of code in your app for that version of the app.
+Every time an app gets deployed, changes that affect the app start running. By tracking deploys in AppSignal, error incidents and performance measurements are grouped per deploy. They will also allow for AppSignal.com to link directly from an [error backtrace][error backtrace links] to the line of code in your app for that version of the app.
 
 In this guide we will track deploys in AppSignal using deploy markers, configure an application to report these deploy markers.
 
@@ -86,7 +86,7 @@ const appsignal = new Appsignal({
   // Other config
 });
 ```
-[JavaScript `revision` configuration option details](/front-end/configuration/options.html#option-revision)
+[JavaScript `revision` configuration option details](/front-end/configuration/#option-revision)
 
 ## Deploy
 

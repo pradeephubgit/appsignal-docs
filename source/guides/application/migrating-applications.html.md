@@ -32,4 +32,4 @@ If you like to have the history of the application as well, you will then need t
 
 [contact]: mailto:support@appsignal.com
 [app settings]: https://appsignal.com/redirect-to/app?to=info
-[remove guide]: /guides/deleting-applications.html
+[remove guide]: /guides/application/deleting-applications.html

@@ -80,7 +80,7 @@ There are multiple webhooks available. Which payloads the webhook receives can b
     <tr>
       <td><code>revision</code></td>
       <td><code>String</code></td>
-      <td>The <a href="application/markers/deploy-marker.html">deploy marker</a> revision name.</td>
+      <td>The <a href="/application/markers/deploy-markers.html">deploy marker</a> revision name.</td>
     </tr>
     <tr>
       <td><code>user</code></td>
@@ -209,7 +209,7 @@ There are multiple webhooks available. Which payloads the webhook receives can b
     <tr>
       <td><code>revision</code></td>
       <td><code>String</code></td>
-      <td>The <a href="application/markers/deploy-marker.html">deploy marker</a> revision name.</td>
+      <td>The <a href="/application/markers/deploy-markers.html">deploy marker</a> revision name.</td>
     </tr>
     <tr>
       <td><code>user</code></td>
@@ -397,7 +397,7 @@ You can add your own metadata by tagging samples (for <a href="/ruby/instrumenta
     <tr>
       <td><code>revision</code></td>
       <td><code>String</code></td>
-      <td>The <a href="application/markers/deploy-marker.html">deploy marker</a> revision name.</td>
+      <td>The <a href="/application/markers/deploy-markers.html">deploy marker</a> revision name.</td>
     </tr>
     <tr>
       <td><code>user</code></td>
