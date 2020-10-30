@@ -120,11 +120,11 @@ sections:
             name: "Backtrace links"
             link: "/application/backtrace-links.html"
           -
-            name: "Integrations (full list)"
+            name: "Integrations"
             link: "/application/integrations/"
             sub_pages:
               -
-                name: "Overview"
+                name: "Overview <sup>(full list)</sup>"
                 link: "/application/integrations/"
               -
                 name: "Asana"
