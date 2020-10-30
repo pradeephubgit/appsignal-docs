@@ -131,7 +131,9 @@ Uninstall AppSignal from your app by following the steps below. When these steps
   - This will make sure the AppSignal servers won't continue to receive data from your app.
 1. Optional: Make sure no `appsignal-agent` processes are running in the background.
   - Check the output of `ps aux | grep appsigal-agent` and kill the processes still running.
-1. Finally, [remove the app](/guides/application/deleting-applications.html) on AppSignal.com
+1. Finally, [remove the app](/guides/application/deleting-applications.html) on AppSignal.com.
+
+-> 📖 Continue with our [uninstall guide](/guides/application/deleting-applications.html).
 
 [support]: mailto:support@appsignal.com
 [elixir-repo]: https://github.com/appsignal/appsignal-elixir

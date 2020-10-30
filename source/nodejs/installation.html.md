@@ -65,4 +65,6 @@ Uninstall AppSignal from your app by following the steps below. When these steps
 3. Remove any AppSignal [configuration](/nodejs/configuration/) from your app.
 4. Commit, deploy and restart your app.
   - This will make sure the AppSignal servers won't continue to receive data from your app.
-5. Finally, [remove the app](/guides/application/deleting-applications.html) on AppSignal.com
+5. Finally, [remove the app](/guides/application/deleting-applications.html) on AppSignal.com.
+
+-> 📖 Continue with our [uninstall guide](/guides/application/deleting-applications.html).
