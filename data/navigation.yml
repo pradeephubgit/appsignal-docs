@@ -229,6 +229,9 @@ sections:
                 name: "Overview"
                 link: "/ruby/integrations/"
               -
+                name: "Active Job"
+                link: "/ruby/integrations/active-job.html"
+              -
                 name: "Capistrano"
                 link: "/ruby/integrations/capistrano.html"
               -
