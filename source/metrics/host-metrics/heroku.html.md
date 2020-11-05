@@ -16,8 +16,6 @@ From the Logplex system we're able to receive the following metrics from your ap
 
 To setup AppSignal to receive these metrics, please follow the guide below.
 
-!> **Note**: This is a beta feature, meaning that the logplex endpoint can change at any time, at which point you will need to re-add the logdrain.
-
 ### 1. Update the AppSignal integration.
 
 First update the Ruby gem to version 2.6.0 or newer.
