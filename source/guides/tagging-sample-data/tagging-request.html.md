@@ -1,17 +1,10 @@
 ---
-title: "Tagging and sample data"
+title: "Adding tags to a request"
 ---
-You can supply extra context on errors and performance issues. This can help to add information that is not already part of the request, session or environment parameters.
 
-## Tags
+## Ruby
 
-Using tags you can easily add more information to errors and performance issues
-tracked by AppSignal.
-
-
-### Ruby
-
-#### Limitations
+### Limitations
 
 
 - The tag key must be a `String` or `Symbol`.
@@ -37,9 +30,9 @@ Appsignal.tag_request(
 )
 ```
 
-### Elixir
+## Elixir
 
-#### Limitations
+### Limitations
 - The tag key must be a `String` or `Atom`.
 - The tagged value must be a `String`, `Atom` or `Integer`.
 
@@ -60,9 +53,9 @@ will result in the following data:
 }
 ```
 
-### Node.js
+## Node.js
 
-#### Limitations
+### Limitations
 
 - The tag key must be a `String`.
 - The tagged value must be a `String`, `Number` or `Boolean`.

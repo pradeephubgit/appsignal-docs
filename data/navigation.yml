@@ -28,6 +28,16 @@ sections:
             name: "Grouping with namespaces"
             link: "/guides/namespaces.html"
           -
+            name: "Tagging and Sample data"
+            link: "/guides/tagging-sample-data/"
+            sub_pages:
+              -
+                name: "Start"
+                link: "/guides/tagging-sample-data/"
+              -
+                name: "Tagging request"
+                link: "/guides/tagging-sample-data/tagging-request.html"
+          -
             name: "Filtering app data"
             link: "/guides/filter-data/"
             sub_pages:
