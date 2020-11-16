@@ -37,6 +37,9 @@ sections:
               -
                 name: "Tagging request"
                 link: "/guides/tagging-sample-data/tagging-request.html"
+              -
+                name: "Sample data"
+                link: "/guides/tagging-sample-data/sample-data.html"
           -
             name: "Filtering app data"
             link: "/guides/filter-data/"
@@ -290,9 +293,6 @@ sections:
                 name: "Exception handling"
                 link: "/ruby/instrumentation/exception-handling.html"
               -
-                name: "Tagging and Sample Data"
-                link: "/ruby/instrumentation/tagging.html"
-              -
                 name: "Ignore instrumentation"
                 link: "/ruby/instrumentation/ignore-instrumentation.html"
               -
@@ -399,9 +399,6 @@ sections:
                 name: "Exception handling"
                 link: "/elixir/instrumentation/exception-handling.html"
               -
-                name: "Tagging and Sample Data"
-                link: "/elixir/instrumentation/tagging.html"
-              -
                 name: "Minutely probes <sup>New</sup>"
                 link: "/elixir/instrumentation/minutely-probes.html"
               -
@@ -469,9 +466,6 @@ sections:
               -
                 name: "Exception handling"
                 link: "/nodejs/tracing/exception-handling.html"
-              -
-                name: "Tagging and Sample Data"
-                link: "/nodejs/tracing/tagging.html"
               -
                 name: "Async tracing and Scopes"
                 link: "/nodejs/tracing/scopes.html"
