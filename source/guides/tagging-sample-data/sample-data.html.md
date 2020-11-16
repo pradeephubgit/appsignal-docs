@@ -70,7 +70,7 @@ This key accepts nested objects and will result in the following block on a Inci
 
 ![custom_data](/assets/images/screenshots/sample_data/custom_data.png)
 
-## NodeJS
+## Node.js
 
 Sample data with the following key/value pairs can be set **on the root span**:
 

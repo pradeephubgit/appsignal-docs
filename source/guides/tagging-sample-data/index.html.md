@@ -21,8 +21,7 @@ Besides tags you can add more metadata to a transaction (or override default met
 ## Next steps
 
 - [Adding tags to a request](/guides/tagging-sample-data/tagging-request.html) - the next step in this guide
-- [Adding sample data to a request](/) - future step in this guide
-- [Adding tags to metrics](/l) - future step in this guide
+- [Adding sample data to a request](/guides/tagging-sample-data/sample-data.html) - future step in this guide
 
 ---
 
