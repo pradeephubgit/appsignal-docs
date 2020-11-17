@@ -24,13 +24,9 @@ existing dependency on `:appsignal`, and replace it with a dependency on
 
 ```elixir
 defp deps do
-  {:appsignal_phoenix, "~> 2.0.0-beta.1"}
+  {:appsignal_phoenix, "~> 2.0.0"}
 end
 ```
-
-!> **NOTE:** During the beta stage, we recommend depending on version `~>
-2.0.0-beta.1`. Once AppSignal for Elixir 2.0 is officially released, we'll
-change this to `~> 2.0`.
 
 Like before, we recommend to use a pessimistic version constraint to always get
 the latest compatible version, but not upgrade to 3.x automatically.
