@@ -2,12 +2,12 @@
 title: "Tagging and Sample Data"
 ---
 
-Use the [`Appsignal.Transaction.set_sample_data`](https://hexdocs.pm/appsignal/Appsignal.Transaction.html#set_sample_data/2) function to supply extra context on errors and
+Use the [`Appsignal.Span.set_sample_data`](https://hexdocs.pm/appsignal/Appsignal.Span.html#set_sample_data/2) function to supply extra context on errors and
 performance issues. This can help to add information that is not already part of
 the request, session or environment parameters.
 
 ```elixir
-Appsignal.Transaction.set_sample_data("tags", %{locale: "en"})
+Appsignal.Span.set_sample_data("tags", %{locale: "en"})
 ```
 
 !> **Warning**: Do not use tagging to send personal data such as names or email
@@ -29,9 +29,9 @@ Tags that do not meet these limitations are dropped without warning.
 `set_sample_data` can be called multiple times, but only the last value will be retained:
 
 ```elixir
-Appsignal.Transaction.set_sample_data("tags", %{locale: "en"})
-Appsignal.Transaction.set_sample_data("tags", %{user: "bob"})
-Appsignal.Transaction.set_sample_data("tags", %{locale: "de"})
+Appsignal.Span.set_sample_data("tags", %{locale: "en"})
+Appsignal.Span.set_sample_data("tags", %{user: "bob"})
+Appsignal.Span.set_sample_data("tags", %{locale: "de"})
 ```
 will result in the following data:
 
@@ -57,7 +57,7 @@ Besides tags you can add more metadata to a transaction (or override default met
 Filled with session/cookie data by default, but can be overridden with the following call:
 
 ```
-Appsignal.Transaction.set_sample_data("session_data", %{_csrf_token: "Z11CWRVG+I2egpmiZzuIx/qbFb/60FZssui5eGA8a3g="})
+Appsignal.Span.set_sample_data("session_data", %{_csrf_token: "Z11CWRVG+I2egpmiZzuIx/qbFb/60FZssui5eGA8a3g="})
 ```
 
 This key accepts nested objects that will be rendered as JSON on a Incident Sample page for both Exception and Performance samples.
@@ -70,7 +70,7 @@ This key accepts nested objects that will be rendered as JSON on a Incident Samp
 Filled with framework (such as Phoenix) parameters by default, but can be overridden or filled with the following call:
 
 ```
-Appsignal.Transaction.set_sample_data("params", %{action: "show", controller: "homepage"})
+Appsignal.Span.set_sample_data("params", %{action: "show", controller: "homepage"})
 ```
 
 This key accepts nested objects and will show up as follows on a Incident Sample page for both Exception and Performance samples, formatted as JSON.
@@ -83,7 +83,7 @@ This key accepts nested objects and will show up as follows on a Incident Sample
 Environment variables from a request/background job, filled by the Phoenix integration, but can be filled/overriden with the following call:
 
 ```
-Appsignal.Transaction.set_sample_data("environment", %{CONTENT_LENGTH: "0"})
+Appsignal.Span.set_sample_data("environment", %{CONTENT_LENGTH: "0"})
 ```
 
 This call only accepts a one-level key/value object, nested values will be ignored.
@@ -97,7 +97,7 @@ This will result the following block on a Incident Sample page for both Exceptio
 Custom data is not set by default, but can be used to add additional debugging data to solve a performance issue or exception.
 
 ```
-Appsignal.Transaction.set_sample_data("custom_data", %{foo: "bar"})
+Appsignal.Span.set_sample_data("custom_data", %{foo: "bar"})
 ```
 This key accepts nested objects and will result in the following block on a Incident Sample page for both Exception and Performance samples formatted as JSON.
 

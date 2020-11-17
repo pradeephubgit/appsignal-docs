@@ -39,7 +39,7 @@ of your application.
   defp deps do
     [
       # ...
-      {:appsignal, "~> 1.0"}
+      {:appsignal, "~> 2.0"}
     ]
   end
 

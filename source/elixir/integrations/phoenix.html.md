@@ -13,6 +13,29 @@ instrumentation](/elixir/instrumentation/index.html) documentation.
 More information can be found in the [AppSignal Hex package
 documentation][hex-appsignal].
 
+## Getting started
+
+Since version 2.0, the Phoenix integration is moved to a separate library named
+`:appsignal_phoenix`, which depends on the main `:appsignal` library. To use
+AppSignal in a Phoenix app, add `:appsignal_phoenix` to your dependencies. You
+can then remove the `:appsignal` dependency.
+
+``` elixir
+defmodule AppsignalPhoenixExample.MixProject do
+  # ...
+
+  defp deps do
+    [
+      {:phoenix, "~> 1.5.3"},
+      # ...
+      {:appsignal_phoenix, "~> 2.0.0"}
+    ]
+  end
+
+  # ...
+end
+```
+
 ## Incoming HTTP requests
 
 To start logging HTTP requests in your Phoenix app, make sure you use the
@@ -30,84 +53,63 @@ end
 This will create a transaction for every HTTP request which is performed on the
 endpoint.
 
-## Phoenix instrumentation hooks
-
--> **Note**: From AppSignal for Elixir package version `1.12.0` onward, manually configuring Phoenix instrumentation hooks is no longer needed and this step can be skipped for apps running Phoenix 1.4.7 and up.
-
-Phoenix comes with instrumentation hooks built-in. To send Phoenix'
-default instrumentation events to AppSignal, add the following to your
-`config.exs` (adjusting for your app's name!).
-
-```elixir
-# config/config.exs
-config :my_app, MyAppWeb.Endpoint,
-  instrumenters: [Appsignal.Phoenix.Instrumenter]
-```
-
-Using the `Appsignal.Phoenix.Instrumenter` it's possible to add custom
-instrumentation to your Phoenix applications.
-
-This module can be used as a Phoenix instrumentation module. Adding this module
-to the list of Phoenix instrumenters will result in the
-`phoenix_controller_call` and `phoenix_controller_render` events to become part
-of your request timeline.
-
-For more information on instrumentation please visit the [AppSignal Hex package
-documentation](https://hexdocs.pm/appsignal/).
-
 ## Template rendering
 
 It's possible to instrument how much time it takes each template render,
 including subtemplates (partials), in your Phoenix application.
 
-To enable this for AppSignal you need to register the AppSignal template
-renderer, which augment the compiled templates with instrumentation hooks.
-
-Put the following in your `config.exs`.
+To enable this for AppSignal, add `use Appsignal.Phoenix.View` to the view/0
+function in your app's web module, after `use Phoenix.View`:
 
 ```elixir
-# config/config.exs
-config :phoenix, :template_engines,
-  eex: Appsignal.Phoenix.Template.EExEngine,
-  exs: Appsignal.Phoenix.Template.ExsEngine
-```
+defmodule AppsignalPhoenixExampleWeb do
+  # ...
 
-## Queries
+  def view do
+    quote do
+      use Phoenix.View,
+        root: "lib/appsignal_phoenix_example_web/templates",
+        namespace: AppsignalPhoenixExampleWeb
 
-If you're using Ecto 3, attach `Appsignal.Ecto` to Telemetry query events in your application's `start/2` function by calling `:telemetry.attach/4`. In most Phoenix applications, the application's start function is located in a module named `YourAppName.Application`:
+      use Appsignal.Phoenix.View
 
-``` elixir
-defmodule AppsignalPhoenixExample.Application do
-  use Application
+      # Import convenience functions from controllers
+      import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-  def start(_type, _args) do
-    children = [
-      # ...
-    ]
-
-    # Add this :telemetry.attach/4 call:
-    :telemetry.attach(
-      "appsignal-ecto",
-      [:my_app, :repo, :query],
-      &Appsignal.Ecto.handle_event/4,
-      nil
-    )
-
-    opts = [strategy: :one_for_one, name: AppsignalPhoenixExample.Supervisor]
-    Supervisor.start_link(children, opts)
+      # Include shared imports and aliases for views
+      unquote(view_helpers())
+    end
   end
+
+  # ...
 end
 ```
-
-For more information on query instrumentation and installation instructions for Telemetry < 0.3.0 and Ecto < 3.0, check out the [AppSignal Ecto documentation](/elixir/integrations/ecto.html).
 
 ## Channels
 
 ### Channel instrumentation with a channel's handle
 
-Incoming channel requests can be instrumented by adding code to the
-`handle_in/3` function of your application. Function decorators are used to
-minimize the amount of code you have to add to your application's channels.
+Incoming channel requests can be instrumented by wrapping the code in your
+`handle_in/3` functions with `Appsignal.Phoenix.Channel.instrument/5`:
+
+```
+defmodule AppsignalPhoenixExampleWeb.RoomChannel do
+  use Phoenix.Channel
+
+  # ...
+
+  def handle_in("new_msg", %{"body" => body} = params, socket) do
+    Appsignal.Phoenix.Channel.instrument(__MODULE__, "new_msg", params, socket, fn ->
+      broadcast!(socket, "new_msg", %{body: body})
+      {:noreply, socket}
+    end)
+  end
+end
+```
+
+Alternatively, you can use function decorators to instrument channels. While
+less flexible than the instrumentation function, decorators minimize the amount
+of code you have to add to your application's channels.
 
 ```elixir
 defmodule SomeApp.MyChannel do
@@ -123,42 +125,6 @@ end
 Channel events will be displayed under the "Background jobs" tab, showing the
 channel module and the action argument that you entered.
 
-### Channel instrumentation without decorators
-
-You can also decide not to use function decorators. In that case, use the
-`channel_action/3` function directly, passing in a name for the channel action,
-the socket, and the actual code that you are executing in the channel handler.
-
-```elixir
-defmodule SomeApp.MyChannel do
-  import Appsignal.Phoenix.Channel, only: [channel_action: 4]
-
-  def handle_in("ping" = action, _payload, socket) do
-    channel_action(__MODULE__, action, socket, fn ->
-      # do some heave processing here...
-      reply = perform_work()
-      {:reply, {:ok, reply}, socket}
-    end)
-  end
-end
-```
-
-### Adding channel payloads
-
-Channel payloads aren't included by default, but can be added by using [sample_data]:
-
-```elixir
-defmodule SomeApp.MyChannel do
-  use Appsignal.Instrumentation.Decorators
-
-  @decorate channel_action
-  def handle_in("ping", %{"body" => body}, socket) do
-    # make sure to sanitize any parameters such as emails/passwords and long strings
-    Appsignal.Transaction.set_sample_data("custom_data", %{body: body})
-    # your code here..
-  end
-end
-```
 
 ## LiveView
 

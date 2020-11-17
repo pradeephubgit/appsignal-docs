@@ -6,13 +6,13 @@ Please follow the [installation guide](/guides/new-application.html) first, when
 
 ## Installation
 
-Installing the AppSignal package in your Elixir application requires a couple manual steps. Currently pure Elixir applications and the Phoenix framework are supported. Both use-cases are described in this guide.
+Installing the AppSignal package in your Elixir application requires a couple of manual steps. Currently, AppSignal support Phoenix, Plug and pure Elixir apps.
 
 If AppSignal does not support your use-case or if you find a problem with the documentation, don't hesitate to [contact us][support]. You can also create a pull-request on our public [Elixir repository][elixir-repo] or [documentation repository][docs-repo].
 
 ### Requirements
 
-Before you can compile the AppSignal package make sure the build/compilation tools are installed for your system. Please check the [Supported Operating Systems](/support/operating-systems.html) page for any system dependencies that may be required.
+Before you can compile the AppSignal package, make sure the build/compilation tools are installed for your system. Please check the [Supported Operating Systems](/support/operating-systems.html) page for any system dependencies that may be required.
 
 ### Installing the package
 
@@ -26,7 +26,7 @@ Before you can compile the AppSignal package make sure the build/compilation too
     # mix.exs
     def deps do
       [
-        {:appsignal, "~> 1.0"},
+        {:appsignal, "~> 2.0"},
         {:jason, "~> 1.1"}
       ]
     end
@@ -36,7 +36,7 @@ Before you can compile the AppSignal package make sure the build/compilation too
 3. Then run `mix appsignal.install YOUR_PUSH_API_KEY` or follow the [manual configuration guide](#configuration).
 4. If you use the [Phoenix framework][phoenix], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) guide.
 
-After the installation is complete start your application. When the AppSignal
+After the installation is complete, start your application. When the AppSignal
 OTP application starts, it looks for a valid configuration (e.g. an AppSignal
 Push API key), and start the AppSignal agent.
 
@@ -71,17 +71,19 @@ name and environment and more.
 ```elixir
 # config/config.exs
 config :appsignal, :config,
-  active: true,
-  name: "My awesome app",
+  otp_app: :appsignal_phoenix_example,
+  name: "AppsignalPhoenixExample",
   push_api_key: "your-push-api-key",
-  env: Mix.env
+  env: Mix.env,
+  active: true
 ```
 
 Alternatively, you can configure AppSignal using OS environment variables.
 
 ```sh
+export APPSIGNAL_OTP_APP="appsignal_phoenix_example"
 export APPSIGNAL_PUSH_API_KEY="your-push-api-key"
-export APPSIGNAL_APP_NAME="My awesome app"
+export APPSIGNAL_APP_NAME="AppsignalPhoenixExample"
 export APPSIGNAL_APP_ENV="prod"
 ```
 
@@ -119,7 +121,7 @@ our [instrumentation documentation](/elixir/instrumentation/index.html).
 
 Uninstall AppSignal from your app by following the steps below. When these steps are completed your app will no longer send data to the AppSignal servers.
 
-1. In the `mix.exs` of your app, delete the `{:appsignal, "~> 1.0"}` line.
+1. In the `mix.exs` of your app, delete the `{:appsignal, "~> 2.0"}` line.
 1. Run `mix deps.get` to update your `mix.lock` with the removed packages state.
 1. Remove any AppSignal [configuration files](/elixir/configuration/) from your app.
   - Configuration file location: `config/appsignal.exs`

@@ -24,10 +24,11 @@ defmodule Mix.Tasks.Rescue do
     {:ok, _} = Application.ensure_all_started(:appsignal)
 
     raise "rescue!"
-  rescue
-    exception ->
-      Appsignal.send_error(exception, "error message", System.stacktrace)
-      reraise exception, __STACKTRACE__
+  catch
+    kind, reason ->
+      stack = __STACKTRACE__
+      Appsignal.send_error(kind, reason, stack)
+      reraise(reason, stack)
   after
     Appsignal.Nif.stop
     :timer.sleep(35_000) # For one-off containers
@@ -44,22 +45,20 @@ To measure performance in your task, start and stop a transaction manually and a
 ```elixir
 defmodule Mix.Tasks.Instrument do
   use Mix.Task
-  import Appsignal.Instrumentation.Helpers, only: [instrument: 4]
 
   def run(_) do
     {:ok, _} = Application.ensure_all_started(:appsignal)
 
-    transaction =
-      Appsignal.Transaction.generate_id()
-      |> Appsignal.Transaction.start(:background_job)
-      |> Appsignal.Transaction.set_action("Mix.Tasks.Instrument")
+    Appsignal.instrument(fn span ->
+      span
+      |> Appsignal.Span.set_namespace("background_job")
+      |> Appsignal.Span.set_name("Mix.Tasks.Instrument")
 
-    instrument(transaction, "task.instrumented", "Sleeping for 1 second", fn ->
-      :timer.sleep(1_000)
+      Appsignal.instrument(fn span ->
+        Appsignal.Span.set_name("task.instrumented")
+        :timer.sleep(1_000)
+      end)
     end)
-
-    Appsignal.Transaction.finish(transaction)
-    Appsignal.Transaction.complete(transaction)
 
     Appsignal.Nif.stop()
     :timer.sleep(35_000) # For one-off containers

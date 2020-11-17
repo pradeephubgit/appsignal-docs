@@ -114,6 +114,15 @@ options:
         Read from environment variable `NODE_ENV`, defaults to "development".
       description: |
         The environment of the app to be reported to AppSignal.
+  - config_key: otp_app
+    env_key: APPSIGNAL_OTP_APP
+    required: true
+    elixir:
+      since: 2.0.0
+      type: string
+      default_value: null
+      description: |
+        The OTP app name of your application, to be used for automatic configuration of instrumentation for libraries like Ecto.
   - config_key: name
     env_key: APPSIGNAL_APP_NAME
     required: true
