@@ -4,7 +4,7 @@ title: Plug actions registered as "unknown"
 
 ## Affected components
 
-- AppSignal Elixir package versions: `v1.5.0-beta.1` - most recent
+- AppSignal Elixir package versions: from `v1.5.0-beta.1` - `v1.13.x`
 
 ## Description
 
