@@ -79,10 +79,6 @@ For more information about this config option, see the [`ignoreNamespaces` confi
 
 ## Next steps
 
-- [Ignore namespaces](/guides/filter-data/ignore-namespaces.html) - the next step in this guide
-
----
-
 - [Ignore errors](/guides/filter-data/ignore-errors.html) - the previous step in this guide
 - [Filtering app data](/guides/filter-data/) - the start of this guide
 - [Getting started guides](/guides/) - Guides overview
