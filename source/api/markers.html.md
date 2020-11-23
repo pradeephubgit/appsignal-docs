@@ -139,7 +139,7 @@ Used to annotate events that can impact your performance/error rate. Examples ar
     <tr>
       <td>icon</td>
       <td>String - Optional</td>
-      <td>Emoji to use for this Custom marker.</td>
+      <td>Emoji to use for this Custom marker, defaults to 🚀.</td>
     </tr>
     <tr>
       <td>message</td>
