@@ -1,7 +1,7 @@
 <%
   tours = [
     {
-      title: "Catch errors",
+      title: "Error tracking",
       slug: "errors",
       color: "orange",
       icon: "fa-bug",
@@ -9,7 +9,7 @@
       icon_class: "c-header-subnav__link__icon--orange"
     },
     {
-      title: "Track performance",
+      title: "Performance monitoring",
       slug: "performance",
       color: "green",
       icon: "fa-rabbit-fast",
@@ -17,7 +17,7 @@
       icon_class: "c-header-subnav__link__icon--green"
     },
     {
-      title: "Monitor hosts",
+      title: "Host monitoring",
       slug: "hosts",
       color: "teal",
       icon: "fa-server",
@@ -25,7 +25,7 @@
       icon_class: "c-header-subnav__link__icon--teal"
     },
     {
-      title: "Visualise metrics",
+      title: "Metric dashboards",
       slug: "metrics",
       color: "purple",
       icon: "fa-tachometer-alt",
@@ -33,7 +33,7 @@
       icon_class: "c-header-subnav__link__icon--purple"
     },
     {
-      title: "Work smoother",
+      title: "Workflow features",
       slug: "workflow",
       color: "blue",
       icon: "fa-users",
@@ -42,10 +42,10 @@
     }
   ]
   platforms = [
-    { name: "Elixir", link: "https://appsignal.com/elixir/", icon: "fa fa-tint", text_class: "text-purple", dark_text_class: "dark:text-purple-400" },
-    { name: "Ruby", link: "https://appsignal.com/ruby/", icon: "fa fa-gem", text_class: "text-red", dark_text_class: "dark:text-red-400" },
-    { name: "NodeJS", link: "https://appsignal.com/nodejs/", icon: "fab fa-node-js", text_class: "text-green", dark_text_class: "dark:text-green-400" },
-    { name: "JavaScript", link: "https://appsignal.com/javascript/", icon: "fab fa-js-square", text_class: "text-yellow", dark_text_class: "dark:text-yellow-400" }
+    { name: "Elixir APM", link: "https://appsignal.com/elixir/", icon: "fa fa-tint", text_class: "text-purple", dark_text_class: "dark:text-purple-400" },
+    { name: "Ruby APM", link: "https://appsignal.com/ruby/", icon: "fa fa-gem", text_class: "text-red", dark_text_class: "dark:text-red-400" },
+    { name: "NodeJS APM", link: "https://appsignal.com/nodejs/", icon: "fab fa-node-js", text_class: "text-green", dark_text_class: "dark:text-green-400" },
+    { name: "JavaScript error tracking", link: "https://appsignal.com/javascript/", icon: "fab fa-js-square", text_class: "text-yellow", dark_text_class: "dark:text-yellow-400" }
   ]
 %>
 
@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-span-1">
                   <h3 class="c-header-subnav__title">
-                    Platforms
+                    Supported platforms
                   </h3>
                   <ul class="c-header-subnav__list">
                     <% platforms.each do |platform| %>
