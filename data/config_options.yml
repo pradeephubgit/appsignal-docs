@@ -1,5 +1,5 @@
 file_paths_notice: &file_paths_notice
-  - "-> **Note**: The specified path cannot contain Operating Specific file system abstractions, such as the homedir symbol `~` for *NIX systems. This will be seen an malformed path."
+  - "-> **Note**: The specified path cannot contain Operating Specific file system abstractions, such as the homedir symbol `~` for *NIX systems. This will be seen as a malformed path."
 
 options:
   - config_key: active
