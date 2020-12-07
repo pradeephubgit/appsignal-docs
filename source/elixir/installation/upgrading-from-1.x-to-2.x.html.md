@@ -111,7 +111,7 @@ end
 Lastly, query instrumentation is automatic in 2.x, so you can remove the
 `:telemetry.attach/4` call in your application module.
 
-## Custom instrumentation
+## Custom integrations
 
 If you use `Appsignal.Transaction.set_action/1` to override action names for actions in your Plug or Phoenix app, switch to the newly added `Appsignal.Plug.put_name/2` which adds the new name to the conn. You'll have to make sure you call `put_name/2` on the conn that's returned in the action:
 
@@ -136,7 +136,9 @@ For pure Elixir apps, you can use `Appsignal.Span.set_name/2` to set the name di
 Appsignal.Span.set_name(Appsignal.Tracer.current_span(), "AppsignalElixirExample#index")
 ```
 
-If your app includes more custom instrumentation, please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
+## Custom instrumentation
+
+If you added custom instrumentation in your app you used `Appsignal.TransactionRegistry` in the past. In 2.x this is no longer necessary, you can instrument without using the registry. Please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
 
 ## Welcome to 2.x!
 
