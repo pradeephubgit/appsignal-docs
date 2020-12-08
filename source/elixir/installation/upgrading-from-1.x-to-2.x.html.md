@@ -24,7 +24,7 @@ existing dependency on `:appsignal`, and replace it with a dependency on
 
 ```elixir
 defp deps do
-  {:appsignal_phoenix, "~> 2.0.0"}
+  {:appsignal_phoenix, "~> 2.0"}
 end
 ```
 
