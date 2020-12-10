@@ -49,49 +49,7 @@ in our [link templates guide](/application/link-templates.html).
 
 ## Sample Data
 
-Besides tags you can add more metadata to a transaction (or override default metadata from integrations such as Phoenix), below is a list of valid keys that can be given to `set_sample_data` and the format of the value.
-
-
-### `session_data`
-
-Filled with session/cookie data by default, but can be overridden with the following call:
-
-```
-Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "session_data", %{_csrf_token: "Z11CWRVG+I2egpmiZzuIx/qbFb/60FZssui5eGA8a3g="})
-```
-
-This key accepts nested objects that will be rendered as JSON on a Incident Sample page for both Exception and Performance samples.
-
-![session_data](/assets/images/screenshots/sample_data/session_data.png)
-
-
-
-### `params`
-Filled with framework (such as Phoenix) parameters by default, but can be overridden or filled with the following call:
-
-```
-Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "params", %{action: "show", controller: "homepage"})
-```
-
-This key accepts nested objects and will show up as follows on a Incident Sample page for both Exception and Performance samples, formatted as JSON.
-
-![params](/assets/images/screenshots/sample_data/params.png)
-
-
-
-### `environment`
-Environment variables from a request/background job, filled by the Phoenix integration, but can be filled/overriden with the following call:
-
-```
-Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "environment", %{CONTENT_LENGTH: "0"})
-```
-
-This call only accepts a one-level key/value object, nested values will be ignored.
-This will result the following block on a Incident Sample page for both Exception and Performance samples.
-
-![environment](/assets/images/screenshots/sample_data/environment.png)
-
-
+Besides tags you can add more metadata to a span by passing custom data to be shown on your sample pages.
 
 ### `custom_data`
 Custom data is not set by default, but can be used to add additional debugging data to solve a performance issue or exception.
@@ -102,3 +60,5 @@ Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "custom_data", %{foo:
 This key accepts nested objects and will result in the following block on a Incident Sample page for both Exception and Performance samples formatted as JSON.
 
 ![custom_data](/assets/images/screenshots/sample_data/custom_data.png)
+
+-> **Note**: The "params", "session_data" or "environment" will be overwritten at the end of the request in Plug and Phoenix applications. We recommend using "custom_data" instead.

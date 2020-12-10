@@ -136,6 +136,22 @@ For pure Elixir apps, you can use `Appsignal.Span.set_name/2` to set the name di
 Appsignal.Span.set_name(Appsignal.Tracer.current_span(), "AppsignalElixirExample#index")
 ```
 
+## Extra sample data
+
+In 2.0, we handle sample data through adding tags or custom data, as explained in [the tagging guide](/elixir/instrumentation/tagging.html). To tag a sample with extra data, use the "tags" key:
+
+```elixir
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en"})
+```
+
+To add custom data as a map, add use the "custom_data" key:
+
+```elixir
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "custom_data", %{foo: "bar"})
+```
+
+-> **Note**: The "params", "session_data" or "environment" will be overwritten at the end of the request in Plug and Phoenix applications. We recommend using "custom_data" instead.
+
 ## Custom instrumentation
 
 If you added custom instrumentation in your app you used `Appsignal.TransactionRegistry` in the past. In 2.x this is no longer necessary, you can instrument without using the registry. Please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
