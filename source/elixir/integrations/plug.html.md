@@ -62,7 +62,7 @@ defmodule AppsignalPlugExample do
   end
 
   defp slow do
-    Appsignal.Instrument("slow", fn ->
+    Appsignal.instrument("slow", fn ->
       :timer.sleep(1000)
     end)
   end
