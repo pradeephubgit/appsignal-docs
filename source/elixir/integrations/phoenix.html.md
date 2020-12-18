@@ -92,7 +92,7 @@ end
 Incoming channel requests can be instrumented by wrapping the code in your
 `handle_in/3` functions with `Appsignal.Phoenix.Channel.instrument/5`:
 
-```
+```elixir
 defmodule AppsignalPhoenixExampleWeb.RoomChannel do
   use Phoenix.Channel
 
