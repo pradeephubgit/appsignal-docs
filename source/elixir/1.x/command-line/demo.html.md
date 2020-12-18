@@ -4,7 +4,7 @@ title: "AppSignal for Elixir: Demonstration tool"
 
 The AppSignal for Elixir package ships with a command line tool used to send demonstration samples to AppSignal. Upon running it, it sends an error and performance sample to AppSignal from the user's machine.
 
-This command line tool is useful when testing AppSignal on a system and validating the local configuration. It tests if the installation of AppSignal has succeeded and if the AppSignal agent is able to run on the machine's architecture and communicate with the AppSignal servers. The same test is also run during installation using [mix appsignal.install](/elixir/command-line/install.html).
+This command line tool is useful when testing AppSignal on a system and validating the local configuration. It tests if the installation of AppSignal has succeeded and if the AppSignal agent is able to run on the machine's architecture and communicate with the AppSignal servers. The same test is also run during installation using [mix appsignal.install](/elixir/1.x/command-line/install.html).
 
 Read more about how to use the demonstration command on the [Debugging][debugging] page.
 

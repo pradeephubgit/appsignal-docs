@@ -6,7 +6,7 @@ The AppSignal for Elixir package integrates with the Erlang VM to provide metric
 
 ## Minutely probe
 
-Since AppSignal Elixir package `1.10.1` and up a [minutely probe](/elixir/instrumentation/minutely-probes.html) is activated by default. Once we detect these metrics we'll add a [magic dashboard](https://blog.appsignal.com/2019/03/27/magic-dashboards.html) to your apps.
+Since AppSignal Elixir package `1.10.1` and up a [minutely probe](/elixir/1.x/instrumentation/minutely-probes.html) is activated by default. Once we detect these metrics we'll add a [magic dashboard](https://blog.appsignal.com/2019/03/27/magic-dashboards.html) to your apps.
 
 This probe will report the following [metrics](/metrics/custom.html) grouped by `hostname` tag:
 
@@ -36,4 +36,4 @@ This probe will report the following [metrics](/metrics/custom.html) grouped by 
 
 ###^minutely-probe Configuration
 
-This probe listens to the [`hostname` config option](/elixir/configuration/options.html#option-hostname) for the hostname tag added to all its metrics. If none is set it will try to detect it automatically. Use the `hostname` config option to set the hostname if you want to change the detected hostname.
+This probe listens to the [`hostname` config option](/elixir/1.x/configuration/options.html#option-hostname) for the hostname tag added to all its metrics. If none is set it will try to detect it automatically. Use the `hostname` config option to set the hostname if you want to change the detected hostname.

@@ -21,11 +21,11 @@ It's possible to configure AppSignal with the Mix configuration. The AppSignal f
 
 When this option is chosen the given Push API key is written to the configuration file. We do not recommend checking this key into version control (git/svn/mercurial/etc). Instead, use a `APPSIGNAL_PUSH_API_KEY` environment variable or a secrets management tool for your application.
 
-See the [configuration documentation](/elixir/configuration) for more information.
+See the [configuration documentation](/elixir/1.x/configuration) for more information.
 
 ### 2. Environment variables
 
-It's possible to configure AppSignal using only system environment variables. When this option is selected no configuration is written to the file system. See the [configuration documentation](/elixir/configuration) for more information.
+It's possible to configure AppSignal using only system environment variables. When this option is selected no configuration is written to the file system. See the [configuration documentation](/elixir/1.x/configuration) for more information.
 
 ## Usage
 

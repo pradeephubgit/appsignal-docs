@@ -15,7 +15,7 @@ certain errors.
 ## Ignore errors
 
 The AppSignal configuration makes it possible to [ignore
-errors](/elixir/configuration/ignore-errors.html). By providing a list of
+errors](/elixir/1.x/configuration/ignore-errors.html). By providing a list of
 specific errors AppSignal will not send alerts when these errors are raised.
 
 ## Appsignal.Transaction.set_error/3

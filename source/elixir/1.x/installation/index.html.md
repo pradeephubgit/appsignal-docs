@@ -16,7 +16,7 @@ Before you can compile the AppSignal package make sure the build/compilation too
 
 ### Installing the package
 
--> **Note**: If you're running an umbrella application, see also our [umbrella installation guide](/elixir/installation/umbrella.html).
+-> **Note**: If you're running an umbrella application, see also our [umbrella installation guide](/elixir/1.x/installation/umbrella.html).
 
 1. Start by adding `appsignal` to your list of dependencies in `mix.exs`.
    AppSignal requires you to depend on a JSON encoder. You can pick between
@@ -34,7 +34,7 @@ Before you can compile the AppSignal package make sure the build/compilation too
 
 2. Then run `mix deps.get`.
 3. Then run `mix appsignal.install YOUR_PUSH_API_KEY` or follow the [manual configuration guide](#configuration).
-4. If you use the [Phoenix framework][phoenix], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) guide.
+4. If you use the [Phoenix framework][phoenix], continue with the [integrating AppSignal into Phoenix](/elixir/1.x/integrations/phoenix.html) guide.
 
 After the installation is complete start your application. When the AppSignal
 OTP application starts, it looks for a valid configuration (e.g. an AppSignal
@@ -57,7 +57,7 @@ with the hexadecimal [Push API key](/appsignal/terminology.html#push-api-key)
 or manually configure AppSignal using the guide below.
 
 For more information about configuring the AppSignal package for Elixir, please
-read our [configuration documentation](/elixir/configuration/index.html).
+read our [configuration documentation](/elixir/1.x/configuration/index.html).
 
 #### Manual configuration
 
@@ -86,7 +86,7 @@ export APPSIGNAL_APP_ENV="prod"
 ```
 
 For more information about configuring the AppSignal package for Elixir, please
-read our [configuration options page](/elixir/configuration/index.html).
+read our [configuration options page](/elixir/1.x/configuration/index.html).
 
 ### Run your application!
 
@@ -103,13 +103,13 @@ encountered any problems during the installation.
 
 Read more about how you can integrate more instrumentation in your Phoenix
 application in our [integrating Phoenix
-guide](/elixir/integrations/phoenix.html).
+guide](/elixir/1.x/integrations/phoenix.html).
 
 ### Optional: Add custom instrumentation
 
 Add custom instrumentation to your application to get a more in-depth view of
 what's happening in your application. Read more about custom instrumentation in
-our [instrumentation documentation](/elixir/instrumentation/index.html).
+our [instrumentation documentation](/elixir/1.x/instrumentation/index.html).
 
 ---
 
@@ -121,12 +121,12 @@ Uninstall AppSignal from your app by following the steps below. When these steps
 
 1. In the `mix.exs` of your app, delete the `{:appsignal, "~> 1.0"}` line.
 1. Run `mix deps.get` to update your `mix.lock` with the removed packages state.
-1. Remove any AppSignal [configuration files](/elixir/configuration/) from your app.
+1. Remove any AppSignal [configuration files](/elixir/1.x/configuration/) from your app.
   - Configuration file location: `config/appsignal.exs`
   - And its references in any other files in `config/*.exs`
 1. Remove any system environment variables from your development, staging, production, etc. hosts.
   - Environment variables prefixed with `APPSIGNAL_`
-  - Environment variable [`APP_REVISION`](/elixir/configuration/options.html#option-revision)
+  - Environment variable [`APP_REVISION`](/elixir/1.x/configuration/options.html#option-revision)
 1. Commit, deploy and restart your app.
   - This will make sure the AppSignal servers won't continue to receive data from your app.
 1. Optional: Make sure no `appsignal-agent` processes are running in the background.

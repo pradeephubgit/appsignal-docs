@@ -8,7 +8,7 @@ framework of choice, or maybe you're using your own application setup.
 When AppSignal does not support something out-of-the-box it's still possible to
 instrument applications. AppSignal needs to be configured and started once
 at the beginning of a process. It can be
-[configured](/elixir/configuration/index.html) through Mix configuration or by
+[configured](/elixir/1.x/configuration/index.html) through Mix configuration or by
 using environment variables.
 
 ## Installation
@@ -47,7 +47,7 @@ of your application.
 
 ```
 
-See our [installation guide](/elixir/installation.html) for the full guide.
+See our [installation guide](/elixir/1.x/installation.html) for the full guide.
 
 ## Configuration
 
@@ -55,7 +55,7 @@ The AppSignal for Elixir package needs to be configured before it can send data
 to AppSignal.com. There are two methods of configuration. Using the mix
 configuration and using environment variables.
 
-See the [configuration pages](/elixir/configuration/index.html) for the full
+See the [configuration pages](/elixir/1.x/configuration/index.html) for the full
 configuration guide.
 
 ## Starting AppSignal
@@ -75,4 +75,4 @@ integrations, such as independent tasks or background jobs.
 ## Add custom instrumentation
 
 Continue with our guide to [add custom
-instrumentation](/elixir/instrumentation/instrumentation.html) to your application.
+instrumentation](/elixir/1.x/instrumentation/instrumentation.html) to your application.

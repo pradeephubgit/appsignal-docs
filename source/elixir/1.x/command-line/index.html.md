@@ -25,6 +25,6 @@ A command to demonstrate and test the AppSignal for Elixir package. Useful for t
 Read more about the [appsignal demo][cli-demo] command line tool.
 
 [package]: https://github.com/appsignal/appsignal-elixir
-[cli-install]: /elixir/command-line/install.html
-[cli-diagnose]: /elixir/command-line/diagnose.html
-[cli-demo]: /elixir/command-line/demo.html
+[cli-install]: /elixir/1.x/command-line/install.html
+[cli-diagnose]: /elixir/1.x/command-line/diagnose.html
+[cli-demo]: /elixir/1.x/command-line/demo.html

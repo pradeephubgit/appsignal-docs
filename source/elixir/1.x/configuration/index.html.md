@@ -42,7 +42,7 @@ export APPSIGNAL_APP_ENV="prod"
 ## Configuration options
 
 Read about all the configuration options on the [options
-page](/elixir/configuration/options.html).
+page](/elixir/1.x/configuration/options.html).
 
 ## Application environments
 

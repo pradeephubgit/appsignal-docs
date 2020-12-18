@@ -27,7 +27,7 @@ The agent defaults can be found in the [package source]
 (https://github.com/appsignal/appsignal-elixir/blob/main/lib/appsignal/config.ex)
 as `Appsignal.Config.default_config`.
 
-This source is listed as `default` in the [diagnose](/elixir/command-line/diagnose.html) output.
+This source is listed as `default` in the [diagnose](/elixir/1.x/command-line/diagnose.html) output.
 
 ##=system 2. System detected settings
 
@@ -37,7 +37,7 @@ accordingly.
 For example, when it's running on Heroku it sets the configuration option
 `:running_in_container` to `true` and `:log` to `"stdout"`.
 
-This source is listed as `system` in the [diagnose](/elixir/command-line/diagnose.html) output.
+This source is listed as `system` in the [diagnose](/elixir/1.x/command-line/diagnose.html) output.
 
 ##=file 3. Mix configuration
 
@@ -55,7 +55,7 @@ config :appsignal, :config,
 This step will override all given options from the defaults or system
 detected configuration.
 
-This source is listed as `file` in the [diagnose](/elixir/command-line/diagnose.html) output.
+This source is listed as `file` in the [diagnose](/elixir/1.x/command-line/diagnose.html) output.
 
 ##=env 4. Environment variables
 
@@ -68,4 +68,4 @@ export APPSIGNAL_APP_NAME="my custom app name"
 # start your app here
 ```
 
-This source is listed as `env` in the [diagnose](/elixir/command-line/diagnose.html) output.
+This source is listed as `env` in the [diagnose](/elixir/1.x/command-line/diagnose.html) output.

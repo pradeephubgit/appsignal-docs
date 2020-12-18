@@ -4,7 +4,7 @@ title: Installing AppSignal in an umbrella application
 
 AppSignal works with umbrella applications, but there are some things to keep in mind. The dependency should be added to each nested application inside the umbrella, and the configuration should be added to the umbrella's main configuration file.
 
-This guide goes over the first steps to install AppSignal in your umbrella Elixir and Phoenix projects. For more information and further steps, check out the [main installation guide](/elixir/installation.html).
+This guide goes over the first steps to install AppSignal in your umbrella Elixir and Phoenix projects. For more information and further steps, check out the [main installation guide](/elixir/1.x/installation.html).
 
 ## Installation
 
@@ -24,7 +24,7 @@ By default, each nested application in an umbrella uses the main umbrella config
 
 ## Phoenix
 
-The installation for Phoenix in an umbrella application are mostly the same as [setting up AppSignal “regular” Phoenix application](/elixir/integrations/phoenix.html), but there are a few things to keep in mind.
+The installation for Phoenix in an umbrella application are mostly the same as [setting up AppSignal “regular” Phoenix application](/elixir/1.x/integrations/phoenix.html), but there are a few things to keep in mind.
 
 1. `use Appsignal.Phoenix` in your application’s endpoint file. If you have multiple nested Phoenix applications, use the module in each.
 

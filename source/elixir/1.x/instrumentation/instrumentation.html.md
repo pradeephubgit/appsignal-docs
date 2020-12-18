@@ -16,14 +16,14 @@ the usage of certain helpers can be found in the Hex docs for the [AppSignal
 package](https://hexdocs.pm/appsignal/).
 
 -> **Note**: Make sure you've [integrated
-   AppSignal](/elixir/instrumentation/integrating-appsignal.html) before adding
+   AppSignal](/elixir/1.x/instrumentation/integrating-appsignal.html) before adding
    custom instrumentation to your application if it's not automatically
    integrated by one of our supported
-   [integrations](/elixir/integrations/index.html).
+   [integrations](/elixir/1.x/integrations/index.html).
 
 -> **Note**: This page only describes how to add performance instrumentation to
    your code. To track errors please read our
-   [exception handling](/elixir/instrumentation/exception-handling.html) guide.
+   [exception handling](/elixir/1.x/instrumentation/exception-handling.html) guide.
 
 ## Function decorators
 
@@ -114,7 +114,7 @@ end
 **Note**: When using pure Elixir applications, make sure that the AppSignal
 application is started before you start a transaction. For more information,
 see how to
-[integrate AppSignal](/elixir/instrumentation/integrating-appsignal.html).
+[integrate AppSignal](/elixir/1.x/instrumentation/integrating-appsignal.html).
 
 ###^decorator Namespaces
 
@@ -336,7 +336,7 @@ end
 **Note**: When using pure Elixir applications, make sure that the AppSignal
 application is started before you start a transaction. For more information,
 see how to
-[integrate AppSignal](/elixir/instrumentation/integrating-appsignal.html).
+[integrate AppSignal](/elixir/1.x/instrumentation/integrating-appsignal.html).
 
 ###^helper Transaction metadata
 
@@ -409,7 +409,7 @@ Appsignal.Transaction.start(
 ###^helper Exception handling
 
 To report errors using custom instrumentation please read more in our
-[exception handling guide](/elixir/instrumentation/exception-handling.html).
+[exception handling guide](/elixir/1.x/instrumentation/exception-handling.html).
 
 ###^helper Example
 

@@ -6,12 +6,12 @@ title: "Integrating AppSignal into Plug"
    AppSignal for Elixir package.
 
 The AppSignal for Elixir package integrates with Plug. To set up the
-integration, please follow our [installation guide](/elixir/installation.html).
+integration, please follow our [installation guide](/elixir/1.x/installation.html).
 
 This page describes how to set up AppSignal in a Plug application, and how to
 add instrumentation for events within requests. For more information about
 custom instrumentation, read the [Elixir
-instrumentation](/elixir/instrumentation/index.html) documentation.
+instrumentation](/elixir/1.x/instrumentation/index.html) documentation.
 
 More information can be found in the [AppSignal Hex package
 documentation][hex-appsignal].
@@ -85,7 +85,7 @@ end
 
 This will add an event for the `slow/0` function to the current transaction
 whenever it's called. For more information about custom instrumentation, read
-the [Elixir instrumentation](/elixir/instrumentation/index.html) documentation.
+the [Elixir instrumentation](/elixir/1.x/instrumentation/index.html) documentation.
 
 ## Instrumentation for included Plugs
 

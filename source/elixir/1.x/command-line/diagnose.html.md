@@ -105,7 +105,7 @@ The configuration options are printed to the CLI as their inspected values. This
 
 The configuration section also prints where values from config options come from. This may help by identifying sources that override values from other config sources.
 
-For more on which configuration sources are available and in which order they're loaded and thus their priority, see the [configuration load order](/elixir/configuration/load-order.html) page.
+For more on which configuration sources are available and in which order they're loaded and thus their priority, see the [configuration load order](/elixir/1.x/configuration/load-order.html) page.
 
 The configuration options are printed as demonstrated below depending on where the configuration option value comes from and how many sources set this option.
 

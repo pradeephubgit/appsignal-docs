@@ -18,11 +18,11 @@ Once activated, the minutely probes system runs on every instance of an app. Thi
 
 To remedy this, we suggest [tagging](/metrics/custom.html#metric-tags) your metrics with the hostname or something else unique for each instance. For example, the ErlangVM Probe tags metrics with the hostname by default.
 
-Alternatively you can [disable minutely probes](/elixir/configuration/options.html#option-enable_minutely_probes) for all but one instance, on which the minutely probes process is run. We suggest using the [`APPSIGNAL_ENABLE_MINUTELY_PROBES`](/elixir/configuration/options.html#option-enable_minutely_probes) environment variable to only enable it on the instance of your choosing.
+Alternatively you can [disable minutely probes](/elixir/1.x/configuration/options.html#option-enable_minutely_probes) for all but one instance, on which the minutely probes process is run. We suggest using the [`APPSIGNAL_ENABLE_MINUTELY_PROBES`](/elixir/1.x/configuration/options.html#option-enable_minutely_probes) environment variable to only enable it on the instance of your choosing.
 
 ## Configuration
 
-The minutely probes are configured using the [`enable_minutely_probes`](/elixir/configuration/options.html#option-enable_minutely_probes) config option. The default value is `true`.
+The minutely probes are configured using the [`enable_minutely_probes`](/elixir/1.x/configuration/options.html#option-enable_minutely_probes) config option. The default value is `true`.
 
 ## Creating probes
 
@@ -88,7 +88,7 @@ end
 
 ## Overriding default probes
 
-AppSignal ships with default probes for certain [integrations](/elixir/integrations/). If for any reason this probe does not function properly or requires some additional configuration for your use case, you can override the default probe by registering a new probe with the same key.
+AppSignal ships with default probes for certain [integrations](/elixir/1.x/integrations/). If for any reason this probe does not function properly or requires some additional configuration for your use case, you can override the default probe by registering a new probe with the same key.
 
 ```elixir
 # lib/my_app/application.ex

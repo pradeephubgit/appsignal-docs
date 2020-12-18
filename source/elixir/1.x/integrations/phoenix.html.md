@@ -3,12 +3,12 @@ title: "Integrating AppSignal into Phoenix"
 ---
 
 The AppSignal for Elixir package integrates with Phoenix. To set up the
-integration, please follow our [installation guide](/elixir/installation.html).
+integration, please follow our [installation guide](/elixir/1.x/installation.html).
 
 This page will describe further ways of configuring AppSignal for the [Phoenix
 framework][phoenix]. To add more custom instrumentation to your Phoenix
 application, read the [Elixir
-instrumentation](/elixir/instrumentation/index.html) documentation.
+instrumentation](/elixir/1.x/instrumentation/index.html) documentation.
 
 More information can be found in the [AppSignal Hex package
 documentation][hex-appsignal].
@@ -99,7 +99,7 @@ defmodule AppsignalPhoenixExample.Application do
 end
 ```
 
-For more information on query instrumentation and installation instructions for Telemetry < 0.3.0 and Ecto < 3.0, check out the [AppSignal Ecto documentation](/elixir/integrations/ecto.html).
+For more information on query instrumentation and installation instructions for Telemetry < 0.3.0 and Ecto < 3.0, check out the [AppSignal Ecto documentation](/elixir/1.x/integrations/ecto.html).
 
 ## Channels
 
@@ -211,16 +211,16 @@ namespace.
 Exceptions in included Plugs are automatically caught by AppSignal, but
 performance samples need to be set up manually using the custom instrumentation
 helpers or decorators. See the
-[Plug](/elixir/integrations/plug.html#instrumentation-for-included-plugs)
+[Plug](/elixir/1.x/integrations/plug.html#instrumentation-for-included-plugs)
 documentation for more information.
 
 ## Custom instrumentation
 
-[Add custom instrumentation](/elixir/instrumentation/instrumentation.html) to
+[Add custom instrumentation](/elixir/1.x/instrumentation/instrumentation.html) to
 keep track of more complex code and get more complete breakdowns of slow
 requests.
 
 [phoenix]: http://www.phoenixframework.org/
 [hex-appsignal]: https://hexdocs.pm/appsignal/
 [hex-phoenix-channels]: https://hexdocs.pm/appsignal/Appsignal.Phoenix.Channel.html
-[sample_data]:/elixir/instrumentation/tagging.html#sample-data
+[sample_data]:/elixir/1.x/instrumentation/tagging.html#sample-data
