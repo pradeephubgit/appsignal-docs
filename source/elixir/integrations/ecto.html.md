@@ -4,11 +4,11 @@ AppSignal uses Ecto’s Telemetry instrumentation to gain information about quer
 
 ## Automatic instrumentation
 
-The Ecto instrumentation automatically hooks into your Ecto repos if you've set your `:otp_app` configuration to match your app's OTP app name. The new installer wil automatically set that option, but you'll need to add it to your appsignal.exs  config file manually when upgrading:
+The Ecto instrumentation automatically hooks into your Ecto repos if you've set your `:otp_app` configuration to match your app's OTP app name. The new installer wil automatically set that option, but you'll need to add it to your appsignal.exs config file manually when upgrading:
 
 ``` elixir
 config :appsignal, :config,
-  otp_app: :appsignal_phoenix_example, <--
+  otp_app: :appsignal_phoenix_example, # <-- Add this
   name: "appsignal_phoenix_example",
   push_api_key: "your-api-key",
   env: Mix.env
