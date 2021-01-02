@@ -8,9 +8,10 @@ In order to provide a full picture of your infrastructure, you should monitor no
 
 We are in the process of testing and packaging the standalone agent on Linux distributions that are most popular with our customers. [Let us know](mailto:support@appsignal.com) if you want to run the agent on a distribution that is not supported yet.
 
-### Ubuntu
+### Debian and Ubuntu
 
-The agent has been tested on Ubuntu LTS 14.04, 16.04 and 18.04. First make sure the following packages are installed. All the following commands need root permissions, you might have to use `sudo`.
+The agent has been tested on Ubuntu LTS 14.04/16.04/18.04/20.04 and Debian 8/9/10.
+First make sure the following packages are installed. All the following commands need root permissions, you might have to use `sudo`.
 
 ```bash
 apt-get install curl gnupg apt-transport-https
@@ -22,11 +23,24 @@ Then import the GPG key from [Packagecloud](https://packagecloud.io). This is a 
 curl -L https://packagecloud.io/appsignal/agent/gpgkey | sudo apt-key add -
 ```
 
-Create a file named `/etc/apt/sources.list.d/appsignal_agent.list` that contains the repository configuration below. Make sure to replace `bionic` in the config below with your Linux distribution and version. Use `xenial` for 16.04 or `trusty` for 14.04.
+Create a file named `/etc/apt/sources.list.d/appsignal_agent.list` that contains the repository configuration below for the OS you use.
+
+#### Ubuntu
+
+Make sure to replace `focal` in the config below with your Ubuntu release's name. Use `xenial` for 16.04, `bionic` for 18.04  or `trusty` for 14.04.
 
 ```bash
-deb https://packagecloud.io/appsignal/agent/ubuntu/ bionic main
-deb-src https://packagecloud.io/appsignal/agent/ubuntu/ bionic main
+deb https://packagecloud.io/appsignal/agent/ubuntu/ focal main
+deb-src https://packagecloud.io/appsignal/agent/ubuntu/ focal main
+```
+
+#### Debian
+
+Make sure to replace `buster` in the config below with your Debian release's name. Use `stretch` for 9 and `jessie` for 8.
+
+```bash
+deb https://packagecloud.io/appsignal/agent/debian/ buster main
+deb-src https://packagecloud.io/appsignal/agent/debian/ buster main
 ```
 
 Then run `apt update` to get the newly added packages and install the agent.
@@ -40,18 +54,33 @@ The agent has now been installed. Next up is configuring it to report to the cor
 
 ### Redhat Enterprise Linux/Centos
 
-At the moment EL version 7 is supported. First make sure the following packages are installed. All the following commands need root permissions, you might have to use `sudo`.
+At the moment EL version 7 and 8 are supported. First make sure the following packages are installed. All the following commands need root permissions, you might have to use `sudo`.
 
 ```bash
 yum install pygpgme yum-utils
 ```
 
-Create a file named `/etc/yum.repos.d/appsignal_agent.repo` that contains the repository configuration below.
+Create a file named `/etc/yum.repos.d/appsignal_agent.repo` that contains the repository configuration below for EL7:
 
 ```
 [appsignal_agent]
 name=appsignal_agent
 baseurl=https://packagecloud.io/appsignal/agent/el/7/$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/appsignal/agent/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300
+```
+
+Or this config for EL8:
+
+```
+[appsignal_agent]
+name=appsignal_agent
+baseurl=https://packagecloud.io/appsignal/agent/el/8/$basearch
 repo_gpgcheck=1
 gpgcheck=0
 enabled=1
@@ -100,7 +129,7 @@ environment = "production"
 Once you edit the configuration file you need to restart the agent.
 
 - On Ubuntu 14.04 use `service appsignal-agent restart`
-- On Centos/Redhat 7 and Ubuntu 16.04 and up use `systemctl restart appsignal-agent`
+- On Centos/Redhat and Ubuntu 16.04 and up use `systemctl restart appsignal-agent`
 
 ## Collected metrics
 
