@@ -21,17 +21,19 @@ The AppSignal integrations for Ruby, Elixir & Node.js contain native extensions 
 
 ## Support table
 
-| Operating System                                       | 32-bit support | 64-bit support |
-| ------------------------------------------------------ | -------------- | -------------- |
-| macOS/OSX (`darwin`) <sup>1</sup>                      |                | ✓              |
-| Linux <sup>2 3</sup>                                   | ✓              | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - Alpine Linux <sup>4 5</sup> | ✓              | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - CentOS                      | ✓              | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - Debian                      | ✓              | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - Fedora                      | ✓              | ✓              |
-| FreeBSD <sup>1</sup>                                   |                | ✓              |
-| Microsoft Windows <sup>6</sup>                         |                |                |
-| Microsoft Windows Subsystem for Linux <sup>7</sup>     |                | ? <sup>7</sup> |
+| Operating System                                            | 32-bit support | 64-bit support |
+| ----------------------------------------------------------- | -------------- | -------------- |
+| macOS/OSX                                                   |                |                |
+| &nbsp;&nbsp;&nbsp;&nbsp; - `darwin` <sup>1</sup>            |                | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - `ARM` Apple Silicon <sup>8</sup> |                |                |
+| Linux <sup>2 3</sup>                                        | ✓              | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - Alpine Linux <sup>4 5</sup>      | ✓              | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - CentOS                           | ✓              | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - Debian                           | ✓              | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - Fedora                           | ✓              | ✓              |
+| FreeBSD <sup>1</sup>                                        |                | ✓              |
+| Microsoft Windows <sup>6</sup>                              |                |                |
+| &nbsp;&nbsp;&nbsp;&nbsp; - Subsystem for Linux <sup>7</sup> |                | ? <sup>7</sup> |
 
 - `1`: Does not support [host metrics][host-metrics] (yet).
 - `2`: Depending on the integration version some older versions of the Operating System are supported. See the [Linux](#linux) section for more information.
@@ -40,6 +42,7 @@ The AppSignal integrations for Ruby, Elixir & Node.js contain native extensions 
 - `5`: Dynamic builds (which are required for JRuby) are supported since Ruby gem `2.8.0`.
 - `6`: Does not work directly on Microsoft Window's system. See also point 7.
 - `7`: We do not provide support for this setup. May work with the Windows subsystem for Linux. See also the [Microsoft Windows WSL section](#microsoft-windows-subsystem-for-linux) for more information.
+- `8`: We do not provide support for Apple Silicon currently. If you use an Apple Silicon based machine it's possible to run AppSignal (and the parent app) through Rosetta 2.
 
 ## Linux
 
@@ -216,6 +219,8 @@ Please make sure Xcode is installed with the command line build tools.
 ```sh
 xcode-select --install
 ```
+
+-> **Note**: We do not provide support for Apple Silicon currently. If you use an Apple Silicon based machine it's possible to run AppSignal (and the parent app) through Rosetta 2.
 
 ## Microsoft Windows
 
