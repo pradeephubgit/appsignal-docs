@@ -115,6 +115,3 @@ DEPENDENCIES
   middleman-syntax
   pry
   redcarpet
-
-BUNDLED WITH
-   1.17.3
