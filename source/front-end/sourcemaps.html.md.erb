@@ -69,6 +69,8 @@ curl -k -X POST -H 'Content-Type: multipart/form-data' \
 
 You can read more about the sourcemap API endpoint on the [documentation page](/api/sourcemaps.html).
 
+-> **NOTE:** You can only upload one sourcemap file at a time, so if you have multiple sourcemap files, you will have to send an upload request for each file separately.
+
 ### Retention
 
 Sourcemaps are grouped into a "release" by the `revision` string and we will keep the last "release" until a new `revision` is uploaded. Older "releases" will be kept for up to sixty days.
