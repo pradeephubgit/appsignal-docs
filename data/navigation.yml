@@ -84,7 +84,7 @@ sections:
             link: "/application/session-data-filtering.html"
           -
             name: "Tagging and Sample Data"
-            link: "/application/tagging-sample-data.html"
+            link: "/application/tagging.html"
           -
             name: "Request header collection"
             link: "/application/header-filtering.html"
