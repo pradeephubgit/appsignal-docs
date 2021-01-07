@@ -29,17 +29,17 @@ sections:
             link: "/guides/namespaces.html"
           -
             name: "Tagging and Sample data"
-            link: "/guides/tagging-sample-data/"
+            link: "/guides/custom-data/"
             sub_pages:
               -
                 name: "Start"
-                link: "/guides/tagging-sample-data/"
+                link: "/guides/custom-data/"
               -
                 name: "Tagging request"
-                link: "/guides/tagging-sample-data/tagging-request.html"
+                link: "/guides/custom-data/tagging-request.html"
               -
                 name: "Sample data"
-                link: "/guides/tagging-sample-data/sample-data.html"
+                link: "/guides/custom-data/sample-data.html"
           -
             name: "Filtering app data"
             link: "/guides/filter-data/"

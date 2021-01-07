@@ -32,7 +32,7 @@ Appsignal.tag_request(
 
 ## Elixir
 
-Please check the documentation on [set_sample_data](/guides/tagging-sample-data/sample-data.html)
+Please check the documentation on [set_sample_data](/guides/custom-data/sample-data.html)
 
 
 ## Node.js

@@ -223,4 +223,4 @@ requests.
 [phoenix]: http://www.phoenixframework.org/
 [hex-appsignal]: https://hexdocs.pm/appsignal/
 [hex-phoenix-channels]: https://hexdocs.pm/appsignal/Appsignal.Phoenix.Channel.html
-[sample_data]:/guides/tagging-sample-data/sample-data.html#elixir
+[sample_data]:/guides/custom-data/sample-data.html#elixir

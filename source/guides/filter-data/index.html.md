@@ -18,5 +18,5 @@ You can configure AppSignal what kind of data it should not collect by filtering
 
 ---
 
-- [Tagging and Sample Data](/guides/tagging-sample-data) - previous guide
+- [Tagging and Sample Data](/guides/custom-data) - previous guide
 - [Getting started guides](/guides/) - Guides overview

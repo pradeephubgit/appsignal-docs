@@ -65,4 +65,4 @@ By default the tags and links table will increment links, e.g. "Link 1", "Link 2
 [Backend]https://yourapp.com/backend/users/%user_id%
 ```
 
-[tagging-guide]: /guides/tagging-sample-data/
+[tagging-guide]: /guides/custom-data/

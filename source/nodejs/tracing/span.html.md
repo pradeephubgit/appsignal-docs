@@ -85,7 +85,7 @@ Query.fetchAll
 
 ## Adding metadata to a `Span`
 
-More information on this is available [here](/guides/tagging-sample-data/).
+More information on this is available [here](/guides/custom-data/).
 
 ## Adding an error to a `Span`
 

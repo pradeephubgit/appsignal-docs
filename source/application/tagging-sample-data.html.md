@@ -12,7 +12,7 @@ This can help to add information that is not already part of the request, sessio
    [link templates](/application/link-templates.html) to link them to your own
    system.
 
--> 📖 Also read our guide on [how to set up tags and sample data](/guides/tagging-sample-data).
+-> 📖 Also read our guide on [how to set up tags and sample data](/guides/custom-data).
 
 ## Tags
 

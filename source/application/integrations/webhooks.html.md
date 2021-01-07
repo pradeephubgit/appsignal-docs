@@ -264,14 +264,14 @@ There are multiple webhooks available. Which payloads the webhook receives can b
     <tr>
       <td><code>metadata</code></td>
       <td><code>Hash&lt;String, String&gt;</code></td>
-      <td>This includes user set metadata (see <a href="/guides/tagging-sample-data/">Tagging feature]</a>.</td>
+      <td>This includes user set metadata (see <a href="/guides/custom-data/">Tagging feature]</a>.</td>
     </tr>
   </tbody>
 </table>
 
 ####^exception Metadata fields
 
-You can add your own metadata by <a href="/guides/tagging-sample-data/">tagging samples</a>.
+You can add your own metadata by <a href="/guides/custom-data/">tagging samples</a>.
 
 <table>
   <thead>
@@ -437,14 +437,14 @@ You can add your own metadata by <a href="/guides/tagging-sample-data/">tagging 
     <tr>
       <td><code>metadata</code></td>
       <td><code>Hash&lt;String, String&gt;</code></td>
-      <td>This includes user set metadata see <a href="/guides/tagging-sample-data/">metadata</a>.</td>
+      <td>This includes user set metadata see <a href="/guides/custom-data/">metadata</a>.</td>
     </tr>
   </tbody>
 </table>
 
 ####^performance Metadata fields
 
-You can add your own metadata by <a href="/guides/tagging-sample-data/">tagging samples</a>.
+You can add your own metadata by <a href="/guides/custom-data/">tagging samples</a>.
 
 <table>
   <thead>
