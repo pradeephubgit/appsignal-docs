@@ -472,3 +472,182 @@ You can add your own metadata by tagging samples (for <a href="/ruby/instrumenta
     </tr>
   </tbody>
 </table>
+
+## Anomaly detection
+
+```json
+{
+  "alert_id": "5bdb1fb301925b0c4b6c7017",
+  "state": "closed",
+  "site": "google",
+  "environment": "production",
+  "tags": {
+    "namespace": "web"
+  },
+  "human_tags": [
+    "namespace: web"
+  ],
+  "metric_name": "transaction_exception_rate",
+  "field": "gauge",
+  "trigger_label": "Exception rate",
+  "trigger_description": "This is a description",
+  "last_value": 12.0,
+  "peak_value": 20.0,
+  "mean_value": 11.0,
+  "comparison_operator": "<",
+  "comparison_value": 21.0,
+  "human_last_value": "12 %",
+  "human_peak_value": "20 %",
+  "human_mean_value": "11 %",
+  "human_comparison_value": "21 %",
+  "created_at": "2017-08-01T10:00:00Z",
+  "opened_at": "2017-08-01T10:05:00Z",
+  "resolved_at": "2017-08-01T12:00:00Z",
+  "closed_at": "2017-08-01T13:43:00Z",
+  "warmup_duration": 10,
+  "cooldown_duration": 20,
+  "alert_url": "http://example.com/#{site.account.slug}/sites/#{site.id}/alerts/#{alert.id}",
+  "edit_trigger_url": "http://example.com/#{site.account.slug}/sites/#{site.id}/triggers?overlay=triggerForm&triggerId=#{alert.trigger.id}"
+}
+```
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>alert_id</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>state</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>site</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>environment</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>tags</code></td>
+      <td><code></code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>metric_name</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>field</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>trigger_label</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>trigger_description</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>last_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>peak_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>mean_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>comparison_operator</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>comparison_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>human_last_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>human_peak_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>human_mean_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>human_comparison_value</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>created_at</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>opened_at</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>resolved_at</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>closed_at</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>warmup_duration</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>cooldown_duration</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>alert_url</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code>edit_trigger_url</code></td>
+      <td><code>String</code></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
