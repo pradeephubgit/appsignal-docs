@@ -6,11 +6,7 @@ You can supply extra context on errors and performance issues using tags and sam
 This can help to add information that is not already part of the request, session or environment parameters.
 
 
-!> **Warning**: Do not use tagging to send personal data such as names or email
-   addresses to AppSignal. If you want to identify a person, consider using a
-   user ID, hash or pseudonymized identifier instead. You can use
-   [link templates](/application/link-templates.html) to link them to your own
-   system.
+!> **Warning**: Do not use tagging to send personal data such as names or email addresses to AppSignal. If you want to identify a person, consider using a user ID, hash or pseudonymized identifier instead. You can use [link templates](/application/link-templates.html) to link them to your own system.
 
 -> 📖 Also read our guide on [how to set up tags and sample data](/guides/custom-data).
 
