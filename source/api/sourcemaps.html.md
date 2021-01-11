@@ -100,3 +100,5 @@ curl -k -X POST -H 'Content-Type: multipart/form-data' \
   -F 'file=@/~project/application.js.map' \
   'https://appsignal.com/api/sourcemaps?push_api_key=xxx&app_name=MyApp&environment=development'
 ```
+
+-> **NOTE:** Maximum upload size allowed for sourcemap file is 100MB.
