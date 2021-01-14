@@ -165,7 +165,8 @@ Are namespaces not being reported or incorrectly? [Contact us][contact] and we w
 
 ## Next steps
 
-- [Filtering app data][filtering] - Next guide
+- [Tagging and sample data][tagging] - Next guide
+- [Filtering app data][filtering] - Learn how to filter data
 - [Read more about namespaces][namespaces] - More detailed information about namespaces
 - [Ignoring namespaces][ignoring namespaces] - Ignore data from an entire namespace
 
@@ -174,6 +175,7 @@ Are namespaces not being reported or incorrectly? [Contact us][contact] and we w
 - [Reporting deploys to AppSignal to track improvements](/guides/deploy-markers.html) - previous guide
 - [Getting started guides](/guides/) - Guides overview
 
+[tagging]: /guides/custom-data/
 [namespaces]: /application/namespaces.html
 [ignoring namespaces]: /guides/filter-data/ignore-namespaces.html
 [filtering]: /guides/filter-data/
