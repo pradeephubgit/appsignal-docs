@@ -14,9 +14,8 @@ You can use the `tag` feature of AppSignal for this purpose.
 ```ruby
 # Good, I18n.locale/default_locale returns a symbol
 Appsignal.tag_request(
-  user: current_user.id,
-  admin_url: '<a href="url">Admin</a>',
-  stripe_customer: '<a href="url">Stripe</a>',
+  user_id: current_user.id,
+  stripe_customer_id: stripe_customer_id,
   locale: I18n.locale,
   default_locale: I18n.default_locale
 )
@@ -33,7 +32,7 @@ Appsignal.tag_request(
 ## Elixir
 
 ```
-Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en", user: user_id, admin_url: '<a href="url">Admin</a>', stripe_customer: '<a href="url">Stripe</a>', locale: locale, default_locale: default_locale})
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en", user_id: user_id, stripe_customer_id: stripe_customer_id, locale: locale, default_locale: default_locale})
 ```
 
 
@@ -42,15 +41,18 @@ Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en
 ```js
 const tracer = appsignal.tracer();
 const span = tracer.currentSpan();
-span.set("user", user_id);
-span.set("admin_url", '<a href="url">Admin</a>');
-span.set("stripe_customer", '<a href="url">Stripe</a>');
+span.set("user_id", user_id);
+span.set("stripe_customer_id", stripe_customer_id);
 span.set("locale", locale);
 span.set("default_locale", default_locale);
 ```
 
-In AppSignal you can see the tag when you open a sepecific [Performance incident](https://appsignal.com/redirect-to/app?to=performance)
+In AppSignal you can see the tag when you open a sepecific [Performance incident]
+(https://appsignal.com/redirect-to/app?to=performance)
+
 ![Tag a request](/assets/images/screenshots/tags/tags.png)
+
+-> Link 1 and Link 2 you see in the screenshot above can be created using [Link templates](/application/link-templates.html)
 
 ## Limitations
 
