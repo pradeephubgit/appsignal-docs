@@ -99,6 +99,9 @@ sections:
             name: "Namespaces"
             link: "/application/namespaces.html"
           -
+            name: "Tagging and Sample Data"
+            link: "/application/tagging.html"
+          -
             name: "Markers"
             link: "/application/markers/"
             sub_pages:
