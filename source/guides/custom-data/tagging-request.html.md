@@ -32,7 +32,9 @@ Appsignal.tag_request(
 
 ## Elixir
 
-Please check the documentation on [set_sample_data](/guides/custom-data/sample-data.html)
+```
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en", user: user_id, admin_url: '<a href="url">Admin</a>', stripe_customer: '<a href="url">Stripe</a>', locale: locale, default_locale: default_locale})
+```
 
 
 ## Node.js
