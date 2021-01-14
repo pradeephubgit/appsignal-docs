@@ -1,76 +1,113 @@
 <%
   tours = [
-    { title: "Catch errors", slug: "errors", text_class: "text-orange", icon: "fa-bug", human_teaser: "Catch errors and make sure they don't happen again." },
-    { title: "Track performance", slug: "performance", text_class: "text-green", icon: "fa-rabbit-fast", human_teaser: "Find performance issues before they find you." },
-    { title: "Monitor hosts", slug: "hosts", text_class: "text-teal", icon: "fa-server", human_teaser: "Run healthy apps on healthy hardware." },
-    { title: "Visualise metrics", slug: "metrics", text_class: "text-purple", icon: "fa-tachometer-alt", human_teaser: "Collect metrics and visualize them with a few lines of code." },
-    { title: "Work smoother", slug: "workflow", text_class: "text-blue", icon: "fa-users", human_teaser: "AppSignal keeps your team focused on building great apps." }
+    {
+      title: "Error tracking",
+      slug: "errors",
+      color: "orange",
+      icon: "fa-bug",
+      human_teaser: "Catch errors and make sure they don't happen again.",
+      icon_class: "c-header-subnav__link__icon--orange"
+    },
+    {
+      title: "Performance monitoring",
+      slug: "performance",
+      color: "green",
+      icon: "fa-rabbit-fast",
+      human_teaser: "Find performance issues before they find you.",
+      icon_class: "c-header-subnav__link__icon--green"
+    },
+    {
+      title: "Host monitoring",
+      slug: "hosts",
+      color: "teal",
+      icon: "fa-server",
+      human_teaser: "Run healthy apps on healthy hardware.",
+      icon_class: "c-header-subnav__link__icon--teal"
+    },
+    {
+      title: "Metric dashboards",
+      slug: "metrics",
+      color: "purple",
+      icon: "fa-tachometer-alt",
+      human_teaser: "Collect metrics and visualize them with a few lines of code.",
+      icon_class: "c-header-subnav__link__icon--purple"
+    },
+    {
+      title: "Workflow features",
+      slug: "workflow",
+      color: "blue",
+      icon: "fa-users",
+      human_teaser: "AppSignal keeps your team focused on building great apps.",
+      icon_class: "c-header-subnav__link__icon--blue"
+    }
   ]
   platforms = [
-    { name: "Elixir", link: "https://appsignal.com/elixir/", icon: "fa fa-tint", text_class: "text-purple", dark_text_class: "dark:text-purple-400" },
-    { name: "Ruby", link: "https://docs.appsignal.com/ruby/", icon: "fa fa-gem", text_class: "text-red", dark_text_class: "dark:text-red-400" },
-    { name: "NodeJS", link: "https://appsignal.com/nodejs/", icon: "fab fa-node-js", text_class: "text-green", dark_text_class: "dark:text-green-400" },
-    { name: "JavaScript", link: "https://appsignal.com/javascript/", icon: "fab fa-js-square", text_class: "text-yellow", dark_text_class: "dark:text-yellow-400" }
+    { name: "Elixir APM", link: "https://appsignal.com/elixir/", icon: "fa fa-tint", text_class: "text-purple", dark_text_class: "dark:text-purple-400" },
+    { name: "Ruby APM", link: "https://appsignal.com/ruby/", icon: "fa fa-gem", text_class: "text-red", dark_text_class: "dark:text-red-400" },
+    { name: "NodeJS APM", link: "https://appsignal.com/nodejs/", icon: "fab fa-node-js", text_class: "text-green", dark_text_class: "dark:text-green-400" },
+    { name: "JavaScript error tracking", link: "https://appsignal.com/javascript/", icon: "fab fa-js-square", text_class: "text-yellow", dark_text_class: "dark:text-yellow-400" }
   ]
 %>
 
-<header class="sticky top-0 z-50 shadow">
+<header class="sticky top-0 z-50">
   <div
     class="js-mobile-menu-wrapper bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 lg:relative"
-    data-mobile-menu-wrapper-active-classes="fixed inset-0"
+    data-mobile-menu-wrapper-active-classes="fixed inset-0 overflow-y-auto"
   >
-    <div class="container flex flex-wrap items-center py-5">
-      <a href="/" class="flex-grow lg:flex-grow-0 text-gray-800 dark:text-white h-6" title="Return to the homepage of AppSignal">
-        <%= partial "assets/images/dl_logo/appsignal-logo.svg" %>
+    <div class="container flex flex-wrap items-center py-5 px-8">
+      <a href="https://appsignal.com" class="flex-grow lg:flex-grow-0" title="Return to the homepage of AppSignal">
+        <%= image_tag "dl_logo/appsignal-logo.svg", :alt => "Logo of AppSignal", :class => "h-6" %>
       </a>
 
-      <div class="js-mobile-menu-toggle cursor-pointer lg:hidden toggle c-button c-button--sm c-button--white dark:c-button--gray">
-        Menu
-        <i class="fa fa-fw fa-bars ml-1"></i>
-      </div>
-
-      <nav class="js-mobile-menu-nav hidden lg:block flex-grow w-full lg:w-auto mt-6 lg:mt-0">
-        <ul class="lg:flex lg:justify-center">
-          <% navLinkClasses = "block lg:px-4 py-2 text-gray-600 lg:dark:text-white-700 dark-hover:text-white border-t lg:border-t-0 lg:rounded no-underline" %>
+      <%# Desktop Nav %>
+      <nav class="hidden lg:block flex-grow w-full lg:w-auto mt-6 lg:mt-0">
+        <ul class="c-header-nav">
           <li>
-            <a href="/" class="<%= navLinkClasses %>">
+            <a href="https://appsignal.com" class="c-header-nav__link">
               Home
             </a>
           </li>
-          <li class="group focus:outline-none focus:bg-gray-100 dark-focus:bg-gray-800 rounded" tabindex="0">
-            <a class="hidden lg:block cursor-pointer <%= navLinkClasses %>">
+          <li class="group" tabindex="0">
+            <a class="c-header-nav__link">
               Tour
-              <i class="far fa-angle-down ml-1 hidden lg:inline-block transform"></i>
+              <i class="fa fa-angle-down c-header-nav__link__icon"></i>
             </a>
-
-            <div class="hidden lg:group-hover:block lg:group-focus:block absolute left-0 right-0 max-w-screen-xl mx-auto pt-2">
-              <div class="flex flex-wrap px-6 py-2 bg-white border dark:bg-gray-800 dark:border-gray-700 dark:border-0 shadow-lg rounded max-w-screen-lg mx-auto">
-                <div class="w-2/3 p-4">
-                  <h3 class="mb-6 pb-4 border-b text-gray-600 dark:text-white-700 font-medium uppercase text-sm tracking-wider leading-tight">Features</h3>
-                  <ul class="flex flex-wrap -m-4">
+            <div class="c-header-nav__subnav-wrapper">
+              <div class="c-header-subnav grid grid-cols-3 gap-8">
+                <div class="col-span-2">
+                  <h3 class="c-header-subnav__title">
+                    Features
+                  </h3>
+                  <ul class="c-header-subnav__list c-header-subnav__list--large grid grid-cols-2">
                     <% tours.each do |tour| %>
-                      <li class="w-1/2">
-                        <a href="https://appsignal.com/tour/<%= tour[:slug] %>" class="flex items-baseline p-4 hover:bg-gray-100 dark-hover:bg-gray-700 no-underline rounded">
-                          <i class="fa fa-fw <%= tour[:icon] %> <%= tour[:text_class] %> text-sm mr-4"></i>
+                      <li class="col-span-1">
+                        <a href="https://appsignal.com/tour/<%= tour[:slug] %>" class="c-header-subnav__link c-header-subnav__link--large">
+                          <i class="fa fa-fw <%= tour[:icon] %> c-header-subnav__link__icon <%= tour[:icon_class] %>"></i>
                           <div>
-                            <strong class="leading-tighter block mb-1 font-medium dark:text-white"><%= tour[:title] %></strong>
-                            <p class="text-gray-600 dark:text-white-700"><%= tour[:human_teaser] %></p>
+                            <span class="c-header-subnav__link__title">
+                              <%= tour[:title] %>
+                            </span>
+                            <span class="c-header-subnav__link__description">
+                              <%= tour[:human_teaser] %>
+                            </span>
                           </div>
                         </a>
                       </li>
                     <% end %>
                   </ul>
                 </div>
-                <div class="w-1/3 p-4">
-                  <h3 class="mb-6 pb-4 border-b text-gray-600 dark:text-white-700 font-medium uppercase text-sm tracking-wider leading-tight">Platforms</h3>
-                  <ul class="space-y-2">
+                <div class="col-span-1">
+                  <h3 class="c-header-subnav__title">
+                    Supported platforms
+                  </h3>
+                  <ul class="c-header-subnav__list">
                     <% platforms.each do |platform| %>
                       <li>
-                        <a
-                          class="p-2 -m-2 block font-medium no-underline rounded hover:bg-gray-100 dark-hover:bg-gray-700 dark:text-white"
-                          href="<%= platform[:link] %>">
-                          <i class="fa-fw <%= platform[:icon] %> mr-2 text-sm <%= platform[:text_color] %>"></i>
-                          <%= platform[:name] %>
+                        <a class="c-header-subnav__link" href="<%= platform[:link] %>">
+                          <i class="fa-fw <%= platform[:icon] %> c-header-subnav__link__icon"></i>
+                          <span class="c-header-subnav__link__title">
+                            <%= platform[:name] %>
+                          </span>
                         </a>
                       </li>
                     <% end %>
@@ -78,30 +115,23 @@
                 </div>
               </div>
             </div>
-            <ul class="lg:hidden">
-              <% tours.each do |tour| %>
-                <li class="border-t py-2">
-                  <a href="https://appsignal.com/tour/<%= tour[:slug] %>" class="no-underline <%= tour[:text_class] %>">
-                    <%= tour[:title] %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
           </li>
           <li>
-            <a href="http://docs.appsignal.com" class="<%= navLinkClasses %> text-gray-800">Docs</a>
+            <a href="http://docs.appsignal.com" class="c-header-nav__link c-header-nav__link--active">Docs</a>
           </li>
           <li>
-            <a href="http://blog.appsignal.com" class="<%= navLinkClasses %>">Blog</a>
+            <a href="http://blog.appsignal.com" class="c-header-nav__link">Blog</a>
           </li>
           <li>
-            <a href="https://appsignal.com/pricing" class="<%= navLinkClasses %>">Pricing</a>
+            <a href="https://appsignal.com/pricing" class="c-header-nav__link">
+              Pricing
+            </a>
           </li>
         </ul>
       </nav>
 
-      <nav class="js-mobile-menu-nav hidden lg:block w-full lg:w-auto mt-6 lg:mt-0">
-        <ul class="lg:flex text-center lg:text-left">
+      <nav class="hidden lg:block">
+        <ul class="flex">
           <li class="logged-in hidden">
             <a href="https://appsignal.com/accounts" class="c-button c-button--sm c-button--white dark:c-button--gray block">
               Go to app
@@ -113,7 +143,91 @@
             </a>
           </li>
           <li class="logged-out">
-            <a href="https://appsignal.com/users/sign_up" class="c-button c-button--sm block">Sign up</a>
+            <a href="https://appsignal.com/users/sign_up" class="c-button c-button--sm block">
+              Sign up
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <%# Mobile Nav %>
+      <div class="js-mobile-menu-toggle cursor-pointer lg:hidden toggle c-button c-button--sm c-button--white dark:c-button--gray">
+        Menu
+        <i class="fa fa-fw fa-bars ml-1"></i>
+      </div>
+
+      <nav class="js-mobile-menu-nav hidden c-header-m-nav">
+        <ul class="c-header-m-nav__list">
+          <h3 class="c-header-m-nav__title">Features</h3>
+          <% tours.each do |tour| %>
+            <li>
+              <a class="c-header-m-nav__link" href="https://appsignal.com/tour/<%= tour[:slug] %>">
+                <i class="c-header-m-nav__link__icon fa fa-fw <%= tour[:icon] %>"></i>
+              <span class="c-header-m-nav__link__title">
+                <%= tour[:title] %>
+              </span>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="c-header-m-nav__list">
+          <h3 class="c-header-m-nav__title">Platforms</h3>
+          <% platforms.each do |platform| %>
+            <li>
+              <a class="c-header-m-nav__link" href="<%= platform[:link] %>">
+                <i class="c-header-m-nav__link__icon fa-fw <%= platform[:icon] %>"></i>
+              <span class="c-header-m-nav__link__title">
+                <%= platform[:name] %>
+              </span>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+        <ul class="c-header-m-nav__list">
+          <h3 class="c-header-m-nav__title">Product</h3>
+          <li>
+            <a class="c-header-m-nav__link" href="https://appsignal.com/pricing">
+              <i class="c-header-m-nav__link__icon fa fa-fw fa-credit-card-blank"></i>
+              <span class="c-header-m-nav__link__title">
+                Pricing
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="c-header-m-nav__list">
+          <h3 class="c-header-m-nav__title">Resources</h3>
+          <li>
+            <a class="c-header-m-nav__link" href="http://docs.appsignal.com">
+              <i class="c-header-m-nav__link__icon fa fa-fw fa-file"></i>
+              <span class="c-header-m-nav__link__title">
+                Documentation
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="c-header-m-nav__link" href="http://blog.appsignal.com">
+              <i class="c-header-m-nav__link__icon fa fa-fw fa-rss"></i>
+              <span class="c-header-m-nav__link__title">
+                Blog
+              </span>
+            </a>
+          </li>
+        </ul>
+        <ul class="text-center">
+          <li class="logged-in hidden">
+            <a href="https://appsignal.com/accounts" class="c-button c-button--sm c-button--white dark:c-button--gray block">
+              Go to app
+            </a>
+          </li>
+          <li class="logged-out">
+            <a href="https://appsignal.com/users/sign_in" class="c-button c-button--sm c-button--white dark:c-button--gray block mb-4 lg:mb-0 lg:mr-4">
+              Log in
+            </a>
+          </li>
+          <li class="logged-out">
+            <a href="https://appsignal.com/users/sign_up" class="c-button c-button--sm block">
+              Sign up
+            </a>
           </li>
         </ul>
       </nav>

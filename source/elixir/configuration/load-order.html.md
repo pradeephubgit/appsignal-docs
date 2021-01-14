@@ -48,8 +48,11 @@ configuration file.
 # config/config.exs
 # or config/prod.exs
 config :appsignal, :config,
-  name: :my_app,
-  push_api_key: "your-push-api-key"
+  otp_app: :appsignal_phoenix_example,
+  name: "AppsignalPhoenixExample",
+  push_api_key: "your-push-api-key",
+  env: Mix.env,
+  active: true
 ```
 
 This step will override all given options from the defaults or system
@@ -64,7 +67,7 @@ When found these will override all given configuration options from
 previous steps.
 
 ```bash
-export APPSIGNAL_APP_NAME="my custom app name"
+export APPSIGNAL_APP_NAME="AppsignalPhoenixExample"
 # start your app here
 ```
 

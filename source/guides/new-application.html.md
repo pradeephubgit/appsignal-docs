@@ -12,6 +12,10 @@ After choosing a language you will be presented with instructions on how to inst
 
 Once the app is deployed AppSignal will start receiving data and you're good to go!
 
+## Requirements
+
+Before you can compile the AppSignal gem make sure the build/compilation tools are installed for your system. Please check the [Supported Operating Systems](/support/operating-systems.html) page for any system dependencies that may be required.
+
 ## Installation instructions
 
 Some language integrations and support for libraries require some manual steps to get set up. Please see our installation instructions for the language of your app for more information.
@@ -27,7 +31,7 @@ JavaScript applications will create an app beforehand that generate an applicati
 
 ## Next steps
 
-- [Reporting deploys to track improvements](/guides/deploy-markers.html) - next guide
+- [Configuring applications](/guides/configuration.html) - next guide
 
 ---
 

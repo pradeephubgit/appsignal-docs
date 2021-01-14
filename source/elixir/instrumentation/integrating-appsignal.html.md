@@ -39,7 +39,7 @@ of your application.
   defp deps do
     [
       # ...
-      {:appsignal, "~> 1.0"}
+      {:appsignal, "~> 2.0"}
     ]
   end
 
@@ -75,4 +75,4 @@ integrations, such as independent tasks or background jobs.
 ## Add custom instrumentation
 
 Continue with our guide to [add custom
-instrumentation](/elixir/instrumentation/index.html) to your application.
+instrumentation](/elixir/instrumentation/instrumentation.html) to your application.

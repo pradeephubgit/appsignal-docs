@@ -25,7 +25,7 @@ In Ruby gem version `2.1.1` and Elixir package version `0.11.3` we also tried to
 
 ## Solution
 
-A complete fix was released in AppSignal for Ruby gem [version `2.4.0`](https://blog.appsignal.com/2017/10/31/ruby-gem-2-4.html) and AppSignal for Elixir package [version `1.4.0`](https://blog.appsignal.com/2017/11/02/elixir-package-1.4.html) by providing a separate musl-based build to musl systems. Non-musl systems will use a non-musl agent and extension build.
+A complete fix was released in AppSignal for Ruby gem [version `2.4.0`](https://blog.appsignal.com/2017/10/31/ruby-gem-2-4.html) and AppSignal for Elixir package [version `1.4.0`](https://blog.appsignal.com/2017/11/02/elixir-package-1-4.html) by providing a separate musl-based build to musl systems. Non-musl systems will use a non-musl agent and extension build.
 
 Upgrade to the latest version of AppSignal for the language your app uses.
 

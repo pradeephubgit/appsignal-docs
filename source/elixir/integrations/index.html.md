@@ -8,3 +8,5 @@ guide](/elixir/instrumentation/integrating-appsignal.html).
 
 * [Phoenix](phoenix.html)
 * [Plug](plug.html)
+* [Ecto](ecto.html)
+* [Erlang](erlang.html)

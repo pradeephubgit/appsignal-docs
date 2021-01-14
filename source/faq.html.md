@@ -4,6 +4,8 @@ title: "Frequently Asked Questions"
 
 On this page we list some frequently asked questions, if you need further support please check out our [support section](/support/).
 
+- Getting started
+  - [I need help getting started. Where do I begin?](#i-need-help-getting-started-where-do-i-begin)
 - AppSignal libraries
   - [What programming languages does AppSignal support?](#what-programming-languages-does-appsignal-support)
   - [Filtering data](#filtering-data)
@@ -17,6 +19,12 @@ On this page we list some frequently asked questions, if you need further suppor
 - User account
   - [How to enable two-factor authentication (2FA) for the AppSignal app?](#how-to-enable-two-factor-authentication-2fa-for-the-appsignal-app)
 
+## Getting started
+
+### I need help getting started. Where do I begin?
+
+If you're new to AppSignal or want to know more about to configure AppSignal features, please [read our guides](/guides/) to get set up.
+
 ## AppSignal libraries
 
 ### What programming languages does AppSignal support?
@@ -27,16 +35,17 @@ AppSignal supports the [Node.js](https://nodejs.dev), [Ruby](https://www.ruby-la
 
 #### How to ignore actions from your app?
 
-By [ignoring actions](/application/data-collection.html#ignore-actions) it's possible to not record any data for the configured actions, requests, background jobs, etc.
+By [ignoring actions](/guides/filter-data/ignore-actions.html) it's possible to not record any data for the configured actions, requests, background jobs, etc.
 
 #### How to ignore errors in your app?
 
-By [ignoring errors](/application/data-collection.html#ignore-errors) AppSignal will ignore errors matching the exact name of an error.
+By [ignoring errors](/guides/filter-data/ignore-errors.html) AppSignal will ignore errors matching the exact name of an error.
 
 #### How to filter data that's being send to AppSignal?
 
-- [Filter parameters and background job arguments](/application/data-collection.html#parameters).
-- [Skip sending session data for requests](/application/data-collection.html#session-data).
+- [Filter request parameters and background job arguments](/guides/filter-data/filter-parameters.html).
+- [Filter session data for HTTP requests](/guides/filter-data/filter-session-data.html).
+- [Filter HTTP request headers](/guides/filter-data/filter-headers.html).
 
 ### How to add additional instrumentation to my app?
 
@@ -46,7 +55,7 @@ Add additional instrumentation to your app to gain more insights in how your app
 
 By default AppSignal is configured to assume one application runs on one host. If you run more than one application on a host, some odd behavior may occur, such as data being reported for a different app.
 
-To configure AppSignal for multiple applications on one host the AppSignal working directory needs to be configured. Read more about how to configure the working directory on our [applications documentation page](https://docs.appsignal.com/application/#running-multiple-applications-on-one-host).
+To configure AppSignal for multiple applications on one host the AppSignal working directory needs to be configured. Read more about how to configure the working directory in our [guide to running multiple application on one host](/guides/application/multiple-applications-on-one-host.html).
 
 ### What Operating Systems does AppSignal support?
 

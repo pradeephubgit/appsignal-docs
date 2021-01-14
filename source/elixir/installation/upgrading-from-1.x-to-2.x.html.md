@@ -24,13 +24,9 @@ existing dependency on `:appsignal`, and replace it with a dependency on
 
 ```elixir
 defp deps do
-  {:appsignal_phoenix, "~> 2.0.0-beta.1"}
+  {:appsignal_phoenix, "~> 2.0"}
 end
 ```
-
-!> **NOTE:** During the beta stage, we recommend depending on version `~>
-2.0.0-beta.1`. Once AppSignal for Elixir 2.0 is officially released, we'll
-change this to `~> 2.0`.
 
 Like before, we recommend to use a pessimistic version constraint to always get
 the latest compatible version, but not upgrade to 3.x automatically.
@@ -82,7 +78,7 @@ Instead of the custom `:template_engines` from 1.x, AppSignal for Elixir 2.x
 uses the new `Appsignal.View` module to gain insights into your template
 rendering.
 
-To upgrade, remove the `:template_engines` from `config/config.exs and add `use
+To upgrade, remove the `:template_engines` from `config/config.exs` and add `use
 Appsignal.Phoenix.View` to the view/0 function in your app's web module, after
 `use Phoenix.View`:
 
@@ -115,8 +111,51 @@ end
 Lastly, query instrumentation is automatic in 2.x, so you can remove the
 `:telemetry.attach/4` call in your application module.
 
+## Custom integrations
+
+If you use `Appsignal.Transaction.set_action/1` to override action names for actions in your Plug or Phoenix app, switch to the newly added `Appsignal.Plug.put_name/2` which adds the new name to the conn. You'll have to make sure you call `put_name/2` on the conn that's returned in the action:
+
+```elixir
+defmodule AppsignalPlugExample do
+  use Plug.Router
+  use Appsignal.Plug
+  plug(:match)
+  plug(:dispatch)
+
+  get "/" do
+    conn
+    |> Appsignal.Plug.put_name("AppsignalPlugExample#index")
+    |> send_resp(200, "Welcome")
+  end
+end
+```
+
+For pure Elixir apps, you can use `Appsignal.Span.set_name/2` to set the name directly on the current span:
+
+```elixir
+Appsignal.Span.set_name(Appsignal.Tracer.current_span(), "AppsignalElixirExample#index")
+```
+
+## Extra sample data
+
+In 2.0, we handle sample data through adding tags or custom data, as explained in [the tagging guide](/elixir/instrumentation/tagging.html). To tag a sample with extra data, use the "tags" key:
+
+```elixir
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "tags", %{locale: "en"})
+```
+
+To add custom data as a map, add use the "custom_data" key:
+
+```elixir
+Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "custom_data", %{foo: "bar"})
+```
+
+-> **Note**: The "params", "session_data" or "environment" will be overwritten at the end of the request in Plug and Phoenix applications. We recommend using "custom_data" instead.
+
+## Custom instrumentation
+
+If you added custom instrumentation in your app you used `Appsignal.TransactionRegistry` in the past. In 2.x this is no longer necessary, you can instrument without using the registry. Please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
+
 ## Welcome to 2.x!
 
-This should cover upgrading most Phoenix applications to 2.x. If your app includes custom instrumentation, please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
-
-If you have any questions, or would like assistance upgrading to the new version, please don't hesitate to [contact support](mailto:support@appsignal.com).
+This should cover upgrading most Phoenix applications to 2.x. If you have any questions, or would like assistance upgrading to the new version, please don't hesitate to [contact support](mailto:support@appsignal.com).

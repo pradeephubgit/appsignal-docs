@@ -21,4 +21,4 @@ After saving the form, you can see the `routing_key`.
 
 Use this service key on the AppSignal PagerDuty integration form. After saving, make sure the integration works by clicking "Test hook". If all goes well, it should trigger an incident on PagerDuty.
 
-As always, if you run into any issues, don't hesitate to contact us at <a href="mailto:contact@appsignal.com">contact@appsignal.com</a>.
+As always, if you run into any issues, don't hesitate to contact us at [support@appsignal.com](mailto:support@appsignal.com).

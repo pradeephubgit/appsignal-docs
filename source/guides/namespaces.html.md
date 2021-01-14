@@ -94,7 +94,7 @@ defmodule AppsignalPhoenixExampleWeb.AdminController do
   defp set_appsignal_namespace(conn, _params) do
     # Configures all actions in this controller to report
     # in the "admin" namespace
-    Appsignal.Transaction.set_namespace(:admin)
+    Appsignal.Span.set_namespace(Appsignal.Tracer.current_span(), "admin")
     conn
   end
 
@@ -108,7 +108,7 @@ In a background job call the `Appsignal.Transaction.set_namespace` at the beginn
 defmodule MyApp.CriticalJob do
   def run do
     # Configures this worker's jobs to report in the "critical" namespace
-    Appsignal.Transaction.set_namespace(:critical)
+    Appsignal.Span.set_namespace(Appsignal.Tracer.current_span(), "critical")
 
     # The actual worker code
   end
@@ -155,7 +155,7 @@ const span = appsignal.createSpan()
 span.setNamespace("admin") // a custom namespace for this span (defaults to `frontend`)
 ```
 
-For more information, [read more about how spans work in Front-end JavaScript](front-end/span.html).
+For more information, [read more about how spans work in Front-end JavaScript](/front-end/span.html).
 
 ## Deploy
 
@@ -175,6 +175,6 @@ Are namespaces not being reported or incorrectly? [Contact us][contact] and we w
 - [Getting started guides](/guides/) - Guides overview
 
 [namespaces]: /application/namespaces.html
-[ignoring namespaces]: /application/namespaces.html#ignoring-namespaces
+[ignoring namespaces]: /guides/filter-data/ignore-namespaces.html
 [filtering]: /guides/filter-data/
 [contact]: mailto:support@appsignal.com

@@ -1,5 +1,5 @@
 file_paths_notice: &file_paths_notice
-  - "-> **Note**: The specified path cannot contain Operating Specific file system abstractions, such as the homedir symbol `~` for *NIX systems. This will be seen an malformed path."
+  - "-> **Note**: The specified path cannot contain Operating Specific file system abstractions, such as the homedir symbol `~` for *NIX systems. This will be seen as a malformed path."
 
 options:
   - config_key: active
@@ -110,9 +110,19 @@ options:
     nodejs:
       config_key: environment
       type: string
-      default: env
+      default_value: |
+        Read from environment variable `NODE_ENV`, defaults to "development".
       description: |
         The environment of the app to be reported to AppSignal.
+  - config_key: otp_app
+    env_key: APPSIGNAL_OTP_APP
+    required: true
+    elixir:
+      since: 2.0.0
+      type: string
+      default_value: null
+      description: |
+        The OTP app name of your application, to be used for automatic configuration of instrumentation for libraries like Ecto.
   - config_key: name
     env_key: APPSIGNAL_APP_NAME
     required: true
@@ -803,7 +813,7 @@ options:
         - |
           Override the location where AppSignal for Elixir can store temporary files. Use this option if the default location is not suitable. See our [how AppSignal operates](/appsignal/how-appsignal-operates.html) page for more information about the purpose of this working directory.
 
-          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/application/index.html#running-multiple-applications-on-one-host) documentation.
+          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html) documentation.
 
           ```elixir
           # config/config.exs
@@ -826,7 +836,7 @@ options:
         - |
           Override the location where AppSignal for Ruby can store temporary files. Use this option if the default location is not suitable. See our [how AppSignal operates](/appsignal/how-appsignal-operates.html) page for more information about the purpose of this working directory.
 
-          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/application/index.html#running-multiple-applications-on-one-host) documentation.
+          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html) documentation.
 
           ```yml
           # config/appsignal.yml
@@ -844,12 +854,33 @@ options:
         - |
           Override the location where AppSignal for Elixir can store temporary files. Use this option if the default location is not suitable. See our [how AppSignal operates](/appsignal/how-appsignal-operates.html) page for more information about the purpose of this working directory.
 
-          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/application/index.html#running-multiple-applications-on-one-host) documentation.
+          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html) documentation.
 
-          ```yml
+          ```elixir
           # config/appsignal.exs
           config :appsignal, :config,
             working_directory_path: "/tmp/project_1/"
+          ```
+    nodejs:
+      config_key: "workingDirectoryPath"
+      since: 1.0.0
+      type: string
+      default_value:
+        markdown: detected by agent
+      description:
+        - |
+          Override the location where AppSignal for Node.js can store temporary files. Use this option if the default location is not suitable. See our [how AppSignal operates](/appsignal/how-appsignal-operates.html) page for more information about the purpose of this working directory.
+
+          If you are running multiple applications using AppSignal on the same server, use this configuration option to select different working directories for every AppSignal instance, otherwise the two instances could conflict with one another. For more information on this scenario see our [running multiple applications on one host](/guides/application/multiple-applications-on-one-host.html) documentation.
+
+          ```js
+          // Example: appsignal.js
+          const { Appsignal } = require("@appsignal/nodejs");
+
+          const appsignal = new Appsignal({
+            // Other config
+            workingDirectoryPath: "/tmp/project_1"
+          });
           ```
     description:
       - *file_paths_notice

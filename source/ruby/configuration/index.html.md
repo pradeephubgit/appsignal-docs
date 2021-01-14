@@ -59,6 +59,42 @@ production:
   active: true
 ```
 
+#### Multiple app environments
+
+Multiple app environments can be configured in this file using root-level keys.
+
+```yml
+# Example: config/appsignal.yml
+development: # Development app environment
+  active: true
+
+production: # Production app environment
+  active: true
+
+test: # Testing app environment
+  active: false # Disabled for test environment
+```
+
+To avoid having to repeat the configuration for every app environment, we can use YAML anchors to extend YAML objects.
+
+```yml
+# Example: config/appsignal.yml
+default: &defaults
+  active: true
+
+development: # Development app environment
+  <<: *defaults
+
+production: # Production app environment
+  <<: *defaults
+
+test: # Testing app environment
+  <<: *defaults
+  active: false # Overwrites the inherited active config option from "defaults"
+```
+
+It's not possible to only configure a `defaults` anchor and have it apply to all environments automatically. Every environment needs to be configured in the YAML file with a root-level key and extend from this `defaults` anchor.
+
 ### System environment variable
 
 An alternative way of configuring AppSignal is by using system environment variables on the host the application AppSignal is monitoring is running on. This is common on platforms such as Heroku.
