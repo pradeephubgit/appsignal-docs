@@ -31,8 +31,7 @@ Appsignal.Transaction.set_sample_data(
 )
 ```
 
-For more information about tagging requests, please read the tagging guide for
-[Ruby][ruby-tagging] and [Elixir][elixir-tagging].
+-> 📖 For more information about tagging requests, please read the [tagging guide][tagging-guide].
 
 ## Creating a link template
 
