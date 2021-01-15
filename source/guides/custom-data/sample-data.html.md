@@ -2,28 +2,51 @@
 title: "Adding sample data to a request"
 ---
 
-Besides tags you can add more metadata to a transaction (or override default metadata from integrations such as Phoenix).
+Besides tags it's possible to add more metadata to a transaction or span. This allow apps to overwrite the metadata set by AppSignal integration or add more custom data.
 
 !> **Warning**: Do not use sample data to send personal data such as names or email addresses to AppSignal. If you want to identify a person, consider using a user ID, hash or pseudonymized identifier instead. You can use [link templates](/application/link-templates.html) in combination with [tags](/guides/custom-data/tagging-request.html) to link them back to your own system.
 
+## Custom data
+
+Custom data is a sample data "key" that can be used to set more dynamic values than tags allow. This includes nested objects (JavaScript), maps (Elixir) and hashes (Ruby). It is not possible to filter or search on data set on the "custom_data" key, it is only there to provide an additional area in the interface to list more metadata.
+
+This "custom_data" sample data key accepts nested objects. This will result in the following block on a Incident Sample page for both Exception and Performance samples formatted as JSON.
+
+![custom_data](/assets/images/screenshots/sample_data/custom_data.png)
 
 ## Ruby
 
 ### `custom_data`
-Custom data is not set by default, but can be used to add additional debugging data to solve a performance issue or exception.
 
-```
-Appsignal::Transaction.current.set_sample_data("custom_data", {foo: "bar"})
+Set custom data on the sample to add additional debugging data about the sample error or performance issue.
+
+```ruby
+Appsignal::Transaction.current.set_sample_data(
+  "custom_data",
+  :i18n => {
+    :locale => "en_GB",
+    :default_locale => "en_US"
+  }
+)
 ```
 
 ## Elixir
 
 ### `custom_data`
-Custom data is not set by default, but can be used to add additional debugging data to solve a performance issue or exception.
 
-```
-Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "custom_data", %{foo: "bar"})
+Set custom data on the sample to add additional debugging data about the sample error or performance issue.
 
+```elixir
+Appsignal.Span.set_sample_data(
+  Appsignal.Tracer.root_span,
+  "custom_data",
+  %{
+    i18n: %{
+      locale: "en_GB",
+      default_locale: "en_US"
+    }
+  }
+)
 ```
 
 ## Node.js
@@ -78,15 +101,19 @@ This will result the following block on a Incident Sample page for both Exceptio
 
 ### `custom_data`
 
-Custom data is not set by default, but can be used to add additional debugging data to solve a performance issue or exception.
+Set custom data on the sample to add additional debugging data about the sample error or performance issue.
 
 ```js
-span.setSampleData("custom_data", { foo: "bar" });
+span.setSampleData(
+  "custom_data",
+  {
+    i18n: {
+      locale: "en_GB",
+      default_locale: "en_US"
+    }
+  }
+);
 ```
-
-This key accepts nested objects and will result in the following block on a Incident Sample page for both Exception and Performance samples formatted as JSON.
-
-![custom_data](/assets/images/screenshots/sample_data/custom_data.png)
 
 ## Next steps
 
