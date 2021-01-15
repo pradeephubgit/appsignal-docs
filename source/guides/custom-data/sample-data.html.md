@@ -88,7 +88,7 @@ This key accepts nested objects and will show up as follows on a Incident Sample
 
 ### `environment`
 
-Environment variables from a request/background job (typically filled by the default `http` integration, but can be further augmented by other integrations), but can be filled/overriden with the following call:
+Environment variables from a request/background job (typically filled by the default `http` integration, but can be further augmented by other integrations), but can be filled/overridden with the following call:
 
 ```js
 span.setSampleData("environment", { CONTENT_LENGTH: "0" });
