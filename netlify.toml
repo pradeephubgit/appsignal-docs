@@ -193,3 +193,12 @@
 [[redirects]]
   from = "/nodejs/tracing/namespaces.html"
   to = "/guides/namespaces.html"
+[[redirects]]
+from = "/ruby/instrumentation/tagging.html"
+to = "/guides/custom-data"
+[[redirects]]
+from = "/elixir/instrumentation/tagging.html"
+to = "/guides/custom-data/"
+[[redirects]]
+from = "/nodejs/tracing/tagging.html"
+to = "/guides/custom-data/"

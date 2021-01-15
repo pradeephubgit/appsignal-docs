@@ -54,7 +54,7 @@ Data is filtered before being sent to AppSignal.
 
 #### Requirements for Tagging
 
-We have changed the documentation for our Tagging feature ([Ruby](/ruby/instrumentation/tagging.html) / [Elixir](/elixir/instrumentation/tagging.html)) to strongly state that no personal data should be sent to AppSignal in tags, and that user IDs, hashes or pseudonymized identifiers should be used instead.
+We have changed the documentation for our [Tagging feature](/guides/custom-data/) to strongly state that no personal data should be sent to AppSignal in tags, and that user IDs, hashes or pseudonymized identifiers should be used instead.
 
 #### Data removal procedure
 
