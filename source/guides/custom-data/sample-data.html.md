@@ -4,6 +4,9 @@ title: "Adding sample data to a request"
 
 Besides tags you can add more metadata to a transaction (or override default metadata from integrations such as Phoenix).
 
+!> **Warning**: Do not use sample data to send personal data such as names or email addresses to AppSignal. If you want to identify a person, consider using a user ID, hash or pseudonymized identifier instead. You can use [link templates](/application/link-templates.html) in combination with [tags](/guides/custom-data/tagging-request.html) to link them back to your own system.
+
+
 ## Ruby
 
 ### `custom_data`

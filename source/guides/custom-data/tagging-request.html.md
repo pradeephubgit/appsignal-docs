@@ -8,6 +8,8 @@ Sometimes we need to attach an extra information to a request to help debug a ce
 
 You can use the `tag` feature of AppSignal for this purpose.
 
+!> **Warning**: Do not use tagging to send personal data such as names or email addresses to AppSignal. If you want to identify a person, consider using a user ID, hash or pseudonymized identifier instead. You can use [link templates](/application/link-templates.html) to link them back to your own system.
+
 ## Ruby
 
 ```ruby
