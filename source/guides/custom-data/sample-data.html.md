@@ -87,3 +87,14 @@ span.setSampleData("custom_data", { foo: "bar" });
 This key accepts nested objects and will result in the following block on a Incident Sample page for both Exception and Performance samples formatted as JSON.
 
 ![custom_data](/assets/images/screenshots/sample_data/custom_data.png)
+
+## Next steps
+
+- [Filtering app data](/guides/filter-data/) - next guide
+
+---
+
+- [Adding tags to a request](/guides/custom-data/tagging-request.html) - previous step in this guide
+- [Tagging and Sample data guide](/guides/custom-data/) - the start of this guide
+- [Tagging and Sample data topic](/application/tagging.html) - topic on tagging
+- [Getting started guides](/guides/) - Guides overview

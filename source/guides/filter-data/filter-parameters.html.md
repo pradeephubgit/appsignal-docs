@@ -133,7 +133,7 @@ If the `filter_parameters` config option is not set, Phoenix will default to `["
 
 ## Next steps
 
-- [Filter session data](/guides/filter-data/filter-session-data.html) - future next step in this guide
+- [Filter session data](/guides/filter-data/filter-session-data.html) - next step in this guide
 
 ---
 

@@ -134,3 +134,13 @@ const span = tracer.currentSpan();
 # Unsupported: object value type is not supported
 span.set("i18n", { locale: "en_GB", default_locale: "en_US" });
 ```
+
+## Next steps
+
+- [Adding sample data to a request](/guides/custom-data/sample-data.html) - step in this guide
+
+---
+
+- [Tagging and Sample data guide](/guides/custom-data/) - the start of this guide
+- [Tagging and Sample data topic](/application/tagging.html) - topic on tagging
+- [Getting started guides](/guides/) - Guides overview

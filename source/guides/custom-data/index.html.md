@@ -12,11 +12,9 @@ Using tags you can easily add more information to errors and performance issues 
 Tags can also be used to create link templates. Read more about link templates
 in our [link templates guide](/application/link-templates.html).
 
-
 ## Sample Data
 
 Besides tags you can add more metadata to a transaction (or override default metadata from integrations such as Phoenix).
-
 
 ## Next steps
 
