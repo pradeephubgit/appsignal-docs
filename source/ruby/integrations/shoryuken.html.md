@@ -15,6 +15,25 @@ guide][integration-guide].
 Instrumentation for Shoryuken is enabled automatically if the Shoryuken gem is
 detected on AppSignal start.
 
+## Batch support
+
+If an app uses worker with the `:batch => true` option, multiple messages are processed by a worker in the same tick. An upgrade is required to Ruby gem `2.11.3` or higher, which adds support for the batch option.
+
+```ruby
+# my_worker.rb
+class MyWorker
+  include Shoryuken::Worker
+
+  shoryuken_options :queue => "batched", :batch => true
+
+  def perform(sqs_msg, body)
+    # Do stuff
+    puts "Performing BatchedWorker job: #{body}"
+    sleep 1
+  end
+end
+```
+
 ## Example application
 
 We have an example application for a standalone Shoryuken application available
