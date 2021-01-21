@@ -2,7 +2,9 @@
 title: "Add method instrumentation"
 ---
 
--> This feature is available since Ruby gem version 1.3 and only works for classes.
+-> ℹ️  Notes:  
+-> - This feature is available since Ruby gem version 1.3 and only works for classes.  
+-> - Ruby 3.0 support for keyword arguments was added in Ruby gem `2.11.4`.
 
 Sometimes [instrumentation blocks](/ruby/instrumentation/instrumentation.html) are not accurate enough. Every application is different, and so is the code that runs it. Developers know what code and, more accurately, what methods to instrument.
 
