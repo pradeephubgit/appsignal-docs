@@ -415,10 +415,10 @@ options:
       default_value: ./log
     elixir:
       type: string
-      default_value: "/tmp/appsignal.log"
+      default_value: "/tmp"
       since: 1.0.0
       since_notes:
-        - "`1.9.0`: The default log path was changed from `/tmp/appsignal/appsignal.log` to `/tmp/appsignal.log`."
+        - "`1.9.0`: The default log path was changed from `/tmp/appsignal/` to `/tmp/`."
     nodejs:
       config_key: logPath
       type: string
