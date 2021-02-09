@@ -20,7 +20,7 @@ Before you can compile the AppSignal gem make sure the build/compilation tools a
 
 Some language integrations and support for libraries require some manual steps to get set up. Please see our installation instructions for the language of your app for more information.
 
-- [Ruby installation instructions](/ruby/installation.html)
+- [Ruby installation instructions](/ruby/installation/)
 - [Elixir installation instructions](/elixir/installation/)
 - [Node.js installation instructions](/nodejs/installation.html)
 - [Front-end JavaScript installation instructions](/front-end/installation.html)

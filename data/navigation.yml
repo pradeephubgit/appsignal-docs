@@ -226,7 +226,11 @@ sections:
             link: "/ruby/"
           -
             name: "Installation"
-            link: "/ruby/installation.html"
+            link: "/ruby/installation/"
+            sub_pages:
+              -
+                name: "Overview"
+                link: "/ruby/installation/"
           -
             name: "Configuration"
             link: "/ruby/configuration/"

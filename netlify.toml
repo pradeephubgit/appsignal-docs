@@ -134,6 +134,9 @@
   from = "/organization/team/index.html"
   to = "/organization/team/members.html"
 [[redirects]]
+  from = "/ruby/installation.html"
+  to = "/ruby/installation/index.html"
+[[redirects]]
   from = "/elixir/installation.html"
   to = "/elixir/installation/index.html"
 [[redirects]]

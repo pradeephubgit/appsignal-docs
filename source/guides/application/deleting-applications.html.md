@@ -8,7 +8,7 @@ An application (app) in AppSignal is defined as the combination of the applicati
 
 Please follow the uninstall guide for the programming language of your application(s) listed below:
 
-- [Ruby gem uninstall guide](/ruby/installation.html#uninstall)
+- [Ruby gem uninstall guide](/ruby/installation/#uninstall)
 - [Elixir package uninstall guide](/elixir/installation.html#uninstall)
 - [JavaScript for Front-end package uninstall guide](/front-end/installation.html#uninstall)
 
