@@ -1,5 +1,5 @@
 ---
-title: Upgrading from Appsignal for Elixir 1.x to 2.x
+title: Upgrading from AppSignal for Elixir 1.x to 2.x
 ---
 
 Upgrading to AppSignal for Elixir requires some manual changes. This guide
