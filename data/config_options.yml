@@ -336,6 +336,8 @@ options:
     env_key: APPSIGNAL_ENABLE_FRONTEND_ERROR_CATCHING
     ruby:
       since: 1.0.0
+      since_notes:
+        - "`3.0.0`: Removed from the gem. See our [upgrade guide](/ruby/installation/upgrade-from-2-to-3.html) for more information."
       type: bool
       default_value: false
       description: |
