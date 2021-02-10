@@ -34,7 +34,9 @@ Other instrumentation gems may either use the method aliasing or `Module.prepend
 
 The Ruby ecosystem seems to be moving towards the `Module.prepend` method of providing instrumentation so the AppSignal gem has updated its instrumentation method to be more compatible with other gems.
 
-If an app encounters this issue with the AppSignal for Ruby 3.x series, please contact the maintainers of the other gems to update their implementation to `Module.prepend`, and downgrade the AppSignal for Ruby gem to the 2.x series for now. Please also [inform us][contact], so we can keep a list of compatible gems.
+If an app starts encountering this issue with the AppSignal for Ruby 3.x series, upgrade other APM and error reporting gems in the app. They may have been updated to instrument using `Module.prepend` as well.
+
+If the issue persists, please contact the maintainers of the other gems to update their implementation to `Module.prepend`, and downgrade the AppSignal for Ruby gem to the 2.x series for now. Please also [inform us][contact], so we can keep a list of compatible gems.
 
 For more information and background of this change, see [issue 603 on the Ruby gem issue tracker][module prepend issue].
 
