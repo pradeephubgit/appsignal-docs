@@ -132,14 +132,34 @@ Appsignal.monitor_transaction "process_action" do
 end
 ```
 
--> **Note:** This method only works when there is an AppSignal transaction active. Otherwise the error will be ignored. This is true in most automatically supported integrations and when using `Appsignal.monitor_transaction`. Please see [`Appsignal.send_error`](#appsignal-send_error) for sending errors
-without an AppSignal transaction.
+-> **Note:** This method only works when there is an AppSignal transaction active. Otherwise the error will be ignored. This is true in most automatically supported integrations and when using `Appsignal.monitor_transaction`. Please see [`Appsignal.send_error`](#appsignal-send_error) for sending errors without an AppSignal transaction.
 
-###^appsignal-set_error Tagging
+###^appsignal-set_error Adding metadata
 
-Optionally you can can pass in a hash with tags as the second argument.
+-> **Note**: The block argument to `set_error` was added in AppSignal for Ruby gem 3.0.0. If using an older version, use the [metadata arguments](#appsignal-set_error-tagging) instead.
 
 See our [Tagging guide](tagging.html) for more information about the tagging parameter data structure.
+
+```ruby
+begin
+  # some code
+rescue => error
+  Appsignal.set_error(error) do |transaction|
+    transaction.set_namespace("admin")
+    transaction.set_tags(:key => "value")
+  end
+end
+```
+
+###^appsignal-set_error-metadata Tagging
+
+!> **Warning**: The tags argument was deprecated in AppSignal for Ruby gem 3.0.0. Instead use the [block argument](#appsignal-set_error-adding-metadata) for `set_error`.
+
+-> **Note**: The tags argument is available since version 2.3.0 of the AppSignal for Ruby gem.
+
+-> 📖 See our [Tagging guide](tagging.html) for more information about the tagging parameter data structure.
+
+Optionally you can can pass in a hash with tags as the second argument.
 
 ```ruby
 begin
@@ -149,13 +169,16 @@ rescue => e
 end
 ```
 
--> **Note**: Tagging argument is available since version 2.3.0 of the AppSignal for Ruby gem.
-
 ###^appsignal-set_error Namespaces
+
+!> **Warning**: The namespace argument was deprecated in AppSignal for Ruby gem 3.0.0. Instead use the [block argument](#appsignal-set_error-adding-metadata) for `set_error`.
+
+-> **Note**: Namespaces argument is available since version 2.3.0 of the AppSignal for Ruby gem.
+
+-> 📖 See our [Namespaces](/application/namespaces.html) page for more information about using namespaces.
 
 Optionally you can can pass in custom namespace name as the third argument. This error will then be reported under the specified namespace rather than the default namespace.
 
-See our [Namespaces](/application/namespaces.html) page for more information about using namespaces.
 
 ```ruby
 begin
@@ -164,8 +187,6 @@ rescue => e
   Appsignal.set_error(e, {}, "admin")
 end
 ```
-
--> **Note**: Namespaces argument is available since version 2.3.0 of the AppSignal for Ruby gem.
 
 ## Appsignal.send_error
 
@@ -184,6 +205,10 @@ rescue => e
   Appsignal.send_error(e)
 end
 ```
+
+###^appsignal-send_error Adding metadata
+
+-> **Note**: The block argument to `send_error` was added in AppSignal for Ruby gem 2.9.0. If using an older version, use the [metadata arguments](#appsignal-send_error-tagging) instead.
 
 In AppSignal for Ruby gem 2.9 and newer an additional block can be passed to the `Appsignal.send_error` method to add more metadata to the error transaction. This includes metadata such as the action name and parameters. Older versions of the Ruby gem will not allow additional metadata to be set.
 
@@ -220,9 +245,11 @@ For another example of `Appsignal.send_error` in such a context see our [Rake in
 
 ###^appsignal-send_error Tagging
 
-Optionally you can can pass in a hash with tags as the second argument.
+!> **Warning**: The tags argument was deprecated in AppSignal for Ruby gem 3.0.0. Instead use the [block argument](#appsignal-send_error-adding-metadata) for `send_error`.
 
-See our [Tagging guide](tagging.html) for more information about the tagging parameter data structure.
+-> 📖 See our [Tagging guide](tagging.html) for more information about the tagging parameter data structure.
+
+Optionally you can can pass in a hash with tags as the second argument.
 
 ```ruby
 begin
@@ -234,9 +261,12 @@ end
 
 ###^appsignal-send_error Namespaces
 
+!> **Warning**: The namespace argument was deprecated in AppSignal for Ruby gem 3.0.0. Instead use the [block argument](#appsignal-send_error-adding-metadata) for `send_error`.
+
+-> 📖 See our [Namespaces](/application/namespaces.html) page for more information about using namespaces.
+
 Optionally you can can pass in custom namespace name as the third argument. This error will then be reported under the specified namespace rather than the default namespace.
 
-See our [Namespaces](/application/namespaces.html) page for more information about using namespaces.
 
 ```ruby
 begin
