@@ -154,7 +154,7 @@ Appsignal.Span.set_sample_data(Appsignal.Tracer.root_span, "custom_data", %{foo:
 
 ## Custom instrumentation
 
-If you added custom instrumentation in your app you used `Appsignal.TransactionRegistry` in the past. In 2.x this is no longer necessary, you can instrument without using the registry. Please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/instrumentation/) for more information about custom instrumentation in 2.x.
+If you added custom instrumentation in your app you used `Appsignal.TransactionRegistry` in the past. In 2.x this is no longer necessary, you can instrument without using the registry. Please check out the [custom instrumentation documentation](/elixir/instrumentation/instrumentation.html) for more information about custom instrumentation in 2.x.
 
 ## Welcome to 2.x!
 
