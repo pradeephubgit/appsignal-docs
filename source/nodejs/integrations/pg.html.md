@@ -6,13 +6,13 @@ The AppSignal for Node.js integration for node-postgres (`pg`) v8.0.0+.
 
 ## Installation
 
-Add the `@appsignal/nodejs` package to your `package.json`. Then, run `yarn install`/`npm install`.
+Add the `@appsignal/pg` package to your `package.json`. Then, run `yarn install`/`npm install`.
 
 You can also add these packages to your `package.json` on the command line:
 
 ```bash
-yarn add @appsignal/nodejs
-npm install --save @appsignal/nodejs
+yarn add @appsignal/pg
+npm install --save @appsignal/pg
 ```
 
 You can then import and use the package in your app. No further steps are required to instrument calls made to your database - this is done automatically. 
