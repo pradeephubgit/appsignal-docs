@@ -33,3 +33,4 @@ https://appsignal-endpoint.net/metrics/statsd?api_key=<api_key>
 This API exposes the following endpoints:
 
 * [StatsD](/api/public-endpoint/statsd.html) Send (batched) StatsD-formatted metrics to AppSignal.
+* [Errors](/api/public-endpoint/errors.html) Send Errors to AppSignal.

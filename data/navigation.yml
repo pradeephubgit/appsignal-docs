@@ -704,6 +704,9 @@ sections:
               -
                 name: "StatsD"
                 link: "/api/public-endpoint/statsd.html"
+              -
+                name: "Errors"
+                link: "/api/public-endpoint/errors.html"
   -
     name: "More"
     sub_sections:
