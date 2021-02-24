@@ -669,7 +669,7 @@ sections:
             name: "Installation"
             link: "/standalone-agent/installation.html"
           -
-            name: "StatsD"
+            name: "StatsD Metrics"
             link: "/standalone-agent/statsd.html"
       -
         name: "AppSignal API <sup>Beta</sup>"
@@ -704,6 +704,9 @@ sections:
               -
                 name: "StatsD"
                 link: "/api/public-endpoint/statsd.html"
+              -
+                name: "JSON Metrics"
+                link: "/api/public-endpoint/json-metrics.html"
   -
     name: "More"
     sub_sections:
