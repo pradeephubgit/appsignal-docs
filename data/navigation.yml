@@ -707,6 +707,9 @@ sections:
               -
                 name: "JSON Metrics"
                 link: "/api/public-endpoint/json-metrics.html"
+              -
+                name: "Errors"
+                link: "/api/public-endpoint/errors.html"
   -
     name: "More"
     sub_sections:
