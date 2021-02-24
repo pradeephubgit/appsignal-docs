@@ -1,5 +1,5 @@
 ---
-title: "Public Endpoint - StatsD"
+title: "Public Endpoint - StatsD Metrics"
 ---
 
 This StatsD API endpoint is provided to add additional metrics to AppSignal, where an existing integration can't be used or the language used isn't supported (yet).
