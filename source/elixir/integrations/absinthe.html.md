@@ -4,7 +4,7 @@ title: "Absinthe <sup>Unofficial support</sup>"
 
 !> **Warning:** Use this solution at your own risk.
 
-!> **Warning:** This solution was updated to work with AppSignal Elixir package version 2.0.0 and newer. The old version, previously documented here, doesn't work on newer packages anymore.
+!> **Warning:** This solution was updated to work with AppSignal Elixir package version 2.0.0 and newer.
 
 -> **Note:** AppSignal for Elixir doesn't officially integrate with Absinthe, please track our progress on adding other integrations in [this GitHub issue](https://github.com/appsignal/appsignal-elixir/issues/176).
 
@@ -20,14 +20,12 @@ Absinthe apps in Phoenix do lack a controller and action name registered in the 
 
 A small fix is required for Absinthe Phoenix apps to set the action name manually for the Absinthe requests. The following plug can be used to set the action name for Absinthe requests. Make sure to specify the correct `request_path` in the `call/2` function.
 
-You'll also be able to configure the action name for these requests yourself by changing the value given to `Appsignal.Transaction.set_action/1`.
-
+You'll also be able to configure the action name for these requests yourself by changing the value given to `Appsignal.Plug.put_name/1`.
 !> **Warning**: If AppSignal for Elixir supports Absinthe out-of-the-box in a future release this plug will have to be removed to avoid conflicting action names.
 
 ```elixir
 # Add this plug to your app
 defmodule AppsignalAbsinthePlug do
-  alias Appsignal.Transaction
 
   def init(_), do: nil
 
