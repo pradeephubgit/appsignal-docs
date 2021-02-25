@@ -4,7 +4,7 @@ title: "Absinthe <sup>Unofficial support</sup>"
 
 !> **Warning:** Use this solution at your own risk.
 
-!> **Warning:** This solution was updated to work with AppSignal Elixir package version 2.0.0 and newer. The old version, previously documented here, doesn't work on newer packages anymore.
+!> **Warning:** This solution was updated to work with AppSignal Elixir package version 2.0.0 and newer.
 
 -> **Note:** AppSignal for Elixir doesn't officially integrate with Absinthe, please track our progress on adding other integrations in [this GitHub issue](https://github.com/appsignal/appsignal-elixir/issues/176).
 
