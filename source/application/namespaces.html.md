@@ -71,5 +71,11 @@ After restarting/deploying your app the actions in the selected namespace should
 
 -> 📖 To configure AppSignal to ignore namespaces in your app, read our guide to [ignoring namespace with our integrations][ignore guide].
 
+## Deleting namespaces
+
+If you created a namespace that is no longer active you can delete it from the [namespaces](https://appsignal.com/redirect-to/app?to=namespaces) screen under app settings.
+
+-> 📖 We do not automatically delete a namespace if it is no longer receiving data.
+
 [guide]: /guides/namespaces.html
 [ignore guide]: /guides/filter-data/ignore-namespaces.html
