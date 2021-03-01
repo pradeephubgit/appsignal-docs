@@ -87,9 +87,9 @@ This probe will report the following [metrics](/metrics/custom.html) grouped by 
 - `sidekiq_connection_count` - [gauge](/metrics/custom.html#gauge)
   - How many connections were open to the Redis database.
 - `sidekiq_memory_usage` - [gauge](/metrics/custom.html#gauge)
-  - The Virtual Memory Size memory usage of Sidekiq itself.
+  - The Virtual Memory Size memory usage of Redis.
 - `sidekiq_memory_usage_rss` - [gauge](/metrics/custom.html#gauge)
-  - The Resident Set Size memory usage of Sidekiq itself.
+  - The Resident Set Size memory usage of Redis.
 - `sidekiq_job_count` - [gauge](/metrics/custom.html#gauge)
   - Tag `status`:
       - `processed`: all processed jobs in this minute, this includes failed jobs.
