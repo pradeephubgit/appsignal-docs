@@ -42,11 +42,12 @@ list of all the available commands.
 
 ### Ruby (MRI)
 
-We currently support Ruby `1.9.3+` for the latest gem version `1.x`. To use
-this version add to your `Gemfile`.
+We currently support Ruby `2.0.0+` and higher.
+
+If you need Ruby 1.9 support, you can use an older AppSignal gem version, but do note that we do not provide full support for older versions of the gem.
 
 ```ruby
-gem "appsignal"
+gem "appsignal", "~> 2.0"
 ```
 
 ### JRuby
