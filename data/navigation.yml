@@ -231,6 +231,9 @@ sections:
               -
                 name: "Overview"
                 link: "/ruby/installation/"
+              -
+                name: "Upgrading from 2 to 3"
+                link: "/ruby/installation/upgrade-from-2-to-3.html"
           -
             name: "Configuration"
             link: "/ruby/configuration/"
