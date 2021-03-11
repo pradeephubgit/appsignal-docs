@@ -18,6 +18,12 @@ gem "appsignal", "~> 2.0"
 
 After all deprecation warnings have been resolved that appeared during testing and running the app, remove the version lock from the `Gemfile` and run `bundle update appsignal` again to update to AppSignal for Ruby 3.0.
 
+```ruby
+# Gemfile
+
+gem "appsignal"
+```
+
 ## Removed Ruby 1.9 supported
 
 The 3.x series of the Ruby gem will no longer support Ruby 1.9 and older versions. Ruby 1.9 has been End of Life since [23th of February 2015](https://www.ruby-lang.org/en/news/2015/02/23/support-for-ruby-1-9-3-has-ended/) and should no longer be used in production. Future versions of the AppSignal for Ruby gem may drop other End of Life versions of Ruby.
