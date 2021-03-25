@@ -522,47 +522,52 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>alert_id</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Internal AppSignal alert id for the alert.</td>
     </tr>
     <tr>
       <td><code>state</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td><a href="/anomaly-detection/#alert-states">State</a> of the alert.</td>
     </tr>
     <tr>
       <td><code>site</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>The application name alert belongs to.</td>
     </tr>
     <tr>
       <td><code>environment</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>The application environment name alert belongs to.</td>
     </tr>
     <tr>
       <td><code>tags</code></td>
-      <td><code></code></td>
-      <td></td>
+      <td><code>Array<String, String></code></td>
+      <td>Namespace associated with the alert.</td>
+    </tr>
+    <tr>
+      <td><code>human_tags</code></td>
+      <td><code>Array<String, String></code></td>
+      <td>Custom namespace associated with the alert.</td>
     </tr>
     <tr>
       <td><code>metric_name</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Name of the metric alert was created for.</td>
     </tr>
     <tr>
       <td><code>field</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Field name of the alert.</td>
     </tr>
     <tr>
       <td><code>trigger_label</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Name of the trigger.</td>
     </tr>
     <tr>
       <td><code>trigger_description</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Description of the trigger.</td>
     </tr>
     <tr>
       <td><code>last_value</code></td>
@@ -582,12 +587,12 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>comparison_operator</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Comparison operator set by the user based on which the alert will be triggered.</td>
     </tr>
     <tr>
       <td><code>comparison_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Comparison value set by the user based on which the alert will be triggered.</td>
     </tr>
     <tr>
       <td><code>human_last_value</code></td>
@@ -612,22 +617,22 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>created_at</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Timestamp at which the alert was created.</td>
     </tr>
     <tr>
       <td><code>opened_at</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Timestamp at which the alert was opened.</td>
     </tr>
     <tr>
       <td><code>resolved_at</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Timestamp at which the alert was resolved.</td>
     </tr>
     <tr>
       <td><code>closed_at</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Timestamp at which the alert was closed.</td>
     </tr>
     <tr>
       <td><code>warmup_duration</code></td>
@@ -637,17 +642,17 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>cooldown_duration</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Minutes AppSigtnal waits before opening a alert.</td>
     </tr>
     <tr>
       <td><code>alert_url</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>URl of the alert so user can view it on AppSignal.</td>
     </tr>
     <tr>
       <td><code>edit_trigger_url</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>URl of the alert so user can edit it on AppSignal.</td>
     </tr>
   </tbody>
 </table>
