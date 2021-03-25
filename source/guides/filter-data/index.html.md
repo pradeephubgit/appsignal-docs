@@ -15,6 +15,7 @@ You can configure AppSignal what kind of data it should not collect by filtering
 - [Request headers collection](/guides/filter-data/filter-headers.html) - future step in this guide
 - [Ignoring errors](/guides/filter-data/ignore-errors.html) - future step in this guide
 - [Ignoring actions](/guides/filter-data/ignore-actions.html) - future step in this guide
+- [Ignoring namespaces](/guides/filter-data/ignore-namespaces.html) - future step in this guide
 
 ---
 
