@@ -23,8 +23,8 @@ The most specific option is to ignore a certain action (e.g. `HealthCheckControl
 
 More documentation about ignoring actions:
 
-* [Ignore actions for Ruby](/ruby/configuration/ignore-actions.html)
-* [Ignore actions for Elixir](/elixir/configuration/ignore-actions.html)
+* [Ignore actions for Ruby](/guides/filter-data/ignore-actions.html#ruby)
+* [Ignore actions for Elixir](/guides/filter-data/ignore-actions.html#elixir)
 * [Ignore actions for Node.js](/guides/filter-data/ignore-actions.html#node-js)
 
 ## Ignore namespaces
