@@ -25,6 +25,7 @@ More documentation about ignoring actions:
 
 * [Ignore actions for Ruby](/ruby/configuration/ignore-actions.html)
 * [Ignore actions for Elixir](/elixir/configuration/ignore-actions.html)
+* [Ignore actions for Node.js](/guides/filter-data/ignore-actions.html#node-js)
 
 ## Ignore namespaces
 
@@ -33,3 +34,4 @@ When you have a large amount of actions you'd like to ignore, we recommend setti
 * [Documentation on setting namespaces](/application/namespaces.html)
 * [Configuring namespaces for Ruby](/ruby/instrumentation/namespaces.html)
 * [Configuring namespaces for Elixir](/elixir/instrumentation/namespaces.html)
+* [Configuring namespaces for Node.js](/guides/namespaces.html#node-js)
