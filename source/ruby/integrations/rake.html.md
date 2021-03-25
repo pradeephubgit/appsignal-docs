@@ -70,7 +70,7 @@ task :foo do
 end
 ```
 
-Tasks that do not raise an error, but call `Appsignal.send_error` or any of the [custom metrics](/metrics/custom.html) helper methods, need to call `Appsignal.stop` after the task is finished.
+Tasks that do not raise an error, but call [`Appsignal.send_error`](/ruby/instrumentation/exception-handling.html#appsignal-send_error) or any of the [custom metrics](/metrics/custom.html) helper methods, need to call `Appsignal.stop` after the task is finished.
 
 ```ruby
 # Rakefile

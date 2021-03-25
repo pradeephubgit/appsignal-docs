@@ -295,6 +295,35 @@ options:
         - Not acceptable values: `foo`, `my.awesome.custom.local.dns.server`.
 
         If the DNS server cannot be reached the agent will fall back on the host's DNS configuration and output a message in the `appsignal.log` file: `A problem occurred while setting DNS servers`.
+  - config_key: ecto_repos
+    env_key: APPSIGNAL_ECTO_REPOS
+    elixir:
+      since: 2.0.0
+      type:
+        list:
+          - string
+      default_value: nil
+      description: |
+        Configure which Ecto repos to instrument queries for. If unset, AppSignal will automatically find your repos through your application configuration.
+
+        ```elixir
+        # config/config.exs
+        config :appsignal, :config,
+          ecto_repos: [AppsignalPhoenixExample.Repo, AppsignalPhoenixExample.AnotherRepo]
+        ```
+
+        ```sh
+        # In the host environment
+        export APPSIGNAL_DNS_SERVERS="AppsignalPhoenixExample.Repo,AppsignalPhoenixExample.AnotherRepo"
+        ```
+
+        To turn off all Ecto instrumentation, configure `:ecto_repos` as an empty list:
+
+        ```elixir
+        # config/config.exs
+        config :appsignal, :config,
+          ecto_repos: []
+        ```
   - config_key: enable_allocation_tracking
     env_key: APPSIGNAL_ENABLE_ALLOCATION_TRACKING
     ruby:
@@ -307,18 +336,12 @@ options:
     env_key: APPSIGNAL_ENABLE_FRONTEND_ERROR_CATCHING
     ruby:
       since: 1.0.0
+      since_notes:
+        - "`3.0.0`: Removed from the gem. See our [upgrade guide](/ruby/installation/upgrade-from-2-to-3.html) for more information."
       type: bool
       default_value: false
       description: |
         Enable the experimental front-end error catching system. This will add a route to your app on `/appsignal_error_catcher` that can be used to catch JavaScript error and send them to AppSignal. You can configure this route with [`frontend_error_catching_path`](#option-frontend_error_catching_path).
-  - config_key: enable_gc_instrumentation
-    env_key: APPSIGNAL_ENABLE_GC_INSTRUMENTATION
-    ruby:
-      since: 1.0.0
-      type: bool
-      default_value: false
-      description: |
-        Set this option to `true` to enable AppSignal instrumentation of Ruby's Garbage Collection.
   - config_key: enable_host_metrics
     env_key: APPSIGNAL_ENABLE_HOST_METRICS
     ruby:
@@ -394,10 +417,10 @@ options:
       default_value: ./log
     elixir:
       type: string
-      default_value: "/tmp/appsignal.log"
+      default_value: "/tmp"
       since: 1.0.0
       since_notes:
-        - "`1.9.0`: The default log path was changed from `/tmp/appsignal/appsignal.log` to `/tmp/appsignal.log`."
+        - "`1.9.0`: The default log path was changed from `/tmp/appsignal/` to `/tmp/`."
     nodejs:
       config_key: logPath
       type: string

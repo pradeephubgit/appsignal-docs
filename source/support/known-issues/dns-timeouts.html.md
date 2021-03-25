@@ -43,5 +43,5 @@ These workaround are no longer necessary unless you're unable to upgrade to the 
 [blog-gem-2.1]: http://blog.appsignal.com/2017/01/31/gem-2-1.html
 [libc]: https://www.gnu.org/software/libc/
 [musl]: https://www.musl-libc.org/
-[musl-faq-dns]: http://wiki.musl-libc.org/wiki/Functional_differences_from_glibc#Name_Resolver_.2F_DNS
+[musl-faq-dns]: https://wiki.musl-libc.org/functional-differences-from-glibc.html#Name_Resolver/DNS
 [kubernetes]: https://kubernetes.io/

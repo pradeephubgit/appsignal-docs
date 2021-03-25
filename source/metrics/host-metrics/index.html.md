@@ -6,9 +6,13 @@ The AppSignal agent collects various system metrics, which allows you to correla
 
 For a preview of how host metrics look in the AppSignal interface, please see our [host metrics](https://appsignal.com/tour/hosts) tour page.
 
--> **Note**: This feature is available in the AppSignal for Ruby gem version `1.2` and newer. It's turned on by default since Ruby gem version `1.3`.
--> **Note**: This feature available in AppSignal for Elixir package version <code>0.10.0</code> and newer. It's turned on by default since Elixir package version <code>0.10.0</code>.
--> **Note**: This feature is available in all Node.js package versions.
+-> **Note**: This feature is available in these packages:
+-> <ul>
+-> <li>Ruby: gem version `1.2` and newer. Enabled by default since version `1.3`.</li>
+-> <li>Elixir: package version `0.10.0` and newer. Enabled by default since version `0.10.0`.</li>
+-> <li>Node.js: all package versions.</li>
+-> <li>JavaScript for Front-end: none package versions.</li>
+-> </ul>
 
 -> **Note**: This feature is not available on the following architectures:
 -> <ul>

@@ -134,6 +134,9 @@
   from = "/organization/team/index.html"
   to = "/organization/team/members.html"
 [[redirects]]
+  from = "/ruby/installation.html"
+  to = "/ruby/installation/index.html"
+[[redirects]]
   from = "/elixir/installation.html"
   to = "/elixir/installation/index.html"
 [[redirects]]
@@ -193,3 +196,12 @@
 [[redirects]]
   from = "/nodejs/tracing/namespaces.html"
   to = "/guides/namespaces.html"
+[[redirects]]
+from = "/ruby/instrumentation/tagging.html"
+to = "/guides/custom-data"
+[[redirects]]
+from = "/elixir/instrumentation/tagging.html"
+to = "/guides/custom-data/"
+[[redirects]]
+from = "/nodejs/tracing/tagging.html"
+to = "/guides/custom-data/"

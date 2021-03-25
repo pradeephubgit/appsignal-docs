@@ -270,4 +270,24 @@ end
 Channel events will be displayed under the "background" namespace, showing the
 channel module and the action argument that it's used on.
 
+## Manually creating and closing spans
 
+In some cases it can be useful to manually handle spans. You can use the
+span API to instrument tasks for example:
+
+```elixir
+def index(conn, _params) do
+  current = Appsignal.Tracer.current_span()
+  fn ->
+    span = "http_request"
+    |> Appsignal.Tracer.create_span(current)
+    |> Appsignal.Span.set_name("name")
+    |> Appsignal.Span.set_attribute("appsignal:category", "category")
+    :timer.sleep(1000)
+    Appsignal.Tracer.close_span(span)
+  end
+  |> Task.async()
+  |> Task.await()
+  render(conn, "index.html")
+end
+```

@@ -31,6 +31,19 @@ sections:
             name: "Grouping with namespaces"
             link: "/guides/namespaces.html"
           -
+            name: "Tagging and Sample data"
+            link: "/guides/custom-data/"
+            sub_pages:
+              -
+                name: "Start"
+                link: "/guides/custom-data/"
+              -
+                name: "Tagging request"
+                link: "/guides/custom-data/tagging-request.html"
+              -
+                name: "Sample data"
+                link: "/guides/custom-data/sample-data.html"
+          -
             name: "Filtering app data"
             link: "/guides/filter-data/"
             sub_pages:
@@ -85,6 +98,9 @@ sections:
           -
             name: "Namespaces"
             link: "/application/namespaces.html"
+          -
+            name: "Tagging and Sample Data"
+            link: "/application/tagging.html"
           -
             name: "Markers"
             link: "/application/markers/"
@@ -210,7 +226,14 @@ sections:
             link: "/ruby/"
           -
             name: "Installation"
-            link: "/ruby/installation.html"
+            link: "/ruby/installation/"
+            sub_pages:
+              -
+                name: "Overview"
+                link: "/ruby/installation/"
+              -
+                name: "Upgrading from 2 to 3"
+                link: "/ruby/installation/upgrade-from-2-to-3.html"
           -
             name: "Configuration"
             link: "/ruby/configuration/"
@@ -305,8 +328,8 @@ sections:
                 name: "Exception handling"
                 link: "/ruby/instrumentation/exception-handling.html"
               -
-                name: "Tagging and Sample Data"
-                link: "/ruby/instrumentation/tagging.html"
+                name: "Breadcrumbs"
+                link: "/ruby/instrumentation/breadcrumbs.html"
               -
                 name: "Ignore instrumentation"
                 link: "/ruby/instrumentation/ignore-instrumentation.html"
@@ -414,9 +437,6 @@ sections:
                 name: "Exception handling"
                 link: "/elixir/instrumentation/exception-handling.html"
               -
-                name: "Tagging and Sample Data"
-                link: "/elixir/instrumentation/tagging.html"
-              -
                 name: "Minutely probes <sup>New</sup>"
                 link: "/elixir/instrumentation/minutely-probes.html"
               -
@@ -484,9 +504,6 @@ sections:
               -
                 name: "Exception handling"
                 link: "/nodejs/tracing/exception-handling.html"
-              -
-                name: "Tagging and Sample Data"
-                link: "/nodejs/tracing/tagging.html"
               -
                 name: "Async tracing and Scopes"
                 link: "/nodejs/tracing/scopes.html"
@@ -655,7 +672,7 @@ sections:
             name: "Installation"
             link: "/standalone-agent/installation.html"
           -
-            name: "StatsD"
+            name: "StatsD Metrics"
             link: "/standalone-agent/statsd.html"
       -
         name: "AppSignal API <sup>Beta</sup>"
@@ -690,6 +707,12 @@ sections:
               -
                 name: "StatsD"
                 link: "/api/public-endpoint/statsd.html"
+              -
+                name: "JSON Metrics"
+                link: "/api/public-endpoint/json-metrics.html"
+              -
+                name: "Errors"
+                link: "/api/public-endpoint/errors.html"
   -
     name: "More"
     sub_sections:

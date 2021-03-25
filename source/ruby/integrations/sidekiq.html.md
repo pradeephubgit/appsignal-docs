@@ -53,6 +53,12 @@ Sidekiq.on(:shutdown) do
 end
 ```
 
+## Internal Sidekiq errors
+
+-> ℹ️ This type of error reporting was added in AppSignal for Ruby gem version 3.0.
+
+When Sidekiq encounters a problem before or after a job has been processed, such as parsing JSON from Redis, it will raise an error. This error is reported under the `SidekiqInternal` action on the `background` namespace, as the context of the job is unknown at the time the error occurs.
+
 ## Metrics
 
 The Sidekiq integration will report the following [metrics](/metrics/custom.html) for every processed job.
@@ -81,9 +87,9 @@ This probe will report the following [metrics](/metrics/custom.html) grouped by 
 - `sidekiq_connection_count` - [gauge](/metrics/custom.html#gauge)
   - How many connections were open to the Redis database.
 - `sidekiq_memory_usage` - [gauge](/metrics/custom.html#gauge)
-  - The Virtual Memory Size memory usage of Sidekiq itself.
+  - The Virtual Memory Size memory usage of Redis.
 - `sidekiq_memory_usage_rss` - [gauge](/metrics/custom.html#gauge)
-  - The Resident Set Size memory usage of Sidekiq itself.
+  - The Resident Set Size memory usage of Redis.
 - `sidekiq_job_count` - [gauge](/metrics/custom.html#gauge)
   - Tag `status`:
       - `processed`: all processed jobs in this minute, this includes failed jobs.

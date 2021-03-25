@@ -518,7 +518,7 @@ possible to add more [metadata](#metadata) to a sample that can be used in
 [link templates](/application/link-templates.html) to easily link to
 the relevant data in your own application.
 
-Read more about [tagging requests](/ruby/instrumentation/tagging.html).
+Read more about [tagging requests](/guides/custom-data/).
 
 ## Teams
 

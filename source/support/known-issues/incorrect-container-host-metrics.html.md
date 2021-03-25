@@ -35,6 +35,8 @@ Please upgrade to the latest AppSignal for Ruby gem or Elixir package to receive
   - [CPU](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/)
   - [memory](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/)
 
+For more information, please read our page on [container metrics and container limits](/metrics/host-metrics/containers.html#container-limits).
+
 Contact us if host metrics are not reported accurately for your system. In which case it would help us a lot if you could send us the `appsignal.log` file and some information about your app's container setup so we can reproduce the issue.
 
 Let us know which metrics you are missing, are inaccurate or if you have a problem, at [support@appsignal.com].
