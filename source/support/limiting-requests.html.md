@@ -32,6 +32,6 @@ More documentation about ignoring actions:
 When you have a large amount of actions you'd like to ignore, we recommend setting a custom namespace for these actions and ignore the namespace instead. This keeps the config clean.
 
 * [Documentation on setting namespaces](/application/namespaces.html)
-* [Configuring namespaces for Ruby](/ruby/instrumentation/namespaces.html)
-* [Configuring namespaces for Elixir](/elixir/instrumentation/namespaces.html)
-* [Configuring namespaces for Node.js](/guides/namespaces.html#node-js)
+* [Configuring namespaces for Ruby](/guides/filter-data/ignore-namespaces.html#ruby)
+* [Configuring namespaces for Elixir](/guides/filter-data/ignore-namespaces.html#elixir)
+* [Configuring namespaces for Node.js](/guides/filter-data/ignore-namespaces.html#node-js)
