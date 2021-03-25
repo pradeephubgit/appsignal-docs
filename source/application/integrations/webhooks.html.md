@@ -572,17 +572,17 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>last_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Last value recorded for the alert.</td>
     </tr>
     <tr>
       <td><code>peak_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Highest value recorded for the alert</td>
     </tr>
     <tr>
       <td><code>mean_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Mean of all values for the alert.</td>
     </tr>
     <tr>
       <td><code>comparison_operator</code></td>
@@ -597,22 +597,22 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>human_last_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Last value recorded for the alert in a readable format.</td>
     </tr>
     <tr>
       <td><code>human_peak_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Highest value recorded for the alert in a readable format.</td>
     </tr>
     <tr>
       <td><code>human_mean_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Mean of all values for the alert in a readable format.</td>
     </tr>
     <tr>
       <td><code>human_comparison_value</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Comparison value set by the user based on which the alert will be triggered in a readable format.</td>
     </tr>
     <tr>
       <td><code>created_at</code></td>
