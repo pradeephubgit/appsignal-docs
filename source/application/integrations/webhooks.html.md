@@ -597,7 +597,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>human_last_value</code></td>
       <td><code>String</code></td>
-      <td>Last value recorded for the alert in a readable format.</td>
+      <td>Last metric value that recorded for the alert since it was opened in a more readable format.</td>
     </tr>
     <tr>
       <td><code>human_peak_value</code></td>
