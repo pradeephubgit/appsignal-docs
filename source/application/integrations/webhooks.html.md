@@ -627,7 +627,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>resolved_at</code></td>
       <td><code>String</code></td>
-      <td>Timestamp at which the alert was resolved.</td>
+      <td>Timestamp (ISO8601) at which the alert was resolved.</td>
     </tr>
     <tr>
       <td><code>closed_at</code></td>
