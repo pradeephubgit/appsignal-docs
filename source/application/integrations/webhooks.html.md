@@ -602,7 +602,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>human_peak_value</code></td>
       <td><code>String</code></td>
-      <td>Highest value recorded for the alert in a readable format.</td>
+      <td>Highest value of the metric value that was recorded for the alert while it was open.</td>
     </tr>
     <tr>
       <td><code>human_mean_value</code></td>
