@@ -607,7 +607,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>human_mean_value</code></td>
       <td><code>String</code></td>
-      <td>Mean of all values for the alert in a readable format.</td>
+      <td>Mean value of the metric value for the alert while it was open in a more readable format.</td>
     </tr>
     <tr>
       <td><code>human_comparison_value</code></td>
