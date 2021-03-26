@@ -612,7 +612,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>human_comparison_value</code></td>
       <td><code>String</code></td>
-      <td>Comparison value set by the user based on which the alert will be triggered in a readable format.</td>
+      <td>Comparison value for the alert metric set by the user based on which the alert will be triggered in a readable format.</td>
     </tr>
     <tr>
       <td><code>created_at</code></td>
