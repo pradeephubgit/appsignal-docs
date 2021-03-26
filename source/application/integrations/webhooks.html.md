@@ -637,7 +637,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>warmup_duration</code></td>
       <td><code>String</code></td>
-      <td></td>
+      <td>Time in minutes AppSignal waits before opening a alert.</td>
     </tr>
     <tr>
       <td><code>cooldown_duration</code></td>
