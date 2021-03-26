@@ -642,7 +642,7 @@ You can add your own metadata by <a href="/guides/custom-data/">tagging samples<
     <tr>
       <td><code>cooldown_duration</code></td>
       <td><code>String</code></td>
-      <td>Minutes AppSigtnal waits before opening a alert.</td>
+      <td>Time in minutes AppSignal waits before closing a alert.</td>
     </tr>
     <tr>
       <td><code>alert_url</code></td>
