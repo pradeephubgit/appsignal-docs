@@ -69,7 +69,7 @@ All parameters, except for `file` can be sent either in the POST body or as GET 
     <tr>
       <td><code>name</code></td>
       <td>Array of Strings</td>
-      <td>List of filenames that the sourcemap covers. This should be a full URL to the minified JavaScript file.</td>
+      <td>List of filenames that the sourcemap covers. This should be a full URL to the minified JavaScript file, as you see it in the backtrace, including any url params.</td>
     </tr>
     <tr>
       <td><code>file</code></td>
@@ -95,7 +95,7 @@ All parameters, except for `file` can be sent either in the POST body or as GET 
 
 ```bash
 curl -k -X POST -H 'Content-Type: multipart/form-data' \
-  -F 'name[]=https://localhost:3000/application.min.js' \
+  -F 'name[]=https://localhost:3000/application.min.js?vsn=d ' \
   -F 'revision=abcdef' \
   -F 'file=@/~project/application.js.map' \
   'https://appsignal.com/api/sourcemaps?push_api_key=xxx&app_name=MyApp&environment=development'
