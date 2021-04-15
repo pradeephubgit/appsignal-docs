@@ -87,3 +87,47 @@ The metric name is `uptime_monitor_duration` and the tags are:
   * `north-america`
   * `south-america`
 * `name` the name of the uptime monitor check.
+
+
+## Plans and Requests
+
+The requests made by us to check your service are not deducted from the plan requests by default. This means just the health check alone can consume a big chunk of your (developer) plan. We recommend not pinging the homepage of your project, but to setup a dedicated health-check endpoint that can be ignored in the AppSignal config. This way the requests from the uptime monitor checks won't count towards your plan's total requests.
+
+### Example in Ruby/Rails
+
+Here's an example of a health-check endpoint in Ruby on Rails. We make sure to hit all our external services such as the Database and Redis, something that might not happen on the homepage, ensuring all services are operational.
+
+Routes.rb
+
+```ruby
+resource :health_check, :only => :show
+```
+
+health_checks_controller.rb
+
+```ruby
+class HealthChecksController < ApplicationController
+  def show
+    # Check MongoDB
+    Account.mongo_client.command(:getLastError => 1)
+    # Check Redis
+    Redis.new.ping
+    head 200
+  rescue Mongo::Error, Redis::CannotConnectError
+    head 503
+  end
+end
+```
+
+appsignal.yml
+
+```yaml
+default: &defaults
+  push_api_key: "<%= ENV['APPSIGNAL_PUSH_API_KEY'] %>"
+
+  # Your app's name
+  name: "AppSignal"
+
+  ignore_actions:
+    - HealthChecksController#show
+```
