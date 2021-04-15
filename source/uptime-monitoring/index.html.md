@@ -30,7 +30,22 @@ We will request the given URL from the following regions:
 * South-America (São Paulo)
 
 
-### IP whitelisting
+## User-Agent
+
+To detect AppSignal uptime monitor requests, your check will send a specific `User-Agent` header with the request in the following format;
+
+```
+AppSignal/<version> (+https://appsignal.com)
+```
+
+For example:
+
+```
+AppSignal/1.0 (+https://appsignal.com)
+```
+
+
+## IP whitelisting
 
 We run our uptime checks on a serverless framework and have no control over what IP address will be used to make the request to the given URL. Therefore at this moment we're unable to provide a list of IP addresses to whitelist. Right now this feature requires the given URL to be publicly reachable.
 
