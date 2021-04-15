@@ -35,13 +35,13 @@ We will request the given URL from the following regions:
 To detect AppSignal uptime monitor requests, your check will send a specific `User-Agent` header with the request in the following format;
 
 ```
-AppSignal/<version> (+https://appsignal.com)
+AppSignalBot/<version> (+https://appsignal.com)
 ```
 
 For example:
 
 ```
-AppSignal/1.0 (+https://appsignal.com)
+AppSignalBot/1.0 (+https://appsignal.com)
 ```
 
 
