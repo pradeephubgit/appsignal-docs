@@ -29,7 +29,7 @@ We currently only support running AppSignal on machines with an Intel based arch
 | &nbsp;&nbsp;&nbsp;&nbsp; - `darwin` <sup>1</sup>            |                | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - `ARM` Apple Silicon <sup>8</sup> |                |                |
 | Linux <sup>2 3</sup>                                        | ✓              | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - Alpine Linux <sup>4 5</sup>      | ✓              | ✓              |
+| &nbsp;&nbsp;&nbsp;&nbsp; - Alpine Linux <sup>4 5</sup>      |                | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - CentOS                           | ✓              | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - Debian                           | ✓              | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - Fedora                           | ✓              | ✓              |
