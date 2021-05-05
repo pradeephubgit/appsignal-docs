@@ -631,7 +631,6 @@ sections:
           -
             name: "Troubleshooting"
             link: "/front-end/troubleshooting.html"
-
   -
     name: "Features"
     sub_sections:
@@ -679,7 +678,7 @@ sections:
             name: "StatsD Metrics"
             link: "/standalone-agent/statsd.html"
       -
-        name: "AppSignal API <sup>Beta</sup>"
+        name: "AppSignal API"
         icon: "fas fa-code"
         link: "/api/"
         pages:
@@ -717,6 +716,27 @@ sections:
               -
                 name: "Errors"
                 link: "/api/public-endpoint/errors.html"
+  -
+    name: "Services & Integrations"
+    sub_sections:
+      -
+        name: "Heroku"
+        icon: "fa fa-link"
+        link: "/heroku/"
+        pages:
+          -
+            name: "Setup Logdrain"
+            link: "/heroku/setup-logdrain.html"
+          -
+            name: "Logplex errors"
+            link: "/heroku/logplex-errors.html"
+          -
+            name: "Host metrics"
+            link: "/heroku/host-metrics.html"
+          -
+            name: "Dashboards"
+            link: "/heroku/dashboards.html"
+
   -
     name: "More"
     sub_sections:
