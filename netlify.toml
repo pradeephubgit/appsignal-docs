@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/metrics/host-metrics/heroku"
+  from = "/metrics/host-metrics/heroku.html"
   to = "/heroku/host-metrics.html"
 [[redirects]]
   from = "/contributing"
