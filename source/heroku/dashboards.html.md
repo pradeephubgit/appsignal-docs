@@ -3,7 +3,7 @@ title: "Heroku dashboards"
 description: "Learn how to set up Heroku Dashboards and what each dashboard means."
 ---
 
--> **Tip:** Make sure a working [Heroku Logplex Logdrain](/herou/setup-logdrain.html) is setup before continuing with this section.
+-> **Tip:** Make sure a working [Heroku Logplex Logdrain](/heroku/setup-logdrain.html) is setup before continuing with this section.
 
 These dashboards will be generated automatically as "Magic dashboards", when a Logdrain is setup. No further action is required. Note that in some cases you need a
 
