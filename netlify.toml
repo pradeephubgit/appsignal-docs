@@ -1,4 +1,7 @@
 [[redirects]]
+  from = "/metrics/host-metrics/heroku"
+  to = "/heroku/host-metrics.html"
+[[redirects]]
   from = "/contributing"
   to = "/appsignal/contributing.html"
 [[redirects]]

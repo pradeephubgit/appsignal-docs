@@ -1,9 +1,9 @@
 ---
-title: "Heroku host metrics <sup>beta</sup>"
+title: "Heroku host metrics"
 description: "Learn how to set up host metrics for Heroku dyno's for AppSignal using Heroku's logplex system."
 ---
 
--> **Note**: This page is part of the [host metrics section](/metrics/host.html).
+-> **Tip:** Make sure a working [Heroku Logplex Logdrain](/heroku/setup-logdrain.html) is setup before continuing with this section.
 
 Heroku provides a service to retrieve host metrics from a Dyno through their [Logplex system](https://devcenter.heroku.com/articles/logplex).
  AppSignal provides an endpoint to read these metrics from your app's logs. This is the only way to receive accurate host metrics in AppSignal for Heroku apps. The AppSignal [host metrics](/metrics/host.html) feature does not work reliable on Heroku as it doesn't directly expose runtime metrics for LXC containers in which their Dynos run. Using the normal host metrics collection your Heroku apps will report the host metrics for the parent system on which many Heroku apps run rather than metrics limited to your Dynos.
@@ -48,18 +48,4 @@ source=web.1 dyno=heroku.2808254.d97d0ea7-cf3d-411b-b453-d2943a50b456 sample#mem
 
 Please see the [Heroku Logplex documentation](https://devcenter.heroku.com/articles/log-runtime-metrics) for more information on how to set this up if you run into problems.
 
-### 4. Add a Logplex drain
-
-!> **Warning**: This will send **all** of your app's logs to our endpoint, not just the metrics. Our endpoint only parses the Dyno's host runtime metrics and ignores the rest of your logs.
-
-In order to get the Dyno's host metrics to AppSignal you have to create a new Logplex drain.
-
-```
-heroku drains:add "https://appsignal-endpoint.net/logplex?api_key=<push_api_key>&name=<app_name>&environment=<app_environment>"
-```
-
-Make sure to replace the placeholders (`<push_api_key>`, `<app_name>` and `<app_environment>`) with your AppSignal organization's Push API key, your app's name and environment. Make sure your app's name and environment match exactly with your app's AppSignal configuration. These values are case sensitive.
-
-You can find your Push API key, app name and environment on AppSignal.com at ["App settings > Push & Deploy"](https://appsignal.com/redirect-to/app?to=info).
-
-After adding the drain host metrics for your app will appear after a few minutes in the ["host metrics" section](https://appsignal.com/redirect-to/app?to=host_metrics).
+After adding the labs feature, host metrics for your app will appear after a few minutes in the ["host metrics" section](https://appsignal.com/redirect-to/app?to=host_metrics).
