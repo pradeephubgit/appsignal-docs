@@ -3,7 +3,7 @@ title: "Heroku Logplex Errors"
 description: "Learn how to set up Heroku Logplex Errors what the errors mean."
 ---
 
--> **Tip:** Make sure a working [Heroku Logplex Logdrain](/herou/setup-logdrain.html) is setup before continuing with this section.
+-> **Tip:** Make sure a working [Heroku Logplex Logdrain](/heroku/setup-logdrain.html) is setup before continuing with this section.
 
 AppSignal will automatically extract Heroku errors from the Logplex data when a Logdrain is setup, no further action is required.
 
