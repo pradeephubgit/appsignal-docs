@@ -12,3 +12,11 @@ We normally recommend using the the `APP_REVISION` [environment variable](/appli
 However, when using Heroku with the [Heroku Labs: Dyno Metadata](https://devcenter.heroku.com/articles/dyno-metadata) enabled it will automatically set the `revision` config option to the `HEROKU_SLUG_COMMIT` system environment variable. This will automatically report new deploys when the Heroku app gets deployed.
 
 -> 📖 Also read our guide on [how to set up deploy markers](/guides/deploy-markers.html).
+
+To enable Dyno metadata run:
+
+```
+heroku labs:enable runtime-dyno-metadata -a <app name>
+```
+
+While replacing `<app name>` with your app name. And that's it! Deploys will now automatically be tracked by AppSignal.
