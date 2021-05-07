@@ -736,6 +736,9 @@ sections:
           -
             name: "Dashboards"
             link: "/heroku/dashboards.html"
+          -
+            name: "Deploy Markers"
+            link: "/heroku/deploys.html"
 
   -
     name: "More"
