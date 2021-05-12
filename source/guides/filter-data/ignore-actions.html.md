@@ -8,7 +8,7 @@ In an app there may be certain actions that you don't want to report to AppSigna
 
 ## Ignoring actions
 
-These actions can be ignored by customizing the configuration for AppSignal integrations in apps. The "ignore actions" configuration option will allow you to configure a list of action names, as reported to AppSignal. Any action in this list will be ignored, meaning the data from these actions will not be sent to the AppSignal servers, and will not count towards your [organization's billing plan](https://appsignal.com/plans).
+These actions can be ignored by customizing the configuration for AppSignal integrations in apps. The "ignore actions" configuration option will allow you to configure a list of action names, as reported to AppSignal. Any action in this list will be ignored, meaning the data from these actions will not be sent to the AppSignal servers, and will not count towards your [organization's billing plan](https://www.appsignal.com/plans).
 
 The "ignore actions" config option is configured differently per integration language. See the list of integrations below for the one your app uses.
 

@@ -27,13 +27,13 @@ Our main projects include:
 Other projects we have open sourced, and are used internally by other projects,
 include:
 
-- [AppSignal Rust agent][appsignal-rust]  
+- [AppSignal Rust agent][appsignal-rust]
   Early stage proof of concept of AppSignal Rust integration.
-- [sql_lexer][sql_lexer]  
+- [sql_lexer][sql_lexer]
   Rust library to lex and sanitize SQL queries.
-- [probes.rs][probes-rs]  
+- [probes.rs][probes-rs]
   Rust library to read out system stats from a machine running Linux.
-- [public_config][public_config]  
+- [public_config][public_config]
   Parts of AppSignal.com configuration that are public, such as magic dashboards.
 
 ## Using git and GitHub
@@ -100,8 +100,8 @@ behavior to [contact@appsignal.com][coc-contact].
 
 [contact]: mailto:support@appsignal.com
 [blog]: http://blog.appsignal.com/
-[changelog]: https://appsignal.com/changelog
-[waffles-page]: https://appsignal.com/waffles
+[changelog]: https://www.appsignal.com/changelog
+[waffles-page]: https://www.appsignal.com/waffles
 [appsignal-ruby]: https://github.com/appsignal/appsignal-ruby
 [appsignal-elixir]: https://github.com/appsignal/appsignal-elixir
 [appsignal-javascript]: https://github.com/appsignal/appsignal-javascript

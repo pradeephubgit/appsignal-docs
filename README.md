@@ -86,9 +86,9 @@ documentation and follow our [Code of Conduct][coc].
 Also, we would be very happy to send you Stroopwaffles. Have look at everyone
 we send a package to so far on our [Stroopwaffles page][waffles-page].
 
-[appsignal]: https://appsignal.com
+[appsignal]: https://www.appsignal.com
 [contact]: mailto:support@appsignal.com
 [coc]: https://docs.appsignal.com/appsignal/code-of-conduct.html
-[waffles-page]: https://appsignal.com/waffles
+[waffles-page]: https://www.appsignal.com/waffles
 [docs]: https://docs.appsignal.com
 [contributing-guide]: https://docs.appsignal.com/contributing

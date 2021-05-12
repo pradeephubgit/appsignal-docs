@@ -24,7 +24,7 @@ AppSignal is the Data Controller for the information we collect about our custom
 
 When sharing data with vendors, we have made sure there are contracts in place that ensure they also receive and process this data in a lawful way.
 
-You can read more about the data we collect for which purpose in our new [Privacy Policy](https://appsignal.com/privacy-policy).
+You can read more about the data we collect for which purpose in our new [Privacy Policy](https://www.appsignal.com/privacy-policy).
 
 ### Data Processor
 

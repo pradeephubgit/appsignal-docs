@@ -4,7 +4,7 @@ title: "Host metrics"
 
 The AppSignal agent collects various system metrics, which allows you to correlate performance issues and errors to abnormal host metrics. This data is available in the [Host metrics](https://appsignal.com/redirect-to/app?to=host_metrics) section in the app overview, which allows you to inspect and [compare multiple hosts](https://blog.appsignal.com/2018/02/20/comparing-hosts.html). We also show a host metrics overview on the sample detail page for error and performance incidents.
 
-For a preview of how host metrics look in the AppSignal interface, please see our [host metrics](https://appsignal.com/tour/hosts) tour page.
+For a preview of how host metrics look in the AppSignal interface, please see our [host metrics](https://www.appsignal.com/tour/hosts) tour page.
 
 -> **Note**: This feature is available in these packages:
 -> <ul>

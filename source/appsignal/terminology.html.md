@@ -175,7 +175,7 @@ stroopwafels](http://blog.appsignal.com/blog/2016/02/01/stroopwafels-and-how-to-
 ## Changelog
 
 We keep a full product changelog at
-[appsignal.com/changelog](https://appsignal.com/changelog).
+[appsignal.com/changelog](https://www.appsignal.com/changelog).
 
 All our new features, agent releases and other changes to the product can be
 found in this neatly organized list.
@@ -219,7 +219,7 @@ Learn more about what [CPU metrics](https://blog.appsignal.com/2018/03/06/unders
 Want to learn more about Elixir? In our email series Elixir Alchemy (1x p/mo)
 we dive deeper into Elixir and Erlang.
 You can sign up here:
-[appsignal.com/elixir-alchemy](https://appsignal.com/elixir-alchemy).
+[appsignal.com/elixir-alchemy](https://blog.appsignal.com/elixir-alchemy).
 
 ## Environments
 
@@ -243,7 +243,7 @@ crash or a simple typo causing an error page.
 Once an error occurs in an application AppSignal sends an alerts and records
 the details of the error for later viewing on AppSignal.com.
 
-Read more about the [errors feature](https://appsignal.com/tour/errors) on our
+Read more about the [errors feature](https://www.appsignal.com/tour/errors) on our
 tour page. To learn more about error handling in Ruby, read our [Exception
 handling](/ruby/instrumentation/exception-handling.html) topic describing how
 to effectively track errors with AppSignal.
@@ -374,7 +374,7 @@ such as [CPU usage](#cpu-usage), load averages, memory usage, etc. gives more
 insight on performance issues than just the code itself. Maybe the disk space
 is running out causing the application to run much slower.
 
-Read more about [metrics](https://appsignal.com/for/metrics) on our tour page.
+Read more about [metrics](https://www.appsignal.com/for/metrics) on our tour page.
 
 ## Namespace
 
@@ -435,7 +435,7 @@ When AppSignal detects a slow web request or operation it will send an alert,
 because slow code can be as damaging as an [error](#errors) appearing.
 
 Read more about the [performance
-feature](https://appsignal.com/for/performance) on our tour page.
+feature](https://www.appsignal.com/for/performance) on our tour page.
 
 ## Push API
 
@@ -480,7 +480,7 @@ performance issues and in graphs for controllers/jobs and on host-level.
 Did you know we write articles about the magic that is Ruby? We do!
 
 It's called Ruby Magic and you can sign up for it on
-[appsignal.com/ruby-magic](https://appsignal.com/ruby-magic).
+[appsignal.com/ruby-magic](https://blog.appsignal.com/ruby-magic).
 
 A list of all the Ruby Magic articles we've written so far can be found on [our
 blog](http://blog.appsignal.com/).

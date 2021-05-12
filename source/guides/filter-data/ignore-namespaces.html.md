@@ -8,7 +8,7 @@ In a previous guide we've discussed [setting up custom namespaces](/guides/names
 
 ## Ignoring namespaces
 
-Namespaces can be ignored by customizing the configuration for AppSignal integrations in apps. The "ignore namespaces" configuration option will allow you to configure a list of namespaces, as reported to AppSignal. Any namespaces in this list will be ignored, meaning the data from these actions will not be sent to the AppSignal servers, and will not count towards your [organization's billing plan](https://appsignal.com/plans).
+Namespaces can be ignored by customizing the configuration for AppSignal integrations in apps. The "ignore namespaces" configuration option will allow you to configure a list of namespaces, as reported to AppSignal. Any namespaces in this list will be ignored, meaning the data from these actions will not be sent to the AppSignal servers, and will not count towards your [organization's billing plan](https://www.appsignal.com/plans).
 
 The "ignore namespaces" config option is configured differently per integration language. See the list of integrations below for the one your app uses.
 
