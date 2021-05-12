@@ -219,7 +219,7 @@ Learn more about what [CPU metrics](https://blog.appsignal.com/2018/03/06/unders
 Want to learn more about Elixir? In our email series Elixir Alchemy (1x p/mo)
 we dive deeper into Elixir and Erlang.
 You can sign up here:
-[appsignal.com/elixir-alchemy](https://www.appsignal.com/elixir-alchemy).
+[appsignal.com/elixir-alchemy](https://blog.appsignal.com/elixir-alchemy).
 
 ## Environments
 
@@ -480,7 +480,7 @@ performance issues and in graphs for controllers/jobs and on host-level.
 Did you know we write articles about the magic that is Ruby? We do!
 
 It's called Ruby Magic and you can sign up for it on
-[appsignal.com/ruby-magic](https://www.appsignal.com/ruby-magic).
+[appsignal.com/ruby-magic](https://blog.appsignal.com/ruby-magic).
 
 A list of all the Ruby Magic articles we've written so far can be found on [our
 blog](http://blog.appsignal.com/).
