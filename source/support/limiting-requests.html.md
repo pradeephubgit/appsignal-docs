@@ -2,7 +2,7 @@
 title: "Limiting requests"
 ---
 
-[Our pricing](http://appsignal.com/plans) is based on the request count your application processes. This includes web requests and background jobs. We feel it's the most fair way of determining how much value your application generates.
+[Our pricing](https://appsignal.com/plans) is based on the request count your application processes. This includes web requests and background jobs. We feel it's the most fair way of determining how much value your application generates.
 
 However, not all requests are equal. For example load balancer health checks that occur every 10 seconds provide no value, but are needed to keep your app up-and-running.
 
