@@ -45,7 +45,7 @@ proper HTTP responses when resources don't exist or when a form submission
 fails.
 
 Read our primer on [Exception
-handling](http://blog.appsignal.com/blog/2016/10/18/ruby-magic-exceptions-primer.html)
+handling](https://blog.appsignal.com/blog/2016/10/18/ruby-magic-exceptions-primer.html)
 for more information on how it works and how to implement it correctly.
 
 ### Rails rescue_from
@@ -69,7 +69,7 @@ end
 ```
 
 More information about `rescue_from` can be found in the Rails guide about
-[ActionController](http://guides.rubyonrails.org/action_controller_overview.html#rescue-from).
+[ActionController](https://guides.rubyonrails.org/action_controller_overview.html#rescue-from).
 
 ### Handle 404s
 
