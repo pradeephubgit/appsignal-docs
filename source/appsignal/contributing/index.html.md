@@ -99,7 +99,7 @@ to follow the contributor [code of conduct][coc]. Please report unacceptable
 behavior to [contact@appsignal.com][coc-contact].
 
 [contact]: mailto:support@appsignal.com
-[blog]: http://blog.appsignal.com/
+[blog]: https://blog.appsignal.com/
 [changelog]: https://www.appsignal.com/changelog
 [waffles-page]: https://www.appsignal.com/waffles
 [appsignal-ruby]: https://github.com/appsignal/appsignal-ruby
