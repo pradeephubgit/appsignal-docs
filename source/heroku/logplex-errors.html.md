@@ -16,4 +16,4 @@ Because the errors are generated from Log lines, the information available is li
 
 The error code is determined by Heroku, for a full list of error codes, see the [Heroku errors documentation](https://devcenter.heroku.com/articles/error-codes).
 
-You'll receive notifications for these errors when notifiers are setup. If you do not wish to receive notifications for these errors, it's recommended to setup [Namespace default notification settings](application/notification-settings.html).
+You'll receive notifications for these errors when notifiers are setup. If you do not wish to receive notifications for these errors, it's recommended to setup [Namespace default notification settings](/application/notification-settings.html).
