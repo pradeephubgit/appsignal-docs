@@ -165,12 +165,12 @@ The Node.js integration uses them sightly differently:
 
 ## Blog
 
-We have a blog at [blog.appsignal.com](http://blog.appsignal.com/)!
+We have a blog at [blog.appsignal.com](https://blog.appsignal.com/)!
 
 On our blog we post all things relevant to AppSignal, such as new features, new
 major agent releases, [Ruby Magic](#ruby-magic) articles and other awesome
 stories from our internal process. Such as [how to eat
-stroopwafels](http://blog.appsignal.com/blog/2016/02/01/stroopwafels-and-how-to-eat-them.html).
+stroopwafels](https://blog.appsignal.com/blog/2016/02/01/stroopwafels-and-how-to-eat-them.html).
 
 ## Changelog
 
@@ -483,7 +483,7 @@ It's called Ruby Magic and you can sign up for it on
 [appsignal.com/ruby-magic](https://blog.appsignal.com/ruby-magic).
 
 A list of all the Ruby Magic articles we've written so far can be found on [our
-blog](http://blog.appsignal.com/).
+blog](https://blog.appsignal.com/).
 
 ## Samples
 
@@ -506,7 +506,7 @@ a stroopwaffle at the office, chances it came from us.
 
 We've written a whole article about what stroopwaffles are and how you should
 eat them. Read on to [become a stroopwaffle
-expert](http://blog.appsignal.com/blog/2016/02/01/stroopwafels-and-how-to-eat-them.html).
+expert](https://blog.appsignal.com/blog/2016/02/01/stroopwafels-and-how-to-eat-them.html).
 
 Now I'm hungry for a stroopwaffle.
 
