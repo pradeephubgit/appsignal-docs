@@ -40,7 +40,7 @@ These workaround are no longer necessary unless you're unable to upgrade to the 
   - AppSignal for Ruby gem version `2.0.6`.
   - AppSignal for Elixir package version `0.9.2`.
 
-[blog-gem-2.1]: http://blog.appsignal.com/2017/01/31/gem-2-1.html
+[blog-gem-2.1]: https://blog.appsignal.com/2017/01/31/gem-2-1.html
 [libc]: https://www.gnu.org/software/libc/
 [musl]: https://www.musl-libc.org/
 [musl-faq-dns]: https://wiki.musl-libc.org/functional-differences-from-glibc.html#Name_Resolver/DNS
