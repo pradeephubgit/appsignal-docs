@@ -3,7 +3,7 @@ title: Microsoft Teams
 ---
 
 Microsoft Teams, the hub for team collaboration in Microsoft 365, integrates the people, content, and tools your team needs to be more engaged and effective.
-Google Hangouts Chat is a global integration set up per App.
+Microsoft Teams is a global integration set up per App.
 
 Website: [microsoft.com/teams](https://microsoft.com/teams)
 
@@ -11,7 +11,7 @@ Website: [microsoft.com/teams](https://microsoft.com/teams)
 
 ## Adding MS Teams integration to you app
 
-Adding the integration consists of two steps, one on Google Hangouts Chat and one on AppSignal.
+Adding the integration consists of two steps, one on Microsoft Teams and one on AppSignal.
 
 ### Incoming webhook
 Either configure a "connector" under the channel options, or if that option is not available, click the apps icon at the bottom right and search for "Incoming Webhook" and click "Add to team".
