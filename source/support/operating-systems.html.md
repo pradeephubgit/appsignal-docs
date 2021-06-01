@@ -4,21 +4,6 @@ title: "Supported Operating Systems"
 
 The AppSignal integrations for Ruby, Elixir & Node.js contain native extensions and a separate lightweight agent process. These native extensions are supported on most Linux distributions, FreeBSD and macOS/OSX. If an Operating System you use is not supported, please [get in touch](mailto:support@appsignal.com).
 
-- [Support table](#support-table)
-- [Linux](#linux)
-  - [Supported versions](#supported-versions)
-  - [Musl build override](#musl-build-override)
-  - [Alpine Linux](#alpine-linux)
-      - [Ruby](#alpine-linux-ruby)
-      - [Elixir](#alpine-linux-elixir)
-  - [CentOS](#centos)
-  - [Debian / Ubuntu](#debian-ubuntu)
-  - [Fedora](#fedora)
-- [FreeBSD](#freebsd)
-- [macOS / OS X](#macos)
-- [Microsoft Windows](#microsoft-windows)
-  - [Microsoft Windows Subsystem for Linux](#microsoft-windows-subsystem-for-linux)
-
 ## Support table
 
 We currently only support running AppSignal on machines with an Intel based architecture.
