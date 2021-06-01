@@ -46,15 +46,45 @@ You can also set the environment variable at runtime:
 APPSIGNAL_PUSH_API_KEY="<PUSH API KEY HERE>" npx @appsignal/cli diagnose
 ```
 
-### Environment option
-
-Select a specific environment with the CLI.
+To run the diagnose on your production server, and send the report to AppSignal for support purposes, you can run the following command:
 
 ```bash
-npx @appsignal/cli diagnose --environment="<development || staging || production>"
+npx @appsignal/cli diagnose --environment=production --send-report --api-key="<PUSH API KEY HERE>"
 ```
 
 The environment option is useful when the default environment is not the one you want to diagnose. The diagnose tool will warn you when no environment is selected.
+
+## Options
+
+| Option | Description |
+| ------ | ----------- |
+| [`--environment=<environment>`](#environment-option) | Set the environment to use in the command, e.g. `production` or `staging`. |
+| `--api-key` | Define which API key to use. |
+| [`--[no-]send-report`](#report-submission-option) | Automatically send, or do not send the report. |
+
+### Environment option
+
+Define which app environment AppSignal should load in the diagnose CLI.
+
+```bash
+npx @appsignal/cli diagnose --environment=production
+```
+
+### Report submission option
+
+The options to [submit the report](#submitting-the-report) immediately, or not, were added to the AppSignal Node.js package version `1.2.5`.
+
+Submit the report to AppSignal:
+
+```bash
+npx @appsignal/cli diagnose --send-report
+```
+
+Do not submit the report to AppSignal:
+
+```bash
+npx @appsignal/cli diagnose --no-send-report
+```
 
 ## Configuration output format
 
@@ -67,13 +97,6 @@ The configuration options are printed to the CLI as their inspected values. This
 - Arrays values are printed as a collection of values surrounded by square brackets, e.g. `["HTTP_ACCEPT", "HTTP_ACCEPT_CHARSET"]`.
   - Empty Arrays are printed as two square brackets: `[]`.
 - Null or undefined values are printed as `null` or `undefined`.
-
-## Options
-
-| Option | Description |
-| ------ | ----------- |
-| `--environment` | Define which environment to use. |
-| `--api-key` | Define which API key to use. |
 
 ## Exit codes
 
