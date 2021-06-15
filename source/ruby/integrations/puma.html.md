@@ -54,9 +54,15 @@ By default the Puma main process doesn't start your app. This means AppSignal is
 plugin :appsignal
 ```
 
-If you do not load this plugin AppSignal will still attempt to load automatically on boot, which only works in [thread pool mode][thread pool] and [clustered mode][clustered mode] when calling `preload_app!` in your `puma.rb` configuration file.
-
 Additional configuration may be required to load your app config and/or [secrets](#minutely-probe-configuration-secrets) as well in order to load the AppSignal config.
+
+In combination with `prune_bundler` you will need to add AppSignal as a runtime dependency.
+
+```ruby
+# puma.rb
+plugin :appsignal
+extra_runtime_dependencies ["appsignal"]
+```
 
 ####^minutely-probe-configuration Secrets
 
