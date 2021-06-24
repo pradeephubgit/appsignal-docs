@@ -94,20 +94,21 @@ mix compile
 
 To opt-in to the experimental Linux ARM build, add the `APPSIGNAL_BUILD_FOR_LINUX_ARM` environment variable to your system environment before installing AppSignal and compiling your application. This build is opt-in because it requires more testing, and we don't want to automatically install it on ARM systems in case something doesn't work as expected.
 
--> This build is currently only available for the Ruby gem and Elixir package, [let us know](mailto:support@appsignal.com) if you wish to try it for other integrations such as Node.js.  
+-> This build is available for the Ruby gem, Elixir package and Node.js package. [Let us know](mailto:support@appsignal.com) if you have any feedback on this build after testing it. Please report any issues you run into, but also if it works without any issues.  
 ->
 -> Available in these packages:
 -> <ul>
 -> <li>Ruby gem 3.0.8 or newer.</li>
 -> <li>Elixir package 2.1.8 or newer.</li>
+-> <li>Node.js package 1.2.6 or newer.</li>
 -> </ul>
 
 ```sh
-# For Ruby
+# Set this environment variable
+# Note: How environment variables are set may be different for your Operating
+# System.
 export APPSIGNAL_BUILD_FOR_LINUX_ARM=1
-gem install appsignal
-# or with Bundler
-bundle install
+# Run the install command, such as: bundle install, npm install, mix compile
 ```
 
 ### Alpine Linux
