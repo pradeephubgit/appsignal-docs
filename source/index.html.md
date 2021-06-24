@@ -12,7 +12,7 @@ In this documentation we aim to give you all the information you need to get sta
 - [Getting started guides](/guides/) - Start here if you're new to AppSignal!
 - [AppSignal for Ruby](/ruby/index.html)
 - [AppSignal for Elixir](/elixir/index.html)
-- [AppSignal for Node.js](https://docs.appsignal.com/nodejs/)
+- [AppSignal for Node.js](/nodejs/index.html)
 - [AppSignal for Front-end](/front-end/index.html)
 
 ## Features

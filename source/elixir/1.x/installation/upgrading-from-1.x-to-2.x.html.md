@@ -115,6 +115,6 @@ Lastly, query instrumentation is automatic in 2.x, so you can remove the
 
 ## Welcome to 2.x!
 
-This should cover upgrading most Phoenix applications to 2.x. If your app includes custom instrumentation, please check out the [custom instrumentation documentation](https://docs.appsignal.com/elixir/1.x/instrumentation/) for more information about custom instrumentation in 2.x.
+This should cover upgrading most Phoenix applications to 2.x. If your app includes custom instrumentation, please check out the [custom instrumentation documentation](/elixir/1.x/instrumentation/) for more information about custom instrumentation in 2.x.
 
 If you have any questions, or would like assistance upgrading to the new version, please don't hesitate to [contact support](mailto:support@appsignal.com).
