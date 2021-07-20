@@ -373,6 +373,13 @@ options:
       default_value: true
       description: |
         Enables the [minutely probes](/elixir/instrumentation/minutely-probes.html) system.
+    nodejs:
+      config_key: enableMinutelyProbes
+      since: 0.4.0
+      type: bool
+      default_value: true
+      description: |
+        Enables the [minutely probes](/nodejs/metrics/minutely-probes.html) system.
   - config_key: endpoint
     env_key: APPSIGNAL_PUSH_API_ENDPOINT
     ruby:
