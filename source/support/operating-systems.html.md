@@ -12,7 +12,7 @@ We currently only support running AppSignal on machines with an Intel based arch
 | ----------------------------------------------------------- | -------------- | -------------- |
 | macOS/OSX                                                   |                |                |
 | &nbsp;&nbsp;&nbsp;&nbsp; - `darwin` <sup>1</sup>            |                | ✓              |
-| &nbsp;&nbsp;&nbsp;&nbsp; - `ARM` Apple Silicon <sup>8</sup> |                |                |
+| &nbsp;&nbsp;&nbsp;&nbsp; - `ARM` Apple Silicon <sup>8</sup> |                | ✓              |
 | Linux <sup>2 3</sup>                                        | ✓              | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - Alpine Linux <sup>4 5</sup>      |                | ✓              |
 | &nbsp;&nbsp;&nbsp;&nbsp; - ARM <sup>9</sup>                 |                | Experimental   |
@@ -30,7 +30,7 @@ We currently only support running AppSignal on machines with an Intel based arch
 - `5`: Dynamic builds (which are required for JRuby) are supported since Ruby gem `2.8.0`.
 - `6`: Does not work directly on Microsoft Window's system. See also point 7.
 - `7`: We do not provide support for this setup. May work with the Windows subsystem for Linux. See also the [Microsoft Windows WSL section](#microsoft-windows-subsystem-for-linux) for more information.
-- `8`: We do not provide support for Apple Silicon currently. If you use an Apple Silicon based machine it's possible to run AppSignal (and the parent app) through Rosetta 2.
+- `8`: We provide experimental support for Apple Silicon. Some issues may appear and we'd appreciate it if you would [report them][support]. It's also possible to run AppSignal (and the parent app) through Rosetta 2.
 - `9`: Our Linux ARM is in the testing phase. Read more about it in the [Linux ARM build override section](#linux-arm-build-override).
 
 ## Linux
@@ -230,7 +230,12 @@ Please make sure Xcode is installed with the command line build tools.
 xcode-select --install
 ```
 
--> **Note**: We do not provide support for Apple Silicon currently. If you use an Apple Silicon based machine it's possible to run AppSignal (and the parent app) through Rosetta 2.
+-> **Note**: We provide experimental support for Apple Silicon. Some issues may appear and we'd appreciate it if you would [report them][support]. It's also possible to run AppSignal (and the parent app) through Rosetta 2. Support is available in these package versions:
+-> <ul>
+-> <li>Ruby gem 3.0.11 or newer.</li>
+-> <li>Elixir package 2.1.11 or newer.</li>
+-> <li>Node.js package 1.3.1 or newer.</li>
+-> </ul>
 
 ## Microsoft Windows
 
