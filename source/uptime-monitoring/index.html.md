@@ -21,6 +21,8 @@ Use the description field to help out anyone who receives the alert, by providin
 
 Select a notifier to recieve notifications when the endpoint does not return a 200 state. Sometimes there can be small network hickups, we recommend to use a warmup of at least 1 minute to prevent alerts being sent when there's not actually an issue.
 
+### Headers
+If your endpoint requires authorization, you can use these fields. For example, suppose you are using a `Basic` authentication mechanism. In that case, you can send `Authorization` for header name and `Basic xxx` for header value where `xxx` should be `username:password` 64 base encoded.
 
 ## Regions
 
