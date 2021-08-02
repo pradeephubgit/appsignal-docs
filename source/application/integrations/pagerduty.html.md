@@ -23,4 +23,4 @@ Use this service key on the AppSignal PagerDuty integration form. After saving, 
 
 As always, if you run into any issues, don't hesitate to contact us at [support@appsignal.com](mailto:support@appsignal.com).
 
-2b78q53gz2
+2b78q53gz1
