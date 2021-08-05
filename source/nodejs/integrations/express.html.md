@@ -63,7 +63,7 @@ const appsignal = new Appsignal({
 // ...ALL THE REST OF YOUR IMPORTS AND CODE GO HERE!
 
 const express = require("express");
-const { expressMiddleware } = require("@appsignal/express");
+const { expressErrorHandler } = require("@appsignal/express");
 
 const app = express();
 
