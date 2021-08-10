@@ -32,6 +32,23 @@ Appsignal::Transaction.current.set_sample_data(
 
 ## Elixir
 
+###^elixir `params`
+
+Store custom parameters with the `params` key on the sample data. This is usually set by integrations provided by AppSignal for libraries such as Plug and Phoenix. By modifying the `params` on the sample data the data set by the AppSignal library integrations will be overwritten.
+
+```elixir
+Appsignal.Span.set_sample_data(
+  Appsignal.Tracer.root_span,
+  "params",
+  %{
+    i18n: %{
+      locale: "en_GB",
+      default_locale: "en_US"
+    }
+  }
+)
+```
+
 ###^elixir `custom_data`
 
 Set custom data on the sample to add additional debugging data about the sample error or performance issue.
