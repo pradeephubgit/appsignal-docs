@@ -314,7 +314,7 @@ options:
 
         ```sh
         # In the host environment
-        export APPSIGNAL_DNS_SERVERS="AppsignalPhoenixExample.Repo,AppsignalPhoenixExample.AnotherRepo"
+        export APPSIGNAL_ECTO_REPOS="AppsignalPhoenixExample.Repo,AppsignalPhoenixExample.AnotherRepo"
         ```
 
         To turn off all Ecto instrumentation, configure `:ecto_repos` as an empty list:
