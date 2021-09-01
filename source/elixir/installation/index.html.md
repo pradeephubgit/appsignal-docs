@@ -20,7 +20,7 @@ Before you can compile the AppSignal package, make sure the build/compilation to
 
 1. Start by adding `appsignal` to your list of dependencies in `mix.exs`.
    AppSignal requires you to depend on a JSON encoder. You can pick between
-   `jason` and `poison`, our recommendation is to use `jason`.
+   `jason` and `poison`, our recommendation is to use `jason`. See point 4 if you are using [Phoenix framework][phoenix]
 
     ```elixir
     # mix.exs
