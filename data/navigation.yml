@@ -648,6 +648,13 @@ sections:
         name: "Uptime monitoring <sup>Beta</sup>"
         icon: "fa fa-traffic-light"
         link: "/uptime-monitoring/"
+        pages:
+          -
+            name: "Setup"
+            link: "/uptime-monitoring/setup.html"
+          -
+            name: "Public status page"
+            link: "/uptime-monitoring/public-status-page.html"
       -
         name: "Anomaly detection"
         icon: "fas fa-bell"
