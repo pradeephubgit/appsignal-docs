@@ -72,3 +72,18 @@ Also check our [known issues](/support/known-issues.html) page for issues that m
 ### How to enable two-factor authentication (2FA) for the AppSignal app?
 
 Please see our [two-factor authentication](/user-account/two-factor-authentication.html) page for more information.
+
+## IP addresses used
+
+At the moment the AppSignal push API can use one of the following ip addresses:
+
+```
+37.252.121.227
+37.252.120.243
+185.191.3.93
+185.191.3.94
+185.191.3.125
+185.191.3.126
+```
+
+We don't recommend whitelisting specific ip's, because in the future they might change or more might be added, in case we need to scale in an emergency or cycle our loadbalancers. If you do decide to whitelist these IP adress please send [support](mailto:support@appsignal.com) and email, we'll make sure to notify you if there are upcoming changes.
