@@ -75,7 +75,7 @@ Please see our [two-factor authentication](/user-account/two-factor-authenticati
 
 ## IP addresses used
 
-At the moment the AppSignal push API can use one of the following ip addresses:
+At the time of writing, the AppSignal push API uses one of the following IP addresses:
 
 ```
 37.252.121.227
@@ -86,4 +86,4 @@ At the moment the AppSignal push API can use one of the following ip addresses:
 185.191.3.126
 ```
 
-We don't recommend whitelisting specific ip's, because in the future they might change or more might be added, in case we need to scale in an emergency or cycle our loadbalancers. If you do decide to whitelist these IP adress please send [support](mailto:support@appsignal.com) and email, we'll make sure to notify you if there are upcoming changes.
+We don't recommend whitelisting specific IP addresses. They might change and/or more might be added in the future, for instance when we need to quickly add servers or cycle our loadbalancers. If you do decide to whitelist these IP addresses, please [send our support team an email](mailto:support@appsignal.com), and we'll do our best to notify you if there are upcoming changes.
