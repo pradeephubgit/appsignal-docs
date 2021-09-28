@@ -778,6 +778,9 @@ sections:
             name: "Supported Operating Systems"
             link: "/support/operating-systems.html"
           -
+            name: "Maintenance policy"
+            link: "/support/maintenance-policy.html"
+          -
             name: "Limiting requests"
             link: "/support/limiting-requests.html"
           -

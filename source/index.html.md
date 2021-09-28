@@ -32,6 +32,7 @@ In this documentation we aim to give you all the information you need to get sta
 - [Debugging guide](/support/debugging.html)
 - [Known issues](/support/known-issues.html)
 - [Supported Operating Systems](/support/operating-systems.html)
+- [Maintenance policy](/support/maintenance-policy.html)
 - [Security overview](/appsignal/security.html)
 - [AppSignal status page](https://status.appsignal.com)
 
