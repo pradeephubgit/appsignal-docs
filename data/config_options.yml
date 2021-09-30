@@ -380,6 +380,14 @@ options:
       default_value: true
       description: |
         Enables the [minutely probes](/nodejs/metrics/minutely-probes.html) system.
+  - config_key: enable_statsd
+    env_key: APPSIGNAL_ENABLE_STATSD
+    ruby:
+      since: 3.0.14
+      type: bool
+      default_value: true
+      description: |
+        Enables the [StatsD server](/standalone-agent/statsd.html) in the AppSignal agent.
   - config_key: endpoint
     env_key: APPSIGNAL_PUSH_API_ENDPOINT
     ruby:
