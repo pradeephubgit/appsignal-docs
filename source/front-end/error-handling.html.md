@@ -29,7 +29,7 @@ async function() {
 events.on("event", (err) => { appsignal.sendError(err) })
 ```
 
-### Uncaught exceptions
+## Uncaught exceptions
 
 Uncaught exceptions are **not** captured by default. We made the decision to not include this functionality as part of the core library due to the high amount of noise from browser extensions, ad blockers etc. that generally makes libraries such as this less effective.
 
