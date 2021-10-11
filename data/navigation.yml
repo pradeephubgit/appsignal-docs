@@ -645,7 +645,7 @@ sections:
     name: "Features"
     sub_sections:
       -
-        name: "Uptime monitoring <sup>Beta</sup>"
+        name: "Uptime monitoring"
         icon: "fa fa-traffic-light"
         link: "/uptime-monitoring/"
         pages:
