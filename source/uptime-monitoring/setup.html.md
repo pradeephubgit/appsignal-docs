@@ -31,6 +31,13 @@ We will request the given URL from the following regions:
 * North-America (N. Virginia)
 * South-America (São Paulo)
 
+### How the request works
+
+We ping your applications from AWS Lambda workers that are executed from the regions listed above. There's a 30-second timeout to the connection. If your server does not respond within 30 seconds, we consider the application down from that location.
+
+However, if a single region has issues, that doesn't necessarily mean the application is down. It means that the connection between AWS Lambda in that region and your endpoint could not be set up in the allotted 30 seconds. It could be a networking issue between AWS Lambda and your endpoint, for example.
+
+We have no control over the routing between the Lambda function and your endpoint. We merely inform you of what the result of our attempt at connecting to your endpoint was.
 
 ## User-Agent
 
