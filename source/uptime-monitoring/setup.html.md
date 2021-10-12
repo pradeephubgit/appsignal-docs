@@ -37,8 +37,6 @@ We ping your applications from AWS Lambda workers that are executed from the reg
 
 However, if a single region has issues, that doesn't necessarily mean the application is down. It could mean that the connection between AWS Lambda in that region and your endpoint can not be set up in the allotted 30-second timeout. This could point to a networking issue between AWS Lambda and your endpoint.
 
-We have no control over the routing between the Lambda function and your endpoint. We merely inform you of what the result of our attempt at connecting to your endpoint was.
-
 ## User-Agent
 
 To detect AppSignal uptime monitor requests, your check will send a specific `User-Agent` header with the request in the following format;
