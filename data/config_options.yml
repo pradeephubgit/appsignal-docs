@@ -388,6 +388,19 @@ options:
       default_value: true
       description: |
         Enables the [StatsD server](/standalone-agent/statsd.html) in the AppSignal agent.
+    elixir:
+      since: 2.2.6
+      type: bool
+      default_value: false
+      description: |
+        Enables the [StatsD server](/standalone-agent/statsd.html) in the AppSignal agent.
+    nodejs:
+      config_key: enableStatsd
+      since: 2.2.2
+      type: bool
+      default_value: false
+      description: |
+        Enables the [StatsD server](/standalone-agent/statsd.html) in the AppSignal agent.
   - config_key: endpoint
     env_key: APPSIGNAL_PUSH_API_ENDPOINT
     ruby:
