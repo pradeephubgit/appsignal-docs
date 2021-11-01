@@ -10,7 +10,7 @@ The new Node.js implementation contains some concepts that vary from the Ruby an
 
 ## Supported environments
 
-Our Node.js support tracks the active LTS release and above, which is currently [v10](https://github.com/nodejs/Release) and above.
+Our Node.js support tracks the Maintenance LTS releases and above, which is currently [v12](https://nodejs.org/en/about/releases/) and above.
 
 Node.js is an incredibly flexible runtime, which allows it to be used for a multiple of different use-cases. AppSignal was primarily designed for use on a server, so there are a few places that the Node.js integration is currently not suitable:
 
