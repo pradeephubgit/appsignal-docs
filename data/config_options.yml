@@ -215,6 +215,10 @@ options:
       since: 1.11.4
       type: bool
       default_value: false
+    nodejs:
+      since: 2.2.4
+      type: bool
+      default_value: false
     description: |
       Enable transaction debug mode. This enables very detailed logging of transactions and events which is useful when developing integrations or when events aren not tracked as expected. The log is only written if the general `debug` option is on as well.
   - config_key: dns_servers
@@ -464,6 +468,10 @@ options:
       default_value: true
     elixir:
       since: 1.3.4
+      type: bool
+      default_value: true
+    nodejs:
+      since: 2.2.4
       type: bool
       default_value: true
     description: |
