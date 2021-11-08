@@ -216,6 +216,7 @@ options:
       type: bool
       default_value: false
     nodejs:
+      configKey: transactionDebugMode
       since: 2.2.4
       type: bool
       default_value: false
@@ -471,6 +472,7 @@ options:
       type: bool
       default_value: true
     nodejs:
+      config_key: filesWorldAccessible
       since: 2.2.4
       type: bool
       default_value: true
@@ -515,14 +517,6 @@ options:
         ```
 
         Read more about [parameter filtering](/elixir/configuration/parameter-filtering.html).
-    nodejs:
-      config_key: filterParameters
-      type:
-        list:
-          - string
-      default_value: []
-      description: |
-        List of parameter keys that should be ignored using AppSignal filtering. Their values will be replaced with `[FILTERED]` when transmitted to AppSignal.
   - config_key: filter_session_data
     env_key: APPSIGNAL_FILTER_SESSION_DATA
     ruby:
@@ -565,14 +559,6 @@ options:
         ```
 
         Read more about [session data filtering](/elixir/configuration/session-data-filtering.html).
-    nodejs:
-      config_key: filterSessionData
-      type:
-        list:
-          - string
-      default_value: []
-      description: |
-        List of session data keys that should be ignored using AppSignal filtering. Their values will be replaced with `[FILTERED]` when transmitted to AppSignal.
   - config_key: hostname
     env_key: APPSIGNAL_HOSTNAME
     ruby:
