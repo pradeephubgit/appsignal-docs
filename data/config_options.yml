@@ -215,11 +215,6 @@ options:
       since: 1.11.4
       type: bool
       default_value: false
-    nodejs:
-      configKey: transactionDebugMode
-      since: 2.2.4
-      type: bool
-      default_value: false
     description: |
       Enable transaction debug mode. This enables very detailed logging of transactions and events which is useful when developing integrations or when events aren not tracked as expected. The log is only written if the general `debug` option is on as well.
   - config_key: dns_servers
