@@ -20,6 +20,7 @@ Consult the maintenance policy per language we integrate with below. If a langua
 - [Elixir maintenance policy](https://hexdocs.pm/elixir/compatibility-and-deprecations.html)
     - [Erlang OTP support](https://hexdocs.pm/elixir/1.12/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp) is based on which version of Elixir supports which OTP version.
 - [Node.js maintenance policy](https://nodejs.org/en/about/releases/)
+    - We only support the releases under "Maintenance LTS", "Active LTS" and "Current".
 - Front-end JavaScript support policy.
     - We aim for compatibility for most major browsers, down to Internet Explorer 9. All browsers older than this can only supported on a "best effort" basis, and full functionality cannot be guaranteed.
     - It also supports different targets:
