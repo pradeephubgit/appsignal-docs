@@ -785,6 +785,65 @@ options:
         config :appsignal, :config,
           request_headers: []
         ```
+    nodejs:
+      config_key: requestHeaders
+      since: 2.2.5
+      type:
+        list:
+          - string
+      default_value:
+        - accept
+        - accept-charset
+        - accept-encoding
+        - accept-language
+        - cache-control
+        - connection
+        - content-length
+        - path-info
+        - range
+        - request-method
+        - request-uri
+        - server-name
+        - server-port
+        - server-protocol
+      description: |
+        The `requestHeaders` config option contains a list of HTTP request headers which are read and stored by the AppSignal Node.js package.
+
+        This `requestHeaders` config option is an *allowlist*, which means that it will only take headers as specified by this config option. If this config option is unset it will use the AppSignal default.
+
+        Following list is the AppSignal package default.
+
+        ```js
+        client = Appsignal.new(
+          // ...Other config opts
+          requestHeaders: [
+            "accept",
+            "accept-charset",
+            "accept-encoding",
+            "accept-language",
+            "cache-control",
+            "connection",
+            "content-length",
+            "path-info",
+            "range",
+            "request-method",
+            "request-uri",
+            "server-name",
+            "server-port",
+            "server-protocol"
+          ]
+        )
+        ```
+
+        To configure AppSignal to not store any HTTP request headers on AppSignal transactions, configure the option with an empty list.
+
+        ```js
+        client = Appsignal.new(
+          // ...Other config opts
+          requestHeaders: []
+        )
+        ```
+
   - config_key: running_in_container
     env_key: APPSIGNAL_RUNNING_IN_CONTAINER
     ruby:
