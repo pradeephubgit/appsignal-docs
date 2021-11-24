@@ -156,7 +156,10 @@ options:
       type: string
       default_value: null
     nodejs:
-      config_key: apiKey
+      since: 2.2.5
+      since_notes:
+        - This config option was renamed from `apiKey` in version 2.2.5.
+      config_key: pushApiKey
       type: string
       default_value: null
     description: |
@@ -165,6 +168,18 @@ options:
       Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
 
       -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) system environment variable is set, the [`active`](#option-active) option will default to `true` instead of `false`. This means AppSignal will be consider active for the loaded environment even if `active` is set to `false` in the config file. For more information see the [`active`](#option-active) option.
+  - config_key: api_key
+    env_key: APPSIGNAL_PUSH_API_KEY
+    required: true
+    nodejs:
+      since: 1.0.0
+      since_notes:
+        - Deprecated since version 2.2.5 in favor of the [`pushApiKey` config option](#option-pushapikey).
+      config_key: apiKey
+      type: string
+      default_value: null
+    description: |
+      Deprecated config option. Use the [`pushApiKey` config option](#option-pushapikey) instead.
   - config_key: ca_file_path
     env_key: APPSIGNAL_CA_FILE_PATH
     ruby:
