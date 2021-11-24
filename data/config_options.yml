@@ -511,7 +511,7 @@ options:
             - token
         ```
 
-        Read more about [parameter filtering](/ruby/configuration/parameter-filtering.html).
+        Read more about [parameter filtering](/application/parameter-filtering.html).
     elixir:
       type:
         list:
@@ -526,7 +526,7 @@ options:
           filter_parameters: ["password", "secret"]
         ```
 
-        Read more about [parameter filtering](/elixir/configuration/parameter-filtering.html).
+        Read more about [parameter filtering](/application/parameter-filtering.html).
   - config_key: filter_session_data
     env_key: APPSIGNAL_FILTER_SESSION_DATA
     ruby:
@@ -550,7 +550,7 @@ options:
             - token
         ```
 
-        Read more about [session data filtering](/ruby/configuration/session-data-filtering.html).
+        Read more about [session data filtering](/application/session-data-filtering.html).
     elixir:
       since: 1.6.0
       since_notes:
@@ -568,7 +568,7 @@ options:
           filter_session_data: ["name", "email", "api_token", "token"]
         ```
 
-        Read more about [session data filtering](/elixir/configuration/session-data-filtering.html).
+        Read more about [session data filtering](/application/session-data-filtering.html).
   - config_key: hostname
     env_key: APPSIGNAL_HOSTNAME
     ruby:
