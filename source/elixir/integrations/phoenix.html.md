@@ -27,8 +27,8 @@ defmodule AppsignalPhoenixExample.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.5.3"},
+      {:appsignal_phoenix, "~> 2.0"}
       # ...
-      {:appsignal_phoenix, "~> 2.0.0"}
     ]
   end
 
