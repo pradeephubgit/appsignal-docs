@@ -34,7 +34,7 @@ Before you can compile the AppSignal package, make sure the build/compilation to
 
 2. Then run `mix deps.get`.
 3. Then run `mix appsignal.install YOUR_PUSH_API_KEY` or follow the [manual configuration guide](#configuration).
-4. If you use the [Phoenix framework][phoenix], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) guide.
+4. If you use the [Phoenix framework][phoenix] or [Plug][plug], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) or [integrating AppSignal into Plug](/elixir/integrations/plug.html) guides.
 
 After the installation is complete, start your application. When the AppSignal
 OTP application starts, it looks for a valid configuration (e.g. an AppSignal
@@ -141,3 +141,4 @@ Uninstall AppSignal from your app by following the steps below. When these steps
 [elixir-repo]: https://github.com/appsignal/appsignal-elixir
 [docs-repo]: https://github.com/appsignal/appsignal-docs
 [phoenix]: http://www.phoenixframework.org/
+[plug]: https://github.com/elixir-plug/plug
