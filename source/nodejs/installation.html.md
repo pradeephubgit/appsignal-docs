@@ -4,7 +4,7 @@ title: "Installation"
 
 Please follow the [installation guide](/guides/new-application.html) first, when adding a new application to AppSignal.
 
-## Installing Appsignal for Node.js
+## Installing AppSignal for Node.js
 
 First, [sign up](https://appsignal.com/users/sign_up) for an AppSignal account and run our automated install tool, which will install `@appsignal/nodejs` and any relevant integrations to your project:
 
