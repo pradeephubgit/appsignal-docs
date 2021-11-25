@@ -527,6 +527,17 @@ options:
         ```
 
         Read more about [parameter filtering](/application/parameter-filtering.html).
+    nodejs:
+      since: 2.2.5
+      config_key: filterParameters
+      type:
+        list:
+          - string
+      default_value: []
+      description: |
+        List of parameter keys that should be ignored using AppSignal filtering. Their values will be replaced with `[FILTERED]` when transmitted to AppSignal.
+
+        Read more about [parameter filtering](/application/parameter-filtering.html).
   - config_key: filter_session_data
     env_key: APPSIGNAL_FILTER_SESSION_DATA
     ruby:
@@ -567,6 +578,17 @@ options:
         config :appsignal, :config,
           filter_session_data: ["name", "email", "api_token", "token"]
         ```
+
+        Read more about [session data filtering](/application/session-data-filtering.html).
+    nodejs:
+      config_key: filterSessionData
+      since: 2.2.5
+      type:
+        list:
+          - string
+      default_value: []
+      description: |
+        List of session data keys that should be ignored using AppSignal filtering. Their values will be replaced with `[FILTERED]` when transmitted to AppSignal.
 
         Read more about [session data filtering](/application/session-data-filtering.html).
   - config_key: hostname

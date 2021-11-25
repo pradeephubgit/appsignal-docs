@@ -64,6 +64,24 @@ config :appsignal, :config,
   filter_session_data: ["name", "email", "api_token", "token"]
 ```
 
+## Node.js
+
+If a request stores session data on the sample, use the session data filter to filter out any data you do not want to include.
+
+In the session data filtering, there's support for nested hashes and nested hashes in arrays. Any hash we encounter in your session data will be filtered.
+
+To use this filtering, use the [`filterSessionData`](/nodejs/configuration/options.html#option-filtersessiondata) config option to select which session data keys to filter out.
+
+```js
+// Example: appsignal.js
+const { Appsignal } = require("@appsignal/nodejs");
+
+const appsignal = new Appsignal({
+  // Other config options
+  filterSessionData: ["name", "email", "api_token", "token"]
+});
+```
+
 ## Next steps
 
 - [Request headers collection](/guides/filter-data/filter-headers.html) - the next step in this guide
