@@ -4,15 +4,15 @@ title: "Installing AppSignal for Elixir"
 
 Please follow the [installation guide](/guides/new-application.html) first, when adding a new application to AppSignal.
 
+## Requirements
+
+Before you can compile the AppSignal package, make sure the build/compilation tools are installed for your system. Please check the [Supported Operating Systems](/support/operating-systems.html) page for any system dependencies that may be required.
+
 ## Installation
 
 Installing the AppSignal package in your Elixir application requires a couple of manual steps. Currently, AppSignal support Phoenix, Plug and pure Elixir apps.
 
 If AppSignal does not support your use-case or if you find a problem with the documentation, don't hesitate to [contact us][support]. You can also create a pull-request on our public [Elixir repository][elixir-repo] or [documentation repository][docs-repo].
-
-### Requirements
-
-Before you can compile the AppSignal package, make sure the build/compilation tools are installed for your system. Please check the [Supported Operating Systems](/support/operating-systems.html) page for any system dependencies that may be required.
 
 ### Installing the package
 
