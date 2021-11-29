@@ -72,7 +72,7 @@ created using the `Appsignal.instrument/2` function:
 
 ```elixir
 defmodule AppsignalElixirExample do
-  def instrument do
+  def example_fn do
     Appsignal.instrument("instrument", fn ->
       :timer.sleep(500)
     end)
@@ -86,7 +86,7 @@ span. To use a different category name, use `instrument/3` instead:
 
 ```elixir
 defmodule AppsignalElixirExample do
-  def instrument do
+  def example_fn do
     Appsignal.instrument("instrument", "call.instrument", fn ->
       :timer.sleep(500)
     end)
@@ -98,7 +98,7 @@ When passing a function that takes an argument, the `instrument/2-3` function ca
 
 ```elixir
 defmodule AppsignalElixirExample do
-  def instrument do
+  def example_fn do
     Appsignal.instrument("prepare_query.sql", "Build complicated SQL query", fn span ->
       # Example of building a complex SQL query in the instrument block and performing it
       query = "SOME complicate SQL query"
