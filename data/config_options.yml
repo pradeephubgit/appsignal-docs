@@ -836,13 +836,7 @@ options:
         - cache-control
         - connection
         - content-length
-        - path-info
         - range
-        - request-method
-        - request-uri
-        - server-name
-        - server-port
-        - server-protocol
       description: |
         The `requestHeaders` config option contains a list of HTTP request headers which are read and stored by the AppSignal Node.js package.
 
@@ -861,13 +855,7 @@ options:
             "cache-control",
             "connection",
             "content-length",
-            "path-info",
-            "range",
-            "request-method",
-            "request-uri",
-            "server-name",
-            "server-port",
-            "server-protocol"
+            "range"
           ]
         )
         ```
