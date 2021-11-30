@@ -676,7 +676,7 @@ sections:
                 link: "/metrics/host-metrics/"
               -
                 name: "Heroku host metrics"
-                link: "/metrics/host-metrics/heroku.html"
+                link: "/heroku/host-metrics.html"
               -
                 name: "Container host metrics"
                 link: "/metrics/host-metrics/containers.html"

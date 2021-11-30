@@ -93,5 +93,5 @@ To use host metrics on (Docker) containers, head to the [container host metrics]
 [Dokku](https://github.com/dokku/dokku) has host metrics enabled by default as long as your Dokku application has the `DOKKU_ROOT` environment variable set up.
 
 
-[heroku support]: /metrics/host-metrics/heroku.html
+[heroku support]: /heroku/host-metrics.html
 [container support]: /metrics/host-metrics/containers.html
