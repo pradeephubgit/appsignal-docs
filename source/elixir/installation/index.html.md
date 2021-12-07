@@ -107,6 +107,10 @@ Read more about how you can integrate more instrumentation in your Phoenix
 application in our [integrating Phoenix
 guide](/elixir/integrations/phoenix.html).
 
+### Optional: Add Plug instrumentation
+
+Read more about how you can integrate more instrumentation in your Plug application in our [integrating Plug guide](/elixir/integrations/plug.html).
+
 ### Optional: Add custom instrumentation
 
 Add custom instrumentation to your application to get a more in-depth view of
