@@ -893,6 +893,14 @@ options:
       since: 2.11.0
       type: bool
       default_value: true
+    elixir:
+      since: 2.2.8
+      type: bool
+      default_value: true
+    nodejs:
+      since: 2.2.6
+      type: bool
+      default_value: true
     description: |
       Send environment metadata about the app.
 
