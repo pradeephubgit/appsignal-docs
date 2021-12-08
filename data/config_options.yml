@@ -208,30 +208,80 @@ options:
     env_key: APPSIGNAL_DEBUG
     ruby:
       since: 1.0.0
+      since_notes:
+        - Deprecated since version 3.0.16 in favor of the [`log_level` config option](#option-log_level).
       type: bool
       default_value: false
+      description:
+        - "!> **Warning**: This config option is deprecated in Ruby gem 3.0.16. Please use the [`log_level`](#option-log_level) option instead for Ruby gem 3.0.16 and newer."
+        - Enable debug logging, this is usually only needed on request from support. With this option enabled AppSignal will log a lot more information about decisions that are made during metrics collection and when data is sent to AppSignal.com servers.
+        - Enabling debug logging could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
     elixir:
+      since: 1.0.0
+      since_notes:
+        - Deprecated since version 2.2.8 in favor of the [`log_level` config option](#option-log_level).
       type: bool
       default_value: false
+      description:
+        - "!> **Warning**: This config option is deprecated in Elixir package 2.2.8. Please use the [`log_level`](#option-log_level) option instead for Elixir package 2.2.8 and newer."
+        - Enable debug logging, this is usually only needed on request from support. With this option enabled AppSignal will log a lot more information about decisions that are made during metrics collection and when data is sent to AppSignal.com servers.
+        - Enabling debug logging could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
     nodejs:
+      since: 1.0.0
+      since_notes:
+        - Deprecated since version 2.2.6 in favor of the [`log_level` config option](#option-loglevel).
       type: bool
       default_value: false
-    description: |
-      Enable debug logging, this is usually only needed on request from support. With this option enabled AppSignal will log a lot more information about decisions that are made during metrics collection and when data is sent to AppSignal.com servers.
-
-      Enabling debug logging could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
+      description:
+        - "!> **Warning**: This config option is deprecated in Node.js package 2.2.6. Please use the [`logLevel`](#option-loglevel) option instead for Node.js package 2.2.6 and newer."
+        - Enable debug logging, this is usually only needed on request from support. With this option enabled AppSignal will log a lot more information about decisions that are made during metrics collection and when data is sent to AppSignal.com servers.
+        - Enabling debug logging could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
   - config_key: transaction_debug_mode
     env_key: APPSIGNAL_TRANSACTION_DEBUG_MODE
     ruby:
       since: 2.9.18
+      since_notes:
+        - Deprecated since version 3.0.16 in favor of the [`log_level` config option](#option-log_level).
       type: bool
       default_value: false
+      description:
+        - "!> **Warning**: This config option is deprecated in Ruby gem 3.0.16. Please use the [`log_level`](#option-log_level) option instead for Ruby gem 3.0.16 and newer."
+        - Enable transaction debug mode. This enables very detailed logging of transactions and events which is useful when developing integrations or when events aren not tracked as expected. The log is only written if the general `debug` option is on as well.
     elixir:
       since: 1.11.4
+      since_notes:
+        - Deprecated since version 2.2.9 in favor of the [`log_level` config option](#option-log_level).
       type: bool
       default_value: false
+      description:
+        - "!> **Warning**: This config option is deprecated in Elixir package 2.2.9. Please use the [`log_level`](#option-log_level) option instead for Elixir package 2.2.9 and newer."
+        - Enable transaction debug mode. This enables very detailed logging of transactions and events which is useful when developing integrations or when events aren not tracked as expected. The log is only written if the general `debug` option is on as well.
+  - config_key: log_level
+    env_key: APPSIGNAL_LOG_LEVEL
+    ruby:
+      since: 3.0.16
+      type: string
+      default_value: "info"
+    elixir:
+      since: 2.2.8
+      type: string
+      default_value: "info"
+    nodejs:
+      since: 2.2.6
+      type: string
+      default_value: "info"
+      config_key: "logLevel"
     description: |
-      Enable transaction debug mode. This enables very detailed logging of transactions and events which is useful when developing integrations or when events aren not tracked as expected. The log is only written if the general `debug` option is on as well.
+      Set the severity level of the AppSignal logger. If it is configured to "info" it will log all error, warning and info messages, but not log the debug messages.
+
+      Setting it to "debug" is usually only needed on request from support. Also, setting the level to "debug" could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
+
+      Accepted values:
+
+        - error
+        - warning
+        - info
+        - debug
   - config_key: dns_servers
     env_key: APPSIGNAL_DNS_SERVERS
     ruby:
