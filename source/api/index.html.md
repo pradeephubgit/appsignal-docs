@@ -68,3 +68,7 @@ The id that follows is your application id.
 ```
 https://appsignal.com/demo-organization/sites/5114f7e38c5ce90000000011
 ```
+
+## GraphQL
+
+If you are interested in exploring our GraphQL API, you can do that using AppSignal's <a href="graphql-explorer.html" target="_blank">GraphiQL</a> app.
