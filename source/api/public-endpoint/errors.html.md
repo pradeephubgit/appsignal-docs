@@ -97,5 +97,59 @@ For example:
   "language": "javascript"
 }
 ```
+  
+## Example
+```ruby
+require "uri"
+require "json"
+require "net/http"
+
+url = URI("https://appsignal-endpoint.net/errors?api_key=FRONTEND-API-KEY")
+
+https = Net::HTTP.new(url.host, url.port)
+https.use_ssl = true
+
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request.body = JSON.dump({
+  "action": "BlogpostController#show",
+  "namespace": "frontend",
+  "timestamp": 1640327525,
+  "error": {
+    "name": "StandardError",
+    "message": "Error message",
+    "backtrace": [
+      "backtrace/line:1",
+      "backtrace/line:2"
+    ]
+  },
+  "environment": {
+    "os": "windows",
+    "agent": "super secret user agent"
+  },
+  "params": {
+    "foo": "bar"
+  },
+  "tags": {
+    "account_id": "abc-123"
+  },
+  "revision": "revision-abc-123",
+  "breadcrumbs": [
+    {
+      "timestamp": 1640327525,
+      "category": "request",
+      "action": "http://google.com",
+      "message": "request failed",
+      "metadata": {
+        "code": "not_found"
+      }
+    }
+  ],
+  "language": "javascript"
+})
+
+response = https.request(request)
+puts response.read_body
+```
 
 -> **Note**: This endpoint is optimized for large amounts of traffic and does not validate the API key or payload, a `200` (`OK`) response is returned when the body size is within the `200k` limit. This doesn't mean the request is accepted when received.
