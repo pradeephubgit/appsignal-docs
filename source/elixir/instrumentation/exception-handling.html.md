@@ -32,6 +32,12 @@ rescue
   exception -> Appsignal.set_error(exception, __STACKTRACE__)
 end
 ```
+### Erlang
+
+The AppSignal integration tries its best to convert errors raised from Erlang to Elixir exceptions. For example, a `:badarg`
+raised from Erlang is automatically converted to an `ArgumentError`. However, sometimes the best it can do is wrapping the error originating from Erlang in an `ErlangError`.
+
+Since these don’t give much insight into the underlying issue, we recommend adding information from within your application by catching the error, creating an Elixir exception yourself and adding that to the current span using the `set_error/2` function.
 
 !> **NOTE:** `Appsignal.set_error/2` was added in AppSignal for Elixir 2.1.0. If you're on a lower version, use `Appsignal.set_error/3` instead.
 
