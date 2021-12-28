@@ -20,6 +20,7 @@ It is designed to closely follow the concept of a Span from the [OpenTelemetry](
 A `Span` can be created by calling `tracer.createSpan()`, which initializes a new `RootSpan` if there's no current `RootSpan` on the _scope_ or a `ChildSpan` of the present `RootSpan`.
 
 ```js
+const tracer = appsignal.tracer();
 const span = tracer.createSpan();
 ```
 
@@ -41,6 +42,7 @@ The `tracer.createSpan()` method takes two optional arguments. The first optiona
 The `tracer.createSpan()` method also takes an optional second argument. If this second argument is supplied, the returned `Span` will be a `ChildSpan`.
 
 ```js
+const tracer = appsignal.tracer();
 const childSpan = tracer.createSpan(undefined, span || spanContext);
 ```
 
@@ -54,12 +56,15 @@ Let's take a look at `ChildSpan`s in more detail.
 A `ChildSpan` can be created to represent a subdivision of the total length of time represented by the `RootSpan`. This is useful for instrumenting blocks of code that are run inside of the lifetime of a `RootSpan`.
 
 ```js
+const tracer = appsignal.tracer();
+const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
 ```
 
 As mentioned previously, a `ChildSpan` can also be created by passing an optional second argument to `tracer.createSpan()`.
 
 ```js
+const tracer = appsignal.tracer();
 const childSpan = tracer.createSpan(undefined, rootSpan);
 ```
 
@@ -70,6 +75,7 @@ After a `Span` is created, you can begin adding data to it using methods on the 
 A `Span` name is used to identify a certain sample error and performance issues in the relevant tables in our UI. It should concisely identify the work represented by the `Span` (this could be an RPC method name, a function name, or a route name).
 
 ```js
+const tracer = appsignal.tracer();
 const span = tracer.currentSpan();
 span.setName("GET /route");
 ```
@@ -96,6 +102,7 @@ More information on this is available [here](/nodejs/tracing/exception-handling.
 As `Span`s represent a length of time, they must be given a finish time once all the operations that the `Span` is timing have completed. You do this by calling `span.close()`.
 
 ```js
+const tracer = appsignal.tracer();
 const span = tracer.currentSpan();
 span.setName("GET /route");
 
@@ -105,3 +112,16 @@ span.close();
 ```
 
 If the `RootSpan` is created by the core `http` integration (the most common case), the `RootSpan` is closed automatically by the integration. If any children of this `RootSpan` are left unclosed, then they are dropped from the trace.
+
+### Complete example
+
+Here is an example of creating a child span from the current root span, adding information to it, and then closing it.
+
+```js
+const tracer = appsignal.tracer();
+const rootSpan = tracer.rootSpan();
+const childSpan = rootSpan.child();
+
+childSpan.setName(`Query.sql.model.action`);
+childSpan.setCategory("get.query");
+childSpan.close();
