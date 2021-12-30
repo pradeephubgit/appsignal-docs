@@ -18,6 +18,8 @@ If AppSignal does not support your use-case or if you find a problem with the do
 
 -> **Note**: If you're running an umbrella application, see also our [umbrella installation guide](/elixir/installation/umbrella.html).
 
+-> **Note**: If you use the [Phoenix framework][phoenix] or [Plug][plug], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) or [integrating AppSignal into Plug](/elixir/integrations/plug.html) guides.
+
 1. Start by adding `appsignal` to your list of dependencies in `mix.exs`.
    AppSignal requires you to depend on a JSON encoder. You can pick between
    `jason` and `poison`, our recommendation is to use `jason`. See point 4 if you are using [Phoenix framework][phoenix]
@@ -34,7 +36,6 @@ If AppSignal does not support your use-case or if you find a problem with the do
 
 2. Then run `mix deps.get`.
 3. Then run `mix appsignal.install YOUR_PUSH_API_KEY` or follow the [manual configuration guide](#configuration).
-4. If you use the [Phoenix framework][phoenix] or [Plug][plug], continue with the [integrating AppSignal into Phoenix](/elixir/integrations/phoenix.html) or [integrating AppSignal into Plug](/elixir/integrations/plug.html) guides.
 
 After the installation is complete, start your application. When the AppSignal
 OTP application starts, it looks for a valid configuration (e.g. an AppSignal

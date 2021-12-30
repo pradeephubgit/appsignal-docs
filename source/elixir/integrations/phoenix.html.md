@@ -17,7 +17,7 @@ documentation][hex-appsignal].
 
 -> Upgrading from AppSignal for Elixir 1.0? Please read [our upgrade guide](/elixir/installation/upgrading-from-1.x-to-2.x.html).
 
-The AppSignal instrumentation for Phoenix is part of a separate package, which depends on the primary `appsignal` package. Add the `appsignal_phoenix` package to your `mix.exs` file.
+1. The AppSignal instrumentation for Phoenix is part of a separate package, which depends on the primary `appsignal` package. Add the `appsignal_phoenix` package to your `mix.exs` file.
 
 ``` elixir
 # mix.exs
@@ -33,6 +33,8 @@ defmodule AppsignalPhoenixExample.MixProject do
   end
 end
 ```
+2. Then run `mix deps.get`.
+3. Then run `mix appsignal.install YOUR_PUSH_API_KEY`.
 
 ## Incoming HTTP requests
 
