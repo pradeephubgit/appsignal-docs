@@ -42,11 +42,11 @@ Make sure to add `https://appsignal-endpoint.net` to your Content Security Polic
 With just AppSignal in the header:
 
 ```
-Content-Security-Policy: connect-src ‘self’ https://appsignal-endpoint.net
+Content-Security-Policy: connect-src 'self' https://appsignal-endpoint.net
 ```
 
 Or, with other content in the header:
 
 ```
-Content-Security-Policy: <other_content>; connect-src ‘self’ https://appsignal-endpoint.net
+Content-Security-Policy: <other_content>; connect-src 'self' https://appsignal-endpoint.net
 ```
