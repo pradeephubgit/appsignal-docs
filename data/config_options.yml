@@ -501,7 +501,7 @@ options:
         - Print AppSignal logs in the parent process' STDOUT instead of to a file.
           Useful with hosting solutions such as container systems and Heroku.
 
-      -> **Note**: At this time only the AppSignal integration supports this feature and the [AppSignal agent](/appsignal/how-appsignal-operates.html), which is used by the integration, does not yet support this.
+      -> **Note**: At this time only the AppSignal integration supports the "stdout" log output feature. The [AppSignal agent](/appsignal/how-appsignal-operates.html), which is used by the integration, does not support "stdout" log output. It will always write to the "appsignal.log" file.
   - config_key: log_path
     env_key: APPSIGNAL_LOG_PATH
     ruby:
