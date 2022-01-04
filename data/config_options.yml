@@ -968,6 +968,11 @@ options:
       since: 1.10.0
       type: bool
       default_value: true
+    nodejs:
+      config_key: sendParams
+      since: 2.2.8
+      type: bool
+      default_value: true
     description: |
       Whether to skip sending request parameters to AppSignal.
 
