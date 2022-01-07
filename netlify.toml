@@ -211,3 +211,6 @@ to = "/guides/custom-data/"
 [[redirects]]
 from = "/uptime-monitoring.html"
 to = "/uptime-monitoring/setup.html"
+[[redirects]]
+from = "/application/integrations/clubhouse.html"
+to = "/application/integrations/shortcut.html"

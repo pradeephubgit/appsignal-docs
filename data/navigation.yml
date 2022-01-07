@@ -149,9 +149,6 @@ sections:
                 name: "Asana"
                 link: "/application/integrations/asana.html"
               -
-                name: "Clubhouse"
-                link: "/application/integrations/clubhouse.html"
-              -
                 name: "Discord"
                 link: "/application/integrations/discord.html"
               -
@@ -172,6 +169,9 @@ sections:
               -
                 name: "PagerDuty"
                 link: "/application/integrations/pagerduty.html"
+              -
+                name: "Shortcut"
+                link: "/application/integrations/shortcut.html"
               -
                 name: "Slack"
                 link: "/application/integrations/slack.html"
