@@ -79,13 +79,19 @@ When a trigger has a warm-up period configured, the alert will only open once th
 
 When the threshold isn't met for the entire warm-up period, the alert is removed. These alerts aren't included in the [alerts table](https://appsignal.com/redirect-to/app?to=alerts). This reduces noise in the alerts table.
 
-Alerts in the warm-up phase are displayed in the AppSignal web interface, but they do not send any notifications. 
+Alerts in the warm-up phase are displayed in the AppSignal web interface, but they do not send any notifications.
+
+!> ⚠️ It's not recommended to use Anomaly detection and the Warmup feature to check if services such as hourly/daily jobs and cronjobs are running.
+
+The warmup feature works best for data that is emitted every minute. If you only emit a counter with a value of "1" every 24 hours in a nightly cronjob and set the warmup to 25 hours, we won't send you an alert if the warmup expires.
+
+In order for the warmup to expire, you'll have to send a "0" metric every minute for the remaining 23 hours and 59 minutes between each cronjob run.
 
 ### Cooldown
 
 Alerts opened by a Trigger are automatically closed when the threshold condition is no longer met. If the threshold is met again, another alert will open. If a metric keeps dipping above and below the threshold, this will cause noisy notifications.
 
-Use cooldown periods to reduce this noise. A trigger with a cooldown will wait for the specified amount of time before closing an alert. If the threshold isn't met during the cooldown period, the alert is closed. If the threshold is met, the alert is reopened without a notification. 
+Use cooldown periods to reduce this noise. A trigger with a cooldown will wait for the specified amount of time before closing an alert. If the threshold isn't met during the cooldown period, the alert is closed. If the threshold is met, the alert is reopened without a notification.
 
 ## Data processing
 
