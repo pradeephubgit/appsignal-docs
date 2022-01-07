@@ -988,6 +988,15 @@ options:
       default_value: false
     description: |
       Set this option to `true` to not send any session data with exception traces and performance issue samples.
+  - config_key: send_session_data
+    env_key: APPSIGNAL_SEND_SESSION_DATA
+    nodejs:
+      config_key: sendSessionData
+      since: 2.2.9
+      type: bool
+      default_value: true
+    description: |
+      Set this option to `false` to not send any session data with exception traces and performance issue samples.
   - config_key: working_dir_path
     env_key: APPSIGNAL_WORKING_DIR_PATH
     ruby:
