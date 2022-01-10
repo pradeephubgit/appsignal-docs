@@ -18,10 +18,11 @@ Any session data values that are filtered out by these systems will be replaced 
 
 ## Filter all session data
 
-To filter all session data without individual key filtering, set "skip session data" config option to "true" in the integration configuration.
+To filter all session data without individual key filtering, set "skip session data" config option to "true" in the integration configuration. Or set "send session data" to "false" if that's the supported option.
 
 - [Ruby `skip_session_data` config option documentation](/ruby/configuration/options.html#option-skip_session_data)
 - [Elixir `skip_session_data` config option documentation](/elixir/configuration/options.html#option-skip_session_data)
+- [Node.js `send_session_data` config option documentation](/nodejs/configuration/options.html#option-send_session_data)
 
 ## Recommended keys to filter
 
