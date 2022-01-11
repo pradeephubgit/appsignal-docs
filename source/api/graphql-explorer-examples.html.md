@@ -189,3 +189,112 @@ query MetricsListQuery($appId: String!, $start: DateTime, $end: DateTime, $timef
   ]
 }
 ```
+
+### Fetch Mean (timeseries)
+
+#### Query
+```graphql
+query MetricTimeseriesQuery($appId: String!, $start: DateTime, $end: DateTime, $timeframe: TimeframeEnum, $query: [MetricTimeseries]) {
+  app(id: $appId) {
+    id
+    metrics {
+      timeseries(start: $start, end: $end, timeframe: $timeframe, query: $query) {
+        start
+        end
+        resolution
+        keys {
+          name
+          fields
+          tags {
+            key
+            value
+          }
+        }
+        points {
+          timestamp
+          values {
+            value
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+#### Query variables
+```graphql
+{
+  "appId": "YOUR-APP-ID",
+  "start": "2022-01-10T11:00:00Z", // Start data and time you want to fetch the Mean for
+  "end": "2022-01-10T11:05:00Z",   // End data and time you want to fetch the Mean for
+  "query": [
+    {
+      "name": "transaction_duration",
+      "tags": [ // You can add more namespaces here, this example just fetches the Mean for web namespace.
+        {
+          "key": "namespace",
+          "value": "web"
+        }
+      ],
+      "fields": [
+        {
+          "field": "MEAN"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Fetch Mean (aggregated)
+
+#### Query
+```graphql
+query MetricAggregationQuery($appId: String!, $start: DateTime, $end: DateTime, $timeframe: TimeframeEnum, $query: [MetricAggregation!]!) {
+  app(id: $appId) {
+    id
+    metrics {
+      list(start: $start, end: $end, timeframe: $timeframe, query: $query) {
+        start
+        end
+        rows {
+          name
+          tags {
+            key
+            value
+          }
+          fields {
+            key
+            value
+          }
+        }
+      }
+    }
+  }
+}
+
+```
+
+#### Query variables
+```graphql
+{
+  "appId": "YOUR-APP-ID",
+  "start": "2022-01-10T11:00:00Z", // Start data and time you want to fetch the Mean for
+  "end": "2022-01-10T11:05:00Z",   // End data and time you want to fetch the Mean for
+  "query": [
+    {
+      "name": "transaction_duration",
+      "tags": [ // You can add more namespaces here, this example just fetches the Mean for web namespace.
+        {
+          "key": "namespace",
+          "value": "web"
+        }
+      ],
+      "fields": [
+        {"field":"mean","aggregate":"AVG"}
+      ]
+    }
+  ]
+}
+```
