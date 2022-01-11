@@ -219,10 +219,10 @@
   to = "/nodejs/instrumentation"
 [[redirects]]
   from = "/nodejs/tracing/tracer.html"
-  to = "/nodejs/instrumentation/tracer.html"
+  to = "/nodejs/instrumentation/instrumentation.html"
 [[redirects]]
   from = "/nodejs/tracing/span.html"
-  to = "/nodejs/instrumentation/span.html"
+  to = "/nodejs/instrumentation/instrumentation.html"
 [[redirects]]
   from = "/nodejs/tracing/exception-handling.html"
   to = "/nodejs/instrumentation/exception-handling.html"

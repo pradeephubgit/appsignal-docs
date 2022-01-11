@@ -502,11 +502,8 @@ sections:
                 name: "Overview"
                 link: "/nodejs/instrumentation/"
               -
-                name: "The Tracer object"
-                link: "/nodejs/instrumentation/tracer.html"
-              -
-                name: "Creating and using a Span"
-                link: "/nodejs/instrumentation/span.html"
+                name: "Instrumentation"
+                link: "/nodejs/instrumentation/instrumentation.html"
               -
                 name: "Exception handling"
                 link: "/nodejs/instrumentation/exception-handling.html"
