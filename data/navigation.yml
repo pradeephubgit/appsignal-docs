@@ -495,24 +495,24 @@ sections:
                 name: "Load order"
                 link: "/nodejs/configuration/load-order.html"
           -
-            name: "Tracing"
-            link: "/nodejs/tracing/"
+            name: "Custom instrumentation"
+            link: "/nodejs/instrumentation/"
             sub_pages:
               -
                 name: "Overview"
-                link: "/nodejs/tracing/"
+                link: "/nodejs/instrumentation/"
               -
                 name: "The Tracer object"
-                link: "/nodejs/tracing/tracer.html"
+                link: "/nodejs/instrumentation/tracer.html"
               -
                 name: "Creating and using a Span"
-                link: "/nodejs/tracing/span.html"
+                link: "/nodejs/instrumentation/span.html"
               -
                 name: "Exception handling"
-                link: "/nodejs/tracing/exception-handling.html"
+                link: "/nodejs/instrumentation/exception-handling.html"
               -
                 name: "Async tracing and Scopes"
-                link: "/nodejs/tracing/scopes.html"
+                link: "/nodejs/instrumentation/scopes.html"
           -
             name: "Metrics"
             link: "/nodejs/metrics/"
