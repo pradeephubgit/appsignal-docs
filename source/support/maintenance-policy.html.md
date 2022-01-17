@@ -18,7 +18,7 @@ Consult the maintenance policy per language we integrate with below. If a langua
 
 - [Ruby maintenance policy](https://www.ruby-lang.org/en/downloads/branches/)
 - [Elixir maintenance policy](https://hexdocs.pm/elixir/compatibility-and-deprecations.html)
-    - [Erlang OTP support](https://hexdocs.pm/elixir/1.12/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp) is based on which version of Elixir supports which OTP version.
+    - [Erlang OTP support](https://hexdocs.pm/elixir/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp) is based on which version of Elixir supports which OTP version.
 - [Node.js maintenance policy](https://nodejs.org/en/about/releases/)
     - We only support the releases under "Maintenance LTS", "Active LTS" and "Current".
 - Front-end JavaScript support policy.
