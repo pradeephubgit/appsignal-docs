@@ -981,8 +981,12 @@ options:
     env_key: APPSIGNAL_SKIP_SESSION_DATA
     ruby:
       since: 0.11.0
+      since_notes:
+        - "`3.0.20`: Deprecated in favor of [`send_session_data`](#option-send_session_data)."
       type: bool
       default_value: false
+      description:
+        - "!> **Warning**: This config option is deprecated in Ruby gem 3.0.20. Please use the [`send_session_data`](#option-send_session_data) option instead for newer versions of the Ruby gem."
     elixir:
       type: bool
       default_value: false
@@ -990,6 +994,10 @@ options:
       Set this option to `true` to not send any session data with exception traces and performance issue samples.
   - config_key: send_session_data
     env_key: APPSIGNAL_SEND_SESSION_DATA
+    ruby:
+      since: 3.0.20
+      type: bool
+      default_value: true
     nodejs:
       config_key: sendSessionData
       since: 2.2.9
