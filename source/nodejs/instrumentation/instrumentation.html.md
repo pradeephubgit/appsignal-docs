@@ -33,11 +33,21 @@ Each `Span` contains the following state:
 
 It is designed to closely follow the concept of a Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification, but there are some minor differences that we'll get into later.
 
+### Retrieving the current `Span`
+
+The currently active `Span` can be recalled to add data to it or create `ChildSpan`s from it.
+
+```js
+const tracer = appsignal.tracer();
+const span = tracer.currentSpan();
+```
+
 ### Retrieving the current `RootSpan`
 
 In most cases, a `RootSpan` will be created by one of our automatic instrumentations, e.g. the `http` module integration. To add any custom instrumentation to your trace, you'll need to retrieve that `RootSpan` using the `Tracer` instance.
 
 ```js
+const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 ```
 
