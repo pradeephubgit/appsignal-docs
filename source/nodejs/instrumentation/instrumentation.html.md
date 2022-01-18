@@ -42,7 +42,7 @@ const rootSpan = tracer.rootSpan();
 ```
 
 Once you have the current `RootSpan`, you'll be able to add data to it and create `ChildSpan`s from it. If a current `Span` is not available, then `tracer.rootSpan()` will return a `NoopSpan`.
-### Creating a new `Span`
+### Creating a `Span`
 
 A `Span` can be created by calling `tracer.createSpan()`, which initializes a new `RootSpan` if there's no current `RootSpan` on the _scope_ or a `ChildSpan` of the present `RootSpan`.
 
@@ -55,7 +55,7 @@ A `RootSpan` is a type of `Span` which encapsulates the end-to-end latency for t
 
 When a `Span` is created, it is not bound to any _scope_. This means it cannot be recalled again from a different place in your app without first being given a _scope_. Read more about scopes [here](scopes.html).
 
-### Child spans
+### Creating a child `Span`
 
 A `ChildSpan` can be created to represent a subdivision of the total length of time represented by the `RootSpan`. This is useful for instrumenting blocks of code that are run inside of the lifetime of a `RootSpan`.
 
@@ -74,47 +74,43 @@ const childSpan = tracer.createSpan(undefined, rootSpan);
 
 After a `Span` is created, you can begin adding data to it using methods on the `Span` object. `ChildSpan`s and `RootSpan`s share the same interface.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Configuring a `Span`
 
 #### Naming a `Span`
 
-A `Span` name is used to identify a certain sample error and performance issues in the relevant tables in our UI. It should concisely identify the work represented by the `Span` (this could be an RPC method name, a function name, or a route name).
+Set the name for a given `Span`. The Span name is used in the UI to group like requests together.
 
 ```js
 const tracer = appsignal.tracer();
-const span = tracer.currentSpan();
-span.setName("GET /route");
+const rootSpan = tracer.rootSpan();
+const childSpan = rootSpan.child();
+childSpan.setName("Query.sql.model.action");
 ```
 
-The `Span` name should be the most general string that identifies a (statistically) interesting group of `Span`s, rather than individual `Span` instances. These names function as a grouping mechanism. **Under no circumstances should they contain dynamic parameters such as IDs.**
+#### Naming a `Span` category
 
-Examples:
+Set the category for a given `Span`. The category groups Spans together in the "Slow Events" feature, and in the "Sample breakdown".
 
+```js
+const tracer = appsignal.tracer();
+const rootSpan = tracer.rootSpan();
+const childSpan = rootSpan.child();
+childSpan.setName("Query.sql.model.action");
+childSpan.setCategory("get.query");
 ```
-GET /users/:id
-Query.fetchAll
-```
 
+#### Adds sanitized SQL data as a string to a `Span`
+
+When called with a single argument, the `value` will be applied to the span as the body, which will show the sanitized query in your dashboard.
+
+```js
+const tracer = appsignal.tracer();
+const rootSpan = tracer.rootSpan();
+const childSpan = rootSpan.child();
+childSpan.setName("Query.sql.model.action");
+childSpan.setCategory("get.query");
+childSpan.setQuery(queryObj);
+```
 #### Adding metadata to a `Span`
 
 More information on this is available [here](/guides/custom-data/).
@@ -130,7 +126,7 @@ As `Span`s represent a length of time, they must be given a finish time once all
 ```js
 const tracer = appsignal.tracer();
 const span = tracer.currentSpan();
-span.setName("GET /route");
+span.setName("Query.sql.model.action");
 
 // do stuff...
 
@@ -144,10 +140,14 @@ If the `RootSpan` is created by the core `http` integration (the most common cas
 Here is an example of creating a child span from the current root span, adding information to it, and then closing it.
 
 ```js
+
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
-
-childSpan.setName(`Query.sql.model.action`);
+childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
+childSpan.setQuery(queryObj);
+
+// do stuff...
+
 childSpan.close();
