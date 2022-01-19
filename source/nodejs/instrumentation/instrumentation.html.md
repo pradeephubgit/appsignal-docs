@@ -118,6 +118,7 @@ When called with a single argument, the `value` will be applied to the span as t
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
+const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
 childSpan.setQuery(queryObj);
@@ -155,6 +156,7 @@ Here is an example of creating a child span from the current root span, adding i
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
+const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
 childSpan.setQuery(queryObj);

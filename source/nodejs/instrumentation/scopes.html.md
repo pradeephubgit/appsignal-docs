@@ -78,4 +78,4 @@ tracer.withSpan(tracer.currentSpan(), async (span) => {
 
 If the callback returns a value, it will become the return value of the `tracer.withSpan()` function.
 
-The most recent `Span` passed to `tracer.withSpan()` also now has a scope, which means that it will be `Span` to be returned the next time you call `tracer.currentSpan()`. When the operation you wish to instrument is complete, call `span.close()` to stop the timer. 
+The most recent `Span` passed to `tracer.withSpan()` also now has a scope, which means that it will be `Span` to be returned the next time you call `tracer.currentSpan()`. When the operation you wish to instrument is complete, call `span.close()` to stop the timer.
