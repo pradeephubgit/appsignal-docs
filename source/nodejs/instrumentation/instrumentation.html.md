@@ -52,6 +52,7 @@ const rootSpan = tracer.rootSpan();
 ```
 
 Once you have the current `RootSpan`, you'll be able to add data to it and create `ChildSpan`s from it. If a current `Span` is not available, then `tracer.rootSpan()` will return a `NoopSpan`.
+
 ### Creating a `Span`
 
 A `Span` can be created by calling `tracer.createSpan()`, which initializes a new `RootSpan` if there's no current `RootSpan` on the _scope_ or a `ChildSpan` of the present `RootSpan`.
