@@ -22,7 +22,7 @@ If the agent is currently inactive (you must actively set it as such by setting 
 
 A `Span` is the name of the object that we use to capture data about the performance of your application, any errors and any surrounding context. A `Span` can form a part of a broader **trace**, a hierarchical representation of the flow of data through your application.
 
-Each `Span` contains the following state:
+Each `Span` contains the following metadata:
 
 - A name
 - A start and finish timestamp
