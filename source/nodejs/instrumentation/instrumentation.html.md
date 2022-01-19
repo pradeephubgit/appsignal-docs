@@ -123,7 +123,7 @@ childSpan.setQuery(queryObj);
 ```
 #### Adding metadata to a `Span`
 
-More information on this is available [here](/guides/custom-data/).
+For more information, see the [custom data guide](/guides/custom-data/).
 
 #### Adding an error to a `Span`
 
