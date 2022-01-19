@@ -121,7 +121,7 @@ const childSpan = rootSpan.child();
 const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
-childSpan.setQuery(queryObj);
+childSpan.setSQL(queryObj);
 ```
 #### Adding metadata to a `Span`
 
@@ -159,7 +159,7 @@ const childSpan = rootSpan.child();
 const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
-childSpan.setQuery(queryObj);
+childSpan.setSQL(queryObj);
 
 // do stuff...
 
