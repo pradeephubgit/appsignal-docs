@@ -127,7 +127,7 @@ More information on this is available [here](/guides/custom-data/).
 
 #### Adding an error to a `Span`
 
-More information on this is available [here](/nodejs/tracing/exception-handling.html).
+For more information, see the [exception handling page](/nodejs/instrumentation/exception-handling.html).
 
 ### Closing a `Span`
 
