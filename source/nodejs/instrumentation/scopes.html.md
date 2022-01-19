@@ -37,7 +37,6 @@ Once assigned to a Scope, the `Span` passed to `tracer.withSpan()` can be recall
 ```js
 tracer.withSpan(tracer.currentSpan(), (span) => {
   // `span` is the same span created by `tracer.createSpan()` in the example above!
-  // http://gph.is/1KjihQe
 });
 ```
 
