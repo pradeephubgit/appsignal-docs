@@ -89,7 +89,7 @@ After a `Span` is created, you can begin adding data to it using methods on the 
 
 #### Naming a `Span`
 
-Set the name for a given `Span`. The Span name is used in the UI to group like requests together.
+Set the name for a given `Span`. The Span name is used in the UI to group similar requests together.
 
 ```js
 const tracer = appsignal.tracer();
