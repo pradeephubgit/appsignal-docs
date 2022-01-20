@@ -6,7 +6,7 @@ In order to find out what specific pieces of code are causing performance proble
 
 ## The Tracer object
 
-AppSignal for Node.js contains a new concept that is different from the current Ruby implementation - the `Tracer` object. The `Tracer` object contains various methods that you might use when creating your own custom instrumentation.
+The `Tracer` object provided by the AppSignal for Node.js integration contains various methods that you might use when creating your own custom instrumentation.
 
 The Tracer is responsible for tracking the currently active `Span`, and exposes functions for creating and activating new `Span`s.
 
