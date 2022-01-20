@@ -123,7 +123,7 @@ span.set("default_locale", default_locale);
 
 Tags that do not meet these limitations are dropped without warning.
 
-- Tags must be added to the root span.
+- Tags must be added to the root span. If added to a child span, they will be ignored.
 - The tag key must be a `String`.
 - The tagged value must be a `String`, `Number` or `Boolean`.
 - Nested object values are not supported for tags, please use [custom data](/guides/custom-data/sample-data.html) instead.
