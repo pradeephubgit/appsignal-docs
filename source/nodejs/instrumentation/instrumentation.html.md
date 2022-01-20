@@ -16,7 +16,7 @@ The Tracer is responsible for tracking the currently active `Span`, and exposes 
 const tracer = appsignal.tracer();
 ```
 
-If the agent is currently inactive (you must actively set it as such by setting `active: true`), then the AppSignal client will return an instance of `NoopTracer`, which is safe to call within your code as if the agent were currently active but does not record any data.
+If the agent is currently inactive (you must set it as such yourself, by setting `active: true`), then the AppSignal client will return a tracer object that does nothing. It is safe to call this tracer object within your code as you would if the integration was active, but it will not record any data.
 
 ## Creating and using a Span
 
