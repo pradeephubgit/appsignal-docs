@@ -29,7 +29,6 @@ Each `Span` contains the following metadata:
 - Tags
 - Sample data
 - The parent `Span`s ID (if any)
-- `SpanContext` identification of a `Span`
 
 It is designed to closely follow the concept of a Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification, but there are some minor differences that we'll get into later.
 
@@ -51,7 +50,7 @@ const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 ```
 
-Once you have the current `RootSpan`, you'll be able to add data to it and create `ChildSpan`s from it. If a current `Span` is not available, then `tracer.rootSpan()` will return a `NoopSpan`.
+Once you have the current `RootSpan`, you'll be able to [add data](#configuring-a-span) to it and create [ChildSpan](#creating-a-child-span) from it. If a current `Span` is not available, then `tracer.rootSpan()` will return a `NoopSpan`.
 
 ### Creating a `Span`
 
@@ -83,7 +82,7 @@ const tracer = appsignal.tracer();
 const childSpan = tracer.createSpan(undefined, rootSpan);
 ```
 
-After a `Span` is created, you can begin adding data to it using methods on the `Span` object. `ChildSpan`s and `RootSpan`s share the same interface.
+After a `Span` is created, you can begin adding data to it using methods on the `Span` object. `ChildSpan`s and `RootSpan`s share the same interface. After you are done instrumenting the block of code you need to [close](#closing-a-span) the span.
 
 ### Configuring a `Span`
 
