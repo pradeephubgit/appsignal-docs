@@ -229,3 +229,12 @@
 [[redirects]]
   from = "/nodejs/tracing/scopes.html"
   to = "/nodejs/instrumentation/scopes.html"
+[[redirects]]
+  from = "/nodejs/metrics/"
+  to = "/metrics/custom.html"
+[[redirects]]
+  from = "/nodejs/metrics/index.html"
+  to = "/metrics/custom.html"
+[[redirects]]
+  from = "/nodejs/metrics/minutely-probes.html"
+  to = "/nodejs/instrumentation/minutely-probes.html"

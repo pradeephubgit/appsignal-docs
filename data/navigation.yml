@@ -349,7 +349,7 @@ sections:
                 name: "Event formatters"
                 link: "/ruby/instrumentation/event-formatters.html"
               -
-                name: "Minutely probes <sup>New</sup>"
+                name: "Minutely probes"
                 link: "/ruby/instrumentation/minutely-probes.html"
               -
                 name: "Request queue time"
@@ -443,7 +443,7 @@ sections:
                 name: "Exception handling"
                 link: "/elixir/instrumentation/exception-handling.html"
               -
-                name: "Minutely probes <sup>New</sup>"
+                name: "Minutely probes"
                 link: "/elixir/instrumentation/minutely-probes.html"
               -
                 name: "Mix tasks"
@@ -510,16 +510,9 @@ sections:
               -
                 name: "Async tracing and Scopes"
                 link: "/nodejs/instrumentation/scopes.html"
-          -
-            name: "Metrics"
-            link: "/nodejs/metrics/"
-            sub_pages:
-              -
-                name: "Overview"
-                link: "/nodejs/metrics/"
               -
                 name: "Minutely probes"
-                link: "/nodejs/metrics/minutely-probes.html"
+                link: "/nodejs/instrumentation/minutely-probes.html"
           -
             name: "Integrations"
             link: "/nodejs/integrations/"
