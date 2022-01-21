@@ -6,6 +6,8 @@ In order to find out what specific pieces of code are causing performance proble
 
 -> **Note**: Make sure you've [installed AppSignal](/nodejs/installation.html) before adding custom instrumentation to your application if it's not integrated by one of our supported [integrations](/nodejs/integrations/index.html).
 
+-> **Note**: This page only describes how to add performance instrumentation to your code. To track errors please read our [exception handling](/nodejs/instrumentation/exception-handling.html) guide.
+
 ## The Tracer object
 
 The `Tracer` object provided by the AppSignal for Node.js integration contains various functions that you might use when creating your own custom instrumentation.
