@@ -30,7 +30,7 @@ Each Span contains the following metadata:
 - Sample data
 - The parent `Span`s ID (if any)
 
-It is designed to closely follow the concept of a Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification, but there are some minor differences that we'll get into later.
+It is designed to closely follow the concept of a Span from the [OpenTelemetry standard specification](https://github.com/open-telemetry/opentelemetry-specification), but there are some minor differences that we'll get into later.
 
 ### Retrieving the current Span
 
