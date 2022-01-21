@@ -16,11 +16,13 @@ The Tracer is responsible for tracking the current root and active `Span`s, and 
 
 ### Retrieving the Tracer
 
+The tracer object can be retrieved by calling the `tracer()` function on the `Appsignal` client object.
+
 ```js
 const tracer = appsignal.tracer();
 ```
 
-If the agent is currently inactive (you must set it as such yourself, by setting `active: true`), then the AppSignal client will return a tracer object that does nothing. It is safe to call this tracer object within your code as you would if the integration was active, but it will not record any data.
+If AppSignal is configured to not be active (`active: false`), the AppSignal client will return a tracer object that will not record any data. It is safe to call this tracer object within your code as you would if the integration was active.
 
 ## Creating and using a Span
 
