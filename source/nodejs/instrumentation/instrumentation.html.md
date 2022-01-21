@@ -32,10 +32,13 @@ Each Span contains the following metadata:
 
 - The parent Spans ID (if any)
 - A start and finish time
-- A name
+- A name (RootSpan only)
+    - The action name for requests and background jobs, e.g. `GET /user/profile` and `BackgroundJob.perform`. Requests and background jobs are grouped together by this name.
 - A category
-- Sample data (RootSpan only)
-- Tags (RootSpan only)
+    - The name of the event shown in the performance event timeline, e.g. `fetch_all.user_service` and `render.handlebars`.
+- [Error data](/nodejs/instrumentation/exception-handling.html) (RootSpan only)
+- [Sample data](/guides/custom-data/sample-data.html) (RootSpan only)
+- [Tags](/guides/custom-data/tagging-request.html) (RootSpan only)
 
 It is designed to closely follow the concept of a Span from the [OpenTelemetry standard specification](https://github.com/open-telemetry/opentelemetry-specification), but there are some minor differences that we'll get into later.
 
