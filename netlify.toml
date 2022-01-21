@@ -218,6 +218,9 @@
   from = "/nodejs/tracing/"
   to = "/nodejs/instrumentation"
 [[redirects]]
+  from = "/nodejs/tracing/index.html"
+  to = "/nodejs/instrumentation"
+[[redirects]]
   from = "/nodejs/tracing/tracer.html"
   to = "/nodejs/instrumentation/instrumentation.html"
 [[redirects]]
