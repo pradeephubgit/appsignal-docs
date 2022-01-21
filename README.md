@@ -1,5 +1,7 @@
 # AppSignal Documentation
 
+This is a test
+
 This repository contains the source for the [AppSignal documentation
 website][docs].
 
