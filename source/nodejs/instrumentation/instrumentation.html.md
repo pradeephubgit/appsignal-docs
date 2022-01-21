@@ -6,7 +6,7 @@ In order to find out what specific pieces of code are causing performance proble
 
 ## The Tracer object
 
-The `Tracer` object provided by the AppSignal for Node.js integration contains various methods that you might use when creating your own custom instrumentation.
+The `Tracer` object provided by the AppSignal for Node.js integration contains various functions that you might use when creating your own custom instrumentation.
 
 The Tracer is responsible for tracking the currently active `Span`, and exposes functions for creating and activating new `Span`s.
 
@@ -20,9 +20,9 @@ If the agent is currently inactive (you must set it as such yourself, by setting
 
 ## Creating and using a Span
 
-A `Span` is the name of the object that we use to capture data about the performance of your application, any errors and any surrounding context. A `Span` can form a part of a broader **trace**, a hierarchical representation of the flow of data through your application.
+A Span is the name of the object that we use to capture data about the performance of your application, any errors and any surrounding context. A Span can form a part of a broader trace, a hierarchical representation of the flow of data through your application.
 
-Each `Span` contains the following metadata:
+Each Span contains the following metadata:
 
 - A name
 - A start and finish timestamp
@@ -32,42 +32,42 @@ Each `Span` contains the following metadata:
 
 It is designed to closely follow the concept of a Span from the [OpenTelemetry](https://github.com/open-telemetry/opentelemetry-specification) standard specification, but there are some minor differences that we'll get into later.
 
-### Retrieving the current `Span`
+### Retrieving the current Span
 
-The currently active `Span` can be recalled to add data to it or create `ChildSpan`s from it.
+The currently active Span can be recalled to add data to it or create ChildSpans from it.
 
 ```js
 const tracer = appsignal.tracer();
 const span = tracer.currentSpan();
 ```
 
-### Retrieving the current `RootSpan`
+### Retrieving the current root Span
 
-In most cases, a `RootSpan` will be created by one of our automatic instrumentations, e.g. the `http` module integration. To add any custom instrumentation to your trace, you'll need to retrieve that `RootSpan` using the `Tracer` instance.
+In most cases, a root Span (`RootSpan`) will be created by one of our automatic instrumentations, e.g. the `http` module integration. To add any custom instrumentation to your trace, you'll need to retrieve that RootSpan using the Tracer instance.
 
 ```js
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 ```
 
-Once you have the current `RootSpan`, you'll be able to [add data](#configuring-a-span) to it and create [ChildSpan](#creating-a-child-span) from it. If a current `Span` is not available, then `tracer.rootSpan()` will return a `NoopSpan`.
+Once you have the current RootSpan, you'll be able to [add data](#configuring-a-span) to it and create [ChildSpan](#creating-a-child-span) from it. If a current Span is not available, then `tracer.rootSpan()` will return a NoopSpan.
 
-### Creating a `Span`
+### Creating a Span
 
-A `Span` can be created by calling `tracer.createSpan()`, which initializes a new `RootSpan` if there's no current `RootSpan` on the _scope_ or a `ChildSpan` of the present `RootSpan`.
+A Span can be created by calling `tracer.createSpan()`, which initializes a new RootSpan if there's no current RootSpan on the _scope_ or a ChildSpan of the current RootSpan.
 
 ```js
 const tracer = appsignal.tracer();
 const span = tracer.createSpan();
 ```
 
-A `RootSpan` is a type of `Span` which encapsulates the end-to-end latency for the entire request. As a `Span` is created, its start time is recorded. To give the span an end time, the `Span` must be [closed](#closing-a-span) when all the operations that the `Span` is recording are finished.
+A `RootSpan` is a type of Span which encapsulates the end-to-end latency for the entire request. As a Span is created, its start time is recorded. To give the span an end time, the Span must be [closed](#closing-a-span) when all the operations that the Span is recording are finished.
 
-When a `Span` is created, it is not bound to any _scope_. This means it cannot be recalled again from a different place in your app without first being given a _scope_. Read more about scopes [here](scopes.html).
+When a Span is created, it is not bound to any _scope_. This means it cannot be recalled again from a different place in your app without first being given a _scope_. Read more about scopes [here](scopes.html).
 
-### Creating a child `Span`
+### Creating a child Span
 
-A `ChildSpan` can be created to represent a subdivision of the total length of time represented by the `RootSpan`. This is useful for instrumenting blocks of code that are run inside of the lifetime of a `RootSpan`.
+A ChildSpan can be created to represent a subdivision of the total length of time represented by the RootSpan. This is useful for instrumenting blocks of code that are run inside of the lifetime of a RootSpan.
 
 ```js
 const tracer = appsignal.tracer();
@@ -75,20 +75,20 @@ const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
 ```
 
-A `ChildSpan` can also be created by passing an optional second argument to `tracer.createSpan()`.
+A ChildSpan can also be created by passing an optional second argument to `tracer.createSpan()`.
 
 ```js
 const tracer = appsignal.tracer();
 const childSpan = tracer.createSpan(undefined, rootSpan);
 ```
 
-After a `Span` is created, you can begin adding data to it using methods on the `Span` object. `ChildSpan`s and `RootSpan`s share the same interface. After you are done instrumenting the block of code you need to [close](#closing-a-span) the span.
+After a Span is created, you can begin adding data to it using methods on the Span object. ChildSpans and RootSpans share the same interface. After you are done instrumenting the block of code you need to [close](#closing-a-span) the span.
 
-### Configuring a `Span`
+### Configuring a Span
 
-#### Naming a `Span`
+#### Naming a Span
 
-Set the name for a given `Span`. The Span name is used in the UI to group similar requests together.
+Set the name for a given Span. The Span name is used in the UI to group similar requests together.
 
 ```js
 const tracer = appsignal.tracer();
@@ -97,9 +97,9 @@ const childSpan = rootSpan.child();
 childSpan.setName("Query.sql.model.action");
 ```
 
-#### Naming a `Span` category
+#### Naming a Span category
 
-Set the category for a given `Span`. The category groups Spans together in the "Slow Events" feature, and in the "Sample breakdown".
+Set the category for a given Span. The category groups Spans together in the "Slow Events" feature, and in the "Sample breakdown".
 
 ```js
 const tracer = appsignal.tracer();
@@ -109,7 +109,7 @@ childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
 ```
 
-#### Adds sanitized SQL data as a string to a `Span`
+#### Adds sanitized SQL data as a string to a Span
 
 When called with a single argument, the `value` will be applied to the span as the body, which will show the sanitized query in your dashboard.
 
@@ -122,17 +122,17 @@ childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
 childSpan.setSQL(queryObj);
 ```
-#### Adding metadata to a `Span`
+#### Adding metadata to a Span
 
 For more information, see the [custom data guide](/guides/custom-data/).
 
-#### Adding an error to a `Span`
+#### Adding an error to a Span
 
 For more information, see the [exception handling page](/nodejs/instrumentation/exception-handling.html).
 
-### Closing a `Span`
+### Closing a Span
 
-As `Span`s represent a length of time, they must be given a finish time once all the operations that the `Span` is timing have completed. You do this by calling `span.close()`.
+As Spans represent a length of time, they must be given a finish time once all the operations that the Span is timing have completed. You do this by calling `span.close()`.
 
 ```js
 const tracer = appsignal.tracer();
