@@ -35,8 +35,8 @@ Each Span contains the following metadata:
 - A name (RootSpan only)
     - The action name for requests and background jobs, e.g. `GET /user/profile` and `BackgroundJob.perform`. Requests and background jobs are grouped together by this name.
 - A category
-    - The name of the event shown in the performance event timeline, e.g. `fetch_all.user_service` and `render.handlebars`.
-- [Error data](/nodejs/instrumentation/exception-handling.html) (RootSpan only)
+    - The name of the event shown in the performance event timeline, e.g. `fetch_all.user_service` and `render.handlebars`. For the RootSpan this will the top-level first Span in the event timeline that all other Spans will be shown under.
+- [Error data](/nodejs/instrumentation/exception-handling.html)
 - [Sample data](/guides/custom-data/sample-data.html) (RootSpan only)
 - [Tags](/guides/custom-data/tagging-request.html) (RootSpan only)
 
@@ -96,40 +96,69 @@ After a Span is created, you can begin adding data to it using methods on the Sp
 
 ### Configuring a Span
 
-#### Naming a Span
+#### Setting a RootSpan name
 
-Set the name for a given Span. The Span name is used in the UI to group similar requests together.
+The RootSpan name communicates what part of the app the Span recorded data for, such as which request endpoint or which background job worker. The Span name is used in the UI to group all requests on the same endpoint together, or background jobs from the same worker, to find it back easier.
 
 ```js
+// Necessary setup
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
-const childSpan = rootSpan.child();
-childSpan.setName("Query.sql.model.action");
+
+// Examples of RootSpan names
+rootSpan.setName("GET /user/profile"); // For a HTTP endpoint
+rootSpan.setName("BackgroundWorker.perform"); // For a background worker job
 ```
 
-#### Naming a Span category
+ChildSpans can not be configured with names, read how [set categories](#setting-a-span-category) instead.
 
-Set the category for a given Span. The category groups Spans together in the "Slow Events" feature, and in the "Sample breakdown".
+#### Setting a Span category
+
+Every Span has a category. This category label is used in the event timeline for performance measurements, to show the durations of Spans. It also used to group together Span in the same category group, and show breakdowns per group. This helps determine if a HTTP request took more time querying the database, or render a HTML view. This data is also used in the "Slow Events" feature, to highlight slow HTTP requests and database queries across the application.
+
+For more information on how what category names to use, please read our [event naming guide](/api/event-names.html).
 
 ```js
+// Necessary setup
 const tracer = appsignal.tracer();
+
+// Set the category for a RootSpan
 const rootSpan = tracer.rootSpan();
+rootSpan.setName("GET /user/profile");
+rootSpan.setCategory("process_request.express");
+
+// Set the category for a ChildSpan
 const childSpan = rootSpan.child();
-childSpan.setName("Query.sql.model.action");
-childSpan.setCategory("get.query");
+childSpan.setCategory("perform.sql");
+// And then perform query
+childSpan.close() // Close Span after the query has been performed
+
+// Close the RootSpan at the end of the HTTP request
+rootSpan.close()
 ```
 
 #### Adds sanitized SQL data as a string to a Span
 
-When called with a single argument, the `value` will be applied to the span as the body, which will show the sanitized query in your dashboard.
+In the event timeline, additional metadata can be shown for events. To show SQL queries that have been performed, you can use the `setSQL` function.
+
+Any query set on a Span this way will be automatically sanitized of any values in the query. This prevents any personal identifiable information and passwords to accidentally leak to our servers.
 
 ```js
+// Necessary setup
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
+childSpan.setName("GET /user/profile");
+
+// Set SQL query as metadata on the ChildSpan
 const childSpan = rootSpan.child();
-childSpan.setName("Query.sql.model.action");
-childSpan.setCategory("get.query");
+childSpan.setCategory("perform.sql");
 childSpan.setSQL("SELECT * FROM users WHERE email = 'hello@example.com'");
+// The query will be sanitized and reported as:
+// SELECT * FROM users WHERE email = ?
+childSpan.close() // Close Span after the query has been performed
+
+// Close the RootSpan at the end of the HTTP request
+rootSpan.close()
 ```
 #### Adding metadata to a Span
 
@@ -146,7 +175,7 @@ As Spans represent a length of time, they must be given a finish time once all t
 ```js
 const tracer = appsignal.tracer();
 const span = tracer.createSpan();
-span.setName("Query.sql.model.action");
+span.setName("GET /user/profile");
 
 // do stuff...
 
@@ -162,12 +191,14 @@ Here is an example of creating a child span from the current root span, adding i
 ```js
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
+rootSpan.setName("GET /user/profile");
+rootSpan.setCategory("perform.request");
+
+// Do things like performing queries and rendering HTML
 const childSpan = rootSpan.child();
-childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
 childSpan.setSQL("SELECT * FROM users WHERE email = 'hello@example.com'");
 
-// do stuff...
-
 childSpan.close();
+rootSpan.close();
 ```
