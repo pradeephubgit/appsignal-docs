@@ -990,12 +990,18 @@ options:
     elixir:
       type: bool
       default_value: false
-    description: |
-      Set this option to `true` to not send any session data with exception traces and performance issue samples.
+      since_notes:
+        - "`2.2.10`: Deprecated in favor of [`send_session_data`](#option-send_session_data)."
+      description:
+        - "!> **Warning**: This config option is deprecated in the Elixir package 2.2.10. Please use the [`send_session_data`](#option-send_session_data) option instead for newer versions of the Elixir package."
   - config_key: send_session_data
     env_key: APPSIGNAL_SEND_SESSION_DATA
     ruby:
       since: 3.0.20
+      type: bool
+      default_value: true
+    elixir:
+      since: 2.2.10
       type: bool
       default_value: true
     nodejs:
