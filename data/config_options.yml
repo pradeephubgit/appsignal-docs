@@ -441,6 +441,8 @@ options:
     nodejs:
       config_key: enableMinutelyProbes
       since: 0.4.0
+      since_notes:
+        - "`2.3.0`: Disables the minutely probes system from reporting metrics. Before version `2.3.0` it only unregistered the default probes."
       type: bool
       default_value: true
       description: |
