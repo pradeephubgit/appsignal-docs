@@ -10,7 +10,7 @@ The `Tracer` object provided by the AppSignal for Node.js integration contains v
 
 The Tracer is responsible for tracking the currently active `Span`, and exposes functions for creating and activating new `Span`s.
 
-### Retrieving the `Tracer`
+### Retrieving the Tracer
 
 ```js
 const tracer = appsignal.tracer();
@@ -144,7 +144,7 @@ span.setName("Query.sql.model.action");
 span.close();
 ```
 
-If the `RootSpan` is created by the core `http` instrumentation (the most common case), the `RootSpan` is closed automatically by the instrumentation. If any children of this `RootSpan` are left unclosed, then they are dropped from the trace. Generally speaking, you should close the spans that you create, but not the spans that are created by the instrumentations.
+If the RootSpan is created by the core `http` instrumentation (the most common case), the RootSpan is closed automatically by the instrumentation. If any children of this RootSpan are left unclosed, then they are dropped from the trace. Generally speaking, you should close the spans that you create, but not the spans that are created by the instrumentations.
 
 #### Complete example
 
