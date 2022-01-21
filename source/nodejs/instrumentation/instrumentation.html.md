@@ -121,10 +121,9 @@ When called with a single argument, the `value` will be applied to the span as t
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
-const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
-childSpan.setSQL(queryObj);
+childSpan.setSQL("SELECT * FROM users WHERE email = 'hello@example.com'");
 ```
 #### Adding metadata to a Span
 
@@ -158,10 +157,9 @@ Here is an example of creating a child span from the current root span, adding i
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
-const queryObj = "YOUR-QUERY";
 childSpan.setName("Query.sql.model.action");
 childSpan.setCategory("get.query");
-childSpan.setSQL(queryObj);
+childSpan.setSQL("SELECT * FROM users WHERE email = 'hello@example.com'");
 
 // do stuff...
 
