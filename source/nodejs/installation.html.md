@@ -51,7 +51,11 @@ const appsignal = new Appsignal({
 // ...all the rest of your code goes here!
 ```
 
-!> To auto-instrument modules, the Appsignal module must be both **required** and **initialized** before any other package.
+!> To auto-instrument modules, the `Appsignal` module must be both **required** and **initialized** before any other package.
+
+### Adding integrations
+
+AppSignal supports several libraries and frameworks with additional packages, such as Express, Koa, Next.js and more. Additional installation instructions for these packages can be found in the [Node.js integrations section](/nodejs/integrations).
 
 ---
 
