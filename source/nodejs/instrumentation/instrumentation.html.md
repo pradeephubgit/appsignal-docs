@@ -136,7 +136,7 @@ As `Span`s represent a length of time, they must be given a finish time once all
 
 ```js
 const tracer = appsignal.tracer();
-const span = tracer.currentSpan();
+const span = tracer.createSpan();
 span.setName("Query.sql.model.action");
 
 // do stuff...
