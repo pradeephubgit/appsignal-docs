@@ -151,7 +151,6 @@ If the `RootSpan` is created by the core `http` instrumentation (the most common
 Here is an example of creating a child span from the current root span, adding information to it, and then closing it.
 
 ```js
-
 const tracer = appsignal.tracer();
 const rootSpan = tracer.rootSpan();
 const childSpan = rootSpan.child();
@@ -163,3 +162,4 @@ childSpan.setSQL(queryObj);
 // do stuff...
 
 childSpan.close();
+```
