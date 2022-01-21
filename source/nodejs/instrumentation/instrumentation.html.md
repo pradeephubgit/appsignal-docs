@@ -12,7 +12,7 @@ In order to find out what specific pieces of code are causing performance proble
 
 The `Tracer` object provided by the AppSignal for Node.js integration contains various functions that you might use when creating your own custom instrumentation.
 
-The Tracer is responsible for tracking the currently active `Span`, and exposes functions for creating and activating new `Span`s.
+The Tracer is responsible for tracking the current root and active `Span`s, and exposes functions for creating and activating new Spans. We will discuss these functions on this page in more detail.
 
 ### Retrieving the Tracer
 
@@ -28,11 +28,12 @@ A Span is the name of the object that we use to capture data about the performan
 
 Each Span contains the following metadata:
 
+- The parent Spans ID (if any)
+- A start and finish time
 - A name
-- A start and finish timestamp
-- Tags
-- Sample data
-- The parent `Span`s ID (if any)
+- A category
+- Sample data (RootSpan only)
+- Tags (RootSpan only)
 
 It is designed to closely follow the concept of a Span from the [OpenTelemetry standard specification](https://github.com/open-telemetry/opentelemetry-specification), but there are some minor differences that we'll get into later.
 
