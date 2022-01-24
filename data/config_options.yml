@@ -978,7 +978,7 @@ options:
     description: |
       Whether to skip sending request parameters to AppSignal.
 
-      For more information please read about [send_params](parameter-filtering.html#filter-all-parameters) in filtering request parameters.
+      For more information please read about [send_params](/application/parameter-filtering.html) in filtering request parameters.
   - config_key: skip_session_data
     env_key: APPSIGNAL_SKIP_SESSION_DATA
     ruby:

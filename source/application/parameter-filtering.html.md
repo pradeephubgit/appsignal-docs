@@ -24,6 +24,7 @@ To filter all parameters without individual parameter filtering, set "send param
 
 - [Ruby `send_params` config option documentation](/ruby/configuration/options.html#option-send_params)
 - [Elixir `send_params` config option documentation](/elixir/configuration/options.html#option-send_params)
+- [Node.js `sendParams` config option documentation](/nodejs/configuration/options.html#option-sendparams)
 
 ## Processor parameter filtering
 
