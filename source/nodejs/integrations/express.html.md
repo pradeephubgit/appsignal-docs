@@ -70,7 +70,7 @@ const app = express();
 // ADD THIS AFTER ANY OTHER EXPRESS MIDDLEWARE, AND AFTER ANY ROUTES!
 app.use(expressErrorHandler(appsignal));
 ```
-
+-> Only exceptions with status code 500 and above will be reported to AppSignal automatically. To send exceptions to AppSignal with other status codes, you can use [custom exception handling](/nodejs/instrumentation/exception-handling.html).
 ## Example app
 
 An example Express app, containing usage of all of our middleware and custom instrumentation can be found [here](https://github.com/appsignal/appsignal-examples/tree/express).
