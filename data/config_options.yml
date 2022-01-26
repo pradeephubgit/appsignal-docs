@@ -8,7 +8,7 @@ options:
     ruby:
       since: 0.3.0
       since_notes:
-        - "`0.11.6`: Support added for the system environment option."
+        - "`0.11.6`: Support added for the environment variable option."
       type: bool
       default_value:
         markdown: "`false` / detected by system"
@@ -21,6 +21,8 @@ options:
       type: bool
       default_value:
         markdown: "`false` / detected by system"
+      since_notes:
+        - "`2.3.0`: Support added for the environment variable option."
     description: |
       Configure AppSignal to be active or not for a given environment. Most commonly used in the [file configuration](index.html) per environment.
 
@@ -442,6 +444,7 @@ options:
       config_key: enableMinutelyProbes
       since: 0.4.0
       since_notes:
+        - "`2.3.0`: Support added for the environment variable option."
         - "`2.3.0`: Disables the minutely probes system from reporting metrics. Before version `2.3.0` it only unregistered the default probes."
       type: bool
       default_value: true
