@@ -12,21 +12,23 @@ options:
       type: bool
       default_value:
         markdown: "`false` / detected by system"
+      description: |
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
     elixir:
       since: 0.1.0
       type: bool
       default_value:
         markdown: "`false` / detected by system"
+      description: |
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
     nodejs:
       type: bool
       default_value:
-        markdown: "`false` / detected by system"
+        markdown: "`false`"
       since_notes:
         - "`2.3.0`: Support added for the environment variable option."
     description: |
       Configure AppSignal to be active or not for a given environment. Most commonly used in the [file configuration](index.html) per environment.
-
-      -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
   - named_key: env
     env_key: APPSIGNAL_APP_ENV
     required: true
