@@ -15,8 +15,9 @@ will work.
 
 - 1. [Package defaults - `default`](#default)
 - 2. [System detected settings - `system`](#system)
-- 4. [Mix app config file - `file`](#file)
-- 5. [Environment variables - `env`](#env)
+- 3. [Mix app config file - `file`](#file)
+- 4. [Environment variables - `env`](#env)
+- 5. [Overrides - `override`](#override)
 
 ##=default 1. Package defaults
 
@@ -62,7 +63,7 @@ This source is listed as `file` in the [diagnose](/elixir/command-line/diagnose.
 
 ##=env 4. Environment variables
 
-Lastly AppSignal will look for its configuration in environment variables.
+Our integration will look for its configuration in environment variables.
 When found these will override all given configuration options from
 previous steps.
 
@@ -72,3 +73,11 @@ export APPSIGNAL_APP_NAME="AppsignalPhoenixExample"
 ```
 
 This source is listed as `env` in the [diagnose](/elixir/command-line/diagnose.html) output.
+
+##=override 5. Overrides
+
+When all the configuration is known, our integration will do a final check to find out if the configuration doesn't contradict itself or if some defaults config options are not set.
+
+The "override" configuration source will include those last configuration changes made by the integration. When it overrides a config option value, this value is leading.
+
+For example, at some point we deprecated the `skip_session_data` option in favor of the `send_session_data` option. When the `skip_session_data` config option was configured by the app, but `send_session_data` was not, the integration would use the value of `skip_session_data` to set the `send_session_data` config option value.
