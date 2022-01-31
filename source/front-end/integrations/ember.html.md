@@ -13,9 +13,7 @@ yarn add @appsignal/javascript @appsignal/ember
 npm install --save @appsignal/javascript @appsignal/ember
 ```
 
-With the `ember-cli` tool, packages from `npm` cannot be imported into your application by default. You will need to add some kind of method for loading external modules. We recommend using [`ember-auto-import`](https://github.com/ef4/ember-auto-import), which requires little to no configuration to setup. 
-
-Install the following using `ember-cli`:
+Starting with Ember 4, projects created with `ember new` include `ember-auto-import` out of the box. If your project does not, you will need to add some kind of method for loading `npm` packages into your application. We recommend using [`ember-auto-import`](https://github.com/ef4/ember-auto-import), which you can install using `ember-cli`:
 
 ```
 ember install ember-auto-import
@@ -30,14 +28,13 @@ ember install ember-auto-import
 The default Ember integration is a function that binds to the `Ember.onerror` and `Ember.RSVP.on("error")` handlers. In a new app created using `ember-cli`, your `app.js` file might include something like this:
 
 ```js
-import Appsignal from "@appsignal/javascript"
-import { installErrorHandler } from "@appsignal/ember"
+import Appsignal from '@appsignal/javascript'
+import Ember from 'ember'
+import { installErrorHandler } from '@appsignal/ember'
 
 const appsignal = new Appsignal({ 
   key: "YOUR FRONTEND API KEY"
 })
 
-installErrorHandler(appsignal)
+installErrorHandler(appsignal, Ember)
 ```
-
-The integration will look for `window.Ember` to bind to by default. You can also pass the `Ember` instance as the optional second parameter to `installErrorHandler`, e.g. `installErrorHandler(appsignal, Ember)`.
