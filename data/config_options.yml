@@ -8,23 +8,27 @@ options:
     ruby:
       since: 0.3.0
       since_notes:
-        - "`0.11.6`: Support added for the system environment option."
+        - "`0.11.6`: Support added for the environment variable option."
       type: bool
       default_value:
         markdown: "`false` / detected by system"
+      description: |
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
     elixir:
       since: 0.1.0
       type: bool
       default_value:
         markdown: "`false` / detected by system"
+      description: |
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
     nodejs:
       type: bool
       default_value:
-        markdown: "`false` / detected by system"
+        markdown: "`false`"
+      since_notes:
+        - "`2.3.0`: Support added for the environment variable option."
     description: |
       Configure AppSignal to be active or not for a given environment. Most commonly used in the [file configuration](index.html) per environment.
-
-      -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) environment variable is set, this defaults to `true`. This can be overridden by setting the `APPSIGNAL_ACTIVE` system environment variable to `false`: `APPSIGNAL_ACTIVE=false`.
   - named_key: env
     env_key: APPSIGNAL_APP_ENV
     required: true
@@ -442,6 +446,7 @@ options:
       config_key: enableMinutelyProbes
       since: 0.4.0
       since_notes:
+        - "`2.3.0`: Support added for the environment variable option."
         - "`2.3.0`: Disables the minutely probes system from reporting metrics. Before version `2.3.0` it only unregistered the default probes."
       type: bool
       default_value: true
