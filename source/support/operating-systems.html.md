@@ -88,6 +88,10 @@ bundle install
 export APPSIGNAL_BUILD_FOR_MUSL=1
 mix deps.get
 mix compile
+
+# For Node.js
+export APPSIGNAL_BUILD_FOR_MUSL=1
+npm/yarn install
 ```
 
 ### Linux ARM build override
@@ -113,12 +117,16 @@ export APPSIGNAL_BUILD_FOR_LINUX_ARM=1
 
 ### Alpine Linux
 
-[Alpine Linux] support was added in version `2.1.0` of the AppSignal for Ruby gem. (JRuby is not supported on Alpine Linux.) Our AppSignal for Elixir package supports Alpine Linux since version `0.11.0`.
+- Ruby: supports [Alpine Linux] since Ruby gem version `2.1.0`. (JRuby is not supported on Alpine Linux.)
+- Elixir: supports [Alpine Linux] since Elixir package version `0.11.0`.
+- Node.js: does not support [Alpine Linux]. See [Node.js tracking issue #29](https://github.com/appsignal/appsignal-nodejs/issues/29) for updates.
+
+In AppSignal for Ruby version `2.4.0` and AppSignal for Elixir `1.4.0` we started shipping a separate build for Alpine Linux. If you upgraded from an earlier version and are have problems compiling your app, our detection isn't working properly. See our [upgrading issue](/support/known-issues/alpine-linux-ruby-gem-2-4-elixir-package-1-4-upgrade-problems.html) for more information.
 
 The following system dependencies are required for Alpine Linux:
 
 ```sh
-# Dependencies for the AppSignal Ruby gem
+# Dependencies for the AppSignal Ruby gem and Node.js package
 apk add --update alpine-sdk coreutils
 
 # Dependencies for the AppSignal for Elixir package version 1.7.0 and newer
@@ -127,9 +135,7 @@ apk add --update alpine-sdk coreutils
 apk add --update alpine-sdk coreutils curl
 ```
 
-In AppSignal for Ruby version `2.4.0` and AppSignal for Elixir `1.4.0` we started shipping a separate build for Alpine Linux. If you upgraded from an earlier version and are have problems compiling your app, our detection isn't working properly. See our [upgrading issue](/support/known-issues/alpine-linux-ruby-gem-2-4-elixir-package-1-4-upgrade-problems.html) for more information.
-
-For both the Ruby gem and Elixir package, detection is based on the output from `ldd --version`.
+For all integrations, detection is based on the output from `ldd --version`.
 
 If your app is unable to call the `ldd` program or the detection is off for some reason, you can force the Alpine Linux compatible build by providing a special environment variable on install.
 
@@ -144,6 +150,10 @@ bundle install
 export APPSIGNAL_BUILD_FOR_MUSL=1
 mix deps.get
 mix compile
+
+# For Node.js
+export APPSIGNAL_BUILD_FOR_MUSL=1
+npm/yarn install
 ```
 
 ####^alpine-linux Ruby
@@ -173,10 +183,12 @@ CentOS is fully supported by the AppSignal extension. Depending on your CentOS v
 The following system dependencies are required for CentOS:
 
 ```sh
-# Dependencies for the AppSignal Ruby gem
+# Dependencies for the AppSignal Ruby gem and Node.js package
 yum install gcc gcc-c++ make openssl-devel
 
-# Dependencies for the AppSignal Elixir package
+# Dependencies for the AppSignal for Elixir package version 1.7.0 and newer
+yum install gcc gcc-c++ make openssl-devel
+# Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 yum install gcc gcc-c++ make openssl-devel curl
 ```
 
@@ -189,11 +201,14 @@ For CentOS 6 and older versions you will need to opt-in to the musl build for Ap
 The following system dependencies are required for Debian Linux distributions:
 
 ```sh
-# Dependencies for the AppSignal Ruby gem
+# Dependencies for the AppSignal Ruby gem and Node.js package
 apt-get update
 apt-get install build-essential ca-certificates
 
-# Dependencies for the AppSignal Elixir package
+# Dependencies for the AppSignal for Elixir package version 1.7.0 and newer
+apt-get update
+apt-get install build-essential ca-certificates
+# Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 apt-get update
 apt-get install build-essential ca-certificates curl
 ```
@@ -206,7 +221,9 @@ The following system dependencies are required for Fedora Linux distributions:
 # Dependencies for the AppSignal Ruby gem
 dnf install gcc gcc-c++ make openssl-devel
 
-# Dependencies for the AppSignal Elixir package
+# Dependencies for the AppSignal for Elixir package version 1.7.0 and newer
+dnf install gcc gcc-c++ make openssl-devel
+# Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 dnf install gcc gcc-c++ make openssl-devel curl
 ```
 
