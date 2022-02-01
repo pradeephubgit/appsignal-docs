@@ -278,7 +278,7 @@ options:
     description: |
       Set the severity level of the AppSignal logger. If it is configured to "info" it will log all error, warning and info messages, but not log the debug messages.
 
-      Setting it to "debug" is usually only needed on request from support. Also, setting the level to "debug" could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
+      Setting it to the levels "debug" or "trace" is usually only needed on request from support. Setting the level to "debug"/"trace" could have a slight impact on the disk usage and IO, especially on high-traffic sites. CPU overhead is minimal with the debug option enabled.
 
       Accepted values:
 
@@ -286,6 +286,7 @@ options:
         - warning
         - info
         - debug
+        - trace
   - config_key: dns_servers
     env_key: APPSIGNAL_DNS_SERVERS
     ruby:
