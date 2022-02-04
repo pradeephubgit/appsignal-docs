@@ -60,9 +60,7 @@ const appsignal = new Appsignal({
   key: "YOUR FRONTEND API KEY",
 });
 
-const app = createApp(App).mount("#app");
-
-app.config = {
-  errorHandler: errorHandler(appsignal),
-};
+const app = createApp(App)
+app.config.errorHandler = errorHandler(appsignal, app)
+app.mount('#app')
 ```
