@@ -118,6 +118,12 @@ options:
         Read from environment variable `NODE_ENV`, defaults to "development".
       description: |
         The environment of the app to be reported to AppSignal.
+    standalone:
+      config_key: environment
+      type: string
+      default_value: null
+      description: |
+        The environment of the app to be reported to AppSignal.
   - config_key: otp_app
     env_key: APPSIGNAL_OTP_APP
     required: true
@@ -146,6 +152,12 @@ options:
       default_value: nil
       description: |
         Name of your application as it should be displayed on AppSignal.com.
+    standalone:
+      config_key: app_name
+      type: string
+      default_value: null
+      description: |
+        Name of your application as it should be displayed on AppSignal.com.
     description: |
       -> **Note**: Changing the name or [environment](#option-env) of an existing app will create a new app on AppSignal.com.
   - config_key: push_api_key
@@ -155,10 +167,22 @@ options:
       since: 0.1.0
       type: string
       default_value: null
+      description: |
+        The organization-level authentication key to authenticate with our Push API.
+
+        Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
+
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) system environment variable is set, the [`active`](#option-active) option will default to `true` instead of `false`. This means AppSignal will be consider active for the loaded environment even if `active` is set to `false` in the config file. For more information see the [`active`](#option-active) option.
     elixir:
       since: 0.1.0
       type: string
       default_value: null
+      description: |
+        The organization-level authentication key to authenticate with our Push API.
+
+        Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
+
+        -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) system environment variable is set, the [`active`](#option-active) option will default to `true` instead of `false`. This means AppSignal will be consider active for the loaded environment even if `active` is set to `false` in the config file. For more information see the [`active`](#option-active) option.
     nodejs:
       since: 2.2.5
       since_notes:
@@ -166,12 +190,17 @@ options:
       config_key: pushApiKey
       type: string
       default_value: null
-    description: |
-      The organization-level authentication key to authenticate with our Push API.
+      description: |
+        The organization-level authentication key to authenticate with our Push API.
 
-      Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
+        Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
+    standalone:
+      type: string
+      default_value: null
+      description: |
+        The organization-level authentication key to authenticate with our Push API.
 
-      -> **Note**: When the [`APPSIGNAL_PUSH_API_KEY`](#option-push_api_key) system environment variable is set, the [`active`](#option-active) option will default to `true` instead of `false`. This means AppSignal will be consider active for the loaded environment even if `active` is set to `false` in the config file. For more information see the [`active`](#option-active) option.
+        Read more about the [AppSignal Push API key](/appsignal/terminology.html#push-api-key).
   - config_key: api_key
     env_key: APPSIGNAL_PUSH_API_KEY
     required: true
@@ -199,12 +228,18 @@ options:
       default_value:
         markdown: Packaged `cacert.pem` file path.
       description:
-        - Configure the path of the SSL certificate file. By default this points AppSignal [vendored `cacert.pem` file](https://github.com/appsignal/appsignal-elixir/blob/f90759c04a4ff0274e2566704a462d652c988a70/priv/cacert.pem) in the package itself.
+        - Configure the path of the SSL certificate file. By default this points to the AppSignal [vendored `cacert.pem` file](https://github.com/appsignal/appsignal-elixir/blob/f90759c04a4ff0274e2566704a462d652c988a70/priv/cacert.pem) in the package itself.
     nodejs:
       config_key: caFilePath
       type: string
       default_value:
         markdown: Packaged `cacert.pem` file path.
+    standalone:
+      type: string
+      default_value:
+        markdown: Defaults to system CAs.
+      description:
+        - Configure the path of the SSL certificate file.
     description:
       - Use this option to point to another certificate file if there's a problem connecting to our API.
       - *file_paths_notice
@@ -275,6 +310,9 @@ options:
       type: string
       default_value: "info"
       config_key: "logLevel"
+    standalone:
+      type: string
+      default_value: "info"
     description: |
       Set the severity level of the AppSignal logger. If it is configured to "info" it will log all error, warning and info messages, but not log the debug messages.
 
@@ -357,6 +395,23 @@ options:
         ```sh
         # In the host environment
         export APPSIGNAL_DNS_SERVERS="8.8.8.8,8.8.4.4"
+        ```
+
+        If you're affected by our [DNS timeouts](/support/known-issues.html#dns-timeouts), try setting a DNS server manually using this option that doesn't use more than __4__ dots in the server name.
+
+        - Acceptable values: `8.8.8.8`, `my.custom.local.server`.
+        - Not acceptable values: `foo`, `my.awesome.custom.local.dns.server`.
+
+        If the DNS server cannot be reached the agent will fall back on the host's DNS configuration and output a message in the `appsignal.log` file: `A problem occurred while setting DNS servers`.
+    standalone:
+      type: string
+      default_value: null
+      description: |
+        Configure DNS servers for the AppSignal agent to use.
+        
+        ```yml
+        # /etc/appsignal-agent.conf
+        dns_servers = "8.8.8.8,8.8.4.4"
         ```
 
         If you're affected by our [DNS timeouts](/support/known-issues.html#dns-timeouts), try setting a DNS server manually using this option that doesn't use more than __4__ dots in the server name.
@@ -483,6 +538,10 @@ options:
       type: string
       default_value: https://push.appsignal.com
     elixir:
+      type: string
+      default_value: https://push.appsignal.com
+    standalone:
+      config_key: push_api_endpoint
       type: string
       default_value: https://push.appsignal.com
     description: |
@@ -665,6 +724,10 @@ options:
       type: string
       default_value:
         markdown: detected from system
+    standalone:
+      type: string
+      default_value:
+        markdown: detected from system
     description: |
       This overrides the server's hostname. Useful for when you're unable to set a custom hostname or when a nondescript id is generated for you on hosting services.
   - config_key: http_proxy
@@ -678,6 +741,9 @@ options:
       default_value: null
     nodejs:
       config_key: httpProxy
+      type: string
+      default_value: null
+    standalone:
       type: string
       default_value: null
     description: |
@@ -960,6 +1026,9 @@ options:
       since: 2.2.6
       type: bool
       default_value: true
+    standalone:
+      type: bool
+      default_value: true
     description: |
       Send environment metadata about the app.
 
@@ -1045,6 +1114,11 @@ options:
           config :appsignal, :config,
             working_dir_path: "/tmp/project_1/"
           ```
+    standalone:
+      type: string
+      default_value: "/var/lib/appsignal-agent"
+      description: |
+        Override the location where the Standalone AppSignal Agent can store temporary files. Use this option if the default location is not suitable. See our [how AppSignal operates](/appsignal/how-appsignal-operates.html) page for more information about the purpose of this working directory.
     description:
       - *file_paths_notice
   - config_key: working_directory_path

@@ -682,6 +682,9 @@ sections:
             name: "Installation"
             link: "/standalone-agent/installation.html"
           -
+            name: "Configuration options"
+            link: "/standalone-agent/configuration/options.html"
+          -
             name: "StatsD Metrics"
             link: "/standalone-agent/statsd.html"
       -

@@ -1,6 +1,8 @@
 <% options = options_for(integration).sort_by { |o| option_value(:config_key, o, integration) || o[:named_key] } %>
 <% required_options = options.select { |o| o[:required] } %>
 <% not_required_options = options.reject { |o| o[:required] } %>
+<% show_environment = true if show_environment.nil? %>
+
 <h2>
   <a class="anchor" id="available-options"></a>
   <a href="#available-options">Available options</a>
@@ -24,9 +26,10 @@
   </li>
 </ul>
 
-<% required_options.each do |option| %>
-  <%= partial "shared/option", :locals => { :option => option, :integration => integration } %>
-<% end %>
-<% not_required_options.each do |option| %>
-  <%= partial "shared/option", :locals => { :option => option, :integration => integration } %>
+<% (required_options + not_required_options).each do |option| %>
+  <%= partial "shared/option", :locals => {
+    :option => option,
+    :integration => integration,
+    :show_environment => show_environment
+  } %>
 <% end %>
