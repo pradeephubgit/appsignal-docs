@@ -104,7 +104,7 @@ yum install appsignal-agent
 
 ## Configuration
 
-The standalone agent configuration can be found at `/etc/appsignal-agent.conf`.
+The standalone agent configuration can be found at `/etc/appsignal-agent.conf`. For a list of all the available options, see the [configuration options](/standalone-agent/configuration/options.html) page for the standalone agent.
 
 The required Push API key can be found in the ["Push & Deploy" section](https://appsignal.com/redirect-to/app?to=info) for any app in your organization, and in the ["Add app" wizard](https://appsignal.com/redirect-to/organization?to=sites/new) for your organization.
 
