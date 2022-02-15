@@ -39,3 +39,11 @@ Not all packages have a maintenance policy, only supporting the latest release o
 ## Newer integrations
 
 For new integrations (programming languages and packages) this support policy does not apply. AppSignal will first only target the maintained, or latest, version of a language/package. We will not support older versions immediately unless relevant.
+
+## Git branches
+
+During the support process an app may have tested a fix or new feature upon request, by including any of the AppSignal integrations via Git through a specific Git branch. These branches belong to Pull Requests which are eventually either merged or closed. Afterward the branch that belongs to the Pull Request is __removed after six months__. This may take longer at times, but no guarantees are made about the lifetime of branches beyond this point.
+
+Please update your integration to the latest released version of the packages as soon as possible.
+
+We strongly advise to _never_ deploy an app to its production environment when it's installing an AppSignal integration through Git.
