@@ -412,7 +412,7 @@ options:
       default_value: null
       description: |
         Configure DNS servers for the AppSignal agent to use.
-        
+
         ```yml
         # /etc/appsignal-agent.conf
         dns_servers = "8.8.8.8,8.8.4.4"
@@ -476,16 +476,18 @@ options:
     ruby:
       since: 1.2.0
       type: bool
-      default_value: true
+      default_value: "`true` / detected by system"
     elixir:
       type: bool
-      default_value: true
+      default_value: "`true` / detected by system"
     nodejs:
       config_key: enableHostMetrics
       type: bool
-      default_value: true
+      default_value: "`true` / detected by system"
     description: |
       Set this option to `false` to disable [host metrics](/metrics/host.html) collection.
+
+      On Heroku and Dokku host metrics are disabled by default. This is done because these systems will [report inaccurate metrics from within the containers](/support/known-issues/incorrect-container-host-metrics.html). Host metrics collection on these systems cannot be enabled. For Heroku, use the [Heroku log drain](/heroku/host-metrics.html) instead.
   - config_key: enable_minutely_probes
     env_key: APPSIGNAL_ENABLE_MINUTELY_PROBES
     ruby:
