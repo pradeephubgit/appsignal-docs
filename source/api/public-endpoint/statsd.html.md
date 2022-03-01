@@ -37,4 +37,10 @@ stripe_api_duration:19|ms|#function:payment,domain:appsignal
 cpu_usage:55.1|g|#hostname:frontend1,cpu:0
 ```
 
+Here is a complete example on how to send these metrics using `cURL`.
+
+```
+curl -H "Content-Type: text/plain"  -X POST --data $'login_count:10|c|#hostname:frontend1\nstripe_api_duration:19|ms|#function:payment,domain:appsignal' "https://appsignal-endpoint.net/metrics/statsd?api_key=FRONTEND-API-KEY"
+```
+
 -> **Note**: This endpoint is optimized for large amounts of traffic and does not validate the API key or payload, a `200` (`OK`) response is returned when the body size is within the `200k` limit. This doesn't mean the request is accepted when received.
