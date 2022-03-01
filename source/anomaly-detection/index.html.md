@@ -49,8 +49,8 @@ Triggers can be configured for a variety of metrics, such as, but not limited to
   - Network usage
 
 ### Tags
-Some metrics require tags to be selected as well. For example if you are sending a custom metric to AppSignal that has tags:
 
+Some metrics require tags to be selected as well. For example if you are sending a custom metric to AppSignal that has tags:
 
 ```
 Appsignal.set_gauge("my_metric_name", 100, : namespace => "web", :action => "hello")
@@ -59,7 +59,6 @@ Appsignal.set_gauge("my_metric_name", 100, : namespace => "web", :action => "hel
 Then while creating a trigger for this metric you need to select tags as well.
 
 ![Trigger with tags](/assets/images/screenshots/trigger-with-tags.png)
-
 
 ### Editing triggers
 
@@ -81,7 +80,7 @@ When the threshold isn't met for the entire warm-up period, the alert is removed
 
 Alerts in the warm-up phase are displayed in the AppSignal web interface, but they do not send any notifications.
 
-!> ⚠️ It's not recommended to use Anomaly detection and the Warmup feature to check if services such as hourly/daily jobs and cronjobs are running.
+!> ⚠️  It's not recommended to use Anomaly detection and the Warmup feature to check if services such as hourly/daily jobs and cronjobs are running.
 
 The warmup feature works best for data that is emitted every minute. If you only emit a counter with a value of "1" every 24 hours in a nightly cronjob and set the warmup to 25 hours, we won't send you an alert if the warmup expires.
 
@@ -92,6 +91,10 @@ In order for the warmup to expire, you'll have to send a "0" metric every minute
 Alerts opened by a Trigger are automatically closed when the threshold condition is no longer met. If the threshold is met again, another alert will open. If a metric keeps dipping above and below the threshold, this will cause noisy notifications.
 
 Use cooldown periods to reduce this noise. A trigger with a cooldown will wait for the specified amount of time before closing an alert. If the threshold isn't met during the cooldown period, the alert is closed. If the threshold is met, the alert is reopened without a notification.
+
+## Missing datapoints as 0
+
+By default the Triggers assume that a data point is sent every minute. In some cases this is not feasible. For example when incrementing a counter only if a certain action actually happens. In those cases use the option "When checked, we will treat missing datapoints as a value of 0.". If this option is enabled the system will assume that a missing data point is a zero. This will make the alert close as expected if no data is received in the next minute.
 
 ## Data processing
 
