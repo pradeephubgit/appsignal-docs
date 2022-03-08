@@ -33,7 +33,7 @@ documentation][hex-appsignal].
         ]
       end
     end
-  ```
+    ```
 
 2. Then run `mix deps.get`.
 3. Then run `mix appsignal.install YOUR_PUSH_API_KEY`.
