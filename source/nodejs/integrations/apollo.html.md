@@ -21,6 +21,21 @@ You can then import and use the package in your app.
 
 The module includes an Apollo Server plugin for automatically instrumenting the resolvers of your application.
 
+To use the Apollo Server plugin, require it from the `@appsignal/apollo-server` package, and pass it in the `plugins` property when initialising `ApolloServer`, with an `Appsignal` instance as an argument:
+
+```js
+const { createApolloPlugin } = require("@appsignal/apollo-server");
+
+const server = new ApolloServer({
+  /* ... */
+  plugins: [createApolloPlugin(appsignal)],
+});
+```
+
+!> **NOTE:** In order for a [GraphQL query](https://www.apollographql.com/blog/the-anatomy-of-a-graphql-query-6dffa9e9e747/) to have its own entry in the Performance view of AppSignal.com, you must give it a name. For example, the named query `query AllBooks { books }` will show up in the performance view as an entry named `AllBooks`, but the unnamed query `{ books }` will be grouped together with all other unnamed queries, showing up in the performance view as a single entry named `[unknown graphql query]`.
+
+## Full example
+
 ```js
 // ENSURE APPSIGNAL IS THE FIRST THING TO BE REQUIRED/IMPORTED
 // INTO YOUR APP!
@@ -29,7 +44,7 @@ const { createApolloPlugin } = require("@appsignal/apollo-server");
 
 // You can also use one of the apollo-server integrations here,
 // e.g. `apollo-server-<integration>`. Note that you will also need to require
-// the AppSignal integration seperately.
+// the AppSignal integration for it separately.
 const { ApolloServer } = require("apollo-server");
 
 const appsignal = new Appsignal({
@@ -63,8 +78,6 @@ server.listen().then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
 ```
-
-!> **NOTE:** You must define an [operation name](https://www.apollographql.com/blog/the-anatomy-of-a-graphql-query-6dffa9e9e747/) for your query to get an action name in the Performance view of AppSignal.com. For example, `query FetchData {}` would get the action name `FetchData` on AppSignal.com. If no operation name is set, the query will be grouped under the action name `[unknown graphql query]`.
 
 ## Features
 
