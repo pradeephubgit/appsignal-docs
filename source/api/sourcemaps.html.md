@@ -83,7 +83,7 @@ All parameters, except for `file` can be sent either in the POST body or as GET 
 
 - The API will return a `201` HTTP status code if successful.
 - The API will return a `400` HTTP status code with a JSON response when a validation error has occurred.
-- The API will return a `404` HTTP status code if no site exists for the given app name, environment and API key.
+- The API will return a `404` HTTP status code if no app exists for the given app name, environment and Push API key combination.
 
 400 response body example:
 
