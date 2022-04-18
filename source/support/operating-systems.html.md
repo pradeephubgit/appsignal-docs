@@ -188,6 +188,10 @@ yum install gcc gcc-c++ make openssl-devel
 yum install gcc gcc-c++ make openssl-devel
 # Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 yum install gcc gcc-c++ make openssl-devel curl
+
+# Dependencies for the AppSignal for Node.js package version 2.3.4 or newer, the supported Python versions are those between Python 3.7 and Python 3.10.
+# Dependencies for the AppSignal for Node.js package version 2.3.3 or below, the supported Python versions are those between Python 3.5 and Python 3.8.
+yum install python3x
 ```
 
 For CentOS 7 and higher there is no problem upgrading to AppSignal for Ruby `v2.4.0` and AppSignal for Elixir `1.4.0` and higher.
@@ -209,6 +213,10 @@ apt-get install build-essential ca-certificates
 # Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 apt-get update
 apt-get install build-essential ca-certificates curl
+
+# Dependencies for the AppSignal for Node.js package version 2.3.4 or newer, the supported Python versions are those between Python 3.7 and Python 3.10.
+# Dependencies for the AppSignal for Node.js package version 2.3.3 or below, the supported Python versions are those between Python 3.5 and Python 3.8.
+apt-get install python3x
 ```
 
 ### Fedora
@@ -223,6 +231,10 @@ dnf install gcc gcc-c++ make openssl-devel
 dnf install gcc gcc-c++ make openssl-devel
 # Dependencies for the AppSignal for Elixir package version 1.6.3 and older
 dnf install gcc gcc-c++ make openssl-devel curl
+
+# Dependencies for the AppSignal for Node.js package version 2.3.4 or newer, the supported Python versions are those between Python 3.7 and Python 3.10.
+# Dependencies for the AppSignal for Node.js package version 2.3.3 or below, the supported Python versions are those between Python 3.5 and Python 3.8.
+dnf install python3x
 ```
 
 ## FreeBSD
@@ -233,6 +245,10 @@ The following system dependencies are required for FreeBSD Linux distributions:
 
 ```sh
 pkg install gcc gmake openssl-devel
+
+# Dependencies for the AppSignal for Node.js package version 2.3.4 or newer, the supported Python versions are those between Python 3.7 and Python 3.10.
+# Dependencies for the AppSignal for Node.js package version 2.3.3 or below, the supported Python versions are those between Python 3.5 and Python 3.8.
+pkg install python3x
 ```
 
 ## macOS
@@ -243,6 +259,10 @@ Please make sure Xcode is installed with the command line build tools.
 
 ```sh
 xcode-select --install
+
+# Dependencies for the AppSignal for Node.js package version 2.3.4 or newer, the supported Python versions are those between Python 3.7 and Python 3.10.
+# Dependencies for the AppSignal for Node.js package version 2.3.3 or below, the supported Python versions are those between Python 3.5 and Python 3.8.
+brew install python@3.x
 ```
 
 -> **Note**: We provide experimental support for Apple Silicon. Some issues may appear and we'd appreciate it if you would [report them][support]. It's also possible to run AppSignal (and the parent app) through Rosetta 2. Support is available in these package versions:
