@@ -34,7 +34,7 @@ After saving the integration, click the "Edit" icon for the newly created integr
 
 In the "Incoming OAuth" tab, setup OAuth with the following values:
 
-* Consumer Key: `7668c385bf3f09c0219ec178a50ff736`
+* Consumer Key: `ce2jejafmni3qmnzrfergg9fLpzxmppl`
 * Consumer Name: `AppSignal`
 * Public Key:
 
